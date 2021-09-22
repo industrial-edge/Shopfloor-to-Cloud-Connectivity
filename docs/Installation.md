@@ -2,7 +2,7 @@
 
 - [Installation](#installation)
   - [Build application](#build-application)
-    - [Cloning image](#cloning-image)
+    - [Cloning image bl](#cloning-image-bl)
     - [Build docker image](#build-docker-image)
   - [Upload  App to the Industrial Edge Managment](#upload--app-to-the-industrial-edge-managment)
     - [Connect your Industrial Edge App Publisher](#connect-your-industrial-edge-app-publisher)
@@ -14,7 +14,7 @@
   
 ## Build application
 
-### Cloning image
+### Cloning image bl
 
 - Clone or Download the source code to your engineering VM
 
