@@ -20,7 +20,7 @@ Use case for communication from Edge Device to Edge Device and the Mindesphere v
 ### General task
 
 Gathering energy data from two Edge Devices and converting them to a standardized form in a southbound Edge Device with no Internet access. 
-Sharing the standardized data with a northbound Edge Device with Internet connectivity via MQTT.
+Sharing the standardized data with a northbound Edge Device, with Internet connectivity, via MQTT.
 Structuring the energy data in asset models according to the MindSphere design in the northbound Edge Device and forwarding them to the MindSphere.
 Central monitoring the energy data from two locations in one dash board.
 
