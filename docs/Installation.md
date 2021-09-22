@@ -1,71 +1,38 @@
 # Installation
 
 - [Installation](#installation)
-  - [Build application](#build-application)
-    - [Cloning image bl](#cloning-image-bl)
-    - [Build docker image](#build-docker-image)
-  - [Upload  App to the Industrial Edge Managment](#upload--app-to-the-industrial-edge-managment)
-    - [Connect your Industrial Edge App Publisher](#connect-your-industrial-edge-app-publisher)
-    - [Upload  App using the Industrial Edge App Publisher](#upload--app-using-the-industrial-edge-app-publisher)
-  - [Deploying of App](#deploying-of-app)
-    - [Configuring application](#configuring-application)
-    - [Add additional installation steps here, if required](#add-additional-installation-steps-here-if-required)
-      - [Additional steps](#additional-steps)
+  - [Configure PLC project](#configure-plc-project)
+  - [Configuration Device Energy1](#configuration-device-energy1)
   
-## Build application
 
-### Cloning image bl
+## Configure PLC project
 
-- Clone or Download the source code to your engineering VM
+1) Open TIA portal and open the project containing the EnergyManagement application (Adapt the IP addresses to your system)
+2) Download the PLC program to the PLC and set the PLC into RUN
+   
 
-### Build docker image
+## Configuration Device Energy1
 
-Add instruction how to build your application, e.g.:
+**IE Databus**
 
-- Open console in the source code folder
-- Use command `docker-compose build` to create the docker image.
-- This docker image can now be used to build you app with the Industrial Edge App Publisher
-- *docker images | grep scannerapp* can be used to check for the images
-- You should get a result similiar to this:
+- Launch the IE Databus Configurator and add your related credentials/topics:
+`"ie/#"`
 
-## Upload  App to the Industrial Edge Managment
+![ie_databus_user](graphics/IE_Databus_User.png)
 
-Please find below a short description how to publish your application in your IEM.
+![ie_databus](graphics/IE_Databus.png)
 
-For more detailed information please see the section for [uploading apps to the IEM](https://github.com/industrial-edge/upload-app-to-iem).
+**S7 Connector**
 
-### Connect your Industrial Edge App Publisher
+- Import the JSON file "ernergy1_S7_Connector"
+  
+![S7_connector](graphics/S7_Connector.png)
 
-- Connect your Industrial Edge App Publisher to your docker engine
-- Connect your Industrial Edge App Publisher to your Industrial Edge Managment System
+- Launch the S7 Connector and configure the PLC connection 
+- Deploy and start your S7 Connector configuration
 
-### Upload  App using the Industrial Edge App Publisher
+**Mindsphere Connector** 
 
-- Create a new application using the Industrial Publisher
-- Add a app new version
-- Import the [docker-compose](../docker-compose.yml) file using the **Import YAML** button
-- The warning `Build (sevices >> scanner-service) is not supported` can be ignored
-- **Start Upload** to transfer the app to Industrial Edge Managment
-- Further information about using the Industrial Edge App Publisher can be found in the [IE Hub](https://iehub.eu1.edge.siemens.cloud/documents/appPublisher/en/start.html)
+**Flow Creator**
 
-## Deploying of App
 
-### Configuring application
-
-If your app needs additional configuration you can add further description here, e.g. [param.json](../cfg-data/param.json)
-
-```json
-{
-    "Parameter1": "Siemens AG",
-    "Parameter2": "edge",
-    "Parameter3": "edge"
-}
-```
-
-Add description of the configuration here:
-
-### Add additional installation steps here, if required
-
-#### Additional steps
-
-Add description here

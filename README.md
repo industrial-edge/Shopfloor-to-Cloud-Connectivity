@@ -28,7 +28,7 @@ Central monitoring the energy data from two locations in one dash board.
 - Establish Connection to 2 PLC for getting data into the Edge Devices
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Edge Devices 
-- Installed Apps on central Device: Data Service, Databus, Flow Creator, Energy Manager, MQTT Connector, Mindsphere Connector
+- Installed Apps on Central Device: Data Service, Databus, Flow Creator, Energy Manager, MQTT Connector, Mindsphere Connector
 - Installed Apps Device Energy1 and Energy2: S7 Connector, Mindsphere Connector, Databus, Flow Creator
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 
