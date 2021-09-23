@@ -82,8 +82,7 @@ Note: You must create one topic for the data and one topic for the metadata.
   
 ![Mindsphere_Connector5](graphics/Mindsphere_Connector_Client2.png)
 
-- Add Routes 
-  Mark the data and metadata routs an click "Save Route" 
+- Mark the data and metadata routs an click "Save Route" 
     
 ![Mindsphere_Connector6](graphics/Mindsphere_Connector_Rout1.png)
   
