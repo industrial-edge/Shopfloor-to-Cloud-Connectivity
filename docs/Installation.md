@@ -23,6 +23,7 @@
 
 ![ie_databus](graphics/IE_Databus.png)
 
+
 **S7 Connector**
   
 ![S7_connector](graphics/S7_Connector.png)
@@ -30,6 +31,7 @@
 - Launch the S7 Connector and configure the PLC connection 
 - Import the JSON file "ernergy1_S7_Connector" for Energy1 and "ernergy2_S7_Connector" for Energy2
 - Deploy and start your S7 Connector configuration
+
 
 **Mindsphere Connector** 
 
