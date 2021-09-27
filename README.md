@@ -28,8 +28,8 @@ Central monitoring the energy data from two locations in one dash board.
 - Establish Connection to 2 PLC for getting data into the Edge Devices
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Edge Devices 
-- Installed Apps on Central Device: Data Service, Databus, Flow Creator, Energy Manager, MQTT Connector, Mindsphere Connector
-- Installed Apps Device Energy1 and Energy2: S7 Connector, Mindsphere Connector, Databus, Flow Creator
+- Installed Apps on Central Device: Data Service, Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
+- Installed Apps Device Energy1 and Energy2: S7 Connector, Cloud Connector, Databus, Flow Creator
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 
 ### Used components
@@ -38,7 +38,7 @@ Central monitoring the energy data from two locations in one dash board.
 - IE Databus V1.3.5
 - SIMATIC S7 Connector V 1.3.27
 - MQTT Connector V1.2.9
-- Mindsphere Connector V 0.1.5
+- Cloud Connector V 0.1.5
 - Data Service V1.2.0
 - IE Flow Creator V1.1.2
 - Energy Manager V1.2.0
@@ -49,13 +49,13 @@ Central monitoring the energy data from two locations in one dash board.
 ## Configuration Central Edge Device
 
 You can find the further information about the following steps in the [docs](docs/Installation.md)
-- Install Databus, Flow Creator, Energy Manager, MQTT Connector, Mindsphere Connector
+- Install Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
 
 
 ## Configuration Energy Device 1
 
 You can find the further information about the following steps in the [docs](docs/Installation.md)
-- Install S7 Connector, Mindsphere Connector, Databus, Flow Creator 
+- Install S7 Connector, Cloud Connector, Databus, Flow Creator 
 
 
 ## Documentation
