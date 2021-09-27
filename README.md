@@ -48,13 +48,13 @@ Central monitoring the energy data from two locations in one dash board.
 
 ## Configuration Central Edge Device
 
-You can find the further information about the following steps in the [docs](docs/Installation.md)
+You can find the further information about the following steps in the [docs](docs/install.md)
 - Install Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
 
 
 ## Configuration Energy Device 1
 
-You can find the further information about the following steps in the [docs](docs/Installation.md)
+You can find the further information about the following steps in the [docs](docs/install.md)
 - Install S7 Connector, Cloud Connector, Databus, Flow Creator 
 
 
