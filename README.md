@@ -38,7 +38,7 @@ Central monitoring the energy data from two locations in one dash board.
 - IE Databus V1.3.5
 - SIMATIC S7 Connector V 1.3.27
 - MQTT Connector V1.2.9
-- Cloud Connector V 0.1.5
+- Cloud Connector V 1.3.1
 - Data Service V1.2.0
 - IE Flow Creator V1.1.2
 - Energy Manager V1.2.0

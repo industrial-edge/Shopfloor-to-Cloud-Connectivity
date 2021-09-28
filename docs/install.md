@@ -254,9 +254,17 @@ To sort the data and make it ready for the transfer to the Mindsphere it´s nece
 **IE Energy Manager**
 
 The data will be committed to the Energy Manager to show them in a clear way
+The total energy consumption, the energy consumption per bottle and the associated costs should be shown
+
+![EnergyManageroverview1](graphics/EnergyManager_overview1.png)
+
+![EnergyManageroverview2](graphics/EnergyManager_overview2.png)
+
+![EnergyManageroverview3](graphics/EnergyManager_overview3.png)
+
+
 - Add a new dashboard  "Overview Media Consumption"
   
-
   ![EnergyManager1](graphics/EnergyManager1.png)
 
 - do the same for the dashboards "Media Consumption per Bottle Line1" and "Media Consumption per Bottle Line2"
