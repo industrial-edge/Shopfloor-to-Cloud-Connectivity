@@ -17,6 +17,10 @@ Use case for communication from Edge Device to Edge Device and the Mindesphere v
 
 ![overview](docs/graphics/overview.png)
 
+![overview3](docs/graphics/overview3.png)
+
+![overview2](docs/graphics/overview2.png)
+
 ### General task
 
 Gathering energy data from two Edge Devices and converting them to a standardized form in a southbound Edge Device with no Internet access. 

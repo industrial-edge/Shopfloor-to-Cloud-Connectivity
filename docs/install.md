@@ -356,12 +356,13 @@ Add a new KPI
 
 
 Used KPI types:
-CostsPerBottle: `(Energy / 1000 * cost_kWh + PressuredAir * cost_Liter_Air + Water * cost_Liter_Water) / Bottles` Unit: €
+  
+- CostsPerBottle: `(Energy / 1000 * cost_kWh + PressuredAir * cost_Liter_Air + Water * cost_Liter_Water) / Bottles` Unit: €
 
-CostsPerLine: `(Energy / 1000 * cost_kWh + PressuredAir * cost_Liter_Air + Water * cost_Liter_Water)` Unit: €
+- CostsPerLine: `(Energy / 1000 * cost_kWh + PressuredAir * cost_Liter_Air + Water * cost_Liter_Water)` Unit: €
 
-EnergyPerBottle: `Energy / Bottles` Unit: Wh
+- EnergyPerBottle: `Energy / Bottles` Unit: Wh
 
-PressuredAirPerBottle: `PressuredAir / Bottles` Unit: Liter
+- PressuredAirPerBottle: `PressuredAir / Bottles` Unit: Liter
 
-WaterPerBottle: `Water / Bottles` Unit: Liter
+- WaterPerBottle: `Water / Bottles` Unit: Liter
