@@ -36,7 +36,8 @@ Central monitoring the energy data from two locations in one dash board.
 - Installed Apps on Central Device: Data Service, Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
 - Installed Apps Device Energy1 and Energy2: S7 Connector, Cloud Connector, Databus, Flow Creator
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
-
+- Access to the MindSphere
+  
 ### Used components
 Industrial Edge:
 - Industrial Edge Management V1.3.10

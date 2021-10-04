@@ -200,7 +200,7 @@ After the adapters are connected you can find the data in the Dataservice.
     
   ![IE_Dataservice3](graphics/IE_Dataservice3.png)
 
-  With a click on the three points you can edit the asset.
+- With a click on the three points you can edit the asset.
   
     
   ![IE_Dataservice4](graphics/IE_Dataservice4.png)
@@ -234,7 +234,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
 
 [CloudConnector_Central](CloudConnector_Central.json)
   
-- Add the topics: 'ie/cloudconnector/energy1' and 'ie/cloudconnector/energy2' 
+- Add the topics: `ie/cloudconnector/energy1` and `ie/cloudconnector/energy2` 
   
     
   ![Cloud_Connector_Central](graphics/Cloud_Connector_Topic_Cantral.png)
@@ -324,7 +324,7 @@ Because of different units it´s necessary to adapt the "Y-axis"
 - do the same for the other line diagrams 
   Note: for some diagrams KPIs are necessary, how to set them is explained in the next step
 
-A gauge diagram is a way to give a quick overview about the momentary stand e.g. Energy per Bottle Line1
+A gauge diagram is a way to give a quick overview about the momentary stand e.g. Energy per Bottle Line1  
 Here it´s necessary to generate a KPI that calculates the value
 
 Add a new KPI
@@ -427,7 +427,7 @@ In order to display the data of the lines in the MindSphere, it´s necessary to 
 
 **MindConnect IoT Extension**
 
-the MindConnect connects the data from the Central Edge Device with the assets. 
+The MindConnect connects the data from the Central Edge Device with the assets. 
 - go to "Device mapping" -> "Device mapping"
   
   ![Mindsphere_MindConnect1](graphics/Mindsphere_MindConnect1.png)
