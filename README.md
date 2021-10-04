@@ -7,8 +7,9 @@ Use case for communication from Edge Device to Edge Device and the Mindesphere v
     - [General task](#general-task)
     - [Prerequisities](#prerequisities)
     - [Used components](#used-components)
+  - [Configuration Device Energy1 and Device Energy2](#configuration-device-energy1-and-device-energy2)
   - [Configuration Central Edge Device](#configuration-central-edge-device)
-  - [Configuration Energy Device 1](#configuration-energy-device-1)
+  - [Configuration MindSphere](#configuration-mindsphere)
   - [Documentation](#documentation)
   - [Contribution](#contribution)
   - [Licence and Legal Information](#licence-and-legal-information)
@@ -23,8 +24,8 @@ Use case for communication from Edge Device to Edge Device and the Mindesphere v
 
 ### General task
 
-Gathering energy data from two Edge Devices and converting them to a standardized form in a southbound Edge Device with no Internet access. 
-Sharing the standardized data with a northbound Edge Device, with Internet connectivity, via MQTT.
+Gathering energy data from two Edge Devices and converting them to a standardized form in a southbound Edge Device with no internet access. 
+Sharing the standardized data with a northbound Edge Device, with internet connectivity, via MQTT.
 Structuring the energy data in asset models according to the MindSphere design in the northbound Edge Device and forwarding them to the MindSphere.
 Central monitoring the energy data from two locations in one dash board.
 
@@ -37,7 +38,7 @@ Central monitoring the energy data from two locations in one dash board.
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 
 ### Used components
-
+Industrial Edge:
 - Industrial Edge Management V1.3.10
 - IE Databus V1.3.5
 - SIMATIC S7 Connector V 1.3.27
@@ -49,17 +50,29 @@ Central monitoring the energy data from two locations in one dash board.
 - Industrial Edge Device V1.3.0-41
 - Web browser (Mozilla or Chrome)
 
+MindSphere:
+- Asset Manager
+- MindConnect IoT Extension
+- Energy Manager
+
+
+
+
+## Configuration Device Energy1 and Device Energy2
+
+You can find the further information about the following steps in the [docs](docs/install.md)
+- Configure S7 Connector, Cloud Connector, Databus, Flow Creator 
+
 
 ## Configuration Central Edge Device
 
 You can find the further information about the following steps in the [docs](docs/install.md)
-- Install Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
+- Configure Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
 
 
-## Configuration Energy Device 1
-
-You can find the further information about the following steps in the [docs](docs/install.md)
-- Install S7 Connector, Cloud Connector, Databus, Flow Creator 
+## Configuration MindSphere
+You can find the further information about the following steps in the [docs](docs/install.md:132)
+- Configure Asset Manager, MindConnect IoT Extension, Energy Manager 
 
 
 ## Documentation
