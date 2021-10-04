@@ -60,7 +60,7 @@ MindSphere:
 
 ## Configuration Device Energy1 and Device Energy2
 
-You can find the further information about the following steps in the [docs](docs/install.md)
+You can find the further information about the following steps in the [docs](docs/install.md#configuration-device-energy1-and-energy2)
 - Configure S7 Connector, Cloud Connector, Databus, Flow Creator 
 
 
@@ -71,7 +71,7 @@ You can find the further information about the following steps in the [docs](doc
 
 
 ## Configuration MindSphere
-You can find the further information about the following steps in the [docs](docs/install.md:132)
+You can find the further information about the following steps in the [docs](docs/install.md)
 - Configure Asset Manager, MindConnect IoT Extension, Energy Manager 
 
 
