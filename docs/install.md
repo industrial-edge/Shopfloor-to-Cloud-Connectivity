@@ -4,7 +4,7 @@
   - [Configure PLC project](#configure-plc-project)
   - [Configuration Device Energy1 and Energy2](#configuration-device-energy1-and-energy2)
   - [Configure Device Central](#configure-device-central)
-  - [Configure Mindsphere](#configure-mindsphere)
+  - [Configure MindSphere](#configure-mindsphere)
   
 
 ## Configure PLC project
@@ -32,7 +32,7 @@ Configure the user and topic in the Databus Configurator so the data can be foun
 To add the Data from the PLC to the Databus you have to connect the PLC-variables with the S7-Connector
 
 - Launch the S7 Connector and configure the PLC connection 
-- Import the JSON file ´energy1_S7_Connector´ for Energy1 and ´energy2_S7_Connector´ for Energy2
+- Import the JSON file [energy1_S7_Connector](energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](energy2_S7_Connector.json) for Energy2
 - Deploy and start your S7 Connector configuration
 
   ![S7_connector](graphics/S7_Connector.png)
@@ -45,6 +45,10 @@ Configure starting from the left side "Bus Adaptor" to the right the "Cloud Conn
 To deploy the configuration, initially click on your route and connect your topics from the bus adaptor with your cloud topics 
 Then click on deploy. 
 Note: You must create one topic for the data and one topic for the metadata. 
+
+Instead of configure the Cloud Connector, you can also import the Configuration files:
+[CloudConnector_Energy1](CloudConnector_Energy1.json)
+[CloudConnector_Energy2](CloudConnector_Energy2.json)
 
 - Add the Metadata-topic in the Bus Adaptor Field
 
@@ -115,9 +119,9 @@ The raw data from the PLC have to be aggregated to the four units: Energy, Water
 - Import the JSON-File
   
   Energy1:
-  `FlowCreator_Energy1`
+  [FlowCreator_Energy1](FlowCreator_Energy1.json)
   Energy2:
-  `FlowCreator_Energy2`
+  [FlowCreator_Energy2](FlowCreator_Energy2.json)
   
     
   ![FlowCreator1](graphics/Flow_Creator1.png)
@@ -154,6 +158,7 @@ Configure the User and Topic in the Databus Configurator as already described ab
 **IE MQTT Connector**
 
 To recieve the data from the Cloud Connector from Energy1 and Energy2 the MQTT Connector has to be configured
+
 Configure the MQTT Connector similar to the Databus
 
 - Launch the MQTT Connector and add your related credentials/topics:
@@ -165,20 +170,20 @@ Configure the MQTT Connector similar to the Databus
 
 **IE Flow Creator**
 
-The metadata from the data in the Cloud Connector have to be adjusted to prevent a collision with existing data. Also the data will be send back to the Cloud Connector to send them to the Mindsphere 
+The metadata from the data in the Cloud Connector must be adapted to avoid a collision with existing data. Also the data will be send back to the Cloud Connector to send them to the MindSphere 
 
-- Import the Flows from the JSON-File [FlowCreator_Central](docs.FlowCreator_Central.json) as described above.
+- Import the Flows from the JSON-File [FlowCreator_Central](FlowCreator_Central.json) as described above.
 
 
 
 **IE Data Service**
 
-To connect the Data Service with the data from the Cloud Connector you have to configure two adapters with the metadata-topic from the Cloud Connector in Energy1 and Energy2 
+In order to connect the Data Service with the data from the Cloud Connector, two adapters with the metadata topic from the Cloud Connector must be configured in Energy1 and Energy2. 
 
-- Got to the Data Service and select "Adapters"
+- Go to the Data Service and select "Adapters"
     
       
-  ![IE_Dataservice1](graphics/IE_Dataservice1_Centra.png)
+  ![IE_Dataservice1](graphics/IE_Dataservice1_Central.png)
 
 - click "+" to add a new adapter 
 - Add one adapter for Energy1 and one adapter for Energy2
@@ -189,7 +194,7 @@ To connect the Data Service with the data from the Cloud Connector you have to c
     
   ![IE_Dataservice2](graphics/IE_Dataservice2.png)
   
-After the adapters are connected, you can find the data in the Dataservice.
+After the adapters are connected you can find the data in the Dataservice.
 - click on the first button on the left side
   
     
@@ -200,7 +205,7 @@ After the adapters are connected, you can find the data in the Dataservice.
     
   ![IE_Dataservice4](graphics/IE_Dataservice4.png)
 
-- to add the variables to the Data Service, click "Add multiple variables"
+- to add the variables to the Data Service click "Add multiple variables"
 - select the adapter "energy1" mark all four variables and click "save"
 - do the same for the adapter "energy2"
   
@@ -208,13 +213,13 @@ After the adapters are connected, you can find the data in the Dataservice.
   ![IE_Dataservice5](graphics/IE_Dataservice5.png)
 
 
-To sort the data and make it ready for the transfer to the Mindsphere it´s necessary to add aspects.
+To sort the data and make it ready for the transfer to the MindSphere it´s necessary to add aspects.
 - click in the Data Service on the right side on the "Add aspect"
   
 
   ![IE_Dataservice6](graphics/IE_Dataservice6.png)
 
-- choose the Data for Line1 and add them to the aspect. Do the same for Line2
+- choose the data for Line1 and add them to the aspect. Do the same for Line2
   
 
   ![IE_Dataservice7](graphics/IE_Dataservice7.png)
@@ -223,8 +228,11 @@ To sort the data and make it ready for the transfer to the Mindsphere it´s nece
 
 **IE Cloud Connector**
 
-  For the communication with the Mindsphere the Cloud Connector must be configured.
-  The steps are similar to description above
+For the communication with the MindSphere the Cloud Connector must be configured.
+The steps are similar to the description for Energy1 and Energy2 above. 
+Instead of configure the Cloud Connector, you can also import the Configuration files:
+
+[CloudConnector_Central](CloudConnector_Central.json)
   
 - Add the topics: 'ie/cloudconnector/energy1' and 'ie/cloudconnector/energy2' 
   
@@ -254,8 +262,8 @@ To sort the data and make it ready for the transfer to the Mindsphere it´s nece
 
 **IE Energy Manager**
 
-The data will be committed to the Energy Manager to show them in a clear way
-The total energy consumption, the energy consumption per bottle and the associated costs should be shown
+The data will be committed to the Energy Manager to show them in a clear way.
+The total energy consumption, the energy consumption per bottle and the associated costs for each line should be shown.
 
 ![EnergyManageroverview1](graphics/EnergyManager_overview1.png)
 
@@ -303,17 +311,17 @@ Select parameter
   ![EnergyManager7](graphics/EnergyManager7.png)
 
 - Select "counter" for the aggregation
-- to change the colour of the lines click on the gear and 
+- to change the colour of the lines click on the gear and select the colour
 
   ![EnergyManager8](graphics/EnergyManager8.png)
 
 Because of different units it´s necessary to adapt the "Y-axis"
-- on rubric "5 Chart-Display options" click on the gear next to "Y-axis"
+- on rubric 5 "Chart-Display options" click on the gear next to "Y-axis"
 - assign the parameters as shown in the picture below
 
   ![EnergyManager9](graphics/EnergyManager9.png)
 
-- do the same for the other line diagrams
+- do the same for the other line diagrams 
   Note: for some diagrams KPIs are necessary, how to set them is explained in the next step
 
 A gauge diagram is a way to give a quick overview about the momentary stand e.g. Energy per Bottle Line1
@@ -368,17 +376,18 @@ Used KPI types:
 
 - WaterPerBottle: `Water / Bottles` Unit: ml
 
-## Configure Mindsphere
+## Configure MindSphere
 
-**Assett Manager**
-In order to display the data of the lines in the Mindsphere, it is necessary to create the corresponding assets and aspects
+**Asset Manager**
+
+In order to display the data of the lines in the MindSphere, it´s necessary to create the corresponding assets and aspects
 
 - go to "library" and select "Aspect Types"
   
   ![Mindsphere_Asset_Manager1](graphics/Mindsphere_AssetManager1.png)
 
 - ad a new Aspect "Media_Consumption_Line"
-- fill in the Name and  "Dynamic"
+- fill in the name and select "Dynamic"
 
   ![Mindsphere_Asset_Manager2](graphics/Mindsphere_AssetManager2.png)
 
@@ -417,7 +426,8 @@ In order to display the data of the lines in the Mindsphere, it is necessary to 
 
 
 **MindConnect IoT Extension**
-the MindConnect connects the data from the Central Edge Device with the assets 
+
+the MindConnect connects the data from the Central Edge Device with the assets. 
 - go to "Device mapping" -> "Device mapping"
   
   ![Mindsphere_MindConnect1](graphics/Mindsphere_MindConnect1.png)
