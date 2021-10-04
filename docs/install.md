@@ -167,7 +167,7 @@ Configure the MQTT Connector similar to the Databus
 
 The metadata from the data in the Cloud Connector have to be adjusted to prevent a collision with existing data. Also the data will be send back to the Cloud Connector to send them to the Mindsphere 
 
-- Import the Flows from the JSON-File `FlowCreator_Central` as described above.
+- Import the Flows from the JSON-File [FlowCreator_Central](docs.FlowCreator_Central.json) as described above.
 
 
 
@@ -270,7 +270,7 @@ The total energy consumption, the energy consumption per bottle and the associat
 
 - do the same for the dashboards "Media Consumption per Bottle Line1" and "Media Consumption per Bottle Line2"
   
-Show the produced bottles from Line1 in a Value on Dahsboard "Overview Media Consumption"
+Show the produced bottles from Line1 in a Value on Dashboard "Overview Media Consumption"
 - Click on "Create first widget"
 - Select type "Value" and continue
 
