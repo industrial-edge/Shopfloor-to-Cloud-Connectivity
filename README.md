@@ -66,12 +66,12 @@ You can find the further information about the following steps in the [docs](doc
 
 ## Configuration Central Edge Device
 
-You can find the further information about the following steps in the [docs](docs/install.md)
+You can find the further information about the following steps in the [docs](docs/install.md#configure-device-central)
 - Configure Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
 
 
 ## Configuration MindSphere
-You can find the further information about the following steps in the [docs](docs/install.md)
+You can find the further information about the following steps in the [docs](docs/install.md#configure-mindsphere)
 - Configure Asset Manager, MindConnect IoT Extension, Energy Manager 
 
 
