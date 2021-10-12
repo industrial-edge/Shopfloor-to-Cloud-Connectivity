@@ -75,7 +75,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
    Energy2:
   `ie/d/j/simatic/v1/iefc/dp/r/line2/default`
     
-    ![Cloud_Connector2](graphics/Cloud_Connector_Topic1.png)
+  ![Cloud_Connector2](graphics/Cloud_Connector_Topic1.png)
 
 - Add Connecting Routes
   
