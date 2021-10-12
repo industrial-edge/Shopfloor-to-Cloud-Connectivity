@@ -17,19 +17,21 @@
 
 **IE Databus**
 
-Configure the user and topic in the Databus Configurator so the data can be found from the Databus
+Add a user in the IE Databus Configurator with username and password and provide necessary access right to the required topics so the SIMATIC S7 Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
 
 - Launch the IE Databus Configurator and add your related credentials/topics:
 `ie/#`
 
   ![ie_databus_user](graphics/IE_Databus_User.png)
 
+- After adding user deploy configuration to device
+
   ![ie_databus](graphics/IE_Databus.png)
 
 
-**IE S7 Connector**
+**SIMATIC S7 Connector**
 
-To add the Data from the PLC to the Databus you have to connect the PLC-variables with the S7-Connector
+To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector to the PLC and add the required PLC variables
 
 - Launch the S7 Connector and configure the PLC connection 
 - Import the JSON file [energy1_S7_Connector](energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](energy2_S7_Connector.json) for Energy2
@@ -40,11 +42,16 @@ To add the Data from the PLC to the Databus you have to connect the PLC-variable
 
 **IE Cloud Connector**
 
-For the communication from Energy1 and Energy2 to the Central device the cloud connector must be configured. 
+For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector.
+
+
 Configure starting from the left side "Bus Adaptor" to the right the "Cloud Connector Clients" Adapt the IP addresses to your system.
+
 To deploy the configuration, initially click on your route and connect your topics from the bus adaptor with your cloud topics 
-Then click on deploy. 
-Note: You must create one topic for the data and one topic for the metadata. 
+
+Then click on deploy.
+
+Note: Create one topic for the data and one topic for the metadata. 
 
 Instead of configure the Cloud Connector, you can also import the Configuration files:
 [CloudConnector_Energy1](CloudConnector_Energy1.json)
@@ -53,19 +60,19 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
 - Add the Metadata-topic in the Bus Adaptor Field
 
   Energy1:
-  `ie/m/j/simatic/v1/iefc/`
+  `ie/m/j/simatic/v1/iefc/dp`
   
   Energy2:
   `ie/m/j/simatic/v1/iefc/dp` 
   
       
-    ![Cloud_Connector1](graphics/Cloud_Connector_Topic2.png)
+  ![Cloud_Connector1](graphics/Cloud_Connector_Topic2.png)
   
 - Add the Data-topic
--   Energy1:
+   Energy1:
   `ie/d/j/simatic/v1/iefc/dp/r/Line1/default`
   
-  Energy2:
+   Energy2:
   `ie/d/j/simatic/v1/iefc/dp/r/line2/default`
     
     ![Cloud_Connector2](graphics/Cloud_Connector_Topic1.png)
@@ -87,12 +94,12 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
   Type: `LOCAL_LAKE`
   
   Energy1:
-  Data: `"ie/d/j/simatic/v1/iecc/dp/r/energy1line1/raw"`
-  Metadata: `"ie/m/j/simatic/v1/iecc/dp/energy1line1"`
+  Data: `ie/d/j/simatic/v1/iecc/dp/r/energy1line1/raw`
+  Metadata: `ie/m/j/simatic/v1/iecc/dp/energy1line1`
   
   Energy2:
-  Data: `"ie/d/j/simatic/v1/iecc/dp/r/energy2line2/raw"`
-  Metadata: `"ie/m/j/simatic/v1/iecc/dp/energy2line2"`
+  Data: `ie/d/j/simatic/v1/iecc/dp/r/energy2line2/raw`
+  Metadata: `ie/m/j/simatic/v1/iecc/dp/energy2line2`
   
     
   ![Cloud_Connector4](graphics/Cloud_Connector_Client1.png)
@@ -114,7 +121,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
 
 **IE Flow Creator**
 
-The raw data from the PLC have to be aggregated to the four units: Energy, Water, Pressured Air and Produced Bottles. After aggregation the data are subscribed via MQTT to the Cloud Connector to send them to the Central Device. Additionally the topic from the metadata will be adjusted to prevent a collision with the data from S7-Connector
+Aggregate the raw data from the PLC to the four units: Energy, Water, Pressured Air and Produced Bottles. After aggregation the data are subscribed via MQTT to the Cloud Connector to send them to the Central Device. Additionally the topic from the metadata will be adjusted to prevent a collision with the data from S7-Connector
 
 - Import the JSON-File
   
@@ -170,7 +177,7 @@ Configure the MQTT Connector similar to the Databus
 
 **IE Flow Creator**
 
-The metadata from the data in the Cloud Connector must be adapted to avoid a collision with existing data. Also the data will be send back to the Cloud Connector to send them to the MindSphere 
+Adapt the metadata from the data in the Cloud Connector to avoid a collision with existing data. Also the data will be send back to the Cloud Connector to send them to the MindSphere 
 
 - Import the Flows from the JSON-File [FlowCreator_Central](FlowCreator_Central.json) as described above.
 
@@ -178,7 +185,7 @@ The metadata from the data in the Cloud Connector must be adapted to avoid a col
 
 **IE Data Service**
 
-In order to connect the Data Service with the data from the Cloud Connector, two adapters with the metadata topic from the Cloud Connector must be configured in Energy1 and Energy2. 
+In order to connect the Data Service with the data from the Cloud Connector, configure two adapters with the metadata topic from the Cloud Connector in Energy1 and Energy2. 
 
 - Go to the Data Service and select "Adapters"
     
@@ -228,7 +235,7 @@ To sort the data and make it ready for the transfer to the MindSphere it´s nece
 
 **IE Cloud Connector**
 
-For the communication with the MindSphere the Cloud Connector must be configured.
+For the communication with the MindSphere configure the Cloud Connector.
 The steps are similar to the description for Energy1 and Energy2 above. 
 Instead of configure the Cloud Connector, you can also import the Configuration files:
 
@@ -263,13 +270,13 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
 **IE Energy Manager**
 
 The data will be committed to the Energy Manager to show them in a clear way.
-The total energy consumption, the energy consumption per bottle and the associated costs for each line should be shown.
+The total energy consumption, the energy consumption per bottle and the associated costs for each line are displayed.
 
-![EnergyManageroverview1](graphics/EnergyManager_overview1.png)
+  ![EnergyManageroverview1](graphics/EnergyManager_overview1.png)
 
-![EnergyManageroverview2](graphics/EnergyManager_overview2.png)
+  ![EnergyManageroverview2](graphics/EnergyManager_overview2.png)
 
-![EnergyManageroverview3](graphics/EnergyManager_overview3.png)
+  ![EnergyManageroverview3](graphics/EnergyManager_overview3.png)
 
 
 - Add a new dashboard  "Overview Media Consumption"
@@ -409,7 +416,7 @@ In order to display the data of the lines in the MindSphere, it´s necessary to 
 
   ![Mindsphere_Asset_Manager7](graphics/Mindsphere_AssetManager7.png)
 
-- finally the aspects "Line1" and "Line2" should be created
+- finally create the aspects "Line1" and "Line2" 
 
   ![Mindsphere_Asset_Manager8](graphics/Mindsphere_AssetManager8.png)
 

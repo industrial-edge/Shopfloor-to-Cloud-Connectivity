@@ -40,19 +40,19 @@ Central monitoring the energy data from two locations in one dash board.
   
 ### Used components
 Industrial Edge:
-- Industrial Edge Management V1.3.10
+- Industrial Edge Management V1.3.0
 - IE Databus V1.3.5
 - SIMATIC S7 Connector V 1.3.27
 - MQTT Connector V1.2.9
 - Cloud Connector V 1.3.1
-- Data Service V1.2.0
-- IE Flow Creator V1.1.2
+- Data Service V1.3.0
+- IE Flow Creator V1.1.10
 - Energy Manager V1.2.0
-- Industrial Edge Device V1.3.0-41
+- Industrial Edge Device V1.2.0-56
 - Web browser (Mozilla or Chrome)
 
 MindSphere:
-- Asset Manager
+- Asset Manager 
 - MindConnect IoT Extension
 - Energy Manager
 
