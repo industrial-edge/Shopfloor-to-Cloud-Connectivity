@@ -44,6 +44,9 @@ To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector 
 
 For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector.
 
+- Click "Edit Configuration" and login to the Databus.
+
+  ![Cloud_Connector](graphics/Cloud_Connector_Login.png)
 
 Configure starting from the left side "Bus Adaptor" to the right the "Cloud Connector Clients" Adapt the IP addresses to your system.
 
@@ -240,6 +243,10 @@ The steps are similar to the description for Energy1 and Energy2 above.
 Instead of configure the Cloud Connector, you can also import the Configuration files:
 
 [CloudConnector_Central](CloudConnector_Central.json)
+
+- Click "Edit Configuration" and login to the Databus.
+
+  ![Cloud_Connector](graphics/Cloud_Connector_Login.png)
   
 - Add the topics: `ie/cloudconnector/energy1` and `ie/cloudconnector/energy2` 
   
@@ -440,7 +447,7 @@ The MindConnect connects the data from the Central Edge Device with the assets.
   ![Mindsphere_MindConnect1](graphics/Mindsphere_MindConnect1.png)
 
 - select the asset "Media Consumption Factory1"
-  
+
   ![Mindsphere_MindConnect2](graphics/Mindsphere_MindConnect2.png)
 
 - click "Add mapping"
