@@ -1,8 +1,19 @@
+# Installation
+
+- [Installation](#installation)
+  - [Configure Device Central](#configure-device-central)
+    - [IE Databus](#ie-databus)
+    - [IE MQTT Connector](#ie-mqtt-connector)
+    - [IE Flow Creator](#ie-flow-creator)
+    - [IE Data Service](#ie-data-service)
+    - [IE Cloud Connector](#ie-cloud-connector)
+    - [ Energy Manager](#-energy-manager)
+  
 
 
 ## Configure Device Central
 
-### **IE Databus**
+### IE Databus
 
 Configure the User and Topic in the IE Databus Configurator as already described.  
 
@@ -17,7 +28,7 @@ Configure the User and Topic in the IE Databus Configurator as already described
 
 
 
-### **IE MQTT Connector**
+### IE MQTT Connector
 
 To recieve the data from the IE Cloud Connector from Energy1 and Energy2 the IE MQTT Connector has to be configured
 
@@ -29,7 +40,7 @@ Only thing thats necessary to configure is to use unsecure (unencrypted)
 
   ![IE_MQTT_Connector](graphics/IE_MQTT_Connector.png)
 
-### **IE Flow Creator**
+### IE Flow Creator
 
 The IE Flow Creator will extract the packaged data from IE Cloud Connector
 Also converting the data to MindSphere IOT Extension data format
@@ -38,7 +49,7 @@ Also converting the data to MindSphere IOT Extension data format
 
 
 
-### **IE Data Service**
+### IE Data Service
 
 In order to connect the IE Data Service with the data from the Cloud Connector, configure two adapters with the metadata topic from the Cloud Connector in Energy1 and Energy2.  
 
@@ -89,7 +100,7 @@ To sort the data and make it ready for the transfer to the MindSphere it´s nece
 
 
 
-### **IE Cloud Connector**
+### IE Cloud Connector
 
 For the communication with the MindSphere configure the IE Cloud Connector.
 The steps are similar to the description for Energy1 and Energy2 above. 
@@ -127,7 +138,7 @@ Instead of configure the IE Cloud Connector, you can also import the configurati
 - Deploy the configuration
 
 
-### ** Energy Manager**
+###  Energy Manager
 
 The data will be committed to the Energy Manager to show them in a clear way.
 The total energy consumption, the energy consumption per bottle and the associated costs for each line are displayed.

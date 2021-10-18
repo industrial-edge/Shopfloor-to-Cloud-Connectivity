@@ -1,8 +1,16 @@
+# Installation
+
+- [Installation](#installation)
+  - [Configure MindSphere](#configure-mindsphere)
+    - [Asset Manager](#asset-manager)
+    - [MindConnect IoT Extension](#mindconnect-iot-extension)
+    - [Energy Manager](#energy-manager)
+  
 
 
 ## Configure MindSphere
 
-### **Asset Manager**
+### Asset Manager
 
 In order to display the data of the lines in the MindSphere, it´s necessary to create the corresponding assets and aspects
 
@@ -49,7 +57,7 @@ In order to display the data of the lines in the MindSphere, it´s necessary to 
 - name the Asset "Media Consumption Factory1" and safe your configuration
 
 
-### **MindConnect IoT Extension**
+### MindConnect IoT Extension
 
 The MindConnect connects the data from the Central Edge Device with the assets. 
 - go to "Device mapping" -> "Device mapping"
@@ -67,7 +75,7 @@ The MindConnect connects the data from the Central Edge Device with the assets.
 
   ![Mindsphere_MindConnect4](graphics/Mindsphere_MindConnect4.png)
 
-### **Energy Manager**
+### Energy Manager
 
 The Energy Manager shows the data from the hole Factory1
   

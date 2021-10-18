@@ -3,6 +3,10 @@
 - [Installation](#installation)
   - [Configure PLC project](#configure-plc-project)
   - [Configuration Device Energy1 and Energy2](#configuration-device-energy1-and-energy2)
+    - [IE Databus](#ie-databus)
+    - [SIMATIC S7 Connector](#simatic-s7-connector)
+    - [IE Cloud Connector](#ie-cloud-connector)
+    - [IE Flow Creator](#ie-flow-creator)
   
 
 ## Configure PLC project
@@ -13,7 +17,7 @@
 
 ## Configuration Device Energy1 and Energy2
 
-**IE Databus**
+### IE Databus
 
 Add a user in the IE Databus Configurator with username and password and provide necessary access right to the required topics so the SIMATIC S7 Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
 
@@ -27,7 +31,7 @@ Add a user in the IE Databus Configurator with username and password and provide
   ![ie_databus](graphics/IE_Databus.png)
 
 
-**SIMATIC S7 Connector**
+### SIMATIC S7 Connector
 
 To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector to the PLC and add the required PLC variables
 
@@ -38,7 +42,7 @@ To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector 
   ![S7_connector](graphics/S7_Connector.png)
 
 
-**IE Cloud Connector**
+### IE Cloud Connector
 
 For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector.
 
@@ -120,7 +124,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
 
 
 
-**IE Flow Creator**
+### IE Flow Creator
 
 Aggregate the raw data from the PLC to:
 - Energy
