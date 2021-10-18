@@ -7,6 +7,7 @@
     - [SIMATIC S7 Connector](#simatic-s7-connector)
     - [IE Cloud Connector](#ie-cloud-connector)
     - [IE Flow Creator](#ie-flow-creator)
+  - [Navigation](#navigation)
   
 
 ## Configure PLC project
@@ -93,7 +94,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
   `central-metadata2`
   
     
-  ![Cloud_Connector3](graphics/Cloud_Connector_Rout.png)
+  ![Cloud_Connector3](graphics/Cloud_Connector_Route.png)
 
 - Add Cloud Connector Clients
   Type: `LOCAL_LAKE`
@@ -115,10 +116,10 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
 - Mark the data and metadata routs an click "Save Route" 
       
         
-  ![Cloud_Connector6](graphics/Cloud_Connector_Rout1.png)
+  ![Cloud_Connector6](graphics/Cloud_Connector_Route1.png)
     
       
-  ![Cloud_Connector7](graphics/Cloud_Connector_Rout2.png)
+  ![Cloud_Connector7](graphics/Cloud_Connector_Route2.png)
 
 - Deploy your configuration
 
@@ -132,7 +133,7 @@ Aggregate the raw data from the PLC to:
 - Pressured Air
 - Produced Bottles 
 
-After aggregation the data and metadata are published to IE Databus. IE Cloud Connector subscribes to these topics and sends them to the central device (something like that)
+After aggregation the data and metadata are published to IE Databus. IE Cloud Connector subscribes to these topics and sends them to the central device 
 
 The aggregated values are published on newly defined topics to prevent collision with SIMATIC S7-Connector
 
@@ -146,7 +147,7 @@ The aggregated values are published on newly defined topics to prevent collision
     
   ![FlowCreator1](graphics/Flow_Creator1.png)
 
-- Double click to a MQTT-Node  
+- Double click on a MQTT-Node  
 - add IE Databus Credentials
   
   ![FlowCreator2](graphics/Flow_Creator2.png)
@@ -155,4 +156,12 @@ The aggregated values are published on newly defined topics to prevent collision
   ![FlowCreator3](graphics/Flow_Creator3.png)
 
 - Deploy the Flows
+
+## Navigation
+
+[Overview](../README.md)
+
+[Configuration Central Device](install_Device_Northbound.md)
+
+[Configuration MindSphere](install_MindSphere.md)
 

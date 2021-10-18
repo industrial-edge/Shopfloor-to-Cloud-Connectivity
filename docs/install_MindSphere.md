@@ -5,6 +5,7 @@
     - [Asset Manager](#asset-manager)
     - [MindConnect IoT Extension](#mindconnect-iot-extension)
     - [Energy Manager](#energy-manager)
+  - [Navigation](#navigation)
   
 
 
@@ -96,3 +97,11 @@ The Energy Manager shows the data from the hole Factory1
 - PressuredAirPerBottle: `(PressuredAirLine1 + PressuredAirLine2) / (BottlesLine1 + BottlesLine2)` Unit: ml
 
 - WaterPerBottle: `(WaterLine1 + WaterLine2) / (BottlesLine1 + BottlesLine2)` Unit: ml
+
+## Navigation
+
+[Overview](../README.md)
+
+[Configuration Device Energy1/Energy2](install_PLC_Devices_Southbound.md)
+
+[Configuration Central Device](install_Device_Northbound.md)

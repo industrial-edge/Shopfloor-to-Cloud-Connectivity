@@ -5,9 +5,10 @@
     - [IE Databus](#ie-databus)
     - [IE MQTT Connector](#ie-mqtt-connector)
     - [IE Flow Creator](#ie-flow-creator)
-    - [IE Data Service](#ie-data-service)
+    - [Data Service](#data-service)
     - [IE Cloud Connector](#ie-cloud-connector)
-    - [ Energy Manager](#-energy-manager)
+    - [Energy Manager](#energy-manager)
+  - [Navigation](#navigation)
   
 
 
@@ -43,15 +44,15 @@ Only thing thats necessary to configure is to use unsecure (unencrypted)
 ### IE Flow Creator
 
 The IE Flow Creator will extract the packaged data from IE Cloud Connector
-Also converting the data to MindSphere IOT Extension data format
+and also converts the data to MindSphere IOT Extension data format
 
 - Import the Flows from the JSON-File [FlowCreator_Central](FlowCreator_Central.json) as described above.
 
 
 
-### IE Data Service
+###  Data Service
 
-In order to connect the IE Data Service with the data from the Cloud Connector, configure two adapters with the metadata topic from the Cloud Connector in Energy1 and Energy2.  
+In order to store the data send by the Cloud Connector of the Energy 1 and Energy 2 device, configure two adapters with the metadata topic from the Cloud Connector in Energy1 and Energy2.  
 
 
 - Go to the Data Service and select "Adapters"
@@ -87,7 +88,7 @@ After the adapters are connected you can find the data in the Dataservice.
   ![IE_Dataservice5](graphics/IE_Dataservice5.png)
 
 
-To sort the data and make it ready for the transfer to the MindSphere it´s necessary to add aspects.
+To sort the data add aspects in the Data Service.
 - click in the Data Service on the right side on the "Add aspect"
   
 
@@ -104,7 +105,7 @@ To sort the data and make it ready for the transfer to the MindSphere it´s nece
 
 For the communication with the MindSphere configure the IE Cloud Connector.
 The steps are similar to the description for Energy1 and Energy2 above. 
-Instead of configure the IE Cloud Connector, you can also import the configuration files:
+Instead of manually configuring you can also import the configuration files:
 
 [CloudConnector_Central](CloudConnector_Central.json)
 
@@ -120,7 +121,7 @@ Instead of configure the IE Cloud Connector, you can also import the configurati
 - Add Route
   
     
-  ![Cloud_Connector_Rout_Central](graphics/Cloud_Connector_Rout_Cantral.png)
+  ![Cloud_Connector_Route_Central](graphics/Cloud_Connector_Route_Cantral.png)
   
 - Add Cloud Connector Clients
   
@@ -130,10 +131,10 @@ Instead of configure the IE Cloud Connector, you can also import the configurati
   ![Cloud_Connector_Central_Clients2](graphics/Cloud_Connector_Clients_Central2.png)
   
   
-- Mark the Topics, Rout and Client and save the Rout
+- Mark the Topics, Route and Client and save the Route
    
   
-  ![Cloud_Connector_Central_Rout](graphics/Cloud_Connector_Central_Rout1.png)
+  ![Cloud_Connector_Central_Route](graphics/Cloud_Connector_Central_Route1.png)
   
 - Deploy the configuration
 
@@ -254,3 +255,10 @@ Used KPI types:
 
 - WaterPerBottle: `Water / Bottles` Unit: ml
 
+## Navigation
+
+[Overview](../README.md)
+
+[Configuration Device Energy1/Energy2](install_PLC_Devices_Southbound.md)
+
+[Configuration MindSphere](install_MindSphere.md)

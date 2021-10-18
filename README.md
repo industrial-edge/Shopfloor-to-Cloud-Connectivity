@@ -47,22 +47,18 @@ Allows centrally monitoring energy data from multiple location in dash boards.
 - 2 PLCs
 - 2 Edge Devices
 - 1 IEM
-
-
 - List of required Apps:
-
   - Installed Apps Device Energy1 and Energy2: 
     - SIMATIC S7 Connector
     - IE Cloud Connector
     - IE Databus
     - IE Flow Creator
-
   - Installed Apps on Central Device:
-    -  IE Data Service
-    -  IE Databus
-    -  IE Flow Creator
-    -  IE Energy Manager
-    -  IE MQTT Connector
+    - Data Service
+    - IE Databus
+    - IE Flow Creator
+    - Energy Manager
+    - IE MQTT Connector
     -  IE Cloud Connector
 
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
