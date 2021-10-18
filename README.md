@@ -4,6 +4,8 @@ Use case for communication from Edge Device to Edge Device and the Mindesphere v
 
 - [Anchor-Use-Case-Cloud-Integration](#anchor-use-case-cloud-integration)
     - [Overview](#overview)
+      - [Reference Architecture](#reference-architecture)
+      - [Network Architecture](#network-architecture)
     - [General task](#general-task)
     - [Prerequisities](#prerequisities)
     - [Used components](#used-components)
@@ -18,23 +20,51 @@ Use case for communication from Edge Device to Edge Device and the Mindesphere v
 
 ![overview](docs/graphics/overview.png)
 
+#### Reference Architecture
+
 ![overview3](docs/graphics/overview3.png)
+
+#### Network Architecture
 
 ![overview2](docs/graphics/overview2.png)
 
 ### General task
 
-Gathering energy data from two Edge Devices and converting them to a standardized form in a southbound Edge Device with no internet access. 
+Allows gathering energy data from various Devices and converting them to a standardized 
+form in a southbound Edge Device with no Internet access. 
+
+
 Sharing the standardized data with a northbound Edge Device, with internet connectivity, via MQTT.
-Structuring the energy data in asset models according to the MindSphere design in the northbound Edge Device and forwarding them to the MindSphere.
-Central monitoring the energy data from two locations in one dash board.
+
+
+Structuring the energy data in asset models according to the MindSphere design in the northbound Edge Device
+and forwarding them to the MindSphere.
+
+
+Allows centrally monitoring energy data from multiple location in dash boards.
 
 ###  Prerequisities
-- Establish Connection to 2 PLC for getting data into the Edge Devices
-- Access to an Industrial Edge Management System (IEM)
-- Onboarded 3 Edge Devices 
-- Installed Apps on Central Device: Data Service, Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
-- Installed Apps Device Energy1 and Energy2: S7 Connector, Cloud Connector, Databus, Flow Creator
+- 2 PLCs
+- 2 Edge Devices
+- 1 IEM
+
+
+- List of required Apps:
+
+  - Installed Apps Device Energy1 and Energy2: 
+    - SIMATIC S7 Connector
+    - IE Cloud Connector
+    - IE Databus
+    - IE Flow Creator
+
+  - Installed Apps on Central Device:
+    -  IE Data Service
+    -  IE Databus
+    -  IE Flow Creator
+    -  IE Energy Manager
+    -  IE MQTT Connector
+    -  IE Cloud Connector
+
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to the MindSphere
   
@@ -61,18 +91,18 @@ MindSphere:
 
 ## Configuration Device Energy1 and Device Energy2
 
-You can find the further information about the following steps in the [docs](docs/install.md#configuration-device-energy1-and-energy2)
+You can find the further information about the following steps in the [docs](docs/install_PLC_Devices_Southbound.md)
 - Configure S7 Connector, Cloud Connector, Databus, Flow Creator 
 
 
 ## Configuration Central Edge Device
 
-You can find the further information about the following steps in the [docs](docs/install.md#configure-device-central)
+You can find the further information about the following steps in the [docs](docs/install_Device_Northbound.md)
 - Configure Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
 
 
 ## Configuration MindSphere
-You can find the further information about the following steps in the [docs](docs/install.md#configure-mindsphere)
+You can find the further information about the following steps in the [docs](docs/install_MindsSphere.md)
 - Configure Asset Manager, MindConnect IoT Extension, Energy Manager 
 
 
