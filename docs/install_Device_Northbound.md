@@ -134,14 +134,14 @@ Instead of manually configuring you can also import the configuration files:
 - Mark the Topics, Route and Client and save the Route
    
   
-  ![Cloud_Connector_Central_Route](graphics/Cloud_Connector_Central_Route1.png)
+  ![Cloud_Connector_Central_Route](graphics/Cloud_Connector_Central_Rout1.png)
   
 - Deploy the configuration
 
 
 ###  Energy Manager
 
-The data will be committed to the Energy Manager to show them in a clear way.
+Energy Manager displays the total energy consumption, the energy consumption per bottle and the associated costs for each line.
 The total energy consumption, the energy consumption per bottle and the associated costs for each line are displayed.
 
   ![EnergyManageroverview1](graphics/EnergyManager_overview1.png)
@@ -155,7 +155,7 @@ The total energy consumption, the energy consumption per bottle and the associat
   
   ![EnergyManager1](graphics/EnergyManager1.png)
 
-- do the same for the dashboards "Media Consumption per Bottle Line1" and "Media Consumption per Bottle Line2"
+- Do the same for the dashboards "Media Consumption per Bottle Line1" and "Media Consumption per Bottle Line2"
   
 Show the produced bottles from Line1 in a Value on Dashboard "Overview Media Consumption"
 - Click on "Create first widget"
@@ -201,21 +201,22 @@ Because of different units it´s necessary to adapt the "Y-axis"
   ![EnergyManager9](graphics/EnergyManager9.png)
 
 - do the same for the other line diagrams 
+  
   Note: for some diagrams KPIs are necessary, how to set them is explained in the next step
 
-A gauge diagram is a way to give a quick overview about the momentary stand e.g. Energy per Bottle Line1  
+A gauge diagram is a way to give a quick overview about the current values e.g. Energy per Bottle Line1  
 Here it´s necessary to generate a KPI that calculates the value
 
 Add a new KPI
 - click "Configuration" on the left side and select "KPI types"
 
-  ![EnergyManager12] (graphics/EnergyManager12.png)
+  ![EnergyManager12](graphics/EnergyManager12.png)
 
 - Add "New KPI type"
 - Edit Name and Unit
-- Add the formula in case of this example ´totalEnergyLine1 / ProducedBottlesLine1´
+- Add the formula in case of this example `totalEnergyLine1 / ProducedBottlesLine1`
   
-  ![EnergyManager13] (graphics/EnergyManager13.png)
+  ![EnergyManager13](graphics/EnergyManager13.png)
 
 - After saving switch back to "My Plant" 
 - Select the Dashboard "Media Consumption Bottle Line1"

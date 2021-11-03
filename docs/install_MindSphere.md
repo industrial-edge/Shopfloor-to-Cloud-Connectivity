@@ -19,7 +19,7 @@ In order to display the data of the lines in the MindSphere, it´s necessary to 
   
   ![Mindsphere_Asset_Manager1](graphics/Mindsphere_AssetManager1.png)
 
-- ad a new Aspect "Media_Consumption_Line"
+- add a new Aspect "Media_Consumption_Line"
 - fill in the name and select "Dynamic"
 
   ![Mindsphere_Asset_Manager2](graphics/Mindsphere_AssetManager2.png)
@@ -76,6 +76,8 @@ The MindConnect connects the data from the Central Edge Device with the assets.
 
   ![Mindsphere_MindConnect4](graphics/Mindsphere_MindConnect4.png)
 
+- commit changes
+
 ### Energy Manager
 
 The Energy Manager shows the data from the hole Factory1
@@ -84,7 +86,7 @@ The Energy Manager shows the data from the hole Factory1
   
   ![Mindsphere_EnergyManager2](graphics/Mindspehre_EnergyManager2.png)
 
-- the handling is the same as described under "Central Device Energy Manager"
+- the handling is the same as described under [Central Device Energy Manager ](install_Device_Northbound.md#L142)
   
 - CostsPerBottle: `((EnergyLine1 + EnergyLine2) / 1000 * cost_kWh + (PressuredAirLine1 + PressuredAirLine2)`
                      `* cost_Liter_Air + (WaterLine1 + WaterLine2) * cost_Liter_Water) / Bottles` Unit: €
