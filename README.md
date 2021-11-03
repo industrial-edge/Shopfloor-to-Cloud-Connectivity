@@ -7,7 +7,7 @@ Use case for communication from Edge Device to Edge Device and the Mindesphere v
       - [Reference Architecture](#reference-architecture)
       - [Network Architecture](#network-architecture)
     - [General task](#general-task)
-    - [Prerequisities](#prerequisities)
+    - [Prerequisites](#prerequisites)
     - [Used components](#used-components)
   - [Configuration Device Energy1 and Device Energy2](#configuration-device-energy1-and-device-energy2)
   - [Configuration Central Edge Device](#configuration-central-edge-device)
@@ -43,7 +43,7 @@ and forwarding them to the MindSphere.
 
 Allows centrally monitoring energy data from multiple location in dash boards.
 
-###  Prerequisities
+###  Prerequisites
 - 2 PLCs
 - 2 Edge Devices
 - 1 IEM
@@ -98,7 +98,7 @@ You can find the further information about the following steps in the [docs](doc
 
 
 ## Configuration MindSphere
-You can find the further information about the following steps in the [docs](docs/install_MindsSphere.md)
+You can find the further information about the following steps in the [docs](docs/install_MindSphere.md)
 - Configure Asset Manager, MindConnect IoT Extension, Energy Manager 
 
 
@@ -111,7 +111,7 @@ You can find further documentation and help in the following links
   
 ## Contribution
 
-Thanks for your interest in contributing. Anybody is free to report bugs, unclear documenation, and other problems regarding this repository in the Issues section or, even better, is free to propose any changes to this repository using Merge Requests.
+Thanks for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section or, even better, is free to propose any changes to this repository using Merge Requests.
 
 ## Licence and Legal Information
 

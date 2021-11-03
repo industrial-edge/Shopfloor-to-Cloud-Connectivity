@@ -37,7 +37,7 @@ Add a user in the IE Databus Configurator with username and password and provide
 To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector to the PLC and add the required PLC variables
 
 - Launch the S7 Connector and configure the PLC connection 
-- Import the JSON file [energy1_S7_Connector](energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](energy2_S7_Connector.json) for Energy2
+- Import the JSON file [energy1_S7_Connector](../src/Device_Energy1/energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](../src/Cevice_Energy2/energy2_S7_Connector.json) for Energy2 
 - Deploy and start your S7 Connector configuration
 
   ![S7_connector](graphics/S7_Connector.png)
@@ -60,8 +60,10 @@ Then click on deploy.
 Note: Create one topic for the data and one topic for the metadata. 
 
 Instead of configure the Cloud Connector, you can also import the Configuration files:
-[CloudConnector_Energy1](CloudConnector_Energy1.json)
-[CloudConnector_Energy2](CloudConnector_Energy2.json)
+
+[CloudConnector_Energy1](../src/Device_Energy1/CloudConnector_Energy1.json) (Password = Edge1234!)
+
+[CloudConnector_Energy2](../src/Cevice_Energy2/CloudConnector_Energy2.json) (Password = Edge1234!)
 
 - Add the Metadata-topic in the Bus Adaptor Field
 
@@ -140,9 +142,12 @@ The aggregated values are published on newly defined topics to prevent collision
 - Import the JSON-File
   
   Energy1:
-  [FlowCreator_Energy1](FlowCreator_Energy1.json)
+
+  [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
+
   Energy2:
-  [FlowCreator_Energy2](FlowCreator_Energy2.json)
+
+  [FlowCreator_Energy2](../src/Cevice_Energy2/FlowCreator_Energy2.json)
   
     
   ![FlowCreator1](graphics/Flow_Creator1.png)

@@ -31,13 +31,13 @@ Configure the User and Topic in the IE Databus Configurator as already described
 
 ### IE MQTT Connector
 
-To recieve the data from the IE Cloud Connector from Energy1 and Energy2 the IE MQTT Connector has to be configured
+To receive the data from the IE Cloud Connector from Energy1 and Energy2 the IE MQTT Connector has to be configured
 
 This is the same configuration as IE Databus.
     
   ![ie_mqtt_Connector](graphics/MQTT_Connector.png)
 
-Only thing thats necessary to configure is to use unsecure (unencrypted)
+Only set "Unsecure" in "IE MQTT Connector"
 
   ![IE_MQTT_Connector](graphics/IE_MQTT_Connector.png)
 
@@ -46,7 +46,7 @@ Only thing thats necessary to configure is to use unsecure (unencrypted)
 The IE Flow Creator will extract the packaged data from IE Cloud Connector
 and also converts the data to MindSphere IOT Extension data format
 
-- Import the Flows from the JSON-File [FlowCreator_Central](FlowCreator_Central.json) as described above.
+- Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described above.
 
 
 
@@ -60,11 +60,16 @@ In order to store the data send by the Cloud Connector of the Energy 1 and Energ
       
   ![IE_Dataservice1](graphics/IE_Dataservice1_Central.png)
 
-- click "+" to add a new adapter 
+- Click "+" to add a new adapter 
 - Add one adapter for Energy1 and one adapter for Energy2
 - Add the data as shown in the picture
+  
   URL for Energy1 `ie/m/j/simatic/v1/iefc/dp/energy1line1`
+
   URL for Energy2 `ie/m/j/simatic/v1/iefc/dp/energy2line2`
+
+- save the configuration
+- open the configuration again and set the status on "Active"
   
     
   ![IE_Dataservice2](graphics/IE_Dataservice2.png)
@@ -101,13 +106,14 @@ To sort the data add aspects in the Data Service.
 
 
 
+
 ### IE Cloud Connector
 
 For the communication with the MindSphere configure the IE Cloud Connector.
 The steps are similar to the description for Energy1 and Energy2 above. 
 Instead of manually configuring you can also import the configuration files:
 
-[CloudConnector_Central](CloudConnector_Central.json)
+[CloudConnector_Central](../src/CentralDevice/CloudConnector_Central.json) (Password = Edge1234!)
 
 - Click "Edit Configuration" and login to the Databus.
 
@@ -139,10 +145,10 @@ Instead of manually configuring you can also import the configuration files:
 - Deploy the configuration
 
 
+
 ###  Energy Manager
 
 Energy Manager displays the total energy consumption, the energy consumption per bottle and the associated costs for each line.
-The total energy consumption, the energy consumption per bottle and the associated costs for each line are displayed.
 
   ![EnergyManageroverview1](graphics/EnergyManager_overview1.png)
 
