@@ -44,6 +44,7 @@ and forwarding them to the MindSphere.
 Allows centrally monitoring energy data from multiple location in dash boards.
 
 ###  Prerequisites
+
 - 2 PLCs
 - 2 Edge Devices
 - 1 IEM
@@ -81,9 +82,6 @@ MindSphere:
 - Asset Manager 
 - MindConnect IoT Extension
 - Energy Manager
-
-
-
 
 ## Configuration Device Energy1 and Device Energy2
 

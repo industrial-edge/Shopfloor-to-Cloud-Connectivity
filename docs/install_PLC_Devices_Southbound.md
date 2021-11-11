@@ -1,24 +1,23 @@
-# Installation
-
-- [Installation](#installation)
-  - [Configure PLC project](#configure-plc-project)
-  - [Configuration Device Energy1 and Energy2](#configuration-device-energy1-and-energy2)
-    - [IE Databus](#ie-databus)
-    - [SIMATIC S7 Connector](#simatic-s7-connector)
-    - [IE Cloud Connector](#ie-cloud-connector)
-    - [IE Flow Creator](#ie-flow-creator)
-  - [Navigation](#navigation)
+# Configuration Steps
+- [Configuration Steps](#configuration-steps)
+- [Configure PLC project](#configure-plc-project)
+- [Configuration Device Energy1 and Energy2](#configuration-device-energy1-and-energy2)
+  - [IE Databus](#ie-databus)
+  - [SIMATIC S7 Connector](#simatic-s7-connector)
+  - [IE Flow Creator](#ie-flow-creator)
+  - [IE Cloud Connector](#ie-cloud-connector)
+- [Navigation](#navigation)
   
 
-## Configure PLC project
+# Configure PLC project
 
 - Open TIA portal and open the project containing the EnergyManagement application (Adapt the IP addresses to your system)
 - Download the PLC program to the PLC and set the PLC into RUN
    
 
-## Configuration Device Energy1 and Energy2
+# Configuration Device Energy1 and Energy2
 
-### IE Databus
+## IE Databus
 
 Add a user in the IE Databus Configurator with username and password and provide necessary access right to the required topics so the SIMATIC S7 Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
 
@@ -32,7 +31,7 @@ Add a user in the IE Databus Configurator with username and password and provide
   ![ie_databus](graphics/IE_Databus.png)
 
 
-### SIMATIC S7 Connector
+## SIMATIC S7 Connector
 
 To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector to the PLC and add the required PLC variables
 
@@ -42,8 +41,42 @@ To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector 
 
   ![S7_connector](graphics/S7_Connector.png)
 
+## IE Flow Creator
 
-### IE Cloud Connector
+Aggregate the raw data from the PLC to:
+- Energy
+- Water
+- Pressured Air
+- Produced Bottles 
+
+After aggregation the data and metadata are published to IE Databus. IE Cloud Connector subscribes to these topics and sends them to the central device 
+
+The aggregated values are published on newly defined topics to prevent collision with SIMATIC S7-Connector
+
+- Import the JSON-File
+  
+  Energy1:
+
+  [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
+
+  Energy2:
+
+  [FlowCreator_Energy2](../src/Cevice_Energy2/FlowCreator_Energy2.json)
+  
+    
+  ![FlowCreator1](graphics/Flow_Creator1.png)
+
+- Double click on a MQTT-Node  
+- add IE Databus Credentials
+  
+  ![FlowCreator2](graphics/Flow_Creator2.png)
+  
+    
+  ![FlowCreator3](graphics/Flow_Creator3.png)
+
+- Deploy the Flows
+
+## IE Cloud Connector
 
 For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector.
 
@@ -127,42 +160,9 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
 
 
 
-### IE Flow Creator
 
-Aggregate the raw data from the PLC to:
-- Energy
-- Water
-- Pressured Air
-- Produced Bottles 
 
-After aggregation the data and metadata are published to IE Databus. IE Cloud Connector subscribes to these topics and sends them to the central device 
-
-The aggregated values are published on newly defined topics to prevent collision with SIMATIC S7-Connector
-
-- Import the JSON-File
-  
-  Energy1:
-
-  [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
-
-  Energy2:
-
-  [FlowCreator_Energy2](../src/Cevice_Energy2/FlowCreator_Energy2.json)
-  
-    
-  ![FlowCreator1](graphics/Flow_Creator1.png)
-
-- Double click on a MQTT-Node  
-- add IE Databus Credentials
-  
-  ![FlowCreator2](graphics/Flow_Creator2.png)
-  
-    
-  ![FlowCreator3](graphics/Flow_Creator3.png)
-
-- Deploy the Flows
-
-## Navigation
+# Navigation
 
 [Overview](../README.md)
 

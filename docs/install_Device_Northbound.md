@@ -1,20 +1,20 @@
-# Installation
+# Configuration Steps
 
-- [Installation](#installation)
-  - [Configure Device Central](#configure-device-central)
-    - [IE Databus](#ie-databus)
-    - [IE MQTT Connector](#ie-mqtt-connector)
-    - [IE Flow Creator](#ie-flow-creator)
-    - [Data Service](#data-service)
-    - [IE Cloud Connector](#ie-cloud-connector)
-    - [Energy Manager](#energy-manager)
-  - [Navigation](#navigation)
+- [Configuration Steps](#configuration-steps)
+- [Configure Device Central](#configure-device-central)
+  - [IE Databus](#ie-databus)
+  - [IE MQTT Connector](#ie-mqtt-connector)
+  - [IE Flow Creator](#ie-flow-creator)
+  - [Data Service](#data-service)
+  - [IE Cloud Connector](#ie-cloud-connector)
+  - [Energy Manager](#energy-manager)
+- [Navigation](#navigation)
   
 
 
-## Configure Device Central
+# Configure Device Central
 
-### IE Databus
+## IE Databus
 
 Configure the User and Topic in the IE Databus Configurator as already described.  
 
@@ -29,7 +29,7 @@ Configure the User and Topic in the IE Databus Configurator as already described
 
 
 
-### IE MQTT Connector
+## IE MQTT Connector
 
 To receive the data from the IE Cloud Connector from Energy1 and Energy2 the IE MQTT Connector has to be configured
 
@@ -41,7 +41,7 @@ Only set "Unsecure" in "IE MQTT Connector"
 
   ![IE_MQTT_Connector](graphics/IE_MQTT_Connector.png)
 
-### IE Flow Creator
+## IE Flow Creator
 
 The IE Flow Creator will extract the packaged data from IE Cloud Connector
 and also converts the data to MindSphere IOT Extension data format
@@ -50,7 +50,7 @@ and also converts the data to MindSphere IOT Extension data format
 
 
 
-###  Data Service
+##  Data Service
 
 In order to store the data send by the Cloud Connector of the Energy 1 and Energy 2 device, configure two adapters with the metadata topic from the Cloud Connector in Energy1 and Energy2.  
 
@@ -107,7 +107,7 @@ To sort the data add aspects in the Data Service.
 
 
 
-### IE Cloud Connector
+## IE Cloud Connector
 
 For the communication with the MindSphere configure the IE Cloud Connector.
 The steps are similar to the description for Energy1 and Energy2 above. 
@@ -146,7 +146,7 @@ Instead of manually configuring you can also import the configuration files:
 
 
 
-###  Energy Manager
+##  Energy Manager
 
 Energy Manager displays the total energy consumption, the energy consumption per bottle and the associated costs for each line.
 
@@ -262,7 +262,7 @@ Used KPI types:
 
 - WaterPerBottle: `Water / Bottles` Unit: ml
 
-## Navigation
+# Navigation
 
 [Overview](../README.md)
 
