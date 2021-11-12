@@ -1,7 +1,7 @@
 # Configuration Steps
 - [Configuration Steps](#configuration-steps)
 - [Configure PLC project](#configure-plc-project)
-- [Configuration Device Energy1 and Energy2](#configuration-device-energy1-and-energy2)
+- [Configuration Southbound](#configuration-southbound)
   - [IE Databus](#ie-databus)
   - [SIMATIC S7 Connector](#simatic-s7-connector)
   - [IE Flow Creator](#ie-flow-creator)
@@ -11,22 +11,24 @@
 
 # Configure PLC project
 
-- Open TIA portal and open the project containing the EnergyManagement application (Adapt the IP addresses to your system)
-- Download the PLC program to the PLC and set the PLC into RUN
+1. Open TIA portal and open the project containing the EnergyManagement application (Adapt the IP addresses to your system)
+2. Download the PLC program to the PLC and set the PLC into RUN
    
 
-# Configuration Device Energy1 and Energy2
+# Configuration Southbound 
+
+The Southbound consist of two devices. In the following they are called "Energy1" and "Energy2"
 
 ## IE Databus
 
 Add a user in the IE Databus Configurator with username and password and provide necessary access right to the required topics so the SIMATIC S7 Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
 
-- Launch the IE Databus Configurator and add your related credentials/topics:
+1. Launch the IE Databus Configurator and add your related credentials/topics:
 `ie/#`
 
   ![ie_databus_user](graphics/IE_Databus_User.png)
 
-- After adding user deploy configuration to device
+2. After adding user deploy configuration to device
 
   ![ie_databus](graphics/IE_Databus.png)
 
@@ -35,9 +37,9 @@ Add a user in the IE Databus Configurator with username and password and provide
 
 To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector to the PLC and add the required PLC variables
 
-- Launch the S7 Connector and configure the PLC connection 
-- Import the JSON file [energy1_S7_Connector](../src/Device_Energy1/energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](../src/Cevice_Energy2/energy2_S7_Connector.json) for Energy2 
-- Deploy and start your S7 Connector configuration
+1. Launch the S7 Connector and configure the PLC connection 
+2. Import the JSON file [energy1_S7_Connector](../src/Device_Energy1/energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](../src/Cevice_Energy2/energy2_S7_Connector.json) for Energy2 
+3. Deploy and start your S7 Connector configuration
 
   ![S7_connector](graphics/S7_Connector.png)
 
@@ -53,7 +55,7 @@ After aggregation the data and metadata are published to IE Databus. IE Cloud Co
 
 The aggregated values are published on newly defined topics to prevent collision with SIMATIC S7-Connector
 
-- Import the JSON-File
+1. Import the JSON-File
   
   Energy1:
 
@@ -66,21 +68,21 @@ The aggregated values are published on newly defined topics to prevent collision
     
   ![FlowCreator1](graphics/Flow_Creator1.png)
 
-- Double click on a MQTT-Node  
-- add IE Databus Credentials
+2. Double click on a MQTT-Node  
+3. add IE Databus Credentials
   
   ![FlowCreator2](graphics/Flow_Creator2.png)
   
     
   ![FlowCreator3](graphics/Flow_Creator3.png)
 
-- Deploy the Flows
+4. Deploy the Flows
 
 ## IE Cloud Connector
 
 For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector.
 
-- Click "Edit Configuration" and login to the Databus.
+1. Click "Edit Configuration" and login to the Databus.
 
   ![Cloud_Connector](graphics/Cloud_Connector_Login.png)
 
@@ -98,7 +100,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
 
 [CloudConnector_Energy2](../src/Cevice_Energy2/CloudConnector_Energy2.json) (Password = Edge1234!)
 
-- Add the Metadata-topic in the Bus Adaptor Field
+2. Add the Metadata-topic in the Bus Adaptor Field
 
   Energy1:
   `ie/m/j/simatic/v1/iefc/dp`
@@ -109,7 +111,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
       
   ![Cloud_Connector1](graphics/Cloud_Connector_Topic2.png)
   
-- Add the Data-topic
+3. Add the Data-topic
    Energy1:
   `ie/d/j/simatic/v1/iefc/dp/r/Line1/default`
   
@@ -118,7 +120,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
     
   ![Cloud_Connector2](graphics/Cloud_Connector_Topic1.png)
 
-- Add Connecting Routes
+4. Add Connecting Routes
   
   Energy1:
   `central-data` 
@@ -131,7 +133,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
     
   ![Cloud_Connector3](graphics/Cloud_Connector_Route.png)
 
-- Add Cloud Connector Clients
+5. Add Cloud Connector Clients
   Type: `LOCAL_LAKE`
   
   Energy1:
@@ -148,7 +150,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
       
   ![Cloud_Connector5](graphics/Cloud_Connector_Client2.png)
 
-- Mark the data and metadata routs an click "Save Route" 
+6. Mark the data and metadata routs an click "Save Route" 
       
         
   ![Cloud_Connector6](graphics/Cloud_Connector_Route1.png)
@@ -156,7 +158,7 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
       
   ![Cloud_Connector7](graphics/Cloud_Connector_Route2.png)
 
-- Deploy your configuration
+7. Deploy your configuration
 
 
 

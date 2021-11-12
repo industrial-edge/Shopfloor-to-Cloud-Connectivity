@@ -60,7 +60,7 @@ Allows centrally monitoring energy data from multiple location in dash boards.
     - IE Flow Creator
     - Energy Manager
     - IE MQTT Connector
-    -  IE Cloud Connector
+    - IE Cloud Connector
 
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to the MindSphere
@@ -83,13 +83,13 @@ MindSphere:
 - MindConnect IoT Extension
 - Energy Manager
 
-## Configuration Device Energy1 and Device Energy2
+## Configuration Southbound Devices
 
 You can find the further information about the following steps in the [docs](docs/install_PLC_Devices_Southbound.md)
 - Configure S7 Connector, Cloud Connector, Databus, Flow Creator 
 
 
-## Configuration Central Edge Device
+## Configuration Northbound Device
 
 You can find the further information about the following steps in the [docs](docs/install_Device_Northbound.md)
 - Configure Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
