@@ -9,8 +9,8 @@ Use case for communication from Edge Device to Edge Device and the Mindesphere v
     - [General task](#general-task)
     - [Prerequisites](#prerequisites)
     - [Used components](#used-components)
-  - [Configuration Device Energy1 and Device Energy2](#configuration-device-energy1-and-device-energy2)
-  - [Configuration Central Edge Device](#configuration-central-edge-device)
+  - [Configuration Southbound Devices](#configuration-southbound-devices)
+  - [Configuration Northbound Device](#configuration-northbound-device)
   - [Configuration MindSphere](#configuration-mindsphere)
   - [Documentation](#documentation)
   - [Contribution](#contribution)
@@ -44,24 +44,19 @@ and forwarding them to the MindSphere.
 Allows centrally monitoring energy data from multiple location in dash boards.
 
 ###  Prerequisites
-
+- Industrial Edge Learning Path
 - 2 PLCs
 - 2 Edge Devices
 - 1 IEM
 - List of required Apps:
-  - Installed Apps Device Energy1 and Energy2: 
-    - SIMATIC S7 Connector
-    - IE Cloud Connector
-    - IE Databus
-    - IE Flow Creator
-  - Installed Apps on Central Device:
-    - Data Service
-    - IE Databus
-    - IE Flow Creator
-    - Energy Manager
-    - IE MQTT Connector
-    - IE Cloud Connector
-
+  - SIMATIC S7 Connector
+  - IE Cloud Connector
+  - IE Databus
+  - IE Flow Creator
+  - Data Service
+  - Energy Manager
+  - IE MQTT Connector
+    
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to the MindSphere
   
@@ -106,7 +101,7 @@ You can find further documentation and help in the following links
   - [Industrial Edge Hub](https://iehub.eu1.edge.siemens.cloud/#/documentation)
   - [Industrial Edge Forum](https://www.siemens.com/industrial-edge-forum)
   - [Industrial Edge landing page](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge/simatic-edge.html)
-  
+  - [Industrial Edge Learning Path](https://siemens-learning-sitrainaccess.sabacloud.com/Saba/Web_spf/EU2PRD0112/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000005180%3Freturnurl%3Dcommon%2Fcategorydetail%2Fcateg000000000006660%3FembeddedInTorque%3Dtrue)
 ## Contribution
 
 Thanks for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section or, even better, is free to propose any changes to this repository using Merge Requests.

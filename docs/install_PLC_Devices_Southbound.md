@@ -18,6 +18,11 @@
 # Configuration Southbound 
 
 The Southbound consist of two devices. In the following they are called "Energy1" and "Energy2"
+Installed Apps Device Energy1 and Energy2: 
+  - SIMATIC S7 Connector
+  - IE Cloud Connector
+  - IE Databus
+  - IE Flow Creator
 
 ## IE Databus
 
@@ -57,16 +62,16 @@ The aggregated values are published on newly defined topics to prevent collision
 
 1. Import the JSON-File
   
-  Energy1:
+    Energy1:
 
-  [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
+    [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
 
-  Energy2:
+    Energy2:
 
-  [FlowCreator_Energy2](../src/Cevice_Energy2/FlowCreator_Energy2.json)
+    [FlowCreator_Energy2](../src/Cevice_Energy2/FlowCreator_Energy2.json)
   
     
-  ![FlowCreator1](graphics/Flow_Creator1.png)
+    ![FlowCreator1](graphics/Flow_Creator1.png)
 
 2. Double click on a MQTT-Node  
 3. add IE Databus Credentials
@@ -102,33 +107,33 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
 
 2. Add the Metadata-topic in the Bus Adaptor Field
 
-  Energy1:
-  `ie/m/j/simatic/v1/iefc/dp`
+    Energy1:
+    `ie/m/j/simatic/v1/iefc/dp`
   
-  Energy2:
-  `ie/m/j/simatic/v1/iefc/dp` 
+    Energy2:
+   `ie/m/j/simatic/v1/iefc/dp` 
   
       
   ![Cloud_Connector1](graphics/Cloud_Connector_Topic2.png)
   
 3. Add the Data-topic
    Energy1:
-  `ie/d/j/simatic/v1/iefc/dp/r/Line1/default`
+   `ie/d/j/simatic/v1/iefc/dp/r/Line1/default`
   
    Energy2:
-  `ie/d/j/simatic/v1/iefc/dp/r/line2/default`
+   `ie/d/j/simatic/v1/iefc/dp/r/line2/default`
     
   ![Cloud_Connector2](graphics/Cloud_Connector_Topic1.png)
 
 4. Add Connecting Routes
   
-  Energy1:
-  `central-data` 
-  `central-metadata`
+   Energy1:
+   `central-data` 
+   `central-metadata`
   
-  Energy2:
-  `central-data2`
-  `central-metadata2`
+   Energy2:
+   `central-data2`
+   `central-metadata2`
   
     
   ![Cloud_Connector3](graphics/Cloud_Connector_Route.png)
@@ -136,13 +141,13 @@ Instead of configure the Cloud Connector, you can also import the Configuration 
 5. Add Cloud Connector Clients
   Type: `LOCAL_LAKE`
   
-  Energy1:
-  Data: `ie/d/j/simatic/v1/iecc/dp/r/energy1line1/raw`
-  Metadata: `ie/m/j/simatic/v1/iecc/dp/energy1line1`
+   Energy1:
+   Data: `ie/d/j/simatic/v1/iecc/dp/r/energy1line1/raw`
+   Metadata: `ie/m/j/simatic/v1/iecc/dp/energy1line1`
   
-  Energy2:
-  Data: `ie/d/j/simatic/v1/iecc/dp/r/energy2line2/raw`
-  Metadata: `ie/m/j/simatic/v1/iecc/dp/energy2line2`
+   Energy2:
+   Data: `ie/d/j/simatic/v1/iecc/dp/r/energy2line2/raw`
+   Metadata: `ie/m/j/simatic/v1/iecc/dp/energy2line2`
   
     
   ![Cloud_Connector4](graphics/Cloud_Connector_Client1.png)
