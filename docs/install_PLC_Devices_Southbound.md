@@ -1,7 +1,7 @@
 # Configuration Steps
 - [Configuration Steps](#configuration-steps)
-- [Configure PLC project](#configure-plc-project)
-- [Configuration Southbound](#configuration-southbound)
+- [Configure PLC project in TIA-Portal](#configure-plc-project-in-tia-portal)
+- [Configuration Southbound for Industrial Edge](#configuration-southbound-for-industrial-edge)
   - [IE Databus](#ie-databus)
   - [SIMATIC S7 Connector](#simatic-s7-connector)
   - [IE Flow Creator](#ie-flow-creator)
@@ -9,13 +9,16 @@
 - [Navigation](#navigation)
   
 
-# Configure PLC project
+# Configure PLC project in TIA-Portal
 
 1. Open TIA portal and open the project containing the EnergyManagement application (Adapt the IP addresses to your system)
+   
+![TIA_IP](graphics/TIA_IP.png)
+
 2. Download the PLC program to the PLC and set the PLC into RUN
    
 
-# Configuration Southbound 
+# Configuration Southbound for Industrial Edge
 
 The Southbound consist of two devices. In the following they are called "Energy1" and "Energy2"
 Installed Apps Device Energy1 and Energy2: 
@@ -71,7 +74,7 @@ The aggregated values are published on newly defined topics to prevent collision
     [FlowCreator_Energy2](../src/Cevice_Energy2/FlowCreator_Energy2.json)
   
     
-    ![FlowCreator1](graphics/Flow_Creator1.png)
+  ![FlowCreator1](graphics/Flow_Creator1.png)
 
 2. Double click on a MQTT-Node  
 3. add IE Databus Credentials

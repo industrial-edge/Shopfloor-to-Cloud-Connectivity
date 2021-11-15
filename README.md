@@ -49,13 +49,18 @@ Allows centrally monitoring energy data from multiple location in dash boards.
 - 2 Edge Devices
 - 1 IEM
 - List of required Apps:
-  - SIMATIC S7 Connector
-  - IE Cloud Connector
-  - IE Databus
-  - IE Flow Creator
-  - Data Service
-  - Energy Manager
-  - IE MQTT Connector
+  - Southbound
+    - SIMATIC S7 Connector
+    - IE Cloud Connector
+    - IE Databus
+    - IE Flow Creator
+  - Northbound
+    -  Data Service
+    - IE Databus
+    - IE Flow Creator
+    - Energy Manager
+    - IE MQTT Connector
+    - IE Cloud Connector
     
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to the MindSphere
