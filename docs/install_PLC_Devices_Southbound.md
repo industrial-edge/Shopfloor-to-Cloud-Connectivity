@@ -1,6 +1,6 @@
 # Configuration Steps
 - [Configuration Steps](#configuration-steps)
-- [Configure PLC project in TIA-Portal](#configure-plc-project-in-tia-portal)
+- [Configure PLC-Project in TIA-Portal](#configure-plc-project-in-tia-portal)
 - [Configuration Southbound for Industrial Edge](#configuration-southbound-for-industrial-edge)
   - [IE Databus](#ie-databus)
   - [SIMATIC S7 Connector](#simatic-s7-connector)
@@ -9,7 +9,7 @@
 - [Navigation](#navigation)
   
 
-# Configure PLC project in TIA-Portal
+# Configure PLC-Project in TIA-Portal
 
 1. Open TIA portal and open the project containing the EnergyManagement application (Adapt the IP addresses to your system)
    
