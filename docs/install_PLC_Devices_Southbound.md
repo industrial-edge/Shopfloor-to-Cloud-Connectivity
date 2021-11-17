@@ -88,7 +88,12 @@ The aggregated values are published on newly defined topics to prevent collision
 
 ## IE Cloud Connector
 
-For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector.
+For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector. 
+Instead of manually configuring you can also import the configuration files:
+
+[CloudConnector_Energy1](../src/Device_Energy1/CloudConnector_Energy1.json) (Password = Edge1234!)
+
+[CloudConnector_Energy2](../src/Cevice_Energy2/CloudConnector_Energy2.json) (Password = Edge1234!)
 
 1. Click "Edit Configuration" and login to the Databus.
 
@@ -102,19 +107,11 @@ Then click on deploy.
 
 Note: Create one topic for the data and one topic for the metadata. 
 
-Instead of configure the Cloud Connector, you can also import the Configuration files:
 
-[CloudConnector_Energy1](../src/Device_Energy1/CloudConnector_Energy1.json) (Password = Edge1234!)
+1. Add the Metadata-topic in the Bus Adaptor Field
 
-[CloudConnector_Energy2](../src/Cevice_Energy2/CloudConnector_Energy2.json) (Password = Edge1234!)
-
-2. Add the Metadata-topic in the Bus Adaptor Field
-
-    Energy1:
-    `ie/m/j/simatic/v1/iefc/dp`
-  
-    Energy2:
-   `ie/m/j/simatic/v1/iefc/dp` 
+    Energy1: `ie/m/j/simatic/v1/iefc/dp`
+    Energy2: `ie/m/j/simatic/v1/iefc/dp` 
   
       
   ![Cloud_Connector1](graphics/Cloud_Connector_Topic2.png)
