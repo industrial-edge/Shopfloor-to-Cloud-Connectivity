@@ -65,13 +65,9 @@ The aggregated values are published on newly defined topics to prevent collision
 
 1. Import the JSON-File
   
-    Energy1:
+    Energy1: [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
 
-    [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
-
-    Energy2:
-
-    [FlowCreator_Energy2](../src/Cevice_Energy2/FlowCreator_Energy2.json)
+    Energy2:[FlowCreator_Energy2](../src/Cevice_Energy2/FlowCreator_Energy2.json)
   
     
   ![FlowCreator1](graphics/Flow_Creator1.png)
@@ -108,15 +104,17 @@ Then click on deploy.
 Note: Create one topic for the data and one topic for the metadata. 
 
 
-1. Add the Metadata-topic in the Bus Adaptor Field
+2. Add the Metadata-topic in the Bus Adaptor Field
 
     Energy1: `ie/m/j/simatic/v1/iefc/dp`
+
     Energy2: `ie/m/j/simatic/v1/iefc/dp` 
   
       
   ![Cloud_Connector1](graphics/Cloud_Connector_Topic2.png)
   
 3. Add the Data-topic
+   
    Energy1:
    `ie/d/j/simatic/v1/iefc/dp/r/Line1/default`
   
