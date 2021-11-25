@@ -109,6 +109,6 @@ The Energy Manager shows the data from the hole Factory1
 
 [Overview](../README.md)
 
-[Configuration Device Energy1/Energy2](install_PLC_Devices_Southbound.md)
+[Configuration Southbound Device ](install_PLC_Devices_Southbound.md)
 
-[Configuration Central Device](install_Device_Northbound.md)
+[Configuration Northbound Device](install_Device_Northbound.md)

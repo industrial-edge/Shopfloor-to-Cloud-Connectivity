@@ -2,7 +2,6 @@
 
 - [Configuration Steps](#configuration-steps)
 - [Configure Northbound](#configure-northbound)
-  - [IE Databus](#ie-databus)
   - [IE MQTT Connector](#ie-mqtt-connector)
   - [IE Flow Creator](#ie-flow-creator)
   - [Data Service](#data-service)
@@ -23,9 +22,9 @@ Installed Apps on Central Device:
   - IE MQTT Connector
   - IE Cloud Connector
 
-## IE Databus
 
-Configure the User and Topic in the IE Databus Configurator as described [here](install_PLC_Devices_Southbound.md#L31 ) .  
+
+Configure the User and Topic in the IE Databus Configurator as described [here](install_PLC_Devices_Southbound.md#80) .  
 
 1. Launch the IE Databus Configurator and add your related Credentials/Topics:
    `ie/#`
@@ -55,7 +54,7 @@ This is the same configuration as IE Databus.
 The IE Flow Creator will extract the packaged data from IE Cloud Connector
 and also converts the data to MindSphere IOT Extension data format
 
-1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described [here](install_PLC_Devices_Southbound.md#L55)
+1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described [here](install_PLC_Devices_Southbound.md#L150)
    
 2. Enter IE-Databus credentials
 
@@ -300,6 +299,6 @@ Used KPI types:
 
 [Overview](../README.md)
 
-[Configuration Device Energy1/Energy2](install_PLC_Devices_Southbound.md)
+[Configuration Southbound Device](install_PLC_Devices_Southbound.md)
 
 [Configuration MindSphere](install_MindSphere.md)
