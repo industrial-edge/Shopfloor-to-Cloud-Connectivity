@@ -122,7 +122,7 @@ You can find further documentation and help in the following links
   - [Industrial Edge Hub](https://iehub.eu1.edge.siemens.cloud/#/documentation)
   - [Industrial Edge Forum](https://www.siemens.com/industrial-edge-forum)
   - [Industrial Edge landing page](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge/simatic-edge.html)
-  - [Industrial Edge Learning Path](https://siemens-learning-sitrainaccess.sabacloud.com/Saba/Web_spf/EU2PRD0112/app/shared;spf-url=common%2Flearningeventdetail%2Fcurra000000000005180%3Freturnurl%3Dcommon%2Fcategorydetail%2Fcateg000000000006660%3FembeddedInTorque%3Dtrue)
+  - [Industrial Edge Learning Path](https://siemens-learning-simaticedge.sabacloud.com/)
 ## Contribution
 
 Thanks for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section or, even better, is free to propose any changes to this repository using Merge Requests.

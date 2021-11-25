@@ -74,7 +74,7 @@ The aggregated values are published on newly defined topics to prevent collision
   ![FlowCreator1](graphics/Flow_Creator1.png)
 
 2. Double click on a MQTT-Node  
-3. add IE Databus Credentials
+3. Add IE Databus Credentials
   
   ![FlowCreator2](graphics/Flow_Creator2.png)
   
@@ -172,7 +172,7 @@ Note: Create one topic for the data and one topic for the metadata.
 
 [Overview](../README.md)
 
-[Configuration Central Device](install_Device_Northbound.md)
+[Configuration Northbound Device](install_Device_Northbound.md)
 
 [Configuration MindSphere](install_MindSphere.md)
 
