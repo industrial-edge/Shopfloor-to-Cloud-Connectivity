@@ -7,6 +7,7 @@ Use case for communication from Edge Device to Edge Device and the Mindesphere v
       - [Reference Architecture](#reference-architecture)
       - [Network Architecture](#network-architecture)
     - [General task](#general-task)
+  - [Requirements](#requirements)
     - [Prerequisites](#prerequisites)
     - [Used components](#used-components)
   - [Configuration Southbound Devices](#configuration-southbound-devices)
@@ -43,6 +44,8 @@ and forwarding them to the MindSphere.
 
 Allows centrally monitoring energy data from multiple location in dash boards.
 
+## Requirements
+
 ###  Prerequisites
 - Industrial Edge Learning Path (Module 1-3)
 - Established connection to 2 PLCs for getting data into the Edge Device
@@ -57,8 +60,8 @@ Allows centrally monitoring energy data from multiple location in dash boards.
 ### Used components
 
 TIA & PLCs:
-- STEP7 V16
-- CPU 1512SP-1 PN FW V2.1
+- TIA V16
+- PLC 1512SP-1 PN FW V2.1
 
 Industrial Edge:
 - Industrial Edge Management V1.3.0

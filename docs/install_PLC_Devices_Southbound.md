@@ -32,7 +32,7 @@ Installed Apps Device Energy1 and Energy2:
 
 Add a user in the IE Databus Configurator with username and password and provide necessary access right to the required topics so the SIMATIC S7 Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
 
-1. Launch the IE Databus Configurator and add your related credentials/topics:
+1. Open the Industrial Edge Management App and launch the Databus configurator, add your related credentials/topics:
 `ie/#`
 
   ![ie_databus_user](graphics/IE_Databus_User.png)
@@ -46,7 +46,7 @@ Add a user in the IE Databus Configurator with username and password and provide
 
 To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector to the PLC and add the required PLC variables
 
-1. Launch the S7 Connector and configure the PLC connection 
+1. Launch the S7 Connector Configurator and configure the PLC connection 
 2. Import the JSON file [energy1_S7_Connector](../src/Device_Energy1/energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](../src/Cevice_Energy2/energy2_S7_Connector.json) for Energy2 
 3. Deploy and start your S7 Connector configuration
 
@@ -175,6 +175,3 @@ Note: Create one topic for the data and one topic for the metadata.
 [Configuration Northbound Device](install_Device_Northbound.md)
 
 [Configuration MindSphere](install_MindSphere.md)
-
-dSphere.md)
-
