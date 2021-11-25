@@ -24,7 +24,7 @@ Installed Apps on Central Device:
 
 
 
-Configure the User and Topic in the IE Databus Configurator as described [here](install_PLC_Devices_Southbound.md#L31) .  
+Configure the User and Topic in the IE Databus Configurator as described [here](install_PLC_Devices_Southbound.md) .  
 
 1. Launch the IE Databus Configurator and add your related Credentials/Topics:
    `ie/#`
@@ -54,7 +54,7 @@ This is the same configuration as IE Databus.
 The IE Flow Creator will extract the packaged data from IE Cloud Connector
 and also converts the data to MindSphere IOT Extension data format
 
-1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described [here](install_PLC_Devices_Southbound.md#L55-L70)
+1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described [here](install_PLC_Devices_Southbound.md)
    
 2. Enter IE-Databus credentials
 

@@ -49,9 +49,9 @@ Allows centrally monitoring energy data from multiple location in dash boards.
 ###  Prerequisites
 - Industrial Edge Learning Path (Module 1-3)
 - Established connection to 2 PLCs for getting data into the Edge Device
-- Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
 - Access to an Industrial Edge Management System (IEM)
-- Installed system configurators (S7 Connector Configurator, IE Databus Configurator, Cloud Connector Configurator, IE MQTT Connector Configurator) 
+- Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
+- Installed system configurators (S7 Connector Configurator, IE Databus Configurator, Cloud Connector Configurator) 
 - Installed apps on Southbound-Devices (SIMATIC S7 Connector, IE Cloud Connector, IE Databus, IE Flow Creator)
 - Installed apps on Northbound-Device (Data Service, IE Databus, IE Flow Creator, Energy Manager, IE MQTT Connector, IE Cloud Connector)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)

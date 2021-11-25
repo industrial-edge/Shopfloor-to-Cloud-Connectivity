@@ -91,7 +91,7 @@ The Energy Manager shows the data from the hole Factory1
   
   ![Mindsphere_EnergyManager2](graphics/Mindspehre_EnergyManager2.png)
 
-1. The handling is the same as described under [Central Device Energy Manager ](install_Device_Northbound.md#L165-L200)
+1. The handling is the same as described under [Central Device Energy Manager ](install_Device_Northbound.md)
   
 - CostsPerBottle: `((EnergyLine1 + EnergyLine2) / 1000 * cost_kWh + (PressuredAirLine1 + PressuredAirLine2)`
                      `* cost_Liter_Air + (WaterLine1 + WaterLine2) * cost_Liter_Water) / Bottles` Unit: €
