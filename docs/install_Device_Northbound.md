@@ -25,7 +25,7 @@ Installed Apps on Central Device:
 
 ## IE Databus
 
-Configure the User and Topic in the IE Databus Configurator as already described.  
+Configure the User and Topic in the IE Databus Configurator as described [here](install_PLC_Devices_Southbound.md#L31 ) .  
 
 1. Launch the IE Databus Configurator and add your related Credentials/Topics:
    `ie/#`
@@ -55,8 +55,9 @@ This is the same configuration as IE Databus.
 The IE Flow Creator will extract the packaged data from IE Cloud Connector
 and also converts the data to MindSphere IOT Extension data format
 
-1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described above.
-
+1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described [here](install_PLC_Devices_Southbound.md#L55)
+   
+2. Enter IE-Databus credentials
 
 
 ##  Data Service
@@ -70,21 +71,25 @@ In order to store the data send by the Cloud Connector of the Energy 1 and Energ
   ![IE_Dataservice1](graphics/IE_Dataservice1_Central.png)
 
 2. Click "+" to add a new adapter 
+   
 3. Add one adapter for Energy1 and one adapter for Energy2
+   
 4. Add the data as shown in the picture
   
   URL for Energy1 `ie/m/j/simatic/v1/iefc/dp/energy1line1`
 
   URL for Energy2 `ie/m/j/simatic/v1/iefc/dp/energy2line2`
 
-5. save the configuration
-6. open the configuration again and set the status on "Active"
+5. Save the configuration
+   
+6. Open the configuration again and set the status on "Active"
   
     
   ![IE_Dataservice2](graphics/IE_Dataservice2.png)
   
 After the adapters are connected you can find the data in the Dataservice.
-7. click on the first button on the left side
+
+7. Click on the first button on the left side
   
     
   ![IE_Dataservice3](graphics/IE_Dataservice3.png)
@@ -94,21 +99,24 @@ After the adapters are connected you can find the data in the Dataservice.
     
   ![IE_Dataservice4](graphics/IE_Dataservice4.png)
 
-9. to add the variables to the Data Service click "Add multiple variables"
-10. select the adapter "energy1" mark all four variables and click "save"
-11. do the same for the adapter "energy2"
+9. To add the variables to the Data Service click "Add multiple variables"
+    
+10. Select the adapter "energy1" mark all four variables and click "save"
+    
+11. Do the same for the adapter "energy2"
   
     
   ![IE_Dataservice5](graphics/IE_Dataservice5.png)
 
 
 To sort the data add aspects in the Data Service.
-12. click in the Data Service on the right side on the "Add aspect"
+
+12. Click in the Data Service on the right side on the "Add aspect"
   
 
   ![IE_Dataservice6](graphics/IE_Dataservice6.png)
 
-13. choose the data for Line1 and add them to the aspect. Do the same for Line2
+13. Choose the data for Line1 and add them to the aspect. Do the same for Line2
   
 
   ![IE_Dataservice7](graphics/IE_Dataservice7.png)
@@ -119,7 +127,7 @@ To sort the data add aspects in the Data Service.
 ## IE Cloud Connector
 
 For the communication with the MindSphere configure the IE Cloud Connector.
-The steps are similar to the description for Energy1 and Energy2 above. 
+The steps are similar to the description for Energy1 and Energy2. 
 Instead of manually configuring you can also import the configuration files:
 
 [CloudConnector_Central](../src/CentralDevice/CloudConnector_Central.json) (Password = Edge1234!)
@@ -173,7 +181,9 @@ Energy Manager displays the total energy consumption, the energy consumption per
 2. Do the same for the dashboards "Media Consumption per Bottle Line1" and "Media Consumption per Bottle Line2"
   
 Show the produced bottles from Line1 in a Value on Dashboard "Overview Media Consumption"
+
 3. Click on "Create first widget"
+   
 4. Select type "Value" and continue
 
   ![EnergyManager2](graphics/EnergyManager2.png)
@@ -191,11 +201,15 @@ Show the produced bottles from Line1 in a Value on Dashboard "Overview Media Con
   ![EnergyManager5](graphics/EnergyManager5.png)
 
 8. Click "continue" twice and finish the configuration
-9. do the same for "Produced Bottles Line2"
+   
+9.  Do the same for "Produced Bottles Line2"
 
 Show the "Media Consumption Line1" as a line diagram
+
 10. Click "New widget"
+    
 11. Select type "Diagram" and continue 
+    
 12. Name the widget "Media Consumption Line1" and select the calculation 
   
   ![EnergyManager6](graphics/EnergyManager6.png)
@@ -205,17 +219,20 @@ Select parameter
   ![EnergyManager7](graphics/EnergyManager7.png)
 
 13. Select "counter" for the aggregation
-14. to change the colour of the lines click on the gear and select the colour
+    
+14. To change the colour of the lines click on the gear and select the colour
 
   ![EnergyManager8](graphics/EnergyManager8.png)
 
 Because of different units it´s necessary to adapt the "Y-axis"
-15. on rubric 5 "Chart-Display options" click on the gear next to "Y-axis"
-16. assign the parameters as shown in the picture below
+
+15. On rubric 5 "Chart-Display options" click on the gear next to "Y-axis"
+    
+16. Assign the parameters as shown in the picture below
 
   ![EnergyManager9](graphics/EnergyManager9.png)
 
-17. do the same for the other line diagrams 
+17. Do the same for the other line diagrams 
   
   Note: for some diagrams KPIs are necessary, how to set them is explained in the next step
 
@@ -223,19 +240,25 @@ A gauge diagram is a way to give a quick overview about the current values e.g. 
 Here it´s necessary to generate a KPI that calculates the value
 
 Add a new KPI
-18. click "Configuration" on the left side and select "KPI types"
+
+18. Click "Configuration" on the left side and select "KPI types"
 
   ![EnergyManager12](graphics/EnergyManager12.png)
 
 19. Add "New KPI type"
+    
 20. Edit Name and Unit
+    
 21. Add the formula in case of this example `totalEnergyLine1 / ProducedBottlesLine1`
   
   ![EnergyManager13](graphics/EnergyManager13.png)
 
 22. After saving switch back to "My Plant" 
+    
 23. Select the Dashboard "Media Consumption Bottle Line1"
+    
 24. Add a new widget
+    
 25. Select type "Gauge"
   
   ![EnergyManager10](graphics/EnergyManager10.png)
@@ -244,15 +267,17 @@ Add a new KPI
   
   ![EnergyManager11](graphics/EnergyManager11.png)
 
-27. click "New KPI instance"
-28. mark "on basis of a KPI type" and select the KPI type
-29. add the associated variable to the operands
+27. Click "New KPI instance"
+    
+28. Mark "on basis of a KPI type" and select the KPI type
+    
+29. Add the associated variable to the operands
 
   ![EnergyManager14](graphics/EnergyManager14.png)
 
   ![EnergyManager15](graphics/EnergyManager15.png)
 
-30. add the limits of the gauge
+30. Add the limits of the gauge
 
   ![EnergyManager16](graphics/EnergyManager16.png)
 

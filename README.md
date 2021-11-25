@@ -44,28 +44,22 @@ and forwarding them to the MindSphere.
 Allows centrally monitoring energy data from multiple location in dash boards.
 
 ###  Prerequisites
-- Industrial Edge Learning Path
-- 2 PLCs
-- 2 Edge Devices
-- 1 IEM
-- List of required Apps:
-  - Southbound
-    - SIMATIC S7 Connector
-    - IE Cloud Connector
-    - IE Databus
-    - IE Flow Creator
-  - Northbound
-    -  Data Service
-    - IE Databus
-    - IE Flow Creator
-    - Energy Manager
-    - IE MQTT Connector
-    - IE Cloud Connector
-    
+- Industrial Edge Learning Path (Module 1-3)
+- Established connection to 2 PLCs for getting data into the Edge Device
+- Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
+- Access to an Industrial Edge Management System (IEM)
+- Installed system configurators (S7 Connector Configurator, IE Databus Configurator, Cloud Connector Configurator, IE MQTT Connector Configurator) 
+- Installed apps on Southbound-Devices (SIMATIC S7 Connector, IE Cloud Connector, IE Databus, IE Flow Creator)
+- Installed apps on Northbound-Device (Data Service, IE Databus, IE Flow Creator, Energy Manager, IE MQTT Connector, IE Cloud Connector)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to the MindSphere
   
 ### Used components
+
+TIA & PLCs:
+- STEP7 V16
+- CPU 1512SP-1 PN FW V2.1
+
 Industrial Edge:
 - Industrial Edge Management V1.3.0
 - IE Databus V1.3.5
@@ -86,18 +80,40 @@ MindSphere:
 ## Configuration Southbound Devices
 
 You can find the further information about the following steps in the [docs](docs/install_PLC_Devices_Southbound.md)
-- Configure S7 Connector, Cloud Connector, Databus, Flow Creator 
+
+- Configure PLC project in TIA-Portal
+- Configure PLC connections in Industrial Edge
+  - S7 Connector
+  - Databus 
+- Configure Data preprocessing 
+  - Flow Creator 
+- Configure Connection to Northbound
+  - Cloud Connector 
 
 
 ## Configuration Northbound Device
 
 You can find the further information about the following steps in the [docs](docs/install_Device_Northbound.md)
-- Configure Databus, Flow Creator, Energy Manager, MQTT Connector, Cloud Connector
+
+- Configure Connection to Southbound
+  - Databus 
+  - MQTT Connector
+  - Flow Creator
+  - Data Service
+- Configure Connection to MindSphere
+  - Cloud Connector
+- Configure visualization
+  - Energy Manager
 
 
 ## Configuration MindSphere
 You can find the further information about the following steps in the [docs](docs/install_MindSphere.md)
-- Configure Asset Manager, MindConnect IoT Extension, Energy Manager 
+
+- Configure Connection to Northbound
+  - Asset Manager
+  - MindConnect IoT Extension
+- Configure visualization
+  - Energy Manager 
 
 
 ## Documentation

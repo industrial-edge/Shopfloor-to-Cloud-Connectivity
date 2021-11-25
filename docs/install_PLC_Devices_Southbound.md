@@ -21,6 +21,7 @@
 # Configuration Southbound for Industrial Edge
 
 The Southbound consist of two devices. In the following they are called "Energy1" and "Energy2"
+
 Installed Apps Device Energy1 and Energy2: 
   - SIMATIC S7 Connector
   - IE Cloud Connector
@@ -97,7 +98,7 @@ Instead of manually configuring you can also import the configuration files:
 
 Configure starting from the left side "Bus Adaptor" to the right the "Cloud Connector Clients" Adapt the IP addresses to your system.
 
-To deploy the configuration, initially click on your route and connect your topics from the bus adaptor with your cloud topics 
+To save the configuration, initially click on your route and connect your topics from the bus adaptor with your cloud topics 
 
 Then click on deploy.
 
@@ -174,4 +175,6 @@ Note: Create one topic for the data and one topic for the metadata.
 [Configuration Central Device](install_Device_Northbound.md)
 
 [Configuration MindSphere](install_MindSphere.md)
+
+dSphere.md)
 
