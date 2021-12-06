@@ -34,7 +34,7 @@ Use case for communication from Edge Device to Edge Device and Siemens Cloud Min
 Allows gathering energy data from various Devices and converting them to a standardized 
 form in a southbound Edge Device with no internet access. 
 
-Centrally monitoring energy data from multiple location in dashboards, with a strict separation between Automation Cell Network (Southbound) and Datacenter (Northbound). So there is no direct connection between Southbound and the connected PLCs with the Internet, this guidelines minimize the security risk.
+Central monitoring energy data from multiple location in dashboards, with a strict separation between Automation Cell Network (Southbound) and Datacenter (Northbound). So there is no direct connection between Southbound and the connected PLCs with the Internet, this guideline minimize the security risk.
 
 Sharing the standardized data with a northbound Edge Device, with internet connectivity, via MQTT.
 
