@@ -51,7 +51,7 @@ and forwarding them to MindConnect IoT Extension.
 - Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed system configurators in IEM (S7 Connector Configurator, IE Databus Configurator, Cloud Connector Configurator) 
+- Installed system configurators on IEM (S7 Connector Configurator, IE Databus Configurator, Cloud Connector Configurator) 
 - Installed apps on Southbound-Devices (SIMATIC S7 Connector, IE Cloud Connector, IE Databus, IE Flow Creator)
 - Installed apps on Northbound-Device (Data Service, IE Databus, IE Flow Creator, Energy Manager, IE MQTT Connector, IE Cloud Connector)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
