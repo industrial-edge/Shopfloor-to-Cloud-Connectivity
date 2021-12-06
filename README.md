@@ -1,8 +1,8 @@
-# 	Cloud integration - Integrate machine & production data by secure data transfer from field to cloud
+# Cloud integration - Integrate machine & production data by secure data transfer from field to cloud
 
 Use case for communication from Edge Device to Edge Device and Siemens Cloud Mindesphere via MQTT 
 
-- [	Cloud integration - Integrate machine & production data by secure data transfer from field to cloud](#cloud-integration---integrate-machine--production-data-by-secure-data-transfer-from-field-to-cloud)
+- [Cloud integration - Integrate machine & production data by secure data transfer from field to cloud](#cloud-integration---integrate-machine--production-data-by-secure-data-transfer-from-field-to-cloud)
     - [Overview](#overview)
       - [Reference Architecture](#reference-architecture)
       - [Network Architecture](#network-architecture)
