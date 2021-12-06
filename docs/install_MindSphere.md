@@ -14,7 +14,7 @@
 
 ## Asset Manager
 
-In order to display the data of the lines in the MindSphere, it´s necessary to create the corresponding assets and aspects
+In order to display the data of the lines in MindSphere, it´s necessary to create the corresponding assets and aspects
 
 1. Go to "library" and select "Aspect Types"
   
@@ -85,7 +85,7 @@ The Central Device is named "Media Consumption Factory1" this name was defined i
 
 ## Energy Manager
 
-The Energy Manager shows the data from the hole Factory1
+The Energy Manager shows the data from the whole Factory1
   
   ![Mindsphere_EnergyManager1](graphics/Mindspehre_EnergyManager1.png)
   

@@ -125,7 +125,7 @@ To sort the data add aspects in the Data Service.
 
 ## IE Cloud Connector
 
-For the communication with the MindSphere configure the IE Cloud Connector.
+For the communication with MindSphere configure IE Cloud Connector accordingly.
 The steps are similar to the description for Energy1 and Energy2. 
 Instead of manually configuring you can also import the configuration files:
 
@@ -171,6 +171,8 @@ Energy Manager displays the total energy consumption, the energy consumption per
   ![EnergyManageroverview2](graphics/EnergyManager_overview2.png)
 
   ![EnergyManageroverview3](graphics/EnergyManager_overview3.png)
+
+At first a ned dashboard, that contains the widgtes will be created.
 
 
 1. Add a new dashboard  "Overview Media Consumption"
@@ -238,7 +240,7 @@ Because of different units it´s necessary to adapt the "Y-axis"
 A gauge diagram is a way to give a quick overview about the current values e.g. Energy per Bottle Line1  
 Here it´s necessary to generate a KPI that calculates the value
 
-Add a new KPI
+In order not to configure all calculations individually, it´s helpful to create KPIs
 
 18. Click "Configuration" on the left side and select "KPI types"
 

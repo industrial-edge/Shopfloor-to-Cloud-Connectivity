@@ -1,8 +1,8 @@
-# Anchor-Use-Case-Cloud-Integration
+# 	Cloud integration - Integrate machine & production data by secure data transfer from field to cloud
 
-Use case for communication from Edge Device to Edge Device and the Mindesphere via MQTT 
+Use case for communication from Edge Device to Edge Device and Siemens Cloud Mindesphere via MQTT 
 
-- [Anchor-Use-Case-Cloud-Integration](#anchor-use-case-cloud-integration)
+- [	Cloud integration - Integrate machine & production data by secure data transfer from field to cloud](#cloud-integration---integrate-machine--production-data-by-secure-data-transfer-from-field-to-cloud)
     - [Overview](#overview)
       - [Reference Architecture](#reference-architecture)
       - [Network Architecture](#network-architecture)
@@ -32,30 +32,32 @@ Use case for communication from Edge Device to Edge Device and the Mindesphere v
 ### General task
 
 Allows gathering energy data from various Devices and converting them to a standardized 
-form in a southbound Edge Device with no Internet access. 
+form in a southbound Edge Device with no internet access. 
 
+Centrally monitoring energy data from multiple location in dashboards, with a strict separation between Automation Cell Network (Southbound) and Datacenter (Northbound). So there is no direct connection between Southbound and the connected PLCs with the Internet, this guidelines minimize the security risk.
 
 Sharing the standardized data with a northbound Edge Device, with internet connectivity, via MQTT.
 
+Structuring the energy data in asset models according to the asset design in MindSphere in the northbound Edge Device
+and forwarding them to MindConnect IoT Extension.
 
-Structuring the energy data in asset models according to the MindSphere design in the northbound Edge Device
-and forwarding them to the MindSphere.
 
 
-Allows centrally monitoring energy data from multiple location in dash boards.
 
 ## Requirements
 
 ###  Prerequisites
 - Industrial Edge Learning Path (Module 1-3)
-- Established connection to 2 PLCs for getting data into the Edge Device
+- Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed system configurators (S7 Connector Configurator, IE Databus Configurator, Cloud Connector Configurator) 
+- Installed system configurators in IEM (S7 Connector Configurator, IE Databus Configurator, Cloud Connector Configurator) 
 - Installed apps on Southbound-Devices (SIMATIC S7 Connector, IE Cloud Connector, IE Databus, IE Flow Creator)
 - Installed apps on Northbound-Device (Data Service, IE Databus, IE Flow Creator, Energy Manager, IE MQTT Connector, IE Cloud Connector)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
-- Access to the MindSphere
+- Access to MindSphere 
+- MindConnect IoT Extension
+- Energy Manager
   
 ### Used components
 

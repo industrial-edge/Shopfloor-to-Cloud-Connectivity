@@ -11,7 +11,7 @@
 
 # Configure PLC-Project in TIA-Portal
 
-1. Open TIA portal and open the project containing the EnergyManagement application (Adapt the IP addresses to your system)
+1. Open TIA portal and open the project containing the Energy Management application (Adapt the IP addresses to your system)
    
 ![TIA_IP](graphics/TIA_IP.png)
 
@@ -124,6 +124,8 @@ Note: Create one topic for the data and one topic for the metadata.
     
   ![Cloud_Connector2](graphics/Cloud_Connector_Topic1.png)
 
+"Connecting Routes" allows you to forward the data from Databus-Topics to the "Cloud Connector Clients"
+
 4. Add Connecting Routes
   
    Energy1:
@@ -136,6 +138,8 @@ Note: Create one topic for the data and one topic for the metadata.
   
     
   ![Cloud_Connector3](graphics/Cloud_Connector_Route.png)
+
+"Lokal Lake" allows you to connect a lokal MQTT-Broker likte the MQTT-Connector 
 
 5. Add Cloud Connector Clients
   Type: `LOCAL_LAKE`
