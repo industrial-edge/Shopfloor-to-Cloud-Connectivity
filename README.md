@@ -1,8 +1,8 @@
-# Cloud integration - Integrate machine & production data by secure data transfer from field to cloud
+# Shopfloor to Cloud Connectivity - Integrate machine & production data securely into the company cloud
 
-Use case for communication from Edge Device to Edge Device and Siemens Cloud Mindesphere via MQTT 
+Use case for communication from Edge Device to Edge Device and company Cloud (e.g. MindSphere) via MQTT 
 
-- [Cloud integration - Integrate machine & production data by secure data transfer from field to cloud](#cloud-integration---integrate-machine--production-data-by-secure-data-transfer-from-field-to-cloud)
+- [Shopfloor to Cloud Connectivity - Integrate machine & production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
     - [Overview](#overview)
       - [Reference Architecture](#reference-architecture)
       - [Network Architecture](#network-architecture)
