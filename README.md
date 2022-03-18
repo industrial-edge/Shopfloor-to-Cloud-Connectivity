@@ -3,10 +3,12 @@
 Use case for communication from Edge Device to Edge Device and company Cloud (e.g. MindSphere) via MQTT 
 
 - [Shopfloor to Cloud Connectivity - Integrate machine & production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
-    - [Overview](#overview)
-      - [Reference Architecture](#reference-architecture)
-      - [Network Architecture](#network-architecture)
-    - [General task](#general-task)
+  - [Overview](#overview)
+    - [Reference Architecture](#reference-architecture)
+      - [IE Cloud Connector - MindConnect IoT Extension](#ie-cloud-connector---mindconnect-iot-extension)
+      - [MindSphere Connector - MindSphere Native MQTT](#mindsphere-connector---mindsphere-native-mqtt)
+    - [Network Architecture](#network-architecture)
+  - [General task](#general-task)
   - [Requirements](#requirements)
     - [Prerequisites](#prerequisites)
     - [Used components](#used-components)
@@ -17,19 +19,25 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
   - [Contribution](#contribution)
   - [Licence and Legal Information](#licence-and-legal-information)
 
-### Overview 
+## Overview 
 
 ![overview](docs/graphics/overview.png)
 
-#### Reference Architecture
+### Reference Architecture 
+
+#### IE Cloud Connector - MindConnect IoT Extension
 
 ![overview3](docs/graphics/overview3.png)
 
-#### Network Architecture
+#### MindSphere Connector - MindSphere Native MQTT
+
+![overview3](docs/graphics/overview4.png)
+
+### Network Architecture
 
 ![overview2](docs/graphics/overview2.png)
 
-### General task
+## General task
 
 Allows gathering energy data from various Devices and converting them to a standardized 
 form in a southbound Edge Device with no internet access. 
@@ -39,7 +47,7 @@ Central monitoring energy data from multiple location in dashboards, with a stri
 Sharing the standardized data with a northbound Edge Device, with internet connectivity, via MQTT.
 
 Structuring the energy data in asset models according to the asset design in MindSphere in the northbound Edge Device
-and forwarding them to MindConnect IoT Extension.
+and forwarding them to MindSphere.
 
 
 

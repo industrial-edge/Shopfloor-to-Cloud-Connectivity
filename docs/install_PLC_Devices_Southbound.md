@@ -33,11 +33,15 @@ Installed Apps Device Energy1 and Energy2:
 Add a user in the IE Databus Configurator with username and password and provide necessary access right to the required topics so the SIMATIC S7 Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
 
 1. Open the Industrial Edge Management App and launch the Databus configurator, add your related credentials/topics:
-`ie/#`
+
+- Username: `edge`
+- Password: `edge`
+- Topic: `ie/#`
+- Permission: `Publish and Subscribe`
 
   ![ie_databus_user](graphics/IE_Databus_User.png)
 
-2. After adding user deploy configuration to device
+2. Deploy configuration to device
 
   ![ie_databus](graphics/IE_Databus.png)
 
@@ -117,7 +121,7 @@ Note: Create one topic for the data and one topic for the metadata.
 3. Add the Data-topic
    
    Energy1:
-   `ie/d/j/simatic/v1/iefc/dp/r/Line1/default`
+   `ie/d/j/simatic/v1/iefc/dp/r/line1/default`
   
    Energy2:
    `ie/d/j/simatic/v1/iefc/dp/r/line2/default`
@@ -145,12 +149,12 @@ Note: Create one topic for the data and one topic for the metadata.
   Type: `LOCAL_LAKE`
   
    Energy1:
-   Data: `ie/d/j/simatic/v1/iecc/dp/r/energy1line1/raw`
-   Metadata: `ie/m/j/simatic/v1/iecc/dp/energy1line1`
-  
+   Metadata: `ie/m/j/simatic/v1/energy1line1:iefc/dp`
+   Data: `ie/d/j/simatic/v1/energy1line1:iefc/dp/r/line1/default`
+    
    Energy2:
-   Data: `ie/d/j/simatic/v1/iecc/dp/r/energy2line2/raw`
-   Metadata: `ie/m/j/simatic/v1/iecc/dp/energy2line2`
+   Metadata: `ie/m/j/simatic/v1/energy2line2:iefc/dp`
+   Data: `ie/d/j/simatic/v1/energy2line2:iefc/dp/r/line2/default`
   
     
   ![Cloud_Connector4](graphics/Cloud_Connector_Client1.png)
