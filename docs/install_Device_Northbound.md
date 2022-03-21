@@ -3,9 +3,9 @@
 - [Configuration Steps](#configuration-steps)
 - [Configure Northbound](#configure-northbound)
   - [IE MQTT Connector](#ie-mqtt-connector)
-  - [IE Flow Creator - MindConnect IoT Extension](#ie-flow-creator---mindconnect-iot-extension)
+  - [IE Flow Creator - Option 1: MindConnect IoT Extension](#ie-flow-creator---option-1-mindconnect-iot-extension)
   - [Data Service](#data-service)
-  - [IE Cloud Connector](#ie-cloud-connector)
+  - [IE Cloud Connector - Option 1: MindConnect IoT Extension](#ie-cloud-connector---option-1-mindconnect-iot-extension)
   - [Energy Manager](#energy-manager)
 - [Navigation](#navigation)
   
@@ -75,7 +75,7 @@ To receive the data from the IE Cloud Connector from Energy1 and Energy2 the IE 
 
 ![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Bridge.png)
 
-## IE Flow Creator - MindConnect IoT Extension
+## IE Flow Creator - Option 1: MindConnect IoT Extension
 
 > **_NOTE:_** Only required when connection to MindConnect IoT Extension.
 
@@ -151,7 +151,7 @@ To sort the data add aspects in the Data Service.
 
 
 
-## IE Cloud Connector
+## IE Cloud Connector - Option 1: MindConnect IoT Extension
 
 For the communication with MindSphere configure IE Cloud Connector accordingly.
 The steps are similar to the description for Energy1 and Energy2. 
@@ -200,7 +200,7 @@ Energy Manager displays the total energy consumption, the energy consumption per
 
   ![EnergyManageroverview3](graphics/EnergyManager_overview3.png)
 
-At first a ned dashboard, that contains the widgtes will be created.
+At first a ned dashboard, that contains the widgets will be created.
 
 
 1. Add a new dashboard  "Overview Media Consumption"
