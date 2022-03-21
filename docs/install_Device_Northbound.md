@@ -17,10 +17,13 @@ The Northbound consist of one device. In the following this is called "Central D
 Installed Apps on Central Device:
   - Data Service
   - IE Databus
-  - IE Flow Creator
   - Energy Manager
   - IE MQTT Connector
-  - IE Cloud Connector
+  - Option 1: MindConnect IoT Extension
+    - IE Flow Creator
+    - IE Cloud Connector
+  - Option 2: MindSphere Native MQTT
+    - IE Mindsphere Connector
 
 
 
