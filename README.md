@@ -84,7 +84,6 @@ Industrial Edge:
 - Energy Manager V1.2.0
 - IE Cloud Connector V 1.6.2
 - IE Mindsphere Connector
-
 - Web browser (Mozilla or Chrome)
 
 MindSphere:

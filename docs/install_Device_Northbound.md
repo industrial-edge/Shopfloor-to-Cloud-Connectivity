@@ -2,11 +2,12 @@
 
 - [Configuration Steps](#configuration-steps)
 - [Configure Northbound](#configure-northbound)
+  - [IE Databus](#ie-databus)
   - [IE MQTT Connector](#ie-mqtt-connector)
   - [IE Flow Creator - Option 1: MindConnect IoT Extension](#ie-flow-creator---option-1-mindconnect-iot-extension)
   - [Data Service](#data-service)
   - [IE Cloud Connector - Option 1: MindConnect IoT Extension](#ie-cloud-connector---option-1-mindconnect-iot-extension)
-  - [Energy Manager](#energy-manager)
+  - [MindSphere - Energy Manager](#mindsphere---energy-manager)
 - [Navigation](#navigation)
   
 
@@ -25,7 +26,7 @@ Installed Apps on Central Device:
   - Option 2: MindSphere Native MQTT
     - IE Mindsphere Connector
 
-
+## IE Databus
 
 Configure the User and Topic in the IE Databus Configurator as described [here](install_PLC_Devices_Southbound.md) .  
 
@@ -193,7 +194,7 @@ Instead of manually configuring you can also import the configuration files:
 
 
 
-##  Energy Manager
+## MindSphere - Energy Manager
 
 Energy Manager displays the total energy consumption, the energy consumption per bottle and the associated costs for each line.
 
