@@ -3,7 +3,7 @@
 - [Configuration Steps](#configuration-steps)
 - [Configure Northbound](#configure-northbound)
   - [IE MQTT Connector](#ie-mqtt-connector)
-  - [IE Flow Creator](#ie-flow-creator)
+  - [IE Flow Creator - MindConnect IoT Extension](#ie-flow-creator---mindconnect-iot-extension)
   - [Data Service](#data-service)
   - [IE Cloud Connector](#ie-cloud-connector)
   - [Energy Manager](#energy-manager)
@@ -28,10 +28,10 @@ Configure the User and Topic in the IE Databus Configurator as described [here](
 
 1. Launch the IE Databus Configurator and add your related Credentials/Topics:
 
-- Username: edge
-- Password: edge
-- Topic: `ie/#`
-- Permission: Publish and Subscribe
+   - Username: `edge`
+   - Password: `edge`
+   - Topic: `ie/#`
+   - Permission: `Publish and Subscribe`
   
     
   ![ie_databus_user](graphics/IE_Databus_User.png)
@@ -48,15 +48,15 @@ To receive the data from the IE Cloud Connector from Energy1 and Energy2 the IE 
 
 1. Launch the IE MQTT Connector Configurator and add your related Credentials/Topics:
 
-- Username: `edge`
-- Password: `edge`
+   - Username: `edge`
+   - Password: `edge`
 
 ![ie_mqtt_Connector](graphics/IE_MQTT_Connector_User.png)
 
 2. Add Topic and Permission
 
 - Topic: `ie/#`
-- Permission: Publish and Subscribe
+- Permission: `Publish and Subscribe`
 
 ![ie_mqtt_Connector](graphics/IE_MQTT_Connector_Topic.png)
     
@@ -68,14 +68,16 @@ To receive the data from the IE Cloud Connector from Energy1 and Energy2 the IE 
 
 4. Bridge Configure
 
-- Insert User: `edge`
-- Insert password: `edge`
-- Select Topic:  `ie/#`
-- Direction: IE MQTT Connector :arrow_right: IE Databus
+   - Insert User: `edge`
+   - Insert password: `edge`
+   - Select Topic:  `ie/#`
+   - Direction: `IE MQTT Connector` :arrow_right: `IE Databus`
 
 ![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Bridge.png)
 
-## IE Flow Creator
+## IE Flow Creator - MindConnect IoT Extension
+
+> **_NOTE:_** Only required when connection to MindConnect IoT Extension.
 
 The IE Flow Creator will extract the packaged data from IE Cloud Connector
 and also converts the data to MindSphere IOT Extension data format

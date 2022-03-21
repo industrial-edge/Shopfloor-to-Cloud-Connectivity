@@ -34,10 +34,10 @@ Add a user in the IE Databus Configurator with username and password and provide
 
 1. Open the Industrial Edge Management App and launch the Databus configurator, add your related credentials/topics:
 
-- Username: `edge`
-- Password: `edge`
-- Topic: `ie/#`
-- Permission: `Publish and Subscribe`
+   - Username: `edge`
+   - Password: `edge`
+   - Topic: `ie/#`
+   - Permission: `Publish and Subscribe`
 
   ![ie_databus_user](graphics/IE_Databus_User.png)
 
@@ -133,28 +133,29 @@ Note: Create one topic for the data and one topic for the metadata.
 4. Add Connecting Routes
   
    Energy1:
-   `central-data` 
-   `central-metadata`
+   - `central-data` 
+   - `central-metadata`
   
    Energy2:
-   `central-data2`
-   `central-metadata2`
+   - `central-data2`
+   - `central-metadata2`
   
     
   ![Cloud_Connector3](graphics/Cloud_Connector_Route.png)
 
-"Lokal Lake" allows you to connect a lokal MQTT-Broker likte the MQTT-Connector 
+"Local Lake" allows you to connect a local MQTT-Broker like the IE MQTT Connector 
 
 5. Add Cloud Connector Clients
-  Type: `LOCAL_LAKE`
+  - Type: `LOCAL_LAKE`
   
-   Energy1:
-   Metadata: `ie/m/j/simatic/v1/energy1line1:iefc/dp`
-   Data: `ie/d/j/simatic/v1/energy1line1:iefc/dp/r/line1/default`
+  - Publish Topic:
+    Energy1:
+    - Metadata: `ie/m/j/simatic/v1/energy1line1:iefc/dp`
+    - Data: `ie/d/j/simatic/v1/energy1line1:iefc/dp/r/line1/default`
     
-   Energy2:
-   Metadata: `ie/m/j/simatic/v1/energy2line2:iefc/dp`
-   Data: `ie/d/j/simatic/v1/energy2line2:iefc/dp/r/line2/default`
+    Energy2:
+    - Metadata: `ie/m/j/simatic/v1/energy2line2:iefc/dp`
+    - Data: `ie/d/j/simatic/v1/energy2line2:iefc/dp/r/line2/default`
   
     
   ![Cloud_Connector4](graphics/Cloud_Connector_Client1.png)
