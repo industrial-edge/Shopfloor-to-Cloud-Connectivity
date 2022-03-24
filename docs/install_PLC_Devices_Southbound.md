@@ -36,7 +36,7 @@ Instead of manually configuring you can also import the configuration files:
 
 [IE_Databus_Energy1](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
 
-[IE_Databus_Energy1](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
+[IE_Databus_Energy2](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
 
 1. Open the Industrial Edge Management App and launch the Databus configurator, add your related credentials/topics:
 

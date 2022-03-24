@@ -4,8 +4,8 @@
 - [Configure Northbound](#configure-northbound)
   - [IE Databus](#ie-databus)
   - [IE MQTT Connector](#ie-mqtt-connector)
-  - [IE Flow Creator - Option 1: MindConnect IoT Extension](#ie-flow-creator---option-1-mindconnect-iot-extension)
   - [Data Service](#data-service)
+  - [IE Flow Creator - Option 1: MindConnect IoT Extension](#ie-flow-creator---option-1-mindconnect-iot-extension)
   - [IE Cloud Connector - Option 1: MindConnect IoT Extension](#ie-cloud-connector---option-1-mindconnect-iot-extension)
   - [MindSphere - Energy Manager](#mindsphere---energy-manager)
 - [Navigation](#navigation)
@@ -88,18 +88,6 @@ Instead of manually configuring you can also import the configuration files:
 
 ![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Bridge.png)
 
-## IE Flow Creator - Option 1: MindConnect IoT Extension
-
-> **_NOTE:_** Only required when connection to MindConnect IoT Extension.
-
-The IE Flow Creator will extract the packaged data from IE Cloud Connector
-and also converts the data to MindSphere IOT Extension data format
-
-1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described [here](install_PLC_Devices_Southbound.md)
-   
-2. Enter IE-Databus credentials
-
-
 ##  Data Service
 
 In order to store the data send by the Cloud Connector of the Energy 1 and Energy 2 device, configure two adapters with the metadata topic from the Cloud Connector in Energy1 and Energy2.  
@@ -161,8 +149,16 @@ To sort the data add aspects in the Data Service.
 
   ![IE_Dataservice7](graphics/IE_Dataservice7.png)
 
+## IE Flow Creator - Option 1: MindConnect IoT Extension
 
+> **_NOTE:_** Only required when connesction to MindConnect IoT Extension.
 
+The IE Flow Creator will extract the packaged data from IE Cloud Connector
+and also converts the data to MindSphere IOT Extension data format
+
+1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described [here](install_PLC_Devices_Southbound.md)
+   
+2. Enter IE-Databus credentials
 
 ## IE Cloud Connector - Option 1: MindConnect IoT Extension
 
