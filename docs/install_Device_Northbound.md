@@ -10,8 +10,6 @@
   - [MindSphere - Energy Manager](#mindsphere---energy-manager)
 - [Navigation](#navigation)
   
-
-
 # Configure Northbound
 
 The Northbound consist of one device. In the following this is called "Central Device".
@@ -48,8 +46,6 @@ Instead of manually configuring you can also import the configuration files:
 
   ![ie_databus](graphics/IE_Databus.png)
 
-
-
 ## IE MQTT Connector
 
 To receive the data from the IE Cloud Connector from Energy1 and Energy2 the IE MQTT Connector has to be configured
@@ -57,7 +53,6 @@ To receive the data from the IE Cloud Connector from Energy1 and Energy2 the IE 
 Instead of manually configuring you can also import the configuration files:
 
 [IE_MQTT_Connector_Central](../src/CentralDevice/IE_MQTT_Connctor_Central.json) (Password = Edge1234!)
-
 
 1. Launch the IE MQTT Connector Configurator and add your related Credentials/Topics:
 
@@ -92,10 +87,8 @@ Instead of manually configuring you can also import the configuration files:
 
 In order to store the data send by the Cloud Connector of the Energy 1 and Energy 2 device, configure two adapters with the metadata topic from the Cloud Connector in Energy1 and Energy2.  
 
-
 1. Go to the Data Service and select "Adapters"
-    
-      
+     
   ![IE_Dataservice1](graphics/IE_Dataservice1_Central.png)
 
 2. Click "+" to add a new adapter 
