@@ -32,6 +32,12 @@ Installed Apps Device Energy1 and Energy2:
 
 Add a user in the IE Databus Configurator with username and password and provide necessary access right to the required topics so the SIMATIC S7 Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
 
+Instead of manually configuring you can also import the configuration files:
+
+[IE_Databus_Energy1](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
+
+[IE_Databus_Energy1](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
+
 1. Open the Industrial Edge Management App and launch the Databus configurator, add your related credentials/topics:
 
    - Username: `edge`
@@ -51,7 +57,7 @@ Add a user in the IE Databus Configurator with username and password and provide
 To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector to the PLC and add the required PLC variables
 
 1. Launch the S7 Connector Configurator and configure the PLC connection 
-2. Import the JSON file [energy1_S7_Connector](../src/Device_Energy1/energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](../src/Cevice_Energy2/energy2_S7_Connector.json) for Energy2 
+2. Import the JSON file [energy1_S7_Connector](../src/Device_Energy1/energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](../src/Device_Energy2/energy2_S7_Connector.json) for Energy2 
 3. Deploy and start your S7 Connector configuration
 
   ![S7_connector](graphics/S7_Connector.png)
@@ -72,7 +78,7 @@ The aggregated values are published on newly defined topics to prevent collision
   
     Energy1: [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
 
-    Energy2:[FlowCreator_Energy2](../src/Cevice_Energy2/FlowCreator_Energy2.json)
+    Energy2:[FlowCreator_Energy2](../src/Device_Energy2/FlowCreator_Energy2.json)
   
     
   ![FlowCreator1](graphics/Flow_Creator1.png)
@@ -90,11 +96,12 @@ The aggregated values are published on newly defined topics to prevent collision
 ## IE Cloud Connector
 
 For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector. 
+
 Instead of manually configuring you can also import the configuration files:
 
 [CloudConnector_Energy1](../src/Device_Energy1/CloudConnector_Energy1.json) (Password = Edge1234!)
 
-[CloudConnector_Energy2](../src/Cevice_Energy2/CloudConnector_Energy2.json) (Password = Edge1234!)
+[CloudConnector_Energy2](../src/Device_Energy2/CloudConnector_Energy2.json) (Password = Edge1234!)
 
 1. Click "Edit Configuration" and login to the Databus.
 

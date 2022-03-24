@@ -28,7 +28,11 @@ Installed Apps on Central Device:
 
 ## IE Databus
 
-Configure the User and Topic in the IE Databus Configurator as described [here](install_PLC_Devices_Southbound.md) .  
+Configure the User and Topic in the IE Databus Configurator as described [here](install_PLC_Devices_Southbound.md).  
+
+Instead of manually configuring you can also import the configuration files:
+
+[IE_Databus_Central](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
 
 1. Launch the IE Databus Configurator and add your related Credentials/Topics:
 
@@ -49,6 +53,11 @@ Configure the User and Topic in the IE Databus Configurator as described [here](
 ## IE MQTT Connector
 
 To receive the data from the IE Cloud Connector from Energy1 and Energy2 the IE MQTT Connector has to be configured
+
+Instead of manually configuring you can also import the configuration files:
+
+[IE_MQTT_Connector_Central](../src/CentralDevice/IE_MQTT_Connctor_Central.json) (Password = Edge1234!)
+
 
 1. Launch the IE MQTT Connector Configurator and add your related Credentials/Topics:
 
