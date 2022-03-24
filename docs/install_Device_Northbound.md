@@ -5,8 +5,8 @@
   - [IE Databus](#ie-databus)
   - [IE MQTT Connector](#ie-mqtt-connector)
   - [Data Service](#data-service)
-  - [IE Flow Creator - Option 1: MindConnect IoT Extension](#ie-flow-creator---option-1-mindconnect-iot-extension)
-  - [IE Cloud Connector - Option 1: MindConnect IoT Extension](#ie-cloud-connector---option-1-mindconnect-iot-extension)
+  - [Option 1: IE Flow Creator](#option-1-ie-flow-creator)
+  - [Option 1: IE Cloud Connector - MindConnect IoT Extension](#option-1-ie-cloud-connector---mindconnect-iot-extension)
   - [MindSphere - Energy Manager](#mindsphere---energy-manager)
 - [Navigation](#navigation)
   
@@ -142,7 +142,7 @@ To sort the data add aspects in the Data Service.
 
   ![IE_Dataservice7](graphics/IE_Dataservice7.png)
 
-## IE Flow Creator - Option 1: MindConnect IoT Extension
+## Option 1: IE Flow Creator 
 
 > **_NOTE:_** Only required when connesction to MindConnect IoT Extension.
 
@@ -153,7 +153,7 @@ and also converts the data to MindSphere IOT Extension data format
    
 2. Enter IE-Databus credentials
 
-## IE Cloud Connector - Option 1: MindConnect IoT Extension
+## Option 1: IE Cloud Connector - MindConnect IoT Extension
 
 For the communication with MindSphere configure IE Cloud Connector accordingly.
 The steps are similar to the description for Energy1 and Energy2. 
