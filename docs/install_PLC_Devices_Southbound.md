@@ -32,12 +32,22 @@ Installed Apps Device Energy1 and Energy2:
 
 Add a user in the IE Databus Configurator with username and password and provide necessary access right to the required topics so the SIMATIC S7 Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
 
+Instead of manually configuring you can also import the configuration files:
+
+[IE_Databus_Energy1](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
+
+[IE_Databus_Energy2](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
+
 1. Open the Industrial Edge Management App and launch the Databus configurator, add your related credentials/topics:
-`ie/#`
+
+   - Username: `edge`
+   - Password: `edge`
+   - Topic: `ie/#`
+   - Permission: `Publish and Subscribe`
 
   ![ie_databus_user](graphics/IE_Databus_User.png)
 
-2. After adding user deploy configuration to device
+2. Deploy configuration to device
 
   ![ie_databus](graphics/IE_Databus.png)
 
@@ -47,7 +57,7 @@ Add a user in the IE Databus Configurator with username and password and provide
 To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector to the PLC and add the required PLC variables
 
 1. Launch the S7 Connector Configurator and configure the PLC connection 
-2. Import the JSON file [energy1_S7_Connector](../src/Device_Energy1/energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](../src/Cevice_Energy2/energy2_S7_Connector.json) for Energy2 
+2. Import the JSON file [energy1_S7_Connector](../src/Device_Energy1/energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](../src/Device_Energy2/energy2_S7_Connector.json) for Energy2 
 3. Deploy and start your S7 Connector configuration
 
   ![S7_connector](graphics/S7_Connector.png)
@@ -68,7 +78,7 @@ The aggregated values are published on newly defined topics to prevent collision
   
     Energy1: [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
 
-    Energy2:[FlowCreator_Energy2](../src/Cevice_Energy2/FlowCreator_Energy2.json)
+    Energy2:[FlowCreator_Energy2](../src/Device_Energy2/FlowCreator_Energy2.json)
   
     
   ![FlowCreator1](graphics/Flow_Creator1.png)
@@ -86,11 +96,12 @@ The aggregated values are published on newly defined topics to prevent collision
 ## IE Cloud Connector
 
 For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector. 
+
 Instead of manually configuring you can also import the configuration files:
 
 [CloudConnector_Energy1](../src/Device_Energy1/CloudConnector_Energy1.json) (Password = Edge1234!)
 
-[CloudConnector_Energy2](../src/Cevice_Energy2/CloudConnector_Energy2.json) (Password = Edge1234!)
+[CloudConnector_Energy2](../src/Device_Energy2/CloudConnector_Energy2.json) (Password = Edge1234!)
 
 1. Click "Edit Configuration" and login to the Databus.
 
@@ -117,7 +128,7 @@ Note: Create one topic for the data and one topic for the metadata.
 3. Add the Data-topic
    
    Energy1:
-   `ie/d/j/simatic/v1/iefc/dp/r/Line1/default`
+   `ie/d/j/simatic/v1/iefc/dp/r/line1/default`
   
    Energy2:
    `ie/d/j/simatic/v1/iefc/dp/r/line2/default`
@@ -129,28 +140,29 @@ Note: Create one topic for the data and one topic for the metadata.
 4. Add Connecting Routes
   
    Energy1:
-   `central-data` 
-   `central-metadata`
+   - `central-data` 
+   - `central-metadata`
   
    Energy2:
-   `central-data2`
-   `central-metadata2`
+   - `central-data2`
+   - `central-metadata2`
   
     
   ![Cloud_Connector3](graphics/Cloud_Connector_Route.png)
 
-"Lokal Lake" allows you to connect a lokal MQTT-Broker likte the MQTT-Connector 
+"Local Lake" allows you to connect a local MQTT-Broker like the IE MQTT Connector 
 
 5. Add Cloud Connector Clients
-  Type: `LOCAL_LAKE`
+  - Type: `LOCAL_LAKE`
   
-   Energy1:
-   Data: `ie/d/j/simatic/v1/iecc/dp/r/energy1line1/raw`
-   Metadata: `ie/m/j/simatic/v1/iecc/dp/energy1line1`
-  
-   Energy2:
-   Data: `ie/d/j/simatic/v1/iecc/dp/r/energy2line2/raw`
-   Metadata: `ie/m/j/simatic/v1/iecc/dp/energy2line2`
+  - Publish Topic:
+    Energy1:
+    - Metadata: `ie/m/j/simatic/v1/energy1line1:iefc/dp`
+    - Data: `ie/d/j/simatic/v1/energy1line1:iefc/dp/r/line1/default`
+    
+    Energy2:
+    - Metadata: `ie/m/j/simatic/v1/energy2line2:iefc/dp`
+    - Data: `ie/d/j/simatic/v1/energy2line2:iefc/dp/r/line2/default`
   
     
   ![Cloud_Connector4](graphics/Cloud_Connector_Client1.png)

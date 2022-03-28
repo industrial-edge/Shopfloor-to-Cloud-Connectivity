@@ -3,10 +3,12 @@
 Use case for communication from Edge Device to Edge Device and company Cloud (e.g. MindSphere) via MQTT 
 
 - [Shopfloor to Cloud Connectivity - Integrate machine & production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
-    - [Overview](#overview)
-      - [Reference Architecture](#reference-architecture)
-      - [Network Architecture](#network-architecture)
-    - [General task](#general-task)
+  - [Overview](#overview)
+    - [Reference Architecture](#reference-architecture)
+      - [Option 1: IE Cloud Connector - MindConnect IoT Extension](#option-1-ie-cloud-connector---mindconnect-iot-extension)
+      - [Option 2: MindSphere Connector - MindSphere Native MQTT](#option-2-mindsphere-connector---mindsphere-native-mqtt)
+    - [Network Architecture](#network-architecture)
+  - [General task](#general-task)
   - [Requirements](#requirements)
     - [Prerequisites](#prerequisites)
     - [Used components](#used-components)
@@ -17,19 +19,25 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
   - [Contribution](#contribution)
   - [Licence and Legal Information](#licence-and-legal-information)
 
-### Overview 
+## Overview 
 
 ![overview](docs/graphics/overview.png)
 
-#### Reference Architecture
+### Reference Architecture 
+
+#### Option 1: IE Cloud Connector - MindConnect IoT Extension
 
 ![overview3](docs/graphics/overview3.png)
 
-#### Network Architecture
+#### Option 2: MindSphere Connector - MindSphere Native MQTT
+
+![overview3](docs/graphics/overview4.png)
+
+### Network Architecture
 
 ![overview2](docs/graphics/overview2.png)
 
-### General task
+## General task
 
 Allows gathering energy data from various Devices and converting them to a standardized 
 form in a southbound Edge Device with no internet access. 
@@ -39,7 +47,7 @@ Central monitoring energy data from multiple location in dashboards, with a stri
 Sharing the standardized data with a northbound Edge Device, with internet connectivity, via MQTT.
 
 Structuring the energy data in asset models according to the asset design in MindSphere in the northbound Edge Device
-and forwarding them to MindConnect IoT Extension.
+and forwarding them to MindSphere.
 
 
 
@@ -51,7 +59,7 @@ and forwarding them to MindConnect IoT Extension.
 - Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed system configurators on IEM (S7 Connector Configurator, IE Databus Configurator, Cloud Connector Configurator) 
+- Installed System App Configurators on IEM (S7 Connector Configurator, IE Databus Configurator, Cloud Connector Configurator) 
 - Installed apps on Southbound-Devices (SIMATIC S7 Connector, IE Cloud Connector, IE Databus, IE Flow Creator)
 - Installed apps on Northbound-Device (Data Service, IE Databus, IE Flow Creator, Energy Manager, IE MQTT Connector, IE Cloud Connector)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
@@ -66,15 +74,16 @@ TIA & PLCs:
 - PLC 1512SP-1 PN FW V2.1
 
 Industrial Edge:
-- Industrial Edge Management V1.3.0
-- IE Databus V1.3.5
-- SIMATIC S7 Connector V 1.3.27
-- MQTT Connector V1.2.9
-- Cloud Connector V 1.3.1
-- Data Service V1.3.0
-- IE Flow Creator V1.1.10
+- Industrial Edge Management V1.5.6
+- Industrial Edge Device V1.5.0-21-amd64
+- SIMATIC S7 Connector V1.6.0-8
+- IE Databus V1.6.3
+- IE MQTT Connector V1.5.1
+- Data Service V1.3.3-13224869
+- IE Flow Creator V1.3.3
 - Energy Manager V1.2.0
-- Industrial Edge Device V1.2.0-56
+- IE Cloud Connector V 1.6.2
+- IE Mindsphere Connector
 - Web browser (Mozilla or Chrome)
 
 MindSphere:
@@ -88,12 +97,12 @@ You can find the further information about the following steps in the [docs](doc
 
 - Configure PLC project in TIA-Portal
 - Configure PLC connections in Industrial Edge
-  - S7 Connector
-  - Databus 
+  - SIMATIC S7 Connector
+  - IE Databus 
 - Configure Data preprocessing 
-  - Flow Creator 
+  - IE Flow Creator 
 - Configure Connection to Northbound
-  - Cloud Connector 
+  - IE Cloud Connector 
 
 
 ## Configuration Northbound Device
@@ -101,12 +110,14 @@ You can find the further information about the following steps in the [docs](doc
 You can find the further information about the following steps in the [docs](docs/install_Device_Northbound.md)
 
 - Configure Connection to Southbound
-  - Databus 
-  - MQTT Connector
-  - Flow Creator
+  - IE Databus 
+  - IE MQTT Connector
   - Data Service
-- Configure Connection to MindSphere
-  - Cloud Connector
+- **Option 1**: Configure Connection to MindSphere - MindConnect IoT Extension
+  - IE Flow Creator
+  - IE Cloud Connector
+- **Option 2**: Configure Connection to MindSphere - MindSphere Native MQTT
+  - IE Mindsphere Connector
 - Configure visualization
   - Energy Manager
 

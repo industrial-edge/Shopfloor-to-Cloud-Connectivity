@@ -2,71 +2,93 @@
 
 - [Configuration Steps](#configuration-steps)
 - [Configure Northbound](#configure-northbound)
+  - [IE Databus](#ie-databus)
   - [IE MQTT Connector](#ie-mqtt-connector)
-  - [IE Flow Creator](#ie-flow-creator)
   - [Data Service](#data-service)
-  - [IE Cloud Connector](#ie-cloud-connector)
-  - [Energy Manager](#energy-manager)
+  - [Option 1: IE Flow Creator](#option-1-ie-flow-creator)
+  - [Option 1: IE Cloud Connector - MindConnect IoT Extension](#option-1-ie-cloud-connector---mindconnect-iot-extension)
+  - [MindSphere - Energy Manager](#mindsphere---energy-manager)
 - [Navigation](#navigation)
   
-
-
 # Configure Northbound
 
 The Northbound consist of one device. In the following this is called "Central Device".
 Installed Apps on Central Device:
   - Data Service
   - IE Databus
-  - IE Flow Creator
   - Energy Manager
   - IE MQTT Connector
-  - IE Cloud Connector
+  - Option 1: MindConnect IoT Extension
+    - IE Flow Creator
+    - IE Cloud Connector
+  - Option 2: MindSphere Native MQTT
+    - IE Mindsphere Connector
 
+## IE Databus
 
+Configure the User and Topic in the IE Databus Configurator as described [here](install_PLC_Devices_Southbound.md).  
 
-Configure the User and Topic in the IE Databus Configurator as described [here](install_PLC_Devices_Southbound.md) .  
+Instead of manually configuring you can also import the configuration files:
+
+[IE_Databus_Central](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
 
 1. Launch the IE Databus Configurator and add your related Credentials/Topics:
-   `ie/#`
+
+   - Username: `edge`
+   - Password: `edge`
+   - Topic: `ie/#`
+   - Permission: `Publish and Subscribe`
   
     
   ![ie_databus_user](graphics/IE_Databus_User.png)
   
-    
+ 2. Deploy configuration to device
+
   ![ie_databus](graphics/IE_Databus.png)
-
-
 
 ## IE MQTT Connector
 
 To receive the data from the IE Cloud Connector from Energy1 and Energy2 the IE MQTT Connector has to be configured
 
-This is the same configuration as IE Databus.
+Instead of manually configuring you can also import the configuration files:
+
+[IE_MQTT_Connector_Central](../src/CentralDevice/IE_MQTT_Connctor_Central.json) (Password = Edge1234!)
+
+1. Launch the IE MQTT Connector Configurator and add your related Credentials/Topics:
+
+   - Username: `edge`
+   - Password: `edge`
+
+![ie_mqtt_Connector](graphics/IE_MQTT_Connector_User.png)
+
+2. Add Topic and Permission
+
+- Topic: `ie/#`
+- Permission: `Publish and Subscribe`
+
+![ie_mqtt_Connector](graphics/IE_MQTT_Connector_Topic.png)
     
-  ![ie_mqtt_Connector](graphics/MQTT_Connector.png)
+![ie_mqtt_Connector](graphics/MQTT_Connector.png)
 
-1. Only set "Unsecure" in "IE MQTT Connector"
+3. Set "Unsecure" in IE MQTT Connector
 
-  ![IE_MQTT_Connector](graphics/IE_MQTT_Connector.png)
+![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Certificate.png)
 
-## IE Flow Creator
+4. Bridge Configure
 
-The IE Flow Creator will extract the packaged data from IE Cloud Connector
-and also converts the data to MindSphere IOT Extension data format
+   - Insert User: `edge`
+   - Insert password: `edge`
+   - Select Topic:  `ie/#`
+   - Direction: `IE MQTT Connector` :arrow_right: `IE Databus`
 
-1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described [here](install_PLC_Devices_Southbound.md)
-   
-2. Enter IE-Databus credentials
-
+![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Bridge.png)
 
 ##  Data Service
 
 In order to store the data send by the Cloud Connector of the Energy 1 and Energy 2 device, configure two adapters with the metadata topic from the Cloud Connector in Energy1 and Energy2.  
 
-
 1. Go to the Data Service and select "Adapters"
-    
-      
+     
   ![IE_Dataservice1](graphics/IE_Dataservice1_Central.png)
 
 2. Click "+" to add a new adapter 
@@ -75,9 +97,9 @@ In order to store the data send by the Cloud Connector of the Energy 1 and Energ
    
 4. Add the data as shown in the picture
   
-  URL for Energy1 `ie/m/j/simatic/v1/iefc/dp/energy1line1`
+  URL for Energy1 `ie/m/j/simatic/v1/energy1line1:iefc/dp`
 
-  URL for Energy2 `ie/m/j/simatic/v1/iefc/dp/energy2line2`
+  URL for Energy2 `ie/m/j/simatic/v1/energy2line2/iefc/dp`
 
 5. Save the configuration
    
@@ -120,10 +142,18 @@ To sort the data add aspects in the Data Service.
 
   ![IE_Dataservice7](graphics/IE_Dataservice7.png)
 
+## Option 1: IE Flow Creator 
 
+> **_NOTE:_** Only required when connesction to MindConnect IoT Extension.
 
+The IE Flow Creator will extract the packaged data from IE Cloud Connector
+and also converts the data to MindSphere IOT Extension data format
 
-## IE Cloud Connector
+1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described [here](install_PLC_Devices_Southbound.md)
+   
+2. Enter IE-Databus credentials
+
+## Option 1: IE Cloud Connector - MindConnect IoT Extension
 
 For the communication with MindSphere configure IE Cloud Connector accordingly.
 The steps are similar to the description for Energy1 and Energy2. 
@@ -162,7 +192,7 @@ Instead of manually configuring you can also import the configuration files:
 
 
 
-##  Energy Manager
+## MindSphere - Energy Manager
 
 Energy Manager displays the total energy consumption, the energy consumption per bottle and the associated costs for each line.
 
@@ -172,7 +202,7 @@ Energy Manager displays the total energy consumption, the energy consumption per
 
   ![EnergyManageroverview3](graphics/EnergyManager_overview3.png)
 
-At first a ned dashboard, that contains the widgtes will be created.
+At first a ned dashboard, that contains the widgets will be created.
 
 
 1. Add a new dashboard  "Overview Media Consumption"
