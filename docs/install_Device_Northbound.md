@@ -21,7 +21,7 @@ Installed Apps on Central Device:
   - Option 1: MindConnect IoT Extension
     - IE Flow Creator
     - IE Cloud Connector
-  - Option 2: MindSphere Native MQTT
+  - Option 2: MindSphere Native MQTT (coming soon)
     - IE Mindsphere Connector
 
 ## IE Databus
