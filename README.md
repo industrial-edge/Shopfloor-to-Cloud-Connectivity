@@ -29,7 +29,7 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 ![overview3](docs/graphics/overview3.png)
 
-#### Option 2: MindSphere Connector - MindSphere Native MQTT
+#### Option 2: MindSphere Connector - MindSphere Native MQTT (coming soon)
 
 ![overview3](docs/graphics/overview4.png)
 
@@ -116,7 +116,7 @@ You can find the further information about the following steps in the [docs](doc
 - **Option 1**: Configure Connection to MindSphere - MindConnect IoT Extension
   - IE Flow Creator
   - IE Cloud Connector
-- **Option 2**: Configure Connection to MindSphere - MindSphere Native MQTT
+- **Option 2**: Configure Connection to MindSphere - MindSphere Native MQTT (coming soon)
   - IE Mindsphere Connector
 - Configure visualization
   - Energy Manager
