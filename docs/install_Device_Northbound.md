@@ -5,8 +5,12 @@
   - [IE Databus](#ie-databus)
   - [IE MQTT Connector](#ie-mqtt-connector)
   - [Data Service](#data-service)
-  - [Option 1: IE Flow Creator](#option-1-ie-flow-creator)
-  - [Option 1: IE Cloud Connector - MindConnect IoT Extension](#option-1-ie-cloud-connector---mindconnect-iot-extension)
+  - [Option 1: MindConnect IoT Extension](#option-1-mindconnect-iot-extension)
+    - [IE Flow Creator](#ie-flow-creator)
+    - [IE Cloud Connector - MindConnect IoT Extension](#ie-cloud-connector---mindconnect-iot-extension)
+  - [Option 2: MindSphere Native MQTT](#option-2-mindsphere-native-mqtt)
+    - [Create an agent private key](#create-an-agent-private-key)
+    - [Configure IE MindSphere Connector](#configure-ie-mindsphere-connector)
   - [MindSphere - Energy Manager](#mindsphere---energy-manager)
 - [Navigation](#navigation)
   
@@ -142,7 +146,9 @@ To sort the data add aspects in the Data Service.
 
   ![IE_Dataservice7](graphics/IE_Dataservice7.png)
 
-## Option 1: IE Flow Creator 
+## Option 1: MindConnect IoT Extension
+
+### IE Flow Creator 
 
 > **_NOTE:_** Only required when connesction to MindConnect IoT Extension.
 
@@ -153,7 +159,7 @@ and also converts the data to MindSphere IOT Extension data format
    
 2. Enter IE-Databus credentials
 
-## Option 1: IE Cloud Connector - MindConnect IoT Extension
+### IE Cloud Connector - MindConnect IoT Extension
 
 For the communication with MindSphere configure IE Cloud Connector accordingly.
 The steps are similar to the description for Energy1 and Energy2. 
@@ -191,6 +197,49 @@ Instead of manually configuring you can also import the configuration files:
 6. Deploy the configuration
 
 
+## Option 2: MindSphere Native MQTT
+
+### Create an agent private key
+
+To create a private key, you need OpenSSLtoolkit on your computer.
+
+```
+set TENANT=<yourtenant>
+set DEVICE_NAME=<yourdevicename>
+set COUNTRY_CODE=<COUNTRY_CODE>
+set CITY=<CITY>
+set ORGANIZATION=<ORGANIZATION>
+set CLIENT_ID="%TENANT%"_"%DEVICE_NAME%"
+```
+
+1. ```openssl genrsa -out %DEVICE_NAME%.key 2048```
+2. ```openssl req -new -key %DEVICE_NAME%.key -out %DEVICE_NAME%.csr -subj "/C=%COUNTRY_CODE%/ST=%CITY%/O=%ORGANIZATION%/OU=IT/CN=%DEVICE_NAME%"```
+3. ```openssl x509 -req -in %DEVICE_NAME%.csr -CA "%TENANT%.pem" -CAkey "%TENANT%.key" -CAcreateserial -out %DEVICE_NAME%.pem -days 365 -sha256```
+4. ```type %DEVICE_NAME%.pem "%TENANT%.pem" > "%DEVICE_NAME%"_chain.pem```
+
+You now have a private key for your agent: ```%DEVICE_NAME%"_chain.pem```
+More information can be found in the [How To](https://developer.mindsphere.io/howto/howto-onboard-native-mqtt.html) on developer.mindsphere.io
+
+### Configure IE MindSphere Connector
+In your management system, go into Data Connections -> IE MindSphere Connector -> Choose your device -> Launch.
+
+1. Set up the adapter for the IE MindSphere Connector -> Click Add Topic, fill in the required info and select the correct topic.
+   
+  ![IEMindSphereConnector_Adapter](graphics/IEMindSphereConnector_Adapter.PNG)
+
+2. Create the MindSphere client by selecting "Add Client". Choose a name and the type.
+   Upload the previously created client certificate and key
+   -- Screenshot from actual Edge Device IE MindSphere Connector
+
+3. Upload the Mindsphere Root certificate to the Edge Device.
+   -- Asset Manager certificate download
+   -- configuration in IE MindSphere Connector
+
+4. Create a Route by clicking "Add Route", select a name, connect the topic and the client and click "Save Route".
+
+5. Deploy the configuration.
+
+In MindSphere Asset Manager & Energy Manager, you should now see your data structure from Data Service.
 
 ## MindSphere - Energy Manager
 
