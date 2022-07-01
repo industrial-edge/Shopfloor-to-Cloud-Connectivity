@@ -97,9 +97,9 @@ In order to store the data send by the Cloud Connector of the Energy 1 and Energ
    
 4. Add the data as shown in the picture
   
-  URL for Energy1 `ie/m/j/simatic/v1/energy1line1:iefc/dp`
+  URL for Energy1 `ie/m/j/simatic/v1/energy1line1:s7c1/dp`
 
-  URL for Energy2 `ie/m/j/simatic/v1/energy2line2/iefc/dp`
+  URL for Energy2 `ie/m/j/simatic/v1/energy2line2:s7c1/dp`
 
 5. Save the configuration
    
@@ -155,6 +155,13 @@ and also converts the data to MindSphere IOT Extension data format
 
 ## Option 1: IE Cloud Connector - MindConnect IoT Extension
 
+Requirements:
+
+- You must have a MindSphere account
+- You must have the MindConnect IoT Extension Upgrade. This allows to use the MindConnect IoT Extension. To get the upgrade, your tenant admin needs to contact their assigned Account Executive or Customer Success Manager.
+- For MindConnect IoT Extension user: [Managing Users Documentation](https://documentation.mindsphere.io/MindSphere/apps/mindconnect-IoT-extension/account-managing-users.html)
+  - **Devicemanagement User**, assigned in MindConnect IoT Extension 
+
 For the communication with MindSphere configure IE Cloud Connector accordingly.
 The steps are similar to the description for Energy1 and Energy2. 
 Instead of manually configuring you can also import the configuration files:
@@ -181,9 +188,13 @@ Instead of manually configuring you can also import the configuration files:
   ![Cloud_Connector_Central_Clients1](graphics/Cloud_Connector_Clients_Central1.png)
 
   ![Cloud_Connector_Central_Clients2](graphics/Cloud_Connector_Clients_Central2.png)
+
+Example:  
+- Hostname: mciotextension.eu1.mindsphere.io
+- Tenant Name: demo
+- Username: TenantName/username
   
-  
-5. Mark the Topics, Route and Client and save the Route
+1. Mark the Topics, Route and Client and save the Route
    
   
   ![Cloud_Connector_Central_Route](graphics/Cloud_Connector_Central_Rout1.png)
