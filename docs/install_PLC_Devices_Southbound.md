@@ -58,7 +58,8 @@ To provide data from the PLC on the IE Databus connect the SIMATIC S7 Connector 
 
 1. Launch the S7 Connector Configurator and configure the PLC connection 
 2. Import the JSON file [energy1_S7_Connector](../src/Device_Energy1/energy1_S7_Connector.json) for Energy1 and [energy2_S7_Connector](../src/Device_Energy2/energy2_S7_Connector.json) for Energy2 
-3. Deploy and start your S7 Connector configuration
+3. Enter Credentials for IE Databus
+4. Deploy and start your S7 Connector configuration
 
   ![S7_connector](graphics/S7_Connector.png)
 
@@ -108,6 +109,8 @@ Instead of manually configuring you can also import the configuration files:
   ![Cloud_Connector](graphics/Cloud_Connector_Login.png)
 
 Configure starting from the left side "Bus Adaptor" to the right the "Cloud Connector Clients" Adapt the IP addresses to your system.
+
+![Cloud_Connector](graphics/Cloud_Connector_Cloud_Client.png)
 
 To save the configuration, initially click on your route and connect your topics from the bus adaptor with your cloud topics 
 
