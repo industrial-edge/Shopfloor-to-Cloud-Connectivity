@@ -59,8 +59,8 @@ and forwarding them to MindSphere.
 - Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed System App Configurators on IEM (S7 Connector Configurator, IE Databus Configurator, Cloud Connector Configurator) 
-- Installed apps on Southbound-Devices (SIMATIC S7 Connector, IE Cloud Connector, IE Databus, IE Flow Creator)
+- Installed System App Configurators on IEM (OPC UA Connector Configurator, IE Databus Configurator, Cloud Connector Configurator, IE MIndSphere Connector Configurator) 
+- Installed apps on Southbound-Devices (OPC UA Connector, IE Cloud Connector, IE Databus, IE Flow Creator)
 - Installed apps on Northbound-Device (Data Service, IE Databus, IE Flow Creator, Energy Manager, IE MQTT Connector, IE Cloud Connector, IE MindSphere Connector)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to MindSphere 
