@@ -88,7 +88,7 @@ Industrial Edge:
 
 MindSphere:
 - Asset Manager 
-- MindConnect IoT Extension
+- MindConnect IoT Extension (Optional)
 - Energy Manager
 
 ## Configuration Southbound Devices
