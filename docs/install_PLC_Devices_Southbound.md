@@ -174,7 +174,7 @@ Note: Create one topic for the data and one topic for the metadata.
       
   ![Cloud_Connector6](graphics/Cloud_Connector_Client2.png)
 
-6. Mark the data and metadata routs an click "Save Route" 
+6. Mark the data and metadata routes an click "Save Route" 
       
         
   ![Cloud_Connector7](graphics/Cloud_Connector_Route1.png)
