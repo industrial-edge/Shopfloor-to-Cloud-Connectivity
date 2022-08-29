@@ -183,36 +183,36 @@ In your management system, go to Data Connections -> IE MindSphere Connector -> 
   Then select List Data Topics and choose `ie/d/j/simatic/v1/iefc/dp/r/energy1line1/default` from "Select Data Topics".
   Repeat these steps for `ie/m/j/simatic/v1/iefc/dp/energy2line2`
 
-   ![IEMindSphereConnector_Adapter](graphics/IEMindSphereConnector_Adapter.PNG)
+   ![IEMindSphereConnector_Adapter](graphics/IEMindSphereConnector_Adapter.png)
 
 2. Create the MindSphere client by selecting "Add Client". 
    
   Choose a name and the type (Depending on your MindSphere tenant).
   Upload the previously created client certificate and key.
 
-   ![IEMindSphereConnector_CloudClient1](graphics/IEMindSphereConnector_CloudClient1.PNG)
+   ![IEMindSphereConnector_CloudClient1](graphics/IEMindSphereConnector_CloudClient1.png)
 
 3. Edit your Cloud Client and select the Tenant & Client ID.
   > **_NOTE:_**  The Client ID must be in the format `tenant_yourClientName`.
 
-  ![IEMindSphereConnector_CloudClient2](graphics/IEMindSphereConnector_CloudClient2.PNG) 
+  ![IEMindSphereConnector_CloudClient2](graphics/IEMindSphereConnector_CloudClient2.png) 
 
 
 5. Prepare the Model by selecting the data model on Edge which should be transferred to MindSphere.
    
-  ![IEMindSphereConnector_CloudClient3](graphics/IEMindSphereConnector_CloudClient3.PNG) 
+  ![IEMindSphereConnector_CloudClient3](graphics/IEMindSphereConnector_CloudClient3.png) 
 
 6. Create a Route by clicking "Add Route", select a name, connect the topics and the client and click "Save Route".
   
-  ![IEMindSphereConnector_route](graphics/IEMindSphereConnector_route.PNG)  
+  ![IEMindSphereConnector_route](graphics/IEMindSphereConnector_route.png)  
 
 6. Deploy the configuration.
  
- ![IEMindSphereConnector](graphics/IEMindSphereConnector.PNG)  
+ ![IEMindSphereConnector](graphics/IEMindSphereConnector.png)  
 
 In MindSphere Energy Manager, you should now see your data structure from Data Service.
 
-  ![MindSphere_Datamodel](graphics/MindSphere_Datamodel.PNG)
+  ![MindSphere_Datamodel](graphics/MindSphere_Datamodel.png)
 
 ## Option 2: MindConnect IoT Extension
 
