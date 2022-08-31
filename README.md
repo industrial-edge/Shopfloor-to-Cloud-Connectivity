@@ -113,11 +113,11 @@ You can find the further information about the following steps in the [docs](doc
   - IE Databus 
   - IE MQTT Connector
   - Data Service
-- **Option 1**: Configure Connection to MindSphere - MindConnect MQTT
-  - IE Mindsphere Connector
-- **Option 2**: Configure Connection to MindSphere - MindConnect IoT Extension
-  - IE Flow Creator
-  - IE Cloud Connector
+  - **Option 1**: Configure Connection to MindSphere - MindConnect MQTT
+    - IE Mindsphere Connector
+  - **Option 2**: Configure Connection to MindSphere - MindConnect IoT Extension
+    - IE Flow Creator
+    - IE Cloud Connector
 
 - Configure visualization
   - Energy Manager
