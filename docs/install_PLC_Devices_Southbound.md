@@ -109,6 +109,8 @@ Instead of manually configuring you can also import the configuration files:
 
 Configure starting from the left side "Bus Adaptor" to the right the "Cloud Connector Clients" Adapt the IP addresses to your system.
 
+![Cloud_Connector](graphics/Cloud_Connector_Cloud_Client.png)
+
 To save the configuration, initially click on your route and connect your topics from the bus adaptor with your cloud topics 
 
 Then click on deploy.
