@@ -2,15 +2,20 @@
 
 
 - [Configuration Steps](#configuration-steps)
-- [Configure MindSphere](#configure-mindsphere)
+- [Option 1 MindSphere MindConnect MQTT](#option-1-mindsphere-mindconnect-mqtt)
+- [Option 2: MindConnect IoT Extension](#option-2-mindconnect-iot-extension)
   - [Asset Manager](#asset-manager)
   - [MindConnect IoT Extension](#mindconnect-iot-extension)
-  - [Energy Manager](#energy-manager)
+- [Configure Energy Manager](#configure-energy-manager)
 - [Navigation](#navigation)
   
+# Option 1 MindSphere MindConnect MQTT
 
+No further steps have to be done to connect the data to MindSphere. Data in MindSphere should already be available from [previous steps](install_Device_Northbound.md)
 
-# Configure MindSphere
+> **_NOTE:_** Continue with [configuration of Energy Manager on MindSphere](#configure-energy-manager)
+
+# Option 2: MindConnect IoT Extension 
 
 ## Asset Manager
 
@@ -83,7 +88,8 @@ The Central Device is named "Media Consumption Factory1" this name was defined i
 
 5. Commit changes
 
-## Energy Manager
+
+# Configure Energy Manager
 
 The Energy Manager shows the data from the whole Factory1
   

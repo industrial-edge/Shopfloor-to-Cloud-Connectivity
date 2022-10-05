@@ -5,9 +5,13 @@
   - [IE Databus](#ie-databus)
   - [IE MQTT Connector](#ie-mqtt-connector)
   - [Data Service](#data-service)
-  - [Option 1: IE Flow Creator](#option-1-ie-flow-creator)
-  - [Option 1: IE Cloud Connector - MindConnect IoT Extension](#option-1-ie-cloud-connector---mindconnect-iot-extension)
-  - [MindSphere - Energy Manager](#mindsphere---energy-manager)
+  - [Option 1: MindConnect MQTT](#option-1-mindconnect-mqtt)
+    - [Create an agent private key](#create-an-agent-private-key)
+    - [Configure IE MindSphere Connector](#configure-ie-mindsphere-connector)
+  - [Option 2: MindConnect IoT Extension](#option-2-mindconnect-iot-extension)
+    - [IE Flow Creator](#ie-flow-creator)
+    - [IE Cloud Connector - MindConnect IoT Extension](#ie-cloud-connector---mindconnect-iot-extension)
+  - [Northbound Device - Energy Manager](#northbound-device---energy-manager)
 - [Navigation](#navigation)
   
 # Configure Northbound
@@ -17,12 +21,12 @@ Installed Apps on Central Device:
   - Data Service
   - IE Databus
   - Energy Manager
-  - IE MQTT Connector
-  - Option 1: MindConnect IoT Extension
+  - IE MQTT Connector  
+  - Option 1: MindConnect MQTT
+    - IE Mindsphere Connector
+  - Option 2: MindConnect IoT Extension
     - IE Flow Creator
     - IE Cloud Connector
-  - Option 2: MindSphere Native MQTT (coming soon)
-    - IE Mindsphere Connector
 
 ## IE Databus
 
@@ -141,10 +145,80 @@ To sort the data add aspects in the Data Service.
   
 
   ![IE_Dataservice7](graphics/IE_Dataservice7.png)
+  
 
-## Option 1: IE Flow Creator 
+## Option 1: MindConnect MQTT
 
-> **_NOTE:_** Only required when connesction to MindConnect IoT Extension.
+### Create an agent private key
+
+On how to create the agent key, please refer to the [How To](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html) on https://mindsphere.io
+
+```
+set TENANT=<yourtenant>
+set DEVICE_NAME=<yourdevicename>
+set COUNTRY_CODE=<COUNTRY_CODE>
+set CITY=<CITY>
+set ORGANIZATION=<ORGANIZATION>
+set CLIENT_ID="%TENANT%"_"%DEVICE_NAME%"
+```
+
+1. ```openssl genrsa -out %DEVICE_NAME%.key 2048```
+2. ```openssl req -new -key %DEVICE_NAME%.key -out %DEVICE_NAME%.csr -subj "/C=%COUNTRY_CODE%/ST=%CITY%/O=%ORGANIZATION%/OU=IT/CN=%DEVICE_NAME%"```
+3. ```openssl x509 -req -in %DEVICE_NAME%.csr -CA "%TENANT%.pem" -CAkey "%TENANT%.key" -CAcreateserial -out %DEVICE_NAME%.pem -days 365 -sha256```
+4. ```type %DEVICE_NAME%.pem "%TENANT%.pem" > "%DEVICE_NAME%"_chain.pem```
+
+You now have a private key for your agent: ```%DEVICE_NAME%".pem```
+
+### Configure IE MindSphere Connector
+In your Industrial Edge Management, go to Data Connections -> IE MindSphere Connector -> Choose your device -> Launch.
+
+1. Set up the Databus adapter for IE MindSphere Connector -> Click Add Topic, fill in the required info and select the correct topic.
+   
+  - Username: `edge`
+
+  - Password: `edge`
+
+  - Metadata for Subscription: `ie/m/j/simatic/v1/iefc/dp/energy1line1`
+
+  Then select List Data Topics and choose `ie/d/j/simatic/v1/iefc/dp/r/energy1line1/default` from "Select Data Topics".
+  Repeat these steps for `ie/m/j/simatic/v1/iefc/dp/energy2line2`
+
+   ![IEMindSphereConnector_Adapter](graphics/IEMindSphereConnector_Adapter.png)
+
+2. Create the MindSphere client by selecting "Add Client". 
+   
+  Choose a name and the type (Depending on your MindSphere tenant).
+  Upload the previously created client certificate and key.
+
+   ![IEMindSphereConnector_CloudClient1](graphics/IEMindSphereConnector_CloudClient1.png)
+
+3. Edit your Cloud Client and select the Tenant & Client ID.
+  > **_NOTE:_**  The Client ID must be in the format `tenant_yourClientName`.
+
+  ![IEMindSphereConnector_CloudClient2](graphics/IEMindSphereConnector_CloudClient2.png) 
+
+
+5. Prepare the Model by selecting the data model on Edge which should be transferred to MindSphere.
+   
+  ![IEMindSphereConnector_CloudClient3](graphics/IEMindSphereConnector_CloudClient3.png) 
+
+6. Create a Route by clicking "Add Route", select a name, connect the topics and the client and click "Save Route".
+  
+  ![IEMindSphereConnector_route](graphics/IEMindSphereConnector_route.png)  
+
+6. Deploy the configuration.
+ 
+ ![IEMindSphereConnector](graphics/IEMindSphereConnector.png)  
+
+In MindSphere Energy Manager, you should now see your data structure from Data Service.
+
+  ![MindSphere_Datamodel](graphics/MindSphere_Datamodel.png)
+
+## Option 2: MindConnect IoT Extension
+
+### IE Flow Creator 
+
+> **_NOTE:_** Only required when connecting to MindConnect IoT Extension. Otherwise you can skip to [Northbound Device - Energy Manager](#northbound-device---energy-manager)
 
 The IE Flow Creator will extract the packaged data from IE Cloud Connector
 and also converts the data to MindSphere IOT Extension data format
@@ -153,7 +227,7 @@ and also converts the data to MindSphere IOT Extension data format
    
 2. Enter IE-Databus credentials
 
-## Option 1: IE Cloud Connector - MindConnect IoT Extension
+### IE Cloud Connector - MindConnect IoT Extension
 
 Requirements:
 
@@ -202,8 +276,9 @@ Example:
 6. Deploy the configuration
 
 
+## Northbound Device - Energy Manager
 
-## MindSphere - Energy Manager
+To analyze the data locally on the Edge Device, you can use Energy Manager App on the Northbound Device
 
 Energy Manager displays the total energy consumption, the energy consumption per bottle and the associated costs for each line.
 
