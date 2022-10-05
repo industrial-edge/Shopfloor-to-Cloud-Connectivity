@@ -56,7 +56,7 @@ Instead of manually configuring you can also import the configuration files:
 
 To provide data from the PLC on the IE Databus connect the OPC UA Connector to the PLC and add the required PLC variables
 
-1. Launch the OPC UA Connector Configurator  in the management system under 'Data Connections' and configure the PLC connection 
+1. Launch the OPC UA Connector Configurator in the Industrial Edge Management under 'Data Connections' and configure the PLC connection 
 2. Import the JSON file [energy1_OPCUA_Connector](../src/Device_Energy1/energy1_OPCUA_Connector.json) for Energy1 and [energy2_OPCUA_Connector](../src/Device_Energy2/energy2_OPCUA_Connector.json) for Energy2 
 3. Deploy and start your OPC UA Connector configuration
 

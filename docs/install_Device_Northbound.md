@@ -170,7 +170,7 @@ set CLIENT_ID="%TENANT%"_"%DEVICE_NAME%"
 You now have a private key for your agent: ```%DEVICE_NAME%".pem```
 
 ### Configure IE MindSphere Connector
-In your management system, go to Data Connections -> IE MindSphere Connector -> Choose your device -> Launch.
+In your Industrial Edge Management, go to Data Connections -> IE MindSphere Connector -> Choose your device -> Launch.
 
 1. Set up the Databus adapter for IE MindSphere Connector -> Click Add Topic, fill in the required info and select the correct topic.
    
