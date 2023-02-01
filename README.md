@@ -2,10 +2,10 @@
 
 Use case for communication from Edge Device to Edge Device and company Cloud (e.g. MindSphere) via MQTT 
 
-- [Shopfloor to Cloud Connectivity - Integrate machine & production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
+- [Shopfloor to Cloud Connectivity - Integrate machine \& production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
   - [Overview](#overview)
     - [Reference Architecture](#reference-architecture)
-      - [Option 1: MindSphere Connector - MindConnect MQTT](#option-1-mindsphere-connector---mindconnect-mqtt)
+      - [Option 1: IIH Mindsphere Sync - Native MQTT](#option-1-iih-mindsphere-sync---native-mqtt)
       - [Option 2: IE Cloud Connector - MindConnect IoT Extension](#option-2-ie-cloud-connector---mindconnect-iot-extension)
     - [Network Architecture](#network-architecture)
   - [General task](#general-task)
@@ -19,13 +19,13 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
   - [Contribution](#contribution)
   - [Licence and Legal Information](#licence-and-legal-information)
 
-## Overview 
+## Overview
 
 ![overview](docs/graphics/overview.png)
 
 ### Reference Architecture 
 
-#### Option 1: MindSphere Connector - MindConnect MQTT 
+#### Option 1: IIH Mindsphere Sync - Native MQTT 
 
 ![overview3](docs/graphics/overview4.png)
 
