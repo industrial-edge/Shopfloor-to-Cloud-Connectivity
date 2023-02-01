@@ -11,13 +11,15 @@
 
 # Configure PLC-Project in TIA-Portal
 
-1. Open TIA portal and open the project containing the Energy Management application (Adapt the IP addresses to your system)
+1. Download the TIA portal projects [EnergyManagement_Energy1](../src/Device_Energy1/EnergyManagement_Energy1.zap16) and [EnergyManagement_Energy2](../src/Device_Energy2/EnergyManagement_Energy2.zap16)
+
+2. Open TIA portal and open the projects containing the Energy Management application (Adapt the IP addresses to your system)
    
 ![TIA_IP](graphics/TIA_IP.png)
 
-2. Download the PLC program to the PLC and set the PLC into RUN
-   
-
+3. Download the PLC programs to the PLCs and set the PLCs into RUN
+ 
+ 
 # Configuration Southbound for Industrial Edge
 
 The Southbound consist of two devices. In the following they are called "Energy1" and "Energy2"
