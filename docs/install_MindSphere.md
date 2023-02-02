@@ -2,14 +2,14 @@
 
 
 - [Configuration Steps](#configuration-steps)
-- [Option 1 IIH Mindsphere Sync](#option-1-iih-mindsphere-sync)
+- [Option 1: IIH Mindsphere Sync](#option-1-iih-mindsphere-sync)
 - [Option 2: MindConnect IoT Extension](#option-2-mindconnect-iot-extension)
   - [Asset Manager](#asset-manager)
   - [MindConnect IoT Extension](#mindconnect-iot-extension)
 - [Configure Energy Manager](#configure-energy-manager)
 - [Navigation](#navigation)
   
-# Option 1 IIH Mindsphere Sync
+# Option 1: IIH Mindsphere Sync
 
 No further steps have to be done to connect the data to MindSphere. Data in MindSphere should already be available from [previous steps](install_Device_Northbound.md)
 
