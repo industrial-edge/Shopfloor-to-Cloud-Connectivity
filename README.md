@@ -5,7 +5,7 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 - [Shopfloor to Cloud Connectivity - Integrate machine \& production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
   - [Overview](#overview)
     - [Reference Architecture](#reference-architecture)
-      - [Option 1: IIH Mindsphere Sync - Native MQTT](#option-1-iih-mindsphere-sync---native-mqtt)
+      - [Option 1: IIH Mindsphere Sync](#option-1-iih-mindsphere-sync)
       - [Option 2: IE Cloud Connector - MindConnect IoT Extension](#option-2-ie-cloud-connector---mindconnect-iot-extension)
     - [Network Architecture](#network-architecture)
   - [General task](#general-task)
@@ -25,7 +25,7 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 ### Reference Architecture 
 
-#### Option 1: IIH Mindsphere Sync - Native MQTT 
+#### Option 1: IIH Mindsphere Sync
 
 ![overview3](docs/graphics/overview4.png)
 
@@ -59,9 +59,9 @@ and forwarding them to MindSphere.
 - Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed System App Configurators on IEM (OPC UA Connector Configurator, IE Databus Configurator, Cloud Connector Configurator, IE MIndSphere Connector Configurator) 
+- Installed System App Configurators on IEM (OPC UA Connector Configurator, IE Databus Configurator, Cloud Connector Configurator) 
 - Installed apps on Southbound-Devices (OPC UA Connector, IE Cloud Connector, IE Databus, IE Flow Creator)
-- Installed apps on Northbound-Device (Data Service, IE Databus, IE Flow Creator, Energy Manager, IE MQTT Connector, IE Cloud Connector, IE MindSphere Connector)
+- Installed apps on Northbound-Device (Data Service, IE Databus, IE Flow Creator, Energy Manager, IE MQTT Connector, IE Cloud Connector, IIH Core, IIH Configurator, IIH registry Service, IIH Databus Gateway)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to MindSphere 
 - MindConnect IoT Extension (Optional)
@@ -79,11 +79,14 @@ Industrial Edge:
 - OPC UA Connector V1.7.0-15
 - IE Databus V1.7.0
 - IE MQTT Connector V1.6.2
-- Data Service V1.3.3-13224869
+- Data Service V1.6.0
 - IE Flow Creator V1.3.9
 - Energy Manager V1.2.0
 - IE Cloud Connector V1.6.2
-- IE Mindsphere Connector V1.3.2
+- IIH Core V1.6.0
+- IIH Configurator V1.6.0
+- IIH Registry Service V1.5.0
+- IIH Databus Gateway V1.5.0
 - Web browser (Mozilla or Chrome)
 
 MindSphere:
@@ -113,8 +116,8 @@ You can find the further information about the following steps in the [docs](doc
   - IE Databus 
   - IE MQTT Connector
   - Data Service
-  - **Option 1**: Configure Connection to MindSphere - MindConnect MQTT
-    - IE Mindsphere Connector
+  - **Option 1**: Configure Connection to MindSphere - IIH Mindsphere Sync
+    - IIH Configurator
   - **Option 2**: Configure Connection to MindSphere - MindConnect IoT Extension
     - IE Flow Creator
     - IE Cloud Connector

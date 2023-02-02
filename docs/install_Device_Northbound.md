@@ -92,12 +92,14 @@ Instead of manually configuring you can also import the configuration files:
 
 ##  Option 1: IIH Mindsphere Sync
 
+All the following steps for this option will be performed in the "IIH Configurator" app on the Central Device.
+
 ### Integrate Data Service
 
 To store data in the Industrial Information Hub (IIH), it is required to integrate the Data Service Application. 
 Be aware that all data that was previously stored will be lost.
 
-1. Go to the "Sotre Data" tab
+1. Go to the "Store Data" tab
 
 2. Click on "Integrate"
    
@@ -166,10 +168,10 @@ certificates to allow a connection from the IIH.
 
 8. Deploy the configuration
 
-The incoming data will now be stored in the integrated Data Service. Under "Stored Data" you can see the created 
+The incoming data will now be stored in the integrated Data Service. Under "Store Data" you can see the created 
 Asset model and the datapoints.
 
-  ![IIH_StoredData](graphics/IIH_StoredData.png)
+  ![IIH_StoreData](graphics/IIH_StoreData.png)
 
 In MindSphere Energy Manager, you should now also see your data structure from the IIH.
 
