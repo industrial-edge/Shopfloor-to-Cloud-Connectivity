@@ -11,13 +11,15 @@
 
 # Configure PLC-Project in TIA-Portal
 
-1. Open TIA portal and open the project containing the Energy Management application (Adapt the IP addresses to your system)
+1. Download the TIA portal projects [EnergyManagement_Energy1](../src/Device_Energy1/EnergyManagement_Energy1.zap16) and [EnergyManagement_Energy2](../src/Device_Energy2/EnergyManagement_Energy2.zap16)
+
+2. Open TIA portal and open the projects containing the Energy Management application (Adapt the IP addresses to your system)
    
 ![TIA_IP](graphics/TIA_IP.png)
 
-2. Download the PLC program to the PLC and set the PLC into RUN
-   
-
+3. Download the PLC programs to the PLCs and set the PLCs into RUN
+ 
+ 
 # Configuration Southbound for Industrial Edge
 
 The Southbound consist of two devices. In the following they are called "Energy1" and "Energy2"
@@ -58,7 +60,8 @@ To provide data from the PLC on the IE Databus connect the OPC UA Connector to t
 
 1. Launch the OPC UA Connector Configurator in the Industrial Edge Management under 'Data Connections' and configure the PLC connection 
 2. Import the JSON file [energy1_OPCUA_Connector](../src/Device_Energy1/energy1_OPCUA_Connector.json) for Energy1 and [energy2_OPCUA_Connector](../src/Device_Energy2/energy2_OPCUA_Connector.json) for Energy2 
-3. Deploy and start your OPC UA Connector configuration
+3. Adjust IP adress of the imported PLC connection
+4. Deploy and start your OPC UA Connector configuration
 
   ![OPCUA_connector](graphics/OPCUA_Connector.png)
 

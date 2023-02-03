@@ -2,14 +2,14 @@
 
 
 - [Configuration Steps](#configuration-steps)
-- [Option 1 MindSphere MindConnect MQTT](#option-1-mindsphere-mindconnect-mqtt)
+- [Option 1: IIH Mindsphere Sync](#option-1-iih-mindsphere-sync)
 - [Option 2: MindConnect IoT Extension](#option-2-mindconnect-iot-extension)
   - [Asset Manager](#asset-manager)
   - [MindConnect IoT Extension](#mindconnect-iot-extension)
 - [Configure Energy Manager](#configure-energy-manager)
 - [Navigation](#navigation)
   
-# Option 1 MindSphere MindConnect MQTT
+# Option 1: IIH Mindsphere Sync
 
 No further steps have to be done to connect the data to MindSphere. Data in MindSphere should already be available from [previous steps](install_Device_Northbound.md)
 
@@ -33,7 +33,7 @@ In order to display the data of the lines in MindSphere, it´s necessary to crea
 
 4. Add the variables
 
-   ![Mindsphere_Asset_Manager3](graphics/Mindsphere_AssetManager3.png)
+  ![Mindsphere_Asset_Manager3](graphics/Mindsphere_AssetManager3.png)
 
 5. Go to "Asset Types"
 

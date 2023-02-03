@@ -4,10 +4,10 @@
 - [Configure Northbound](#configure-northbound)
   - [IE Databus](#ie-databus)
   - [IE MQTT Connector](#ie-mqtt-connector)
-  - [Data Service](#data-service)
-  - [Option 1: MindConnect MQTT](#option-1-mindconnect-mqtt)
-    - [Create an agent private key](#create-an-agent-private-key)
-    - [Configure IE MindSphere Connector](#configure-ie-mindsphere-connector)
+  - [Option 1: IIH Mindsphere Sync](#option-1-iih-mindsphere-sync)
+    - [Integrate Data Service](#integrate-data-service)
+    - [Configure Connections](#configure-connections)
+    - [Create the Asset Model](#create-the-asset-model)
   - [Option 2: MindConnect IoT Extension](#option-2-mindconnect-iot-extension)
     - [IE Flow Creator](#ie-flow-creator)
     - [IE Cloud Connector - MindConnect IoT Extension](#ie-cloud-connector---mindconnect-iot-extension)
@@ -22,8 +22,11 @@ Installed Apps on Central Device:
   - IE Databus
   - Energy Manager
   - IE MQTT Connector  
-  - Option 1: MindConnect MQTT
-    - IE Mindsphere Connector
+  - Option 1: IIH Mindsphere Sync
+    - IIH Core
+    - IIH Configurator
+    - IIH Registry Service
+    - IIH Databus Gateway
   - Option 2: MindConnect IoT Extension
     - IE Flow Creator
     - IE Cloud Connector
@@ -87,130 +90,90 @@ Instead of manually configuring you can also import the configuration files:
 
 ![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Bridge.png)
 
-##  Data Service
+##  Option 1: IIH Mindsphere Sync
 
-In order to store the data send by the Cloud Connector of the Energy 1 and Energy 2 device, configure two adapters with the metadata topic from the Cloud Connector in Energy1 and Energy2.  
+All the following steps for this option will be performed in the "IIH Configurator" app on the Central Device.
 
-1. Go to the Data Service and select "Adapters"
-     
-  ![IE_Dataservice1](graphics/IE_Dataservice1_Central.png)
+### Integrate Data Service
 
-2. Click "+" to add a new adapter 
+To store data in the Industrial Information Hub (IIH), it is required to integrate the Data Service Application. 
+Be aware that all data that was previously stored will be lost.
+
+1. Go to the "Store Data" tab
+
+2. Click on "Integrate"
    
-3. Add one adapter for Energy1 and one adapter for Energy2
-   
-4. Add the data as shown in the picture
-  
-  URL for Energy1 `ie/m/j/simatic/v1/energy1line1:s7c1/dp`
+  ![IIH_IntegrateDataService](graphics/IIH_IntegrateDataService.png)
 
-  URL for Energy2 `ie/m/j/simatic/v1/energy2line2:s7c1/dp`
+3. Confirm the integration in the popup window
 
-5. Save the configuration
-   
-6. Open the configuration again and set the status on "Active"
-  
-    
-  ![IE_Dataservice2](graphics/IE_Dataservice2.png)
-  
-After the adapters are connected you can find the data in the Dataservice.
+  ![IIH_IntegrateDataServiceConfirmation](graphics/IIH_IntegrateDataServiceConfirmation.png)
 
-7. Click on the first button on the left side
-  
-    
-  ![IE_Dataservice3](graphics/IE_Dataservice3.png)
+### Configure Connections
 
-8. With a click on the three points you can edit the asset.
-  
-    
-  ![IE_Dataservice4](graphics/IE_Dataservice4.png)
+The IIH needs a connection to the IE Databus and to Mindsphere. You need to have a Mindsphere account and create
+certificates to allow a connection from the IIH.
 
-9. To add the variables to the Data Service click "Add multiple variables"
-    
-10. Select the adapter "energy1" mark all four variables and click "save"
-    
-11. Do the same for the adapter "energy2"
-  
-    
-  ![IE_Dataservice5](graphics/IE_Dataservice5.png)
+1. Configure the IE Databus credentials under "Settings > Databus credentials"
 
+  ![IIH_DatabusCredentials](graphics/IIH_DatabusCredentials.png)
 
-To sort the data add aspects in the Data Service.
+2. Save the configuration
 
-12. Click in the Data Service on the right side on the "Add aspect"
-  
+3. Check if the device has a online connection in the "Home" tab. If the status is offline, please check your
+   network settings and make sure that everything is configured correctly.
 
-  ![IE_Dataservice6](graphics/IE_Dataservice6.png)
+  ![IIH_OnlineStatus](graphics/IIH_OnlineStatus.png)
 
-13. Choose the data for Line1 and add them to the aspect. Do the same for Line2
-  
+4. Click on "Add parent IED / Connect to Mindsphere"
 
-  ![IE_Dataservice7](graphics/IE_Dataservice7.png)
-  
+  ![IIH_MindsphereConfig1](graphics/IIH_MindsphereConfig1.png)
 
-## Option 1: MindConnect MQTT
+5. Select the device type "Mindsphere Device"
 
-### Create an agent private key
+6. Enter credentials for the application. Those are required, to allow the IIH to interact with Mindspheres REST-API.
+   The Mindsphere Tenant Administrator has to create them and assign the role "mdsp:core:Admin3rdPartyTechUser", to
+   allow the IIH to update the asset model in Mindsphere. More information can be found [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html)
 
-On how to create the agent key, please refer to the [How To](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html) on https://mindsphere.io
+  ![IIH_MindsphereConfig2](graphics/IIH_MindsphereConfig2.png)
 
-```
-set TENANT=<yourtenant>
-set DEVICE_NAME=<yourdevicename>
-set COUNTRY_CODE=<COUNTRY_CODE>
-set CITY=<CITY>
-set ORGANIZATION=<ORGANIZATION>
-set CLIENT_ID="%TENANT%"_"%DEVICE_NAME%"
-```
+7. Enter the certificate details and upload the certificate and key. Information on how to create connector certificates
+   can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html)
 
-1. ```openssl genrsa -out %DEVICE_NAME%.key 2048```
-2. ```openssl req -new -key %DEVICE_NAME%.key -out %DEVICE_NAME%.csr -subj "/C=%COUNTRY_CODE%/ST=%CITY%/O=%ORGANIZATION%/OU=IT/CN=%DEVICE_NAME%"```
-3. ```openssl x509 -req -in %DEVICE_NAME%.csr -CA "%TENANT%.pem" -CAkey "%TENANT%.key" -CAcreateserial -out %DEVICE_NAME%.pem -days 365 -sha256```
-4. ```type %DEVICE_NAME%.pem "%TENANT%.pem" > "%DEVICE_NAME%"_chain.pem```
+8. Select your region and save the configuration.
 
-You now have a private key for your agent: ```%DEVICE_NAME%".pem```
+  ![IIH_ConnectionSuccessfull](graphics/IIH_ConnectionSuccessfull.png)
 
-### Configure IE MindSphere Connector
-In your Industrial Edge Management, go to Data Connections -> IE MindSphere Connector -> Choose your device -> Launch.
+9. The connection will be established and you should see a green status in the IIH "Home" window
 
-1. Set up the Databus adapter for IE MindSphere Connector -> Click Add Topic, fill in the required info and select the correct topic.
-   
-  - Username: `edge`
+### Create the Asset Model
 
-  - Password: `edge`
+1. Go to "Define Data > Organize" to create a Asset Model and connect the variables
 
-  - Metadata for Subscription: `ie/m/j/simatic/v1/iefc/dp/energy1line1`
+2. Add a Asset Model and name it by double clicking on it
 
-  Then select List Data Topics and choose `ie/d/j/simatic/v1/iefc/dp/r/energy1line1/default` from "Select Data Topics".
-  Repeat these steps for `ie/m/j/simatic/v1/iefc/dp/energy2line2`
+3. Add two Aspects to structure the data according two our two machines
 
-   ![IEMindSphereConnector_Adapter](graphics/IEMindSphereConnector_Adapter.png)
+  ![IIH_CreateAssetModel1](graphics/IIH_CreateAssetModel1.png)
 
-2. Create the MindSphere client by selecting "Add Client". 
-   
-  Choose a name and the type (Depending on your MindSphere tenant).
-  Upload the previously created client certificate and key.
+4. Now add 4 variables for each Aspect and give them names
 
-   ![IEMindSphereConnector_CloudClient1](graphics/IEMindSphereConnector_CloudClient1.png)
+5. On the left side below "Data Sources" you should see the two Databus topics with the variables from each machine
 
-3. Edit your Cloud Client and select the Tenant & Client ID.
-  > **_NOTE:_**  The Client ID must be in the format `tenant_yourClientName`.
+6. Assign those tags two the variables in your Asset model per drag & drop
 
-  ![IEMindSphereConnector_CloudClient2](graphics/IEMindSphereConnector_CloudClient2.png) 
+  ![IIH_CreateAssetModel2](graphics/IIH_CreateAssetModel2.png)
 
+7. Check the "Storage" and "Cloud Sync" checkbox for each variable
 
-5. Prepare the Model by selecting the data model on Edge which should be transferred to MindSphere.
-   
-  ![IEMindSphereConnector_CloudClient3](graphics/IEMindSphereConnector_CloudClient3.png) 
+8. Deploy the configuration
 
-6. Create a Route by clicking "Add Route", select a name, connect the topics and the client and click "Save Route".
-  
-  ![IEMindSphereConnector_route](graphics/IEMindSphereConnector_route.png)  
+The incoming data will now be stored in the integrated Data Service. Under "Store Data" you can see the created 
+Asset model and the datapoints.
 
-6. Deploy the configuration.
- 
- ![IEMindSphereConnector](graphics/IEMindSphereConnector.png)  
+  ![IIH_StoreData](graphics/IIH_StoreData.png)
 
-In MindSphere Energy Manager, you should now see your data structure from Data Service.
+In MindSphere Energy Manager, you should now also see your data structure from the IIH.
 
   ![MindSphere_Datamodel](graphics/MindSphere_Datamodel.png)
 
