@@ -1,0 +1,68 @@
+{
+  "user-config": [
+    {
+      "password": "PBKDF2$sha512$100000$SJXAth7qjtPLuUov4yZDfA==$zWTP5i0aq+WHej4uC6O7jR92UF59MJRLGvcof1Bvi9iC8YBEsGgu18XrBs5HECtrHVYwWUi0agl+ResHtfhgyg==",
+      "username": "edge",
+      "created-at": "2022-03-18T11:58:52.838Z",
+      "last-modified-at": 1647604732896,
+      "id": "36135df5-b927-4b7f-98aa-7525f7bf9165",
+      "topics": [
+        {
+          "topic-name": "ie/#",
+          "access-rights": "both",
+          "id": "36135df5-b927-4b7f-98aa-7525f7bf9165_6972fde0-ef0b-46c0-8c1c-92d61bfd1475",
+          "created-at": "2022-03-18T11:58:52.896Z",
+          "last-modified-at": 1647604732896
+        }
+      ]
+    }
+  ],
+  "advanced-config": {
+    "general": {
+      "hostname": "ie-databus",
+      "plugin-type": "go-auth",
+      "allowed-access-rights": [
+        "none",
+        "subscribe",
+        "both"
+      ]
+    },
+    "server-settings": {
+      "protocol": "mqtt",
+      "port": "1883",
+      "allow-anonymous": false,
+      "max-keepalive": "",
+      "max-connections": "1000",
+      "max-qos": "2",
+      "message-size-limit": "",
+      "max-client-connections": "-1",
+      "auto-gen-client-id": true,
+      "auto-id-prefix": "",
+      "persistent-client-expiration": "",
+      "persistence": {
+        "is-enabled": true,
+        "autosave-interval": "300",
+        "autosave-on-changes": false,
+        "filename": "mosquitto.db",
+        "path": "/home/mosquitto/persistence/"
+      },
+      "logging": {
+        "is-enabled": true,
+        "log-facility": "",
+        "log-type": [
+          "all"
+        ],
+        "log-destination": [
+          "topic"
+        ],
+        "connection-messages": true,
+        "log-timestamp": {
+          "is-enabled": true,
+          "format": "%Y-%m-%dT%H:%M:%S"
+        }
+      }
+    }
+  },
+  "config-version": "1.4.1",
+  "integrity": "849195820cf72411c0046b5da42328cc7524f920ca2f81da9bb98b9353af9a78ce0459397929a3a82e40142b52a419cc82dbb5d04f8a638d4cec5966e0a92542"
+}
