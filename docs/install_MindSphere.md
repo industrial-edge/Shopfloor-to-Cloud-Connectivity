@@ -33,7 +33,7 @@ In order to display the data of the lines in MindSphere, it´s necessary to crea
 
 4. Add the variables
 
-   ![Mindsphere_Asset_Manager3](graphics/Mindsphere_AssetManager3.png)
+  ![Mindsphere_Asset_Manager3](graphics/Mindsphere_AssetManager3.png)
 
 5. Go to "Asset Types"
 
