@@ -59,9 +59,9 @@ and forwarding them to MindSphere.
 - Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed System App Configurators on IEM (OPC UA Connector Configurator, IE Databus Configurator, Cloud Connector Configurator) 
-- Installed apps on Southbound-Devices (OPC UA Connector, IE Cloud Connector, IE Databus, IE Flow Creator)
-- Installed apps on Northbound-Device (Data Service, IE Databus, IE Flow Creator, Energy Manager, IE MQTT Connector, IE Cloud Connector, IIH Core, IIH Configurator, IIH registry Service, IIH Databus Gateway)
+- Installed System App Configurators on IEM (Common Connector Configurator, IE Databus Configurator, IE Cloud Connector Configurator) 
+- Installed apps on Southbound-Devices (OPC UA Connector, IE Cloud Connector, Databus, IE Flow Creator)
+- Installed apps on Northbound-Device (Data Service, Databus, IE Flow Creator, Energy Manager, External Databus, IE Cloud Connector, IIH Core, IIH Configurator)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to MindSphere 
 - MindConnect IoT Extension (Optional)
@@ -77,16 +77,14 @@ Industrial Edge:
 - Industrial Edge Management V1.7.4
 - Industrial Edge Device V1.5.0-21-amd64
 - OPC UA Connector V1.7.0-15
-- IE Databus V1.7.0
-- IE MQTT Connector V1.6.2
+- Databus V2.0.0
+- External Databus V2.0.0
 - Data Service V1.6.0
 - IE Flow Creator V1.3.9
 - Energy Manager V1.2.0
 - IE Cloud Connector V1.6.2
 - IIH Core V1.6.0
 - IIH Configurator V1.6.0
-- IIH Registry Service V1.5.0
-- IIH Databus Gateway V1.5.0
 - Web browser (Mozilla or Chrome)
 
 MindSphere:
@@ -101,7 +99,7 @@ You can find the further information about the following steps in the [docs](doc
 - Configure PLC project in TIA-Portal
 - Configure PLC connections in Industrial Edge
   - OPC UA Connector
-  - IE Databus 
+  - Databus 
 - Configure Data preprocessing 
   - IE Flow Creator 
 - Configure Connection to Northbound
@@ -113,11 +111,11 @@ You can find the further information about the following steps in the [docs](doc
 You can find the further information about the following steps in the [docs](docs/install_Device_Northbound.md)
 
 - Configure Connection to Southbound
-  - IE Databus 
-  - IE MQTT Connector
+  - Databus 
+  - External Databus
   - Data Service
   - **Option 1**: Configure Connection to MindSphere - IIH Mindsphere Sync
-    - IIH Configurator
+    - Industrial Information Hub
   - **Option 2**: Configure Connection to MindSphere - MindConnect IoT Extension
     - IE Flow Creator
     - IE Cloud Connector

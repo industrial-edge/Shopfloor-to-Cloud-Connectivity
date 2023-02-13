@@ -27,12 +27,12 @@ The Southbound consist of two devices. In the following they are called "Energy1
 Installed Apps on the Device Energy1 and Energy2: 
   - OPC UA Connector
   - IE Cloud Connector
-  - IE Databus
+  - Databus
   - IE Flow Creator
 
 ## IE Databus
 
-Add a user in the IE Databus Configurator with username and password and provide necessary access right to the required topics so the OPC UA Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
+Add a user in the Databus Configurator with username and password and provide necessary access right to the required topics so the OPC UA Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
 
 Instead of manually configuring you can also import the configuration files:
 
@@ -56,7 +56,7 @@ Instead of manually configuring you can also import the configuration files:
 
 ## OPC UA Connector
 
-To provide data from the PLC on the IE Databus connect the OPC UA Connector to the PLC and add the required PLC variables
+To provide data from the PLC on the Databus connect the OPC UA Connector to the PLC and add the required PLC variables
 
 1. Launch the OPC UA Connector Configurator in the Industrial Edge Management under 'Data Connections' and configure the PLC connection 
 2. Import the JSON file [energy1_OPCUA_Connector](../src/Device_Energy1/energy1_OPCUA_Connector.json) for Energy1 and [energy2_OPCUA_Connector](../src/Device_Energy2/energy2_OPCUA_Connector.json) for Energy2 
@@ -155,7 +155,7 @@ Note: Create one topic for the data and one topic for the metadata.
     
   ![Cloud_Connector3](graphics/Cloud_Connector_Route.png)
 
-"Local Lake" allows you to connect a local MQTT-Broker like the IE MQTT Connector 
+"Local Lake" allows you to connect a local MQTT-Broker like the External Databus 
 
 5. Add Cloud Connector Clients
   - Type: `LOCAL_LAKE`
