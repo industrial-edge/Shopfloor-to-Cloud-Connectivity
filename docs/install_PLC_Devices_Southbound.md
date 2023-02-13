@@ -2,7 +2,7 @@
 - [Configuration Steps](#configuration-steps)
 - [Configure PLC-Project in TIA-Portal](#configure-plc-project-in-tia-portal)
 - [Configuration Southbound for Industrial Edge](#configuration-southbound-for-industrial-edge)
-  - [IE Databus](#ie-databus)
+  - [Databus](#databus)
   - [OPC UA Connector](#opc-ua-connector)
   - [IE Flow Creator](#ie-flow-creator)
   - [IE Cloud Connector](#ie-cloud-connector)
@@ -30,7 +30,7 @@ Installed Apps on the Device Energy1 and Energy2:
   - Databus
   - IE Flow Creator
 
-## IE Databus
+## Databus
 
 Add a user in the Databus Configurator with username and password and provide necessary access right to the required topics so the OPC UA Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
 

@@ -96,7 +96,6 @@ All the following steps for this option will be performed in the "IIH Configurat
 ### Integrate Data Service
 
 To store data in the Industrial Information Hub (IIH), it is required to integrate the Data Service Application. 
-Be aware that all data that was previously stored will be lost.
 
 1. Go to the "Store Data" tab
 
