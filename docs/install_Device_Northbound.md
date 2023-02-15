@@ -36,7 +36,7 @@ Configure the User and Topic in the Databus Configurator as described [here](ins
 
 Instead of manually configuring you can also import the configuration files:
 
-[IE_Databus_Central](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
+[Databus_Central](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
 
 1. Launch the Databus Configurator and add your related Credentials/Topics:
 
@@ -58,7 +58,7 @@ To receive the data from the IE Cloud Connector from Energy1 and Energy2 the Ext
 
 Instead of manually configuring you can also import the configuration files:
 
-[IE_MQTT_Connector_Central](../src/CentralDevice/IE_MQTT_Connctor_Central.json) (Password = Edge1234!)
+[External_Databus_Central](../src/CentralDevice/IE_MQTT_Connctor_Central.json) (Password = Edge1234!)
 
 1. Launch the External Databus Configurator and add your related Credentials/Topics:
 
@@ -118,7 +118,7 @@ certificates to allow a connection from the IIH.
 
 2. Save the configuration
 
-3. Check if the device has a online connection in the "Home" tab, to proceed with configuring the Mindsphere connection.
+3. Check if the device has an online connection in the "Home" tab, to proceed with configuring the Mindsphere connection.
 
   ![IIH_OnlineStatus](graphics/IIH_OnlineStatus.png)
 
