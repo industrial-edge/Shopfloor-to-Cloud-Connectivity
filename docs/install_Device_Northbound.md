@@ -4,14 +4,10 @@
 - [Configure Northbound](#configure-northbound)
   - [Databus](#databus)
   - [External Databus](#external-databus)
-  - [Option 1: IIH Mindsphere Sync](#option-1-iih-mindsphere-sync)
+  - [IIH Mindsphere Sync](#iih-mindsphere-sync)
     - [Integrate Data Service](#integrate-data-service)
     - [Configure Connections](#configure-connections)
     - [Create the Asset Model](#create-the-asset-model)
-  - [Option 2: MindConnect IoT Extension](#option-2-mindconnect-iot-extension)
-    - [Data Service](#data-service)
-    - [IE Flow Creator](#ie-flow-creator)
-    - [IE Cloud Connector - MindConnect IoT Extension](#ie-cloud-connector---mindconnect-iot-extension)
   - [Northbound Device - Energy Manager](#northbound-device---energy-manager)
 - [Navigation](#navigation)
   
@@ -23,12 +19,8 @@ Installed Apps on Central Device:
   - Databus
   - Energy Manager
   - External Databus  
-  - Option 1: IIH Mindsphere Sync
-    - IIH Core
-    - IIH Configurator
-  - Option 2: MindConnect IoT Extension
-    - IE Flow Creator
-    - IE Cloud Connector
+  - IIH Core
+  - IIH Configurator
 
 ## Databus
 
@@ -89,7 +81,7 @@ Instead of manually configuring you can also import the configuration files:
 
 ![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Bridge.png)
 
-##  Option 1: IIH Mindsphere Sync
+##  IIH Mindsphere Sync
 
 All the following steps for this option will be performed in the "IIH Configurator" app on the Central Device.
 
@@ -173,127 +165,6 @@ Asset model and the datapoints.
 In MindSphere Energy Manager, you should now also see your data structure from the IIH.
 
   ![MindSphere_Datamodel](graphics/MindSphere_Datamodel.png)
-
-## Option 2: MindConnect IoT Extension
-
-###  Data Service
-
-In order to store the data send by the Cloud Connector of the Energy 1 and Energy 2 device, configure two adapters with the metadata topic from the Cloud Connector in Energy1 and Energy2.  
-
-1. Go to the Data Service and select "Adapters"
-     
-  ![IE_Dataservice1](graphics/IE_Dataservice1_Central.png)
-
-2. Click "+" to add a new adapter 
-   
-3. Add one adapter for Energy1 and one adapter for Energy2
-   
-4. Add the data as shown in the picture
-  
-  URL for Energy1 `ie/m/j/simatic/v1/energy1line1:s7c1/dp`
-
-  URL for Energy2 `ie/m/j/simatic/v1/energy2line2:s7c1/dp`
-
-5. Save the configuration
-   
-6. Open the configuration again and set the status on "Active"
-  
-    
-  ![IE_Dataservice2](graphics/IE_Dataservice2.png)
-  
-After the adapters are connected you can find the data in the Dataservice.
-
-7. Click on the first button on the left side
-  
-    
-  ![IE_Dataservice3](graphics/IE_Dataservice3.png)
-
-8. With a click on the three points you can edit the asset.
-  
-    
-  ![IE_Dataservice4](graphics/IE_Dataservice4.png)
-
-9. To add the variables to the Data Service click "Add multiple variables"
-    
-10. Select the adapter "energy1" mark all four variables and click "save"
-    
-11. Do the same for the adapter "energy2"
-  
-    
-  ![IE_Dataservice5](graphics/IE_Dataservice5.png)
-
-
-To sort the data add aspects in the Data Service.
-
-12. Click in the Data Service on the right side on the "Add aspect"
-  
-
-  ![IE_Dataservice6](graphics/IE_Dataservice6.png)
-
-13. Choose the data for Line1 and add them to the aspect. Do the same for Line2
-  
-
-  ![IE_Dataservice7](graphics/IE_Dataservice7.png)
-
-### IE Flow Creator 
-
-> **_NOTE:_** Only required when connecting to MindConnect IoT Extension. Otherwise you can skip to [Northbound Device - Energy Manager](#northbound-device---energy-manager)
-
-The IE Flow Creator will extract the packaged data from IE Cloud Connector
-and also converts the data to MindSphere IOT Extension data format
-
-1. Import the Flows from the JSON-File [FlowCreator_Central](../src/CentralDevice/FlowCreator_Central.json) as described [here](install_PLC_Devices_Southbound.md)
-   
-2. Enter Databus credentials
-
-### IE Cloud Connector - MindConnect IoT Extension
-
-Requirements:
-
-- You must have a MindSphere account
-- You must have the MindConnect IoT Extension Upgrade. This allows to use the MindConnect IoT Extension. To get the upgrade, your tenant admin needs to contact their assigned Account Executive or Customer Success Manager.
-- For MindConnect IoT Extension user: [Managing Users Documentation](https://documentation.mindsphere.io/MindSphere/apps/mindconnect-IoT-extension/account-managing-users.html)
-  - **Devicemanagement User**, assigned in MindConnect IoT Extension 
-
-For the communication with MindSphere configure IE Cloud Connector accordingly.
-The steps are similar to the description for Energy1 and Energy2. 
-Instead of manually configuring you can also import the configuration files:
-
-[CloudConnector_Central](../src/CentralDevice/CloudConnector_Central.json) (Password = Edge1234!)
-
-1. Click "Edit Configuration" and login to the Databus.
-
-  ![Cloud_Connector](graphics/Cloud_Connector_Login.png)
-  
-2. Add the topics: `ie/cloudconnector/energy1` and `ie/cloudconnector/energy2` 
-  
-    
-  ![Cloud_Connector_Central](graphics/Cloud_Connector_Topic_Cantral.png)
-
-3. Add Route
-  
-    
-  ![Cloud_Connector_Route_Central](graphics/Cloud_Connector_Route_Cantral.png)
-  
-4. Add Cloud Connector Clients
-  
-   
-  ![Cloud_Connector_Central_Clients1](graphics/Cloud_Connector_Clients_Central1.png)
-
-  ![Cloud_Connector_Central_Clients2](graphics/Cloud_Connector_Clients_Central2.png)
-
-Example:  
-- Hostname: mciotextension.eu1.mindsphere.io
-- Tenant Name: demo
-- Username: TenantName/username
-  
-1. Mark the Topics, Route and Client and save the Route
-   
-  
-  ![Cloud_Connector_Central_Route](graphics/Cloud_Connector_Central_Rout1.png)
-  
-6. Deploy the configuration
-
 
 ## Northbound Device - Energy Manager
 

@@ -5,8 +5,7 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 - [Shopfloor to Cloud Connectivity - Integrate machine \& production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
   - [Overview](#overview)
     - [Reference Architecture](#reference-architecture)
-      - [Option 1: IIH Mindsphere Sync](#option-1-iih-mindsphere-sync)
-      - [Option 2: IE Cloud Connector - MindConnect IoT Extension](#option-2-ie-cloud-connector---mindconnect-iot-extension)
+      - [IIH Mindsphere Sync](#iih-mindsphere-sync)
     - [Network Architecture](#network-architecture)
   - [General task](#general-task)
   - [Requirements](#requirements)
@@ -25,13 +24,9 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 ### Reference Architecture 
 
-#### Option 1: IIH Mindsphere Sync
+#### IIH Mindsphere Sync
 
 ![overview3](docs/graphics/overview4.png)
-
-#### Option 2: IE Cloud Connector - MindConnect IoT Extension
-
-![overview3](docs/graphics/overview3.png)
 
 ### Network Architecture
 
@@ -61,7 +56,7 @@ and forwarding them to MindSphere.
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
 - Installed System App Configurators on IEM (Common Connector Configurator, IE Databus Configurator, IE Cloud Connector Configurator) 
 - Installed apps on Southbound-Devices (OPC UA Connector, IE Cloud Connector, Databus, IE Flow Creator)
-- Installed apps on Northbound-Device (Data Service, Databus, IE Flow Creator, Energy Manager, External Databus, IE Cloud Connector, IIH Core, IIH Configurator)
+- Installed apps on Northbound-Device (Data Service, Databus, Energy Manager, External Databus, IIH Core, IIH Configurator)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to MindSphere 
 - MindConnect IoT Extension (Optional)
@@ -89,7 +84,6 @@ Industrial Edge:
 
 MindSphere:
 - Asset Manager 
-- MindConnect IoT Extension (Optional)
 - Energy Manager
 
 ## Configuration Southbound Devices
@@ -113,12 +107,9 @@ You can find the further information about the following steps in the [docs](doc
 - Configure Connection to Southbound
   - Databus 
   - External Databus
-  - Data Service
-  - **Option 1**: Configure Connection to MindSphere - IIH Mindsphere Sync
-    - Industrial Information Hub
-  - **Option 2**: Configure Connection to MindSphere - MindConnect IoT Extension
-    - IE Flow Creator
-    - IE Cloud Connector
+  - Industrial Information Hub 
+    - Data Service
+    - Mindsphere Sync
 
 - Configure visualization
   - Energy Manager
@@ -127,9 +118,6 @@ You can find the further information about the following steps in the [docs](doc
 ## Configuration MindSphere
 You can find the further information about the following steps in the [docs](docs/install_MindSphere.md)
 
-- Configure Connection to Northbound (Only for option 2 - IE Cloud Connector with MindConnect IoT Extensions)
-  - Asset Manager
-  - MindConnect IoT Extension
 - Configure visualization
   - Energy Manager 
 
