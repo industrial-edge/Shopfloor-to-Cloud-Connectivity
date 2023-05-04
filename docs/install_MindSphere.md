@@ -2,92 +2,15 @@
 
 
 - [Configuration Steps](#configuration-steps)
-- [Option 1 MindSphere MindConnect MQTT](#option-1-mindsphere-mindconnect-mqtt)
-- [Option 2: MindConnect IoT Extension](#option-2-mindconnect-iot-extension)
-  - [Asset Manager](#asset-manager)
-  - [MindConnect IoT Extension](#mindconnect-iot-extension)
+- [IIH Insights Hub Sync](#iih-insights-hub-sync)
 - [Configure Energy Manager](#configure-energy-manager)
 - [Navigation](#navigation)
   
-# Option 1 MindSphere MindConnect MQTT
+# IIH Insights Hub Sync
 
-No further steps have to be done to connect the data to MindSphere. Data in MindSphere should already be available from [previous steps](install_Device_Northbound.md)
+No further steps have to be done to connect the data to Insights Hub. Data in Insights Hub should already be available from [previous steps](install_Device_Northbound.md)
 
-> **_NOTE:_** Continue with [configuration of Energy Manager on MindSphere](#configure-energy-manager)
-
-# Option 2: MindConnect IoT Extension 
-
-## Asset Manager
-
-In order to display the data of the lines in MindSphere, it´s necessary to create the corresponding assets and aspects
-
-1. Go to "library" and select "Aspect Types"
-  
-  ![Mindsphere_Asset_Manager1](graphics/Mindsphere_AssetManager1.png)
-
-2. Add a new Aspect "Media_Consumption_Line"
-   
-3. Fill in the name and select "Dynamic"
-
-  ![Mindsphere_Asset_Manager2](graphics/Mindsphere_AssetManager2.png)
-
-4. Add the variables
-
-   ![Mindsphere_Asset_Manager3](graphics/Mindsphere_AssetManager3.png)
-
-5. Go to "Asset Types"
-
-  ![Mindsphere_Asset_Manager4](graphics/Mindsphere_AssetManager4.png)
-
-6. Create new type
-  
-  ![Mindsphere_Asset_Manager5](graphics/Mindsphere_AssetManager5.png)
-
-7. Add name and aspects
-  
-  ![Mindsphere_Asset_Manager6](graphics/Mindsphere_AssetManager6.png)
-
-  ![Mindsphere_Asset_Manager7](graphics/Mindsphere_AssetManager7.png)
-
-8. Create the aspects "Line1" and "Line2" 
-
-  ![Mindsphere_Asset_Manager8](graphics/Mindsphere_AssetManager8.png)
-
-9. Go to "Assets"
-
-  ![Mindsphere_Asset_Manager9](graphics/Mindsphere_AssetManager9.png)
-
-10. Create asset
-    
-11. Select type "Media Consumption"
-
-  ![Mindsphere_Asset_Manager10](graphics/Mindsphere_AssetManager10.png)
-
-12. Name the Asset "Media Consumption Factory1" and safe your configuration
-
-
-## MindConnect IoT Extension
-
-The MindConnect connects the data from the Central Edge Device with the assets. 
-The Central Device is named "Media Consumption Factory1" this name was defined in CloudConnector as ClientID. 
-1. Go to "Device mapping" -> "Device mapping"
-  
-  ![Mindsphere_MindConnect1](graphics/Mindsphere_MindConnect1.png)
-
-2. Select the asset "Media Consumption Factory1"
-
-  ![Mindsphere_MindConnect2](graphics/Mindsphere_MindConnect2.png)
-
-3. Click "Add mapping"
-   
-4. Map the Source to the created Target
-  
-  ![Mindsphere_MindConnect3](graphics/Mindsphere_MindConnect3.png)
-
-  ![Mindsphere_MindConnect4](graphics/Mindsphere_MindConnect4.png)
-
-5. Commit changes
-
+> **_NOTE:_** Continue with [configuration of Energy Manager on Insights Hub](#configure-energy-manager)
 
 # Configure Energy Manager
 
@@ -97,7 +20,7 @@ The Energy Manager shows the data from the whole Factory1
   
   ![Mindsphere_EnergyManager2](graphics/Mindspehre_EnergyManager2.png)
 
-1. The handling is the same as described under [Central Device Energy Manager ](install_Device_Northbound.md)
+1. The handling is the same as described under [Central Device Energy Manager ](install_Device_Northbound.md#northbound-device---energy-manager)
   
 - CostsPerBottle: `((EnergyLine1 + EnergyLine2) / 1000 * cost_kWh + (PressuredAirLine1 + PressuredAirLine2)`
                      `* cost_Liter_Air + (WaterLine1 + WaterLine2) * cost_Liter_Water) / Bottles` Unit: €
