@@ -4,7 +4,7 @@
 - [Configure Northbound](#configure-northbound)
   - [Databus](#databus)
   - [External Databus](#external-databus)
-  - [IIH Mindsphere Sync](#iih-mindsphere-sync)
+  - [IIH Insights Hub Sync](#iih-insights-hub-sync)
     - [Integrate Data Service](#integrate-data-service)
     - [Configure Connections](#configure-connections)
     - [Create the Asset Model](#create-the-asset-model)
@@ -81,7 +81,7 @@ Instead of manually configuring you can also import the configuration files:
 
 ![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Bridge.png)
 
-##  IIH Mindsphere Sync
+##  IIH Insights Hub Sync
 
 All the following steps for this option will be performed in the "IIH Configurator" app on the Central Device.
 
@@ -101,7 +101,7 @@ To store data in the Industrial Information Hub (IIH), it is required to integra
 
 ### Configure Connections
 
-The IIH needs a connection to the Databus and to Mindsphere. You need to have a Mindsphere account and create
+The IIH needs a connection to the Databus and to Insights Hub. You need to have a Insights Hub account and create
 certificates to allow a connection from the IIH.
 
 1. Configure the Databus credentials under "Settings > Databus credentials"
@@ -110,19 +110,19 @@ certificates to allow a connection from the IIH.
 
 2. Save the configuration
 
-3. Check if the device has an online connection in the "Home" tab, to proceed with configuring the Mindsphere connection.
+3. Check if the device has an online connection in the "Home" tab, to proceed with configuring the Insights Hub connection.
 
   ![IIH_OnlineStatus](graphics/IIH_OnlineStatus.png)
 
-4. Click on "Add parent IED / Connect to Mindsphere"
+4. Click on "Add parent IED / Connect to MindSphere"
 
   ![IIH_MindsphereConfig1](graphics/IIH_MindsphereConfig1.png)
 
-5. Select the device type "Mindsphere Device"
+5. Select the device type "MindSphere Device"
 
-6. Enter credentials for the application. Those are required, to allow the IIH to interact with Mindspheres REST-API.
-   The Mindsphere Tenant Administrator has to create them and assign the role "mdsp:core:Admin3rdPartyTechUser", to
-   allow the IIH to update the asset model in Mindsphere. More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html) 
+6. Enter credentials for the application. Those are required, to allow the IIH to interact with Insights Hubs REST-API.
+   The Insights Hub Tenant Administrator has to create them and assign the role "mdsp:core:Admin3rdPartyTechUser", to
+   allow the IIH to update the asset model in Insights Hub. More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html) 
 
   ![IIH_MindsphereConfig2](graphics/IIH_MindsphereConfig2.png)
 
@@ -137,9 +137,9 @@ certificates to allow a connection from the IIH.
 
 ### Create the Asset Model
 
-1. Go to "Define Data > Organize" to create a Asset Model and connect the variables
+1. Go to "Define Data > Organize" to create an Asset Model and connect the variables
 
-2. Add a Asset Model and name it by double clicking on it
+2. Add an Asset and name it by double clicking on it
 
 3. Add two Aspects to structure the data according two our two machines
 
@@ -162,7 +162,7 @@ Asset model and the datapoints.
 
   ![IIH_StoreData](graphics/IIH_StoreData.png)
 
-In MindSphere Energy Manager, you should now also see your data structure from the IIH.
+In Insights Hub Energy Manager, you should now also see your data structure from the IIH.
 
   ![MindSphere_Datamodel](graphics/MindSphere_Datamodel.png)
 
@@ -309,4 +309,4 @@ Used KPI types:
 
 [Configuration Southbound Device](install_PLC_Devices_Southbound.md)
 
-[Configuration MindSphere](install_MindSphere.md)
+[Configuration Insights Hub](install_MindSphere.md)

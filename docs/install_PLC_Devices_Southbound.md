@@ -199,4 +199,4 @@ Note: Create one topic for the data and one topic for the metadata.
 
 [Configuration Northbound Device](install_Device_Northbound.md)
 
-[Configuration MindSphere](install_MindSphere.md)
+[Configuration Insights Hub](install_MindSphere.md)

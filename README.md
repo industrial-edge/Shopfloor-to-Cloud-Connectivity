@@ -1,11 +1,11 @@
 # Shopfloor to Cloud Connectivity - Integrate machine & production data securely into the company cloud
 
-Use case for communication from Edge Device to Edge Device and company Cloud (e.g. MindSphere) via MQTT 
+Use case for communication from Edge Device to Edge Device and company Cloud (e.g. Insights Hub, formerly known as MindSphere) via MQTT 
 
 - [Shopfloor to Cloud Connectivity - Integrate machine \& production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
   - [Overview](#overview)
     - [Reference Architecture](#reference-architecture)
-      - [IIH Mindsphere Sync](#iih-mindsphere-sync)
+      - [IIH Insights Hub Sync](#iih-insights-hub-sync)
     - [Network Architecture](#network-architecture)
   - [General task](#general-task)
   - [Requirements](#requirements)
@@ -13,7 +13,7 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
     - [Used components](#used-components)
   - [Configuration Southbound Devices](#configuration-southbound-devices)
   - [Configuration Northbound Device](#configuration-northbound-device)
-  - [Configuration MindSphere](#configuration-mindsphere)
+  - [Configuration Insights Hub](#configuration-insights-hub)
   - [Documentation](#documentation)
   - [Contribution](#contribution)
   - [Licence and Legal Information](#licence-and-legal-information)
@@ -24,7 +24,7 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 ### Reference Architecture 
 
-#### IIH Mindsphere Sync
+#### IIH Insights Hub Sync
 
 ![overview3](docs/graphics/overview4.png)
 
@@ -34,15 +34,14 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 ## General task
 
-Gathering of energy data from various controllers and converting it to a standardized 
-form in a southbound Edge Device with no internet access. 
+Gathering of energy data from various controllers and converting it to a standardized form in a southbound Edge Device with no internet access. 
 
-Central monitoring of energy data from multiple locations in dashboards, with a strict separation between Automation Cell Network (Southbound) and Datacenter (Northbound). Because there is no direct connection between Southbound and the connected PLCs with the Internet, this guideline minimize the security risk.
+Central monitoring of energy data from multiple locations in dashboards, with a strict separation between Automation Cell Network (Southbound) and Datacenter (Northbound). Because there is no direct connection between Southbound and the connected PLCs with the Internet, this guideline minimizes security risks.
 
 Sharing the standardized data with a northbound Edge Device, with internet connectivity, via MQTT.
 
-Structuring the energy data in asset models according to the asset design in MindSphere in the northbound Edge Device
-and forwarding them to MindSphere.
+Structuring the energy data in asset models according to the asset design in Insights Hub in the northbound Edge Device
+and forwarding them to Insights Hub.
 
 
 
@@ -58,7 +57,7 @@ and forwarding them to MindSphere.
 - Installed apps on Southbound-Devices (OPC UA Connector, IE Cloud Connector, Databus, IE Flow Creator)
 - Installed apps on Northbound-Device (Data Service, Databus, Energy Manager, External Databus, IIH Core, IIH Configurator)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
-- Access to MindSphere 
+- Access to Insights Hub
 - MindConnect IoT Extension (Optional)
 - Energy Manager
   
@@ -82,7 +81,7 @@ Industrial Edge:
 - IIH Configurator V1.6.0
 - Web browser (Mozilla or Chrome)
 
-MindSphere:
+Insights Hub:
 - Asset Manager 
 - Energy Manager
 
@@ -109,13 +108,13 @@ You can find the further information about the following steps in the [docs](doc
   - External Databus
   - Industrial Information Hub 
     - Data Service
-    - Mindsphere Sync
+    - Insights Hub Sync
 
 - Configure visualization
   - Energy Manager
 
 
-## Configuration MindSphere
+## Configuration Insights Hub
 You can find the further information about the following steps in the [docs](docs/install_MindSphere.md)
 
 - Configure visualization
@@ -129,7 +128,7 @@ You can find further documentation and help in the following links
   - [Industrial Edge Forum](https://www.siemens.com/industrial-edge-forum)
   - [Industrial Edge landing page](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge/simatic-edge.html)
   - [Industrial Edge Learning Path](https://siemens-learning-simaticedge.sabacloud.com/)
-  - [Energy Manager on MindSphere application manual](https://documentation.mindsphere.io/resources/html/energy-manager/en-US/index.html)
+  - [Energy Manager on Insights Hub application manual](https://documentation.mindsphere.io/resources/html/energy-manager/en-US/index.html)
 ## Contribution
 
 Thanks for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section or, even better, is free to propose any changes to this repository using Merge Requests.

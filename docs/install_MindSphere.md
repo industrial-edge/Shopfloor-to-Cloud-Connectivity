@@ -2,15 +2,15 @@
 
 
 - [Configuration Steps](#configuration-steps)
-- [IIH Mindsphere Sync](#iih-mindsphere-sync)
+- [IIH Insights Hub Sync](#iih-insights-hub-sync)
 - [Configure Energy Manager](#configure-energy-manager)
 - [Navigation](#navigation)
   
-# IIH Mindsphere Sync
+# IIH Insights Hub Sync
 
-No further steps have to be done to connect the data to MindSphere. Data in MindSphere should already be available from [previous steps](install_Device_Northbound.md)
+No further steps have to be done to connect the data to Insights Hub. Data in Insights Hub should already be available from [previous steps](install_Device_Northbound.md)
 
-> **_NOTE:_** Continue with [configuration of Energy Manager on MindSphere](#configure-energy-manager)
+> **_NOTE:_** Continue with [configuration of Energy Manager on Insights Hub](#configure-energy-manager)
 
 # Configure Energy Manager
 
