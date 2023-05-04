@@ -58,7 +58,6 @@ and forwarding them to Insights Hub.
 - Installed apps on Northbound-Device (Data Service, Databus, Energy Manager, External Databus, IIH Core, IIH Configurator)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to Insights Hub
-- MindConnect IoT Extension (Optional)
 - Energy Manager
   
 ### Used components
