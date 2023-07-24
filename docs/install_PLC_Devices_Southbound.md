@@ -5,7 +5,7 @@
   - [Databus](#databus)
   - [OPC UA Connector](#opc-ua-connector)
   - [IE Flow Creator](#ie-flow-creator)
-  - [IE Cloud Connector](#ie-cloud-connector)
+  - [DataXess](#dataxess)
 - [Navigation](#navigation)
   
 
@@ -73,7 +73,7 @@ Aggregate the raw data from the PLC to:
 - Pressured Air
 - Produced Bottles 
 
-After aggregation the data and metadata are published to IE Databus. IE Cloud Connector subscribes to these topics and sends them to the central device 
+After aggregation the data and metadata are published to IE Databus. With DataXess the data will be send to the central device.
 
 The aggregated values are published on newly defined topics to prevent collision with OPC UA Connector related topic names
 
@@ -96,101 +96,10 @@ The aggregated values are published on newly defined topics to prevent collision
 
 4. Deploy the Flows
 
-## IE Cloud Connector
-
-For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector. 
-
-Instead of manually configuring you can also import the configuration files:
-
-[CloudConnector_Energy1](../src/Device_Energy1/CloudConnector_Energy1.json) (Password = Edge1234!)
-
-[CloudConnector_Energy2](../src/Device_Energy2/CloudConnector_Energy2.json) (Password = Edge1234!)
-
-1. Click "Edit Configuration" and login to the Databus.
-
-  ![Cloud_Connector](graphics/Cloud_Connector_Login.png)
-
-Configure starting from the left side "Bus Adaptor" to the right the "Cloud Connector Clients" Adapt the IP addresses to your system.
-
-![Cloud_Connector](graphics/Cloud_Connector_Cloud_Client.png)
-
-To save the configuration, initially click on your route and connect your topics from the bus adaptor with your cloud topics 
-
-Then click on deploy.
-
-Note: Create one topic for the data and one topic for the metadata. 
+## DataXess
 
 
-2. Add the Metadata-topic in the Bus Adaptor Field
-
-    Energy1: `ie/m/j/simatic/v1/iefc/dp`
-
-    Energy2: `ie/m/j/simatic/v1/iefc/dp` 
-  
-      
-  ![Cloud_Connector1](graphics/Cloud_Connector_Topic2.png)
-  
-3. Add the Data-topic
-   
-   Energy1:
-   `ie/d/j/simatic/v1/iefc/dp/r/line1/default`
-  
-   Energy2:
-   `ie/d/j/simatic/v1/iefc/dp/r/line2/default`
-    
-  ![Cloud_Connector2](graphics/Cloud_Connector_Topic1.png)
-
-"Connecting Routes" allows you to forward the data from Databus-Topics to the "Cloud Connector Clients"
-
-4. Add Connecting Routes
-  
-   Energy1:
-   - `central-data` 
-   - `central-metadata`
-  
-   Energy2:
-   - `central-data2`
-   - `central-metadata2`
-  
-    
-  ![Cloud_Connector3](graphics/Cloud_Connector_Route.png)
-
-"Local Lake" allows you to connect a local MQTT-Broker like the External Databus 
-
-5. Add Cloud Connector Clients
-  - Type: `LOCAL_LAKE`
-  
-  - Publish Topic & enter the Databus credentials of the northbound device:
-  
-    Energy1:
-    - Metadata: `ie/m/j/simatic/v1/energy1line1:iefc/dp`
-    - Data: `ie/d/j/simatic/v1/energy1line1:iefc/dp/r/line1/default`
-    
-    Energy2:
-    - Metadata: `ie/m/j/simatic/v1/energy2line2:iefc/dp`
-    - Data: `ie/d/j/simatic/v1/energy2line2:iefc/dp/r/line2/default`
-  
-    
-  ![Cloud_Connector4](graphics/Cloud_Connector_ClientStandard.png)
-  
-
-  ![Cloud_Connector5](graphics/Cloud_Connector_Client1.png)
-    
-      
-  ![Cloud_Connector6](graphics/Cloud_Connector_Client2.png)
-
-6. Mark the data and metadata routes an click "Save Route" 
-      
-        
-  ![Cloud_Connector7](graphics/Cloud_Connector_Route1.png)
-    
-      
-  ![Cloud_Connector8](graphics/Cloud_Connector_Route2.png)
-
-7. Deploy your configuration
-
-
-
+Explain DataXess config
 
 
 # Navigation

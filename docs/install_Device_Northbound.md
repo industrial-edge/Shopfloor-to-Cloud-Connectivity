@@ -3,7 +3,7 @@
 - [Configuration Steps](#configuration-steps)
 - [Configure Northbound](#configure-northbound)
   - [Databus](#databus)
-  - [External Databus](#external-databus)
+  - [DataXess](#dataxess)
   - [IIH Insights Hub Sync](#iih-insights-hub-sync)
     - [Integrate Data Service](#integrate-data-service)
     - [Configure Connections](#configure-connections)
@@ -44,42 +44,9 @@ Instead of manually configuring you can also import the configuration files:
 
   ![ie_databus](graphics/IE_Databus.png)
 
-## External Databus
+## DataXess
 
-To receive the data from the IE Cloud Connector from Energy1 and Energy2 the External Databus has to be configured
-
-Instead of manually configuring you can also import the configuration files:
-
-[External_Databus_Central](../src/CentralDevice/IE_MQTT_Connctor_Central.json) (Password = Edge1234!)
-
-1. Launch the External Databus Configurator and add your related Credentials/Topics:
-
-   - Username: `edge`
-   - Password: `edge`
-
-![ie_mqtt_Connector](graphics/IE_MQTT_Connector_User.png)
-
-2. Add Topic and Permission
-
-- Topic: `ie/#`
-- Permission: `Publish and Subscribe`
-
-![ie_mqtt_Connector](graphics/IE_MQTT_Connector_Topic.png)
-    
-![ie_mqtt_Connector](graphics/MQTT_Connector.png)
-
-3. Set "Unsecure" in the "Certificate" settings
-
-![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Certificate.png)
-
-4. Bridge Configure
-
-   - Insert User: `edge`
-   - Insert password: `edge`
-   - Select Topic:  `ie/#`
-   - Direction: `IE MQTT Connector` :arrow_right: `IE Databus`
-
-![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Bridge.png)
+describe DataXess aggregator config here
 
 ##  IIH Insights Hub Sync
 

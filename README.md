@@ -38,7 +38,7 @@ Gathering of energy data from various controllers and converting it to a standar
 
 Central monitoring of energy data from multiple locations in dashboards, with a strict separation between Automation Cell Network (Southbound) and Datacenter (Northbound). Because there is no direct connection between Southbound and the connected PLCs with the Internet, this guideline minimizes security risks.
 
-Sharing the standardized data with a northbound Edge Device, with internet connectivity, via MQTT.
+Sharing the standardized data with a northbound Edge Device, with internet connectivity.
 
 Structuring the energy data in asset models according to the asset design in Insights Hub in the northbound Edge Device
 and forwarding them to Insights Hub.
@@ -53,9 +53,9 @@ and forwarding them to Insights Hub.
 - Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed System App Configurators on IEM (Common Connector Configurator, IE Databus Configurator, IE Cloud Connector Configurator) 
-- Installed apps on Southbound-Devices (OPC UA Connector, IE Cloud Connector, Databus, IE Flow Creator)
-- Installed apps on Northbound-Device (Data Service, Databus, Energy Manager, External Databus, IIH Core, IIH Configurator)
+- Installed System App Configurators on IEM (Common Connector Configurator, IE Databus Configurator, DataXess Configurator) 
+- Installed apps on Southbound-Devices (OPC UA Connector, DataXess, Databus, IE Flow Creator)
+- Installed apps on Northbound-Device (Data Service, Databus, Energy Manager, DataXess, IIH Core, IIH Configurator)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to Insights Hub
 - Energy Manager
@@ -71,11 +71,10 @@ Industrial Edge:
 - Industrial Edge Device V1.5.0-21-amd64
 - OPC UA Connector V1.7.0-15
 - Databus V2.0.0
-- External Databus V2.0.0
 - Data Service V1.6.0
 - IE Flow Creator V1.3.9
 - Energy Manager V1.2.0
-- IE Cloud Connector V1.6.2
+- DataXess V1.1.1
 - IIH Core V1.6.0
 - IIH Configurator V1.6.0
 - Web browser (Mozilla or Chrome)
@@ -95,7 +94,7 @@ You can find the further information about the following steps in the [docs](doc
 - Configure Data preprocessing 
   - IE Flow Creator 
 - Configure Connection to Northbound
-  - IE Cloud Connector 
+  - DataXess
 
 
 ## Configuration Northbound Device
@@ -104,7 +103,7 @@ You can find the further information about the following steps in the [docs](doc
 
 - Configure Connection to Southbound
   - Databus 
-  - External Databus
+  - DataXess
   - Industrial Information Hub 
     - Data Service
     - Insights Hub Sync
