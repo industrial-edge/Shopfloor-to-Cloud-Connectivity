@@ -36,22 +36,22 @@ Add a user in the Databus Configurator with username and password and provide ne
 
 Instead of manually configuring you can also import the configuration files:
 
-[Databus_Energy1](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
+[Databus_Energy1](../src/Device_Energy1/Databus_Energy1_config.json) (Password = Edge1234!)
 
-[Databus_Energy2](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
+[Databus_Energy2](../src/Device_Energy1/Databus_Energy1_config.json) (Password = Edge1234!)
 
 1. Open the Industrial Edge Management App and launch the Databus configurator, add your related credentials/topics:
 
    - Username: `edge`
    - Password: `edge`
-   - Topic: `ie/#`
+   - Topics: `ie/#` & `ie/d/j/simatic/v1/iefc/dp/r/#`
    - Permission: `Publish and Subscribe`
 
   ![ie_databus_user](graphics/IE_Databus_User.png)
 
 2. Deploy configuration to device
 
-  ![ie_databus](graphics/IE_Databus.png)
+  ![ie_databus](graphics/IE_Databus2.png)
 
 
 ## OPC UA Connector
@@ -98,8 +98,7 @@ The aggregated values are published on newly defined topics to prevent collision
 
 ## DataXess
 
-
-Explain DataXess config
+The DataXess application will send the preprocessed data to the central device. The configuration is done centrally in the IEM and will be explained in the [configuration of the Northbound Device](install_Device_Northbound.md)
 
 
 # Navigation

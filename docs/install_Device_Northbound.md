@@ -46,7 +46,32 @@ Instead of manually configuring you can also import the configuration files:
 
 ## DataXess
 
-describe DataXess aggregator config here
+To aggregate the data to the central device you have to configure the DataXess application.
+
+1. Start the DataXess Configurator in the "Data Connections" tab of your IEM
+   
+2. It doesn't matter which device you select to launch the app. The configuration will be done centrally for all devices at once.
+   ![DataXess1](graphics/DataXess1.png)
+
+3. Start the configuration by creating a new group
+   ![DataXess2](graphics/DataXess2.png)
+
+4. Add a group name and description and add all 3 devices to it. Make sure to select the central device as the "Aggregator Device"
+   ![DataXess3](graphics/DataXess3.png)
+
+5. Click on one of the setting symbols of your new created group to configure the data that get's exchanged. Select the `ie/d/j/simatic/v1/iefc/dp/r/#` topic for both acquistion devices.
+   ![DataXess4](graphics/DataXess4.png)
+
+6. DataXess will automatically create two new topics on the aggregator device were the data will be published.
+   ![DataXess5](graphics/DataXess5.png)
+
+7. Configure a new user that will be used to subscribe and publish to the configured topics
+   ![DataXess6](graphics/DataXess6.png)
+   
+8. Deploy your configuration to the devices
+   ![DataXess7](graphics/DataXess7.png)
+
+You succesfully configured the data exchange from your southbound devices to the central device!
 
 ##  IIH Insights Hub Sync
 
