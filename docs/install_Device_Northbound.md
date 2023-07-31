@@ -18,7 +18,7 @@ Installed Apps on Central Device:
   - Data Service
   - Databus
   - Energy Manager
-  - External Databus  
+  - DataXess 
   - IIH Core
   - IIH Configurator
 

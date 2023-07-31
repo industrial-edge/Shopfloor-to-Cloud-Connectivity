@@ -26,7 +26,7 @@ The Southbound consist of two devices. In the following they are called "Energy1
 
 Installed Apps on the Device Energy1 and Energy2: 
   - OPC UA Connector
-  - IE Cloud Connector
+  - DataXess
   - Databus
   - IE Flow Creator
 
@@ -59,8 +59,8 @@ Instead of manually configuring you can also import the configuration files:
 To provide data from the PLC on the Databus connect the OPC UA Connector to the PLC and add the required PLC variables
 
 1. Launch the OPC UA Connector Configurator in the Industrial Edge Management under 'Data Connections' and configure the PLC connection 
-2. Import the JSON file [energy1_OPCUA_Connector](../src/Device_Energy1/energy1_OPCUA_Connector.json) for Energy1 and [energy2_OPCUA_Connector](../src/Device_Energy2/energy2_OPCUA_Connector.json) for Energy2 
-3. Adjust IP adress of the imported PLC connection
+2. Import the JSON file [Energy1_OPCUA_Connector](../src/Device_Energy1/Energy1_OPCUA_Connector.json) for Energy1 and [Energy2_OPCUA_Connector](../src/Device_Energy2/Energy2_OPCUA_Connector.json) for Energy2 
+3. Adjust IP address of the imported PLC connection
 4. Deploy and start your OPC UA Connector configuration
 
   ![OPCUA_connector](graphics/OPCUA_Connector.png)
@@ -81,7 +81,7 @@ The aggregated values are published on newly defined topics to prevent collision
   
     Energy1: [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
 
-    Energy2:[FlowCreator_Energy2](../src/Device_Energy2/FlowCreator_Energy2.json)
+    Energy2: [FlowCreator_Energy2](../src/Device_Energy2/FlowCreator_Energy2.json)
   
     
   ![FlowCreator1](graphics/Flow_Creator1.png)
@@ -98,7 +98,7 @@ The aggregated values are published on newly defined topics to prevent collision
 
 ## DataXess
 
-The DataXess application will send the preprocessed data to the central device. The configuration is done centrally in the IEM and will be explained in the [configuration of the Northbound Device](install_Device_Northbound.md)
+The DataXess application will send the preprocessed data to the central device. The configuration is done centrally in the IEM and is explained in [configuration of the Northbound Device](install_Device_Northbound.md).
 
 
 # Navigation
