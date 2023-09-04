@@ -3,7 +3,7 @@
 - [Configuration Steps](#configuration-steps)
 - [Configure Northbound](#configure-northbound)
   - [Databus](#databus)
-  - [External Databus](#external-databus)
+  - [DataXess](#dataxess)
   - [IIH Insights Hub Sync](#iih-insights-hub-sync)
     - [Integrate Data Service](#integrate-data-service)
     - [Configure Connections](#configure-connections)
@@ -18,7 +18,7 @@ Installed Apps on Central Device:
   - Data Service
   - Databus
   - Energy Manager
-  - External Databus  
+  - DataXess 
   - IIH Core
   - IIH Configurator
 
@@ -44,42 +44,34 @@ Instead of manually configuring you can also import the configuration files:
 
   ![ie_databus](graphics/IE_Databus.png)
 
-## External Databus
+## DataXess
 
-To receive the data from the IE Cloud Connector from Energy1 and Energy2 the External Databus has to be configured
+To aggregate the data to the central device you have to configure the DataXess application.
 
-Instead of manually configuring you can also import the configuration files:
+1. Start the DataXess Configurator in the "Data Connections" tab of your IEM
+   
+2. It doesn't matter which device you select to launch the app. The configuration will be done centrally for all devices at once.
+   ![DataXess1](graphics/DataXess1.png)
 
-[External_Databus_Central](../src/CentralDevice/IE_MQTT_Connctor_Central.json) (Password = Edge1234!)
+3. Start the configuration by creating a new group
+   ![DataXess2](graphics/DataXess2.png)
 
-1. Launch the External Databus Configurator and add your related Credentials/Topics:
+4. Add a group name and description and add all 3 devices to it. Make sure to select the central device as the "Aggregator Device"
+   ![DataXess3](graphics/DataXess3.png)
 
-   - Username: `edge`
-   - Password: `edge`
+5. Click on one of the setting symbols of your new created group to configure the data that get's exchanged. Select the `ie/d/j/simatic/v1/iefc/dp/r/#` topic for both acquistion devices.
+   ![DataXess4](graphics/DataXess4.png)
 
-![ie_mqtt_Connector](graphics/IE_MQTT_Connector_User.png)
+6. DataXess will automatically create two new topics on the aggregator device were the data will be published.
+   ![DataXess5](graphics/DataXess5.png)
 
-2. Add Topic and Permission
+7. Configure a new user that will be used to subscribe and publish to the configured topics
+   ![DataXess6](graphics/DataXess6.png)
+   
+8. Deploy your configuration to the devices
+   ![DataXess7](graphics/DataXess7.png)
 
-- Topic: `ie/#`
-- Permission: `Publish and Subscribe`
-
-![ie_mqtt_Connector](graphics/IE_MQTT_Connector_Topic.png)
-    
-![ie_mqtt_Connector](graphics/MQTT_Connector.png)
-
-3. Set "Unsecure" in the "Certificate" settings
-
-![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Certificate.png)
-
-4. Bridge Configure
-
-   - Insert User: `edge`
-   - Insert password: `edge`
-   - Select Topic:  `ie/#`
-   - Direction: `IE MQTT Connector` :arrow_right: `IE Databus`
-
-![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Bridge.png)
+You succesfully configured the data exchange from your southbound devices to the central device!
 
 ##  IIH Insights Hub Sync
 
