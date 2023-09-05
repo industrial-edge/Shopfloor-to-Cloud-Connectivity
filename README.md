@@ -53,7 +53,7 @@ and forwarding them to Insights Hub.
 - Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed System App Configurators on IEM (Common Connector Configurator, IE Databus Configurator, DataXess Configurator) 
+- Installed System App Configurators on IEM (Common Connector Configurator, Databus Configurator, DataXess Configurator) 
 - Installed apps on Southbound-Devices (OPC UA Connector, DataXess, Databus, IE Flow Creator)
 - Installed apps on Northbound-Device (Data Service, Databus, Energy Manager, DataXess, IIH Core, IIH Configurator)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
