@@ -69,8 +69,10 @@ TIA & PLCs:
 Industrial Edge:
 - Industrial Edge Management V1.7.4
 - Industrial Edge Device V1.5.0-21-amd64
-- OPC UA Connector V1.7.0-15
-- Databus V2.0.0
+- OPC UA Connector V2.0.0
+- Registry Service V1.8.0
+- Common Import Converter V2.0.0
+- Databus V2.2.0
 - Data Service V1.6.0
 - IE Flow Creator V1.3.9
 - Energy Manager V1.2.0
@@ -90,6 +92,8 @@ You can find the further information about the following steps in the [docs](doc
 - Configure PLC project in TIA-Portal
 - Configure PLC connections in Industrial Edge
   - OPC UA Connector
+  - Common Import Converter
+  - Registry Service
   - Databus 
 - Configure Data preprocessing 
   - IE Flow Creator 
