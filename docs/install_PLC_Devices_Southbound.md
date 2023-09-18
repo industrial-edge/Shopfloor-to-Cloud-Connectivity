@@ -26,6 +26,8 @@ The Southbound consist of two devices. In the following they are called "Energy1
 
 Installed Apps on the Device Energy1 and Energy2: 
   - OPC UA Connector
+  - Common Import Converter
+  - Registry Service
   - IE Cloud Connector
   - Databus
   - IE Flow Creator
@@ -49,20 +51,20 @@ Instead of manually configuring you can also import the configuration files:
 
   ![ie_databus_user](graphics/IE_Databus_User.png)
 
-2. Deploy configuration to device
+1. Deploy configuration to device
 
   ![ie_databus](graphics/IE_Databus.png)
 
 
 ## OPC UA Connector
 
-To provide data from the PLC on the Databus connect the OPC UA Connector to the PLC and add the required PLC variables
+To provide data from the PLC on the Databus connect the OPC UA Connector to the PLC and add the required PLC variables. We will use the central configuration in the IEM.
 
 1. Launch the OPC UA Connector Configurator in the Industrial Edge Management under 'Data Connections' and configure the PLC connection 
-2. Import the JSON file [energy1_OPCUA_Connector](../src/Device_Energy1/energy1_OPCUA_Connector.json) for Energy1 and [energy2_OPCUA_Connector](../src/Device_Energy2/energy2_OPCUA_Connector.json) for Energy2 
-3. Adjust IP adress of the imported PLC connection
-4. Deploy and start your OPC UA Connector configuration
-
+2. Import the JSON file [Energy1_OPCUA_Connector](../src/Device_Energy1/Energy1_OPCUA_Connector.json) for Energy1 and [Energy2_OPCUA_Connector](../src/Device_Energy2/Energy2_OPCUA_Connector.json) for Energy2 
+3. Adjust IP address of the imported PLC connection
+4. Select the PLC and deploy the configuration
+   
   ![OPCUA_connector](graphics/OPCUA_Connector.png)
 
 ## IE Flow Creator

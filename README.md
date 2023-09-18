@@ -53,7 +53,7 @@ and forwarding them to Insights Hub.
 - Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed System App Configurators on IEM (Common Connector Configurator, IE Databus Configurator, IE Cloud Connector Configurator) 
+- Installed System App Configurators on IEM (Common Connector Configurator, Databus Configurator, IE Cloud Connector Configurator) 
 - Installed apps on Southbound-Devices (OPC UA Connector, IE Cloud Connector, Databus, IE Flow Creator)
 - Installed apps on Northbound-Device (Data Service, Databus, Energy Manager, External Databus, IIH Core, IIH Configurator)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
@@ -69,9 +69,10 @@ TIA & PLCs:
 Industrial Edge:
 - Industrial Edge Management V1.7.4
 - Industrial Edge Device V1.5.0-21-amd64
-- OPC UA Connector V1.7.0-15
-- Databus V2.0.0
-- External Databus V2.0.0
+- OPC UA Connector V2.0.0
+- Registry Service V1.8.0
+- Common Import Converter V2.0.0
+- Databus V2.2.0
 - Data Service V1.6.0
 - IE Flow Creator V1.3.9
 - Energy Manager V1.2.0
@@ -91,6 +92,8 @@ You can find the further information about the following steps in the [docs](doc
 - Configure PLC project in TIA-Portal
 - Configure PLC connections in Industrial Edge
   - OPC UA Connector
+  - Common Import Converter
+  - Registry Service
   - Databus 
 - Configure Data preprocessing 
   - IE Flow Creator 
@@ -135,7 +138,7 @@ You can find further documentation and help in the following links
 Thank you for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section.
 Additionally everybody is free to propose any changes to this repository using Pull Requests.
 
-If you are interested in contributing via Pull Request, please check the [Contribution License Agreement](Siemens_CLA_1.1.pdf) and forward a signed copy to [industrialedge.industry@siemens.com](mailto:industrialedge.industry@siemens.com?subject=CLA%20Agreement%20Industrial-Edge).
+If you haven't previously signed the [Siemens Contributor License Agreement](https://cla-assistant.io/industrial-edge/) (CLA), the system will automatically prompt you to do so when you submit your Pull Request. This can be conveniently done through the CLA Assistant's online platform. Once the CLA is signed, your Pull Request will automatically be cleared and made ready for merging if all other test stages succeed.
 
 ## Licence and Legal Information
 
