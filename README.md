@@ -67,19 +67,21 @@ TIA & PLCs:
 - PLC 1512SP-1 PN FW V2.1
 
 Industrial Edge:
-- Industrial Edge Management V1.7.4
-- Industrial Edge Device V1.5.0-21-amd64
-- OPC UA Connector V2.0.0
-- Registry Service V1.8.0
-- Common Import Converter V2.0.0
-- Databus V2.2.0
-- Data Service V1.6.0
-- IE Flow Creator V1.3.9
-- Energy Manager V1.2.0
-- DataXess V1.1.1
-- IIH Core V1.6.0
-- IIH Configurator V1.6.0
+- Industrial Edge Management Virtual V2.0.1-1
+- Industrial Edge Virtual Device V1.16.1-1-a
+- OPC UA Connector V2.0.1-0
+- Registry Service V1.9.0-0
+- Common Import Converter V2.1.0-2
+- Databus V2.3.2-5
+- IIH Essentials V1.10.0
+- IE Flow Creator V1.17.0-2
+- Energy Manager V1.16.1
+- DataXess V1.4.1-3
+- IIH Semantics V1.9.0-0
+- Common Configurator V1.9.0-4
 - Web browser (Mozilla or Chrome)
+
+- FALTA COLOCAR LOS CONFIGURATORS QUE SE TIENEN QUE INSTALAR EN EL APPLICATION MANAGER DEL IEM.
 
 Insights Hub:
 - Asset Manager 
