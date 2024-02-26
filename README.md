@@ -74,14 +74,16 @@ Industrial Edge:
 - Common Import Converter V2.1.0-2
 - Databus V2.3.2-5
 - IIH Essentials V1.10.0
-- IE Flow Creator V1.17.0-2
+- Flow Creator V1.17.0-2
 - Energy Manager V1.16.1
 - DataXess V1.4.1-3
 - IIH Semantics V1.9.0-0
 - Common Configurator V1.9.0-4
 - Web browser (Mozilla or Chrome)
 
-- FALTA COLOCAR LOS CONFIGURATORS QUE SE TIENEN QUE INSTALAR EN EL APPLICATION MANAGER DEL IEM.
+- Common Connector Configurator V1.9.1-1
+- DataXess Configurator V1.4.2-4
+- Databus Configurator V2.3.2-2
 
 Insights Hub:
 - Asset Manager 
