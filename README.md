@@ -54,8 +54,8 @@ and forwarding them to Insights Hub.
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
 - Installed System App Configurators on IEM (Common Connector Configurator, Databus Configurator, DataXess Configurator) 
-- Installed apps on Southbound-Devices (OPC UA Connector, DataXess, Databus, IE Flow Creator)
-- Installed apps on Northbound-Device (Data Service, Databus, Energy Manager, DataXess, IIH Core, IIH Configurator)
+- Installed apps on Southbound-Devices (OPC UA Connector, DataXess, Databus, Flow Creator)
+- Installed apps on Northbound-Device (IIH Essentials, Databus, Energy Manager, DataXess, IIH Semantics, Common Configurator)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to Insights Hub
 - Energy Manager
