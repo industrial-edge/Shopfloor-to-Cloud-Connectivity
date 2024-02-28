@@ -20,7 +20,7 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 ## Overview
 
-![architecture](docs/graphics/architecture.png)
+<img id="architecture" src="docs/graphics/architecture.png" alt="Data Flow Diagram for Performance Insights" width="600"/>
 
 ### Reference Architecture 
 
