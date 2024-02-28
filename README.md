@@ -20,7 +20,7 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 ## Overview
 
-![overview](docs/graphics/overview.png)
+![architecture](docs/graphics/architecture.png)
 
 ### Reference Architecture 
 
