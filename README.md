@@ -20,13 +20,13 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 ## Overview
 
-The following image illustrates the flow of data from a machine in full production to its storage and processing in the cloud:
+The figure below provides an overall visual representation of the data flow process from an operational machine in full production to its subsequent storage and processing in the cloud:
 
 <img id="architecture1" src="docs/graphics/architecture1.png" alt="Data Flow Diagram for Performance Insights" width="600"/>
 
 ### Reference Architecture 
 
-#### IIH Insights Hub Sync
+#### Data Flow through Edge Applications
 
 <img id="architecture2" src="docs/graphics/architecture2.png" alt="Data Through Edge Apps" width="600"/>
 
@@ -97,7 +97,8 @@ You can find the further information about the following steps in the [docs](doc
 
 - Configure PLC project in TIA-Portal
 - Configure PLC connections in Industrial Edge
-  - OPC UA Connector
+  - Enter Databus Credentials in 
+  - OPC UA Connector in Common Configurator
   - Common Import Converter
   - Registry Service
   - Databus 
