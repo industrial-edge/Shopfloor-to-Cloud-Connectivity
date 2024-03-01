@@ -20,7 +20,7 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 ## Overview
 
-The figure below provides an overall visual representation of the data flow process from an operational machine in full production to its subsequent storage and processing in the cloud:
+The following image represents the data flow that will be achieved in this example, which covers everything from the acquisition of data from a machine in full production to its storage and processing in the cloud in general:
 
 <img id="architecture1" src="docs/graphics/architecture1.png" alt="Data Flow Diagram for Performance Insights" width="600"/>
 
