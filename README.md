@@ -22,7 +22,7 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 The following image illustrates the flow of data from a machine in full production to its storage and processing in the cloud:
 
-<img id="architecture" src="docs/graphics/architecture.png" alt="Data Flow Diagram for Performance Insights" width="600"/>
+<img id="architecture1" src="docs/graphics/architecture1.png" alt="Data Flow Diagram for Performance Insights" width="600"/>
 
 ### Reference Architecture 
 
