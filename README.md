@@ -28,7 +28,7 @@ The following image illustrates the flow of data from a machine in full producti
 
 #### IIH Insights Hub Sync
 
-![overview3](docs/graphics/overview4.png)
+<img id="architecture2" src="docs/graphics/architecture2.png" alt="Data Through Edge Apps" width="600"/>
 
 ### Network Architecture
 
