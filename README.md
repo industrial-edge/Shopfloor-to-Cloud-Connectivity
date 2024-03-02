@@ -32,7 +32,9 @@ This representation visualizes how data moves across edge applications within ed
 
 ### Network Architecture
 
-![overview2](docs/graphics/overview2.png)
+The following image illustrates the interaction and communication between all the devices used:
+
+<img id="architecture3" src="docs/graphics/architecture3.png" alt="Network architecture" width="700"/>
 
 ## General task
 
