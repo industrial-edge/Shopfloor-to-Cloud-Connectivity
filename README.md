@@ -28,7 +28,7 @@ The following image represents the data flow that will be achieved in this examp
 
 This representation visualizes how data moves across edge applications within edge devices. The specific configurations of these applications will be detailed in this repository:
 
-<img id="architecture2" src="docs/graphics/architecture2.png" alt="Data Through Edge Apps" width="600"/>
+<img id="architecture2" src="docs/graphics/architecture2.png" alt="Data Through Edge Apps" width="700"/>
 
 ### Network Architecture
 
