@@ -96,14 +96,17 @@ Insights Hub:
 You can find the further information about the following steps in the [docs](docs/install_PLC_Devices_Southbound.md)
 
 - Configure PLC project in TIA-Portal
+
 - Configure PLC connections in Industrial Edge
   - Create Databus Credentials and Topics
   - Configure OPC UA Connector in Common Configurator
     - Enter Databus Credentials
     - Add PLC
     - Add Tags
+  
 - Configure Data preprocessing 
-  - IE Flow Creator 
+  - IE Flow Creator
+  
 - Configure Connection to Northbound
   - DataXess
 
