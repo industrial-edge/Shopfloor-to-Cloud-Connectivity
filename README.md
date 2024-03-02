@@ -44,8 +44,7 @@ Central monitoring of energy data from multiple locations in dashboards, with a 
 
 Sharing the standardized data with a northbound Edge Device, with internet connectivity.
 
-Structuring the energy data in asset models according to the asset design in Insights Hub in the northbound Edge Device
-and forwarding them to Insights Hub.
+Structuring the energy data in asset models according to the asset design in Insights Hub in the northbound Edge Device and forwarding them to Insights Hub.
 
 
 
