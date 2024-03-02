@@ -5,7 +5,6 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 - [Shopfloor to Cloud Connectivity - Integrate machine \& production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
   - [Overview](#overview)
     - [Reference Architecture](#reference-architecture)
-      - [IIH Insights Hub Sync](#iih-insights-hub-sync)
     - [Network Architecture](#network-architecture)
   - [General task](#general-task)
   - [Requirements](#requirements)
