@@ -97,11 +97,11 @@ You can find the further information about the following steps in the [docs](doc
 
 - Configure PLC project in TIA-Portal
 - Configure PLC connections in Industrial Edge
-  - Enter Databus Credentials in 
-  - OPC UA Connector in Common Configurator
-  - Common Import Converter
-  - Registry Service
-  - Databus 
+  - Create Databus Credentials and Topics
+  - Configure OPC UA Connector in Common Configurator
+    - Enter Databus Credentials
+    - Add PLC
+    - Add Tags
 - Configure Data preprocessing 
   - IE Flow Creator 
 - Configure Connection to Northbound
@@ -113,11 +113,14 @@ You can find the further information about the following steps in the [docs](doc
 You can find the further information about the following steps in the [docs](docs/install_Device_Northbound.md)
 
 - Configure Connection to Southbound
-  - Databus 
-  - DataXess
-  - Industrial Information Hub 
-    - Data Service
-    - Insights Hub Sync
+  - Create Databus Credentials
+  - Configure communication with DataXess
+
+- Organize incoming data
+  - Integrate IIH Essentials in Common Configurator
+  - Create an Asset model
+
+- Connect to Insights Hub
 
 - Configure visualization
   - Energy Manager
