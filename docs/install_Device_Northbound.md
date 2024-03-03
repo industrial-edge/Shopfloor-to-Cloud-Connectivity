@@ -86,23 +86,25 @@ If everything was configured correctly, all devices should have a green status. 
 
   ![DataXess8](graphics/data8.png)
 
-##  IIH Insights Hub Sync
+##  Insights Hub Sync
 
-All the following steps for this option will be performed in the "IIH Configurator" app on the Central Device.
+In this section, the necessary configurations will be made to establish communication with the cloud (Insights Hub).
 
-### Integrate Data Service
+All the following steps for this option will be performed in the "Common Configurator" app on the Aggregation Device (Shopfloor-to-cloud).
+
+### Integrate IIH Essentials
 
 To store data in the Industrial Information Hub (IIH), it is required to integrate the Data Service Application. 
 
-1. Go to the "Store Data" tab
+1. Go to *Edge Device UI > Apps*, open *Common COnfigurator*. Then, go to *Store Data*.
 
 2. Click on "Integrate"
    
-  ![IIH_IntegrateDataService](graphics/IIH_IntegrateDataService.png)
+  ![IIH_Integrate](graphics/IIH1.png)
 
 3. Confirm the integration in the popup window
 
-  ![IIH_IntegrateDataServiceConfirmation](graphics/IIH_IntegrateDataServiceConfirmation.png)
+  ![IIH_IntegrateConfirmation](graphics/IIH2.png)
 
 ### Configure Connections
 
