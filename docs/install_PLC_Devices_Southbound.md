@@ -178,6 +178,7 @@ Before deploying the flows, the following topic has to be changed to `ie/d/j/sim
 
 4. Deploy the Flows
 
+## Configure Connection to the Nothbound
 ## DataXess
 
 The DataXess application will send the preprocessed data to the central device. The configuration is done centrally in the IEM and is explained in [configuration of the Northbound Device](install_Device_Northbound.md).
