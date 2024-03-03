@@ -123,7 +123,7 @@ In this case, you'll se something like this for Energy 1:
 
 ![Common Configurator 6](graphics/CommonConfigurator6.png)
 
-Just select all the tags, and select the acquision cycle and access mode. Last, click "Import".
+Select all the tags, enter the acquision cycle and access mode. Last, click "Import".
 
 Now, the tags for Energy 1 are imported in the data-source. Just click "Deploy" to apply changes:
 
