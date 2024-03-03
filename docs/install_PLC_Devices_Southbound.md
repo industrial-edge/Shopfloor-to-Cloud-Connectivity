@@ -4,9 +4,9 @@
 - [Configure PLC connections in Industrial Edge](#configure-plc-connections-in-industrial-edge)
   - [Create Databus Credentials and Topics](#create-databus-credentials-and-topics)
   - [Configure OPC UA Connector in Common Configurator](#configure-opc-ua-connector-in-common-configurator)
-      - Enter Databus credentials
-      - Add PLC
-      - Add tags
+      - [Enter Databus credentials](#enter-databus-credentials)
+      - [Add PLC](#add-plc)
+      - [Add tags](#add-tags)
 - [Configure Data Processing](#configure-data-processing)
   - [IE Flow Creator](#ie-flow-creator)
 - [Configure Connection to Northbound]
