@@ -126,8 +126,6 @@ Select all the tags, enter the acquision cycle and access mode. Last, click "Imp
 
 Now, the tags for Energy 1 are imported in the data-source. Just click "Deploy" to apply changes:
 
-![Common Configurator 7](graphics/CommonConfigurator7.png)
-
 After deployment, ensure that the connector status is displayed in "green" and that the data source also shows a green status, like so:
 
 ![Common Configurator 8](graphics/CommonConfigurator8.png)
