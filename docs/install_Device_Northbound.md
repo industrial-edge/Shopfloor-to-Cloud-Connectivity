@@ -159,7 +159,7 @@ The incoming data will now be stored in the integrated IIH Essentials. Under "St
 
   ![IIH_StoreData](graphics/IIH8.png)
 
-In Insights Hub Energy Manager, you should now also see your data structure from the IIH.
+In Insights Hub Energy Manager, you should now also see your data structure from Common Configurator.
 
   ![InsightsHub_Datamodel](graphics/IIH10.png)
 
