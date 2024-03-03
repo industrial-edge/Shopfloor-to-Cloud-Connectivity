@@ -78,7 +78,12 @@ Instead of manually configuring you can also import the configuration file to bo
 
 ## Configure OPC UA Connector in Common Configurator
 
-In this part, connection with the PLCs are established using the OPC UA Connector.
+In this section, the following steps will be addressed:
+
+- Connect the "Energy1_PLC" to the "Energy1" Edge device to retrieve tags via the OPC UA Connector.
+- Connect the "Energy2_PLC" to the "Energy2" Edge device to retrieve tags via the OPC UA Connector.
+  
+For this example, we will only walk through the steps for Energy 1. The same steps should be repeated for "Energy2".
 
 To provide data from the PLC to the Databus connect the OPC UA Connector to the PLC and add the required PLC variables. We will use Common Configurator to achieve this.
 
@@ -99,15 +104,40 @@ Go to *Get Data* and open the OPC UA Connector:
 
 ![Common Configurator 2](graphics/CommonConfigurator2.png)
 
-> [!WARNING]  
+> [!IMPORTANT]  
 > If the Databus was configured correctly, "Databus is installed" label should be checked in green.
 
-1. Launch the OPC UA Connector Configurator in the Industrial Edge Management under 'Data Connections' and configure the PLC connection 
-2. Import the JSON file [Energy1_OPCUA_Connector](../src/Device_Energy1/Energy1_OPCUA_Connector.json) for Energy1 and [Energy2_OPCUA_Connector](../src/Device_Energy2/Energy2_OPCUA_Connector.json) for Energy2 
-3. Adjust IP address of the imported PLC connection
-4. Select the PLC and deploy the configuration
-   
-  ![OPCUA_connector](graphics/OPCUA_Connector.png)
+Click on *Tags* tab and select *Add data source*:
+
+![Common Configurator 3](graphics/CommonConfigurator3.png)
+
+Type your PLC information (OPC UA server) and save:
+
+![Common Configurator 4](graphics/CommonConfigurator4.png)
+
+Then click "Import tags" on the just created data-source and import the JSON file [Energy1_OPCUA_Connector](../src/Device_Energy1/Energy1_OPCUA_Connector.json) for Energy1 and [Energy2_OPCUA_Connector](../src/Device_Energy2/Energy2_OPCUA_Connector.json) for Energy2.
+
+![Common Configurator 5](graphics/CommonConfigurator5.png)
+
+In this case, you'll se something like this for Energy 1:
+
+![Common Configurator 6](graphics/CommonConfigurator6.png)
+
+Just select all the tags, and select the acquision cycle and access mode. Last, click "Import".
+
+Now, the tags for Energy 1 are imported in the data-source. Just click "Deploy" to apply changes:
+
+![Common Configurator 7](graphics/CommonConfigurator7.png)
+
+After deployment, ensure that the connector status is displayed in "green" and that the data source also shows a green status, like so:
+
+![Common Configurator 8](graphics/CommonConfigurator8.png)
+
+To check if data is actually being extracted from the PLC, let's integrate IIH Essentials into Common Configurator. And after creating assets and adding the tags, data is shown:
+
+![Common Configurator 11](graphics/CommonConfigurator11.png)
+
+Now, repeat the same proccess for Energy 2.
 
 ## IE Flow Creator
 
