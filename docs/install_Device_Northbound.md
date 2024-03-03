@@ -2,8 +2,8 @@
 
 - [Configuration Steps](#configuration-steps)
 - [Configure Northbound](#configure-northbound)
-  - [Databus](#databus)
-  - [DataXess](#dataxess)
+  - [Create Databus Credentials and Topics](#create-databus-credentials-and-topics)
+  - [Configure Communication with DataXess](#configure-communication-with-dataxess)
   - [IIH Insights Hub Sync](#iih-insights-hub-sync)
     - [Integrate Data Service](#integrate-data-service)
     - [Configure Connections](#configure-connections)
@@ -13,16 +13,17 @@
   
 # Configure Northbound
 
-The Northbound consist of one device. In the following this is called "Central Device".
+The Northbound consist of one device. In the following this is called "Shopfloor-to-Cloud".
 Installed Apps on Central Device:
-  - Data Service
+  - IIH Essentials
   - Databus
   - Energy Manager
   - DataXess 
-  - IIH Core
-  - IIH Configurator
+  - IIH Semmantics
+  - Common Configurator
+  - Registry Service
 
-## Databus
+## Create Databus Credentials and Topics
 
 Configure the User and Topic in the Databus Configurator as described [here](install_PLC_Devices_Southbound.md).  
 
@@ -44,41 +45,46 @@ Instead of manually configuring you can also import the configuration files:
 
   ![ie_databus](graphics/IE_Databus.png)
 
-## DataXess
+## Configure Communication with DataXess
 
-To aggregate the data to the central device you have to configure the DataXess application.
+In this section, we will configure the communication between the two acquisition devices (Energy1 and Energy2) and the aggregation device (Shopfloor-to-Cloud).
 
-1. Start the DataXess Configurator in the "Data Connections" tab of your IEM
+To do this, follow these steps:
+
+1. Go to *Industrial Edge Management UI > Data Connections* and open DataXess.
    
 2. It doesn't matter which device you select to launch the app. The configuration will be done centrally for all devices at once.
 
- ![DataXess1](graphics/DataXess1.png)
+ ![DataXess1](graphics/data1.png)
 
 3. Start the configuration by creating a new group
    
-  ![DataXess2](graphics/DataXess2.png)
+  ![DataXess2](graphics/Data2.png)
 
-4. Add a group name and description and add all 3 devices to it. Make sure to select the central device as the "Aggregator Device"
+4. Add a group name and description and add all 3 devices to it. Make sure to select the central device as the "Aggregator Device" and click "Save".
    
-  ![DataXess3](graphics/DataXess3.png)
+  ![DataXess3](graphics/Data3.png)
 
 5. Click on one of the setting symbols of your new created group to configure the data that get's exchanged. Select the topics `ie/d/j/simatic/v1/iefc/dp/r/#` and `ie/m/j/simatic/v1/iefc/dp` for both acquistion devices.
    
-  ![DataXess4](graphics/DataXess4.png)
+  ![DataXess4](graphics/Data4.png)
+  ![DataXess5](graphics/Data5.png)
 
 6. DataXess will automatically create new topics on the aggregator device were the data will be published.
    
-  ![DataXess5](graphics/DataXess5.png)
+  ![DataXess6](graphics/Data9.png)
 
-7. Configure a new user that will be used to subscribe and publish to the configured topics
+7. Click "Deploy".
   
- ![DataXess6](graphics/DataXess6.png)
+ ![DataXess6](graphics/Data6.png)
    
-8. Deploy your configuration to the devices
+8. Configure a new user that will be used to subscribe and publish to the configured topics and click "Validate",
    
-  ![DataXess7](graphics/DataXess7.png)
+  ![DataXess7](graphics/Data7.png)
 
-You succesfully configured the data exchange from your southbound devices to the central device!
+If everything was configured correctly, all devices should have a green status. Also, the general connection status msut be in green as well, as shown:
+
+  ![DataXess8](graphics/Data8.png)
 
 ##  IIH Insights Hub Sync
 
