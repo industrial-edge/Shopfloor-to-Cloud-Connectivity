@@ -46,7 +46,7 @@ Go to the *Industrial Edge Management UI > Data Connections*, select "Databus" a
 
 When the configurator is open, click on the "plus" icon in the red square shown in the picture bellow to add an user: 
 
-[Databus IEM 1](graphics/databusIEM1.png)
+![Databus IEM 1](graphics/databusIEM1.png)
 
 Add your related credentials/topics:
 
@@ -56,17 +56,17 @@ Add your related credentials/topics:
      - `ie/#` 
    - Permission: `Publish and Subscribe`
 
-[Databus IEM 2](graphics/databusIEM2.png)
+![Databus IEM 2](graphics/databusIEM2.png)
 
 Click on the plus icon to add the rest of the topics:
 
-[Databus IEM 3](graphics/databusIEM3.png)
+![Databus IEM 3](graphics/databusIEM3.png)
 
 Add the following topics:
  - `ie/d/j/simatic/v1/iefc/dp/r/#`
  - `ie/m/j/simatic/v1/iefc/dp`
 
-[Databus IEM 4](graphics/databusIEM4.png)
+![Databus IEM 4](graphics/databusIEM4.png)
 
 Click deploy and repeat the same steps for the "Energy2" edge device.
 
