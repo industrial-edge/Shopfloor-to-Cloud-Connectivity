@@ -172,7 +172,7 @@ To do this, follow this steps:
     
   ![FlowCreator3](graphics/Flow_Creator3.png)
 
-Before deploying the flows, the following topic has to be changed to `ie/d/j/simatic/v1/opcuac1/dp/r/Energy1/default` for Energy 1 and to `ie/d/j/simatic/v1/opcuac1/dp/r/Energy2/default` for Energy 2.
+Before deploying the flows, the following topic has to be changed to `ie/d/j/simatic/v1/opcuac1/dp/r/Energy1/default` for Energy 1 and to `ie/d/j/simatic/v1/opcuac1/dp/r/Energy2/default` for Energy 2:
 
 ![FlowCreator1](graphics/topic.png)
 
