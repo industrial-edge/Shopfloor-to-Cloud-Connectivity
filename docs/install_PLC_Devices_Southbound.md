@@ -91,8 +91,8 @@ Go to *Settings > Databus Credentials* and enter the previously created Databus 
 
 ![Common Configurator 1](graphics/CommonConfigurator1.png)
 
-> :memo: **Note**
-If the credentials were typed correctly you should see the "Valid Credentials" pop-up label on the top right as shown in the picture.
+> [!IMPORTANT]  
+> If the credentials were typed correctly you should see the "Valid Credentials" pop-up label on the top right as shown in the picture.
 
 ### Add PLC
 
