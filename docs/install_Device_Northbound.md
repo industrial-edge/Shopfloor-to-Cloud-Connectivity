@@ -94,8 +94,6 @@ All the following steps for this option will be performed in the "Common Configu
 
 ### Integrate IIH Essentials
 
-To store data in the Industrial Information Hub (IIH), it is required to integrate the Data Service Application. 
-
 1. Go to *Edge Device UI > Apps*, open *Common COnfigurator*. Then, go to *Store Data*.
 
 2. Click on "Integrate"
