@@ -139,11 +139,13 @@ To check if data is actually being extracted from the PLC, let's integrate IIH E
 
 Now, repeat the same proccess for Energy 2.
 
-## IE Flow Creator
+## Configure Data Processing
 
 The data collected from the OPC UA Connector is published to the Databus, and using the Flow Creator, we retrieve this data from the Databus and send it to the central Device (Shopfloor-to-Cloud) through the DataXess application, which will be configured in the Northbound.
 
 Please note that for the Flow Creator to function properly, the Acquisition Devices must be strictly named "Energy1" and "Energy2".
+
+### Flow Creator
 
 Aggregate the raw data from the PLC to:
 - Energy
@@ -178,8 +180,7 @@ Before deploying the flows, the following topic has to be changed to `ie/d/j/sim
 
 4. Deploy the Flows
 
-## Configure Connection to the Nothbound
-## DataXess
+## Configure Connection to the Northbound
 
 The DataXess application will send the preprocessed data to the central device. The configuration is done centrally in the IEM and is explained in [configuration of the Northbound Device](install_Device_Northbound.md).
 
