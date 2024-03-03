@@ -79,8 +79,8 @@ Instead of manually configuring you can also import the configuration file to bo
 
 In this section, the following steps will be addressed:
 
-- Connect the "Energy1_PLC" to the "Energy1" Edge device to retrieve tags via the OPC UA Connector.
-- Connect the "Energy2_PLC" to the "Energy2" Edge device to retrieve tags via the OPC UA Connector.
+- Connect the "Energy1" PLC to the "Energy1" Edge device to retrieve tags via the OPC UA Connector.
+- Connect the "Energy2" PLC to the "Energy2" Edge device to retrieve tags via the OPC UA Connector.
   
 For this example, we will only walk through the steps for Energy 1. The same steps should be repeated for "Energy2".
 
