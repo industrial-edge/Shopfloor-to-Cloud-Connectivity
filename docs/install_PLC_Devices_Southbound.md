@@ -9,8 +9,7 @@
       - [Add tags](#add-tags)
 - [Configure Data Processing](#configure-data-processing)
   - [IE Flow Creator](#ie-flow-creator)
-- [Configure Connection to Northbound]
-  - [DataXess](#dataxess)
+- [Configure Connection to Northbound](#configure-data-processing)
 
 
 # Configure PLC-Project in TIA-Portal
