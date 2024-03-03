@@ -163,6 +163,14 @@ In Insights Hub Energy Manager, you should now also see your data structure from
 
   ![InsightsHub_Datamodel](graphics/IIH10.png)
 
+Up to this point, the following steps have been completed:
+
+- Communication has been established between the Southbound devices (Energy1 and Energy2) and the Northbound device (Shopfloor-to-Cloud).
+
+- Communication has been established between the Northbound device (Shopfloor-to-Cloud) and the cloud (Insights Hub).
+
+From here onwards, the Energy Manager application hosted in the cloud will be used to create a dashboard with the preprocessed data sourced from the Northbound device.
+
 ## Northbound Device - Energy Manager
 
 To analyze the data locally on the Edge Device, you can use Energy Manager App on the Northbound Device
