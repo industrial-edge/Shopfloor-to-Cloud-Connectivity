@@ -142,22 +142,20 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 3. Add two Aspects to structure the data according two our two machines
 
-  ![IIH_CreateAssetModel1](graphics/IIH_CreateAssetModel1.png)
+  ![IIH_CreateAssetModel1](graphics/IIH7.png)
 
-4. Now add 4 variables for each Aspect and give them names
+4. On the left side below "Data Sources" you should see the two Databus topics with the variables from each machine
 
-5. On the left side below "Data Sources" you should see the two Databus topics with the variables from each machine
+5. Drag and Drop those variables to their corresponding aspect, like so:
 
-6. Assign those tags two the variables in your Asset model per drag & drop
+  ![IIH_CreateAssetModel2](graphics/IIH8.png)
 
-  ![IIH_CreateAssetModel2](graphics/IIH_CreateAssetModel2.png)
-
-7. Check the "Storage" and "Cloud Sync" checkbox for each variable
+  > [!IMPORTANT]  
+  > Check the "Storage" and "Cloud Sync" checkbox for each variable
 
 8. Deploy the configuration
 
-The incoming data will now be stored in the integrated Data Service. Under "Store Data" you can see the created 
-Asset model and the datapoints.
+The incoming data will now be stored in the integrated IIH Essentials. Under "Store Data" you can see the created Asset model and the datapoints.
 
   ![IIH_StoreData](graphics/IIH_StoreData.png)
 
