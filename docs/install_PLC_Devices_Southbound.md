@@ -70,7 +70,7 @@ Add the following topics:
 
 Click deploy and repeat the same steps for the "Energy2" edge device.
 
-Instead of manually configuring you can also import the configuration files:
+Instead of manually configuring you can also import the configuration files: CONFIRMAR SI SE PUEDE SOLO CON UNOOOOOOOO
 
 [Databus_Energy1](../src/Device_Energy1/Databus_Energy1_config.json) (Password = Edge1234!)
 
