@@ -141,21 +141,25 @@ Now, repeat the same proccess for Energy 2.
 
 ## IE Flow Creator
 
+The data collected from the OPC UA Connector is published to the Databus, and using the Flow Creator, we retrieve this data from the Databus and send it to the central Device (Shopfloor-to-Cloud) through the DataXess application, which will be configured in the Northbound.
+
+Please note that for the Flow Creator to function properly, the Acquisition Devices must be strictly named "Energy1" and "Energy2".
+
 Aggregate the raw data from the PLC to:
 - Energy
 - Water
 - Pressured Air
 - Produced Bottles 
 
-After aggregation the data and metadata are published to IE Databus. With DataXess the data will be send to the central device.
-
 The aggregated values are published on newly defined topics to prevent collision with OPC UA Connector related topic names
+
+To do this, follow this steps:
 
 1. Import the JSON-File
   
-    Energy1: [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
+    For Energy1: [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
 
-    Energy2: [FlowCreator_Energy2](../src/Device_Energy2/FlowCreator_Energy2.json)
+    For Energy2: [FlowCreator_Energy2](../src/Device_Energy2/FlowCreator_Energy2.json)
   
     
   ![FlowCreator1](graphics/Flow_Creator1.png)
@@ -167,6 +171,10 @@ The aggregated values are published on newly defined topics to prevent collision
   
     
   ![FlowCreator3](graphics/Flow_Creator3.png)
+
+Before deploying the flows, the following topic has to be changed to `ie/d/j/simatic/v1/opcuac1/dp/r/Energy1/default` for Energy 1 and to `ie/d/j/simatic/v1/opcuac1/dp/r/Energy2/default` for Energy 2.
+
+![FlowCreator1](graphics/topic.png)
 
 4. Deploy the Flows
 
