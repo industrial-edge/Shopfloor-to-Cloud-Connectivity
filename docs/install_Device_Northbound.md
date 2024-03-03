@@ -148,7 +148,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 5. Drag and Drop those variables to their corresponding aspect, like so:
 
-  ![IIH_CreateAssetModel2](graphics/IIH8.png)
+  ![IIH_CreateAssetModel2](graphics/IIH9.png)
 
   > [!IMPORTANT]  
   > Check the "Storage" and "Cloud Sync" checkbox for each variable
@@ -157,11 +157,11 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 The incoming data will now be stored in the integrated IIH Essentials. Under "Store Data" you can see the created Asset model and the datapoints.
 
-  ![IIH_StoreData](graphics/IIH_StoreData.png)
+  ![IIH_StoreData](graphics/IIH8.png)
 
 In Insights Hub Energy Manager, you should now also see your data structure from the IIH.
 
-  ![MindSphere_Datamodel](graphics/MindSphere_Datamodel.png)
+  ![InsightsHub_Datamodel](graphics/IIH10.png)
 
 ## Northbound Device - Energy Manager
 
