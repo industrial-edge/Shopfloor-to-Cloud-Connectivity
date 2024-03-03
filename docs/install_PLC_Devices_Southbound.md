@@ -1,13 +1,17 @@
 # Configuration Steps
 - [Configuration Steps](#configuration-steps)
 - [Configure PLC-Project in TIA-Portal](#configure-plc-project-in-tia-portal)
-- [Configuration Southbound for Industrial Edge](#configuration-southbound-for-industrial-edge)
-  - [Databus](#databus)
-  - [OPC UA Connector](#opc-ua-connector)
+- [Configure PLC connections in Industrial Edge](#configure-plc-connections-in-industrial-edge)
+  - [Create Databus Credentials and Topics](#create-databus-credentials-and-topics)
+  - [Configure OPC UA Connector in Common Configurator](#configure-opc-ua-connector-in-common-configurator)
+      - Enter Databus credentials
+      - Add PLC
+      - Add tags
+- [Configure Data Processing](#configure-data-processing)
   - [IE Flow Creator](#ie-flow-creator)
+- [Configure Connection to Northbound]
   - [DataXess](#dataxess)
-- [Navigation](#navigation)
-  
+
 
 # Configure PLC-Project in TIA-Portal
 
@@ -20,43 +24,57 @@
 3. Download the PLC programs to the PLCs and set the PLCs into RUN
  
  
-# Configuration Southbound for Industrial Edge
+# Configure PLC connections in Industrial Edge
 
-The Southbound consist of two devices. In the following they are called "Energy1" and "Energy2"
+The Southbound consist of two  edge devices. For this example, they are called "Energy1" and "Energy2"
 
 Installed Apps on the Device Energy1 and Energy2: 
   - OPC UA Connector
   - Common Import Converter
+  - Common Configurator
   - Registry Service
+  - IIH Essentials
   - DataXess
   - Databus
-  - IE Flow Creator
+  - Flow Creator
 
-## Databus
+Each of the following steps are done in the Industrial Edge system and, as explained in the Reference Architecture shown in the main page, the OPC UA Connector is used on the Industrial Edge Device (IED) to read data from the PLCs and provide the data. Then, the data is sent via the connectors to the Databus.
 
-Add a user in the Databus Configurator with username and password and provide necessary access right to the required topics so the OPC UA Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
+## Create Databus Credentials and Topics
+
+Go to the *Industrial Edge Management UI > Data Connections*, select "Databus" and launch it on the "Energy1" Edge Device.
+
+When the configurator is open, click on the "plus" icon in the red square shown in the picture bellow to add an user: 
+
+[Databus IEM 1](graphics/databusIEM1.png)
+
+Add your related credentials/topics:
+
+   - Username: `edge`
+   - Password: `edge`
+   - Topics: 
+     - `ie/#` 
+   - Permission: `Publish and Subscribe`
+
+[Databus IEM 2](graphics/databusIEM2.png)
+
+Click on the plus icon to add the rest of the topics:
+
+[Databus IEM 3](graphics/databusIEM3.png)
+
+Add the following topics:
+ - `ie/d/j/simatic/v1/iefc/dp/r/#`
+ - `ie/m/j/simatic/v1/iefc/dp`
+
+[Databus IEM 4](graphics/databusIEM4.png)
+
+Click deploy and repeat the same steps for the "Energy2" edge device.
 
 Instead of manually configuring you can also import the configuration files:
 
 [Databus_Energy1](../src/Device_Energy1/Databus_Energy1_config.json) (Password = Edge1234!)
 
 [Databus_Energy2](../src/Device_Energy1/Databus_Energy1_config.json) (Password = Edge1234!)
-
-1. Open the Industrial Edge Management App and launch the Databus configurator, add your related credentials/topics:
-
-   - Username: `edge`
-   - Password: `edge`
-   - Topics: 
-     - `ie/#` 
-     - `ie/d/j/simatic/v1/iefc/dp/r/#` 
-     - `ie/m/j/simatic/v1/iefc/dp`
-   - Permission: `Publish and Subscribe`
-
-  ![ie_databus_user](graphics/IE_Databus_User.png)
-
-1. Deploy configuration to device
-
-  ![ie_databus](graphics/IE_Databus2.png)
 
 
 ## OPC UA Connector
