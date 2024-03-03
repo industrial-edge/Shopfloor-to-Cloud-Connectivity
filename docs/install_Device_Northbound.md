@@ -94,7 +94,7 @@ All the following steps for this option will be performed in the "Common Configu
 
 ### Integrate IIH Essentials
 
-1. Go to *Edge Device UI > Apps*, open *Common COnfigurator*. Then, go to *Store Data*.
+1. Go to *Edge Device UI > Apps*, open *Common Configurator*. Then, go to *Store Data*.
 
 2. Click on "Integrate"
    
