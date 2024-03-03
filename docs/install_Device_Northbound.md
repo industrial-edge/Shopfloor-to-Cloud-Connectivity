@@ -112,13 +112,13 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 1. Configure the Databus credentials under "Settings > Databus credentials"
 
-  ![IIH_DatabusCredentials](graphics/IIH3.png)
+   ![IIH_DatabusCredentials](graphics/IIH3.png)
 
 2. Save the configuration
 
 3. Proceed with configuring the Insights Hub connection by clicking "Add" button.
 
-  ![IIH_OnlineStatus](graphics/IIH4.png)
+   ![IIH_OnlineStatus](graphics/IIH4.png)
 
 4. Select the Target type. Enter credentials for the application. Those are required, to allow the IIH to interact with Insights Hubs REST-API.
    
@@ -128,7 +128,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
    Enter the certificate details and upload the certificate and key. Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html)
 
-Lastly, save the configuration.
+   Lastly, save the configuration.
 
 5. The connection will be established and you should see a green status in the Insights Hub "Home" window:
 
