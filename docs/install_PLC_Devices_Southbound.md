@@ -77,9 +77,26 @@ Instead of manually configuring you can also import the configuration files:
 [Databus_Energy2](../src/Device_Energy1/Databus_Energy1_config.json) (Password = Edge1234!)
 
 
-## OPC UA Connector
+## Configure OPC UA Connector in Common Configurator
 
-To provide data from the PLC on the Databus connect the OPC UA Connector to the PLC and add the required PLC variables. We will use the central configuration in the IEM.
+In this part, connection with the PLCs are established using the OPC UA Connector.
+
+To provide data from the PLC to the Databus connect the OPC UA Connector to the PLC and add the required PLC variables. We will use Common Configurator to achieve this.
+
+Go to each *Edge Device UI > Apps* and open *Common Configurator*
+
+### Enter Databus Credentials
+
+Go to *Settings > Databus Credentials* and enter the previously created Databus credentials:
+
+![Common Configurator 1](graphics/CommonConfigurator1.png)
+
+> :memo: **Note**
+If the credentials were typed correctly you should see the "Valid Credentials" pop-up label on the top right as shown in the picture.
+
+### Add PLC
+
+Go to 
 
 1. Launch the OPC UA Connector Configurator in the Industrial Edge Management under 'Data Connections' and configure the PLC connection 
 2. Import the JSON file [Energy1_OPCUA_Connector](../src/Device_Energy1/Energy1_OPCUA_Connector.json) for Energy1 and [Energy2_OPCUA_Connector](../src/Device_Energy2/Energy2_OPCUA_Connector.json) for Energy2 
