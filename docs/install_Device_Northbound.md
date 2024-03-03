@@ -92,7 +92,7 @@ In this section, the necessary configurations will be made to establish communic
 
 All the following steps for this option will be performed in the "Common Configurator" app on the Aggregation Device (Shopfloor-to-cloud).
 
-### Integrate IIH Essentials
+### Integrate IIH Essentials into Common Configurator
 
 1. Go to *Edge Device UI > Apps*, open *Common Configurator*. Then, go to *Store Data*.
 
@@ -104,41 +104,35 @@ All the following steps for this option will be performed in the "Common Configu
 
   ![IIH_IntegrateConfirmation](graphics/IIH2.png)
 
-### Configure Connections
+### Configure Connection to Insights Hub.
 
-The IIH needs a connection to the Databus and to Insights Hub. You need to have a Insights Hub account and create
-certificates to allow a connection from the IIH.
+Common Configurator needs a connection to the Databus and to Insights Hub. 
+
+You need to have a Insights Hub account and create certificates to allow a connection from the Common Configurator.
 
 1. Configure the Databus credentials under "Settings > Databus credentials"
 
-  ![IIH_DatabusCredentials](graphics/IIH_DatabusCredentials.png)
+  ![IIH_DatabusCredentials](graphics/IIH3.png)
 
 2. Save the configuration
 
-3. Check if the device has an online connection in the "Home" tab, to proceed with configuring the Insights Hub connection.
+3. Proceed with configuring the Insights Hub connection by clicking "Add" button.
 
-  ![IIH_OnlineStatus](graphics/IIH_OnlineStatus.png)
+  ![IIH_OnlineStatus](graphics/IIH4.png)
 
-4. Click on "Add parent IED / Connect to MindSphere"
+4. Select the Target type. Enter credentials for the application. Those are required, to allow the IIH to interact with Insights Hubs REST-API.
+   
+   ![IIH_InsightsHub](graphics/IIH5.png)
 
-  ![IIH_MindsphereConfig1](graphics/IIH_MindsphereConfig1.png)
+   The Insights Hub Tenant Administrator has to create them and assign the role "mdsp:core:Admin3rdPartyTechUser", to allow the IIH to update the asset model in Insights Hub. More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html)
 
-5. Select the device type "MindSphere Device"
+   Enter the certificate details and upload the certificate and key. Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html)
 
-6. Enter credentials for the application. Those are required, to allow the IIH to interact with Insights Hubs REST-API.
-   The Insights Hub Tenant Administrator has to create them and assign the role "mdsp:core:Admin3rdPartyTechUser", to
-   allow the IIH to update the asset model in Insights Hub. More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html) 
+Lastly, save the configuration.
 
-  ![IIH_MindsphereConfig2](graphics/IIH_MindsphereConfig2.png)
+5. The connection will be established and you should see a green status in the Insights Hub "Home" window:
 
-7. Enter the certificate details and upload the certificate and key. Information on how to create connector certificates
-   can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html)
-
-8. Select your region and save the configuration.
-
-  ![IIH_ConnectionSuccessfull](graphics/IIH_ConnectionSuccessfull.png)
-
-9. The connection will be established and you should see a green status in the IIH "Home" window
+   ![IIH_InsightsHub2](graphics/IIH6.png)
 
 ### Create the Asset Model
 
