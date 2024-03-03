@@ -59,32 +59,32 @@ To do this, follow these steps:
 
 3. Start the configuration by creating a new group
    
-  ![DataXess2](graphics/Data2.png)
+  ![DataXess2](graphics/data2.png)
 
 4. Add a group name and description and add all 3 devices to it. Make sure to select the central device as the "Aggregator Device" and click "Save".
    
-  ![DataXess3](graphics/Data3.png)
+  ![DataXess3](graphics/data3.png)
 
 5. Click on one of the setting symbols of your new created group to configure the data that get's exchanged. Select the topics `ie/d/j/simatic/v1/iefc/dp/r/#` and `ie/m/j/simatic/v1/iefc/dp` for both acquistion devices.
    
-  ![DataXess4](graphics/Data4.png)
-  ![DataXess5](graphics/Data5.png)
+  ![DataXess4](graphics/data4.png)
+  ![DataXess5](graphics/data5.png)
 
 6. DataXess will automatically create new topics on the aggregator device were the data will be published.
    
-  ![DataXess6](graphics/Data9.png)
+  ![DataXess6](graphics/data9.png)
 
 7. Click "Deploy".
   
- ![DataXess6](graphics/Data6.png)
+ ![DataXess6](graphics/data6.png)
    
 8. Configure a new user that will be used to subscribe and publish to the configured topics and click "Validate",
    
-  ![DataXess7](graphics/Data7.png)
+  ![DataXess7](graphics/data7.png)
 
 If everything was configured correctly, all devices should have a green status. Also, the general connection status msut be in green as well, as shown:
 
-  ![DataXess8](graphics/Data8.png)
+  ![DataXess8](graphics/data8.png)
 
 ##  IIH Insights Hub Sync
 
