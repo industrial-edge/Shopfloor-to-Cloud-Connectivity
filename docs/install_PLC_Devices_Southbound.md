@@ -112,15 +112,15 @@ Click on *Tags* tab and select *Add data source*:
 
 Type your PLC information (OPC UA server) and save:
 
-![Common Configurator 4](graphics/CommonConfigurator4.png)
+![Common Configurator 4](graphics/CommonConfigurator_4.png)
 
 Then click "Import tags" on the just created data-source and import the JSON file [Energy1_OPCUA_Connector](../src/Device_Energy1/Energy1_OPCUA_Connector.json) for Energy1 and [Energy2_OPCUA_Connector](../src/Device_Energy2/Energy2_OPCUA_Connector.json) for Energy2.
 
-![Common Configurator 5](graphics/CommonConfigurator5.png)
+![Common Configurator 5](graphics/CommonConfigurator_5.png)
 
 In this case, you'll se something like this for Energy 1:
 
-![Common Configurator 6](graphics/CommonConfigurator6.png)
+![Common Configurator 6](graphics/CommonConfigurator_6.png)
 
 Select all the tags, enter the acquision cycle and access mode. Last, click "Import".
 
@@ -128,11 +128,11 @@ Now, the tags for Energy 1 are imported in the data-source. Just click "Deploy" 
 
 After deployment, ensure that the connector status is displayed in "green" and that the data source also shows a green status, like so:
 
-![Common Configurator 8](graphics/CommonConfigurator8.png)
+![Common Configurator 8](graphics/CommonConfigurator_8.png)
 
 To check if data is actually being extracted from the PLC, let's integrate IIH Essentials into Common Configurator. And after creating assets and adding the tags, data is shown:
 
-![Common Configurator 11](graphics/CommonConfigurator11.png)
+![Common Configurator 11](graphics/CommonConfigurator_11.png)
 
 Now, repeat the same proccess for Energy 2.
 
