@@ -114,7 +114,7 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 You just created the "Overview" Dashboard !
 
-## Line 1 - Media Consumption Dashboard
+## Line 1 Media Consumption Dashboard
 
 This is the final result of the dashboard:
 
@@ -242,7 +242,7 @@ Now, create a "Diagram" widget and attach it to the following KPI instance:
 Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
 
 
-## Line 2 - Media Consumption Dashboard
+## Line 2 Media Consumption Dashboard
 
 This is the final result of the dashboard:
 
