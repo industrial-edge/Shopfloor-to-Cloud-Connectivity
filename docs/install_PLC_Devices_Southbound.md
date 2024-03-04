@@ -57,7 +57,11 @@ Add your related credentials/topics:
 
 ![Databus IEM 2](graphics/databusIEM2.png)
 
+<<<<<<< HEAD
 Click on the plus icon to add the rest of the topics:
+=======
+1. Deploy configuration to device
+>>>>>>> main
 
 ![Databus IEM 3](graphics/databusIEM3.png)
 
@@ -75,6 +79,7 @@ Instead of manually configuring you can also import the configuration file to bo
 
 
 
+<<<<<<< HEAD
 ## Configure OPC UA Connector in Common Configurator
 
 In this section, the following steps will be addressed:
@@ -83,6 +88,16 @@ In this section, the following steps will be addressed:
 - Connect the "Energy2" PLC to the "Energy2" Edge device to retrieve tags via the OPC UA Connector.
   
 For this example, we will only walk through the steps for Energy 1. The same steps should be repeated for "Energy2".
+=======
+To provide data from the PLC on the Databus connect the OPC UA Connector to the PLC and add the required PLC variables. We will use the central configuration in the IEM.
+
+1. Launch the OPC UA Connector Configurator in the Industrial Edge Management under 'Data Connections' and configure the PLC connection 
+2. Import the JSON file [Energy1_OPCUA_Connector](../src/Device_Energy1/Energy1_OPCUA_Connector.json) for Energy1 and [Energy2_OPCUA_Connector](../src/Device_Energy2/Energy2_OPCUA_Connector.json) for Energy2 
+3. Adjust IP address of the imported PLC connection
+4. Select the PLC and deploy the configuration
+   
+  ![OPCUA_connector](graphics/OPCUA_Connector.png)
+>>>>>>> main
 
 To provide data from the PLC to the Databus connect the OPC UA Connector to the PLC and add the required PLC variables. We will use Common Configurator to achieve this.
 

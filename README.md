@@ -55,9 +55,15 @@ Structuring the energy data in asset models according to the asset design in Ins
 - Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
+<<<<<<< HEAD
 - Installed System App Configurators on IEM (Common Connector Configurator, Databus Configurator, DataXess Configurator) 
 - Installed apps on Southbound-Devices (OPC UA Connector, DataXess, Databus, Flow Creator)
 - Installed apps on Northbound-Device (IIH Essentials, Databus, Energy Manager, DataXess, IIH Semantics, Common Configurator)
+=======
+- Installed System App Configurators on IEM (Common Connector Configurator, Databus Configurator, IE Cloud Connector Configurator) 
+- Installed apps on Southbound-Devices (OPC UA Connector, IE Cloud Connector, Databus, IE Flow Creator)
+- Installed apps on Northbound-Device (Data Service, Databus, Energy Manager, External Databus, IIH Core, IIH Configurator)
+>>>>>>> main
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to Insights Hub
 - Energy Manager
@@ -69,6 +75,7 @@ TIA & PLCs:
 - PLC 1512SP-1 PN FW V2.1
 
 Industrial Edge:
+<<<<<<< HEAD
 - Industrial Edge Management Virtual V2.0.1-1
 - Industrial Edge Virtual Device V1.16.1-1-a
 - OPC UA Connector V2.0.1-0
@@ -81,6 +88,20 @@ Industrial Edge:
 - DataXess V1.4.1-3
 - IIH Semantics V1.9.0-0
 - Common Configurator V1.9.0-4
+=======
+- Industrial Edge Management V1.7.4
+- Industrial Edge Device V1.5.0-21-amd64
+- OPC UA Connector V2.0.0
+- Registry Service V1.8.0
+- Common Import Converter V2.0.0
+- Databus V2.2.0
+- Data Service V1.6.0
+- IE Flow Creator V1.3.9
+- Energy Manager V1.2.0
+- IE Cloud Connector V1.6.2
+- IIH Core V1.6.0
+- IIH Configurator V1.6.0
+>>>>>>> main
 - Web browser (Mozilla or Chrome)
 
 - Common Connector Configurator V1.9.1-1
