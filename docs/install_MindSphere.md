@@ -217,7 +217,28 @@ Now, create a "Gauge" widget and attach it to the KPI instance you just created:
 Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
 
 
+### Create widget for Cost per Bottle (Diagram):
 
+Here, the creation of this section of the dashboard will be explained:
+
+<img id="CostDiagram" src="graphics/CostDiagram.png" alt="CostDiagram" width="900"/>
+
+Now, create a "Diagram" widget and attach it to the following KPI instance:
+
+<img id="CostDiagramKPIInstance" src="graphics/CostDiagramKPIInstance.png" alt="CostDiagramKPIInstance" width="900"/>
+
+Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
+
+
+## Line 2 - Media Consumption Dashboard
+
+This is the final result of the dashboard:
+
+<img id="CostDiagram" src="graphics/CostDiagram.png" alt="CostDiagram" width="900"/>
+
+Create a new dashboard by going to *My Plant*, select the asset where the variables are added, click on "Add dashboard" and name it "Line 2 - Media Consumption".
+
+Follow the same steps you took to create the 'Line 1 - Media Consumption' dashboard.
 
 
 
