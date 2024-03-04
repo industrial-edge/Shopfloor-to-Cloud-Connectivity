@@ -234,7 +234,7 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 This is the final result of the dashboard:
 
-<img id="CostDiagram" src="graphics/CostDiagram.png" alt="CostDiagram" width="900"/>
+<img id="LINE2_MEDIACONSUMPTION" src="graphics/LINE2_MEDIACONSUMPTION.png" alt="LINE2_MEDIACONSUMPTION" width="900"/>
 
 Create a new dashboard by going to *My Plant*, select the asset where the variables are added, click on "Add dashboard" and name it "Line 2 - Media Consumption".
 
