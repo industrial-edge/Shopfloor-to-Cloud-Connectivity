@@ -17,7 +17,6 @@ The Northbound consist of one device. In the following this is called "Shopfloor
 Installed Apps on Central Device:
   - IIH Essentials
   - Databus
-  - Energy Manager
   - DataXess 
   - IIH Semmantics
   - Common Configurator
