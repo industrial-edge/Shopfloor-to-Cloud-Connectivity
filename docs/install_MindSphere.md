@@ -117,7 +117,7 @@ Here, the creation of this section of the dashboard will be explained:
 
 For this widget, create the following KPI type:
 
-<img id="energyXbottle" src="graphics/energyxbottle.png" alt=EnergyXBottle" width="900"/>
+<img id="energyPerBottle" src="graphics/energyxbottle.png" alt="energyPerBottle" width="900"/>
 
 Then, create a KPI instance named "EnergyPerBottleLine1" based on the previously created KPI type, like so:
 
