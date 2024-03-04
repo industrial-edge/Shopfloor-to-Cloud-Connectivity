@@ -71,7 +71,7 @@ To do that, create a "Diagram" widget and attach it to the following parameters:
 
 <img id="tag2" src="graphics/tag2.png" alt="Tag2" width="900"/>
 
-And make sure to have this Y-Axis coinfiguration:
+And make sure to have this Y-Axis configuration:
 
 <img id="yaxis" src="graphics/yaxis.png" alt="yaxis" width="900"/>
 
