@@ -4,6 +4,19 @@
 - [Configuration Steps](#configuration-steps)
 - [IIH Insights Hub Sync](#iih-insights-hub-sync)
 - [Configure Energy Manager](#configure-energy-manager)
+    - [Overview Dashboard](#overview-dashboard)
+        - [Create widget for Produced Bottles of Each Line](#create-widget-for-produced-bottles-of-eaxh-line)
+        - [Create widget for Consumption Graphic of Each Line](#create-widget-for-consumption-graphic-of-each-line)
+        - [Create widget for Cost of each Line](#create-widget-for-cost-of-each-line)
+    - [Line 1 - Media Consumption Dashboard](#line-1-media-consumption-dashboard)
+        - [Create widget for Energy Per Bottle](#create-widget-for-energy-per-bottle)
+        - [Create widget for Water per Bottle](#create-widget-for-water-per-bottle)
+        - [Create widget for PressuredAir per Bottle](#create-widget-for-pressuredair-per-bottle)
+        - [Create widget for Consumption Per Bottle](#create-widget-for-consumption-per-bottle)
+        - [Create widget for Cost per Bottle (Gauge)](#create-widget-for-cost-per-bottle(gauge))
+        - [Create widget for Cost per Bottle (Diagram)](#create-widget-for-cost-per-bottle(diagram))
+    - Line 2 - Media Consumption Dashboard
+
 - [Navigation](#navigation)
   
 # IIH Insights Hub Sync
@@ -45,7 +58,7 @@ Now, create a new dashboard by going to *My Plant*, select the asset where the v
 
 <img id="add_new_dasboard" src="graphics/Insights1.png" alt="CreateDashboard2" width="900"/>
 
-### Create widget for Produced Bottles of Each Line:
+### Create widget for Produced Bottles of Each Line
 
 Here, the creation of this section of the dashboard will be explained:
 
@@ -109,7 +122,7 @@ This is the final result of the dashboard:
 
 Create a new dashboard by going to *My Plant*, select the asset where the variables are added, click on "Add dashboard" and name it "Line 1 - Media Consumption".
 
-### Create widget for Energy Per Bottle:
+### Create widget for Energy Per Bottle
 
 Here, the creation of this section of the dashboard will be explained:
 
@@ -134,7 +147,7 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 
 
-### Create widget for Water per Bottle:
+### Create widget for Water per Bottle
 
 Here, the creation of this section of the dashboard will be explained:
 
@@ -156,7 +169,7 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 
 
-### Create widget for PressuredAir per Bottle:
+### Create widget for PressuredAir per Bottle
 
 Here, the creation of this section of the dashboard will be explained:
 
@@ -178,7 +191,7 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 
 
-### Create widget for Consumption Per Bottle:
+### Create widget for Consumption Per Bottle
 
 Here, the creation of this section of the dashboard will be explained:
 
@@ -196,7 +209,7 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 
 
-### Create widget for Cost per Bottle (Gauge):
+### Create widget for Cost per Bottle (Gauge)
 
 Here, the creation of this section of the dashboard will be explained:
 
@@ -216,8 +229,7 @@ Now, create a "Gauge" widget and attach it to the KPI instance you just created:
 
 Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
 
-
-### Create widget for Cost per Bottle (Diagram):
+### Create widget for Cost per Bottle (Diagram)
 
 Here, the creation of this section of the dashboard will be explained:
 
