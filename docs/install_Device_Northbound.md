@@ -154,7 +154,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 8. Deploy the configuration
 
-The incoming data will now be stored in the integrated IIH Essentials. Under "Store Data" you can see the created Asset model and the datapoints.
+The incoming data from Energy1 and Energy2 will now be stored in the integrated IIH Essentials. Under "Store Data" you can see the created Asset model and the datapoints.
 
   ![IIH_StoreData](graphics/IIH8.png)
 
