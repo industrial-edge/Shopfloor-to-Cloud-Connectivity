@@ -12,7 +12,7 @@ To analyze incoming data from the Shopfloor-To-Cloud edge device in Insights Hub
 
 For this, the following dashboards are created using the data collected from the Shopfloor:
 
-1) **Overview: the following will be shown here:**
+1) **Overview:**
 - Produced Bottles of Each Line
 - Consumption Graphic of Each Line
 - Cost of each Line
@@ -35,7 +35,9 @@ For this, the following dashboards are created using the data collected from the
 
 Let's start by builidng the **Overview** dashboard. This is the final result of the dashboard:
 
+<img id="Overview" src="docs/graphics/OVERVIEW_DASHBOARD.png" alt="OVERVIEW" width="700"/>
 
+For this dashboard
 
 # Navigation
 
