@@ -196,6 +196,27 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 
 
+### Create widget for Cost per Bottle (Gauge):
+
+Here, the creation of this section of the dashboard will be explained:
+
+<img id="CostGauge" src="graphics/CostGauge.png" alt="CostGauge" width="900"/>
+
+For this widget, create the following KPI type:
+
+<img id="CostPerBottleKPIType" src="graphics/CostPerBottleKPIType.png" alt="CostPerBottleKPIType" width="900"/>
+
+Then, create a KPI instance named "CostPerBottleLine1" based on the previously created KPI type, like so:
+
+<img id="CostPerBottleKPIInstance" src="graphics/CostPerBottleKPIInstance.png" alt="CostPerBottleKPIInstance" width="900"/>
+
+Now, create a "Gauge" widget and attach it to the KPI instance you just created:
+
+<img id="CostPerBottleGauge" src="graphics/CostPerBottleGauge.png" alt="CostPerBottleGauge" width="900"/>
+
+Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
+
+
 
 
 
