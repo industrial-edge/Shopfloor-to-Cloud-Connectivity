@@ -43,8 +43,6 @@ Let's start by builidng the **Overview** dashboard. This is the final result of 
 
 Now, create a new dashboard by going to *My Plant*, select the asset where the variables are added, click on "Add dashboard" and name it "Overview":
 
-<img id="add_new" src="graphics/createDashboard.png" alt="CreateDashboard1" width="900"/>
-
 <img id="add_new_dasboard" src="graphics/Insights1.png" alt="CreateDashboard2" width="900"/>
 
 ### Create widget for Produced Bottles of Each Line:
