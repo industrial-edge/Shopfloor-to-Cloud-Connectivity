@@ -109,7 +109,50 @@ This is the final result of the dashboard:
 
 Create a new dashboard by going to *My Plant*, select the asset where the variables are added, click on "Add dashboard" and name it "Line 1 - Media Consumption".
 
+### Create widget for Energy Per Bottle:
 
+Here, the creation of this section of the dashboard will be explained:
+
+<img id="energy" src="graphics/energyPerBottle.png" alt="energyPerBottle" width="900"/>
+
+For this widget, create the following KPI type:
+
+<img id="energyXbottle" src="graphics/energyxbottle.png" alt=EnergyXBottle" width="900"/>
+
+Then, create a KPI instance named "EnergyPerBottleLine1" based on the previously created KPI type, like so:
+
+<img id="EnergyPerBottleLine1" src="graphics/EnergyPerBottleLine1.png" alt="EnergyPerBottleLine1" width="900"/>
+
+Now, create a "Gauge" widget and attach it to the KPI instance you just created:
+
+<img id="EnergyLine1Gauge" src="graphics/EnergyLine1Gauge.png" alt="EnergyLine1Gauge" width="900"/>
+
+Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
+
+
+
+
+
+
+### Create widget for Water per Bottle:
+
+Here, the creation of this section of the dashboard will be explained:
+
+<img id="WaterPerBottleWidget" src="graphics/WaterPerBottleWidget.png" alt="WaterPerBottleWidget" width="900"/>
+
+For this widget, create the following KPI type:
+
+<img id="WaterPerBottleKPIType" src="graphics/WaterPerBottleKPIType.png" alt=WaterPerBottleKPIType" width="900"/>
+
+Then, create a KPI instance named "WaterPerBottleLine1" based on the previously created KPI type, like so:
+
+<img id="WaterPerBottleLine1" src="graphics/WaterPerBottleLine1.png" alt="WaterPerBottleLine1" width="900"/>
+
+Now, create a "Gauge" widget and attach it to the KPI instance you just created:
+
+<img id="WaterPerBottleGauge" src="graphics/WaterPerBottleGauge.png" alt="WaterPerBottleGauge" width="900"/>
+
+Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
 
 
 
