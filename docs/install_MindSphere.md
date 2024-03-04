@@ -156,6 +156,37 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 
 
+### Create widget for PressuredAir per Bottle:
+
+Here, the creation of this section of the dashboard will be explained:
+
+<img id="PressuredAirPerBottleWidget" src="graphics/PressuredAirPerBottleWidget.png" alt="PressuredAirPerBottleWidget" width="900"/>
+
+For this widget, create the following KPI type:
+
+<img id="PressuredAirPerBottleKPIType" src="graphics/PressuredAirPerBottleKPIType.png" alt="PressuredAirPerBottleKPIType" width="900"/>
+
+Then, create a KPI instance named "PressuredAirPerBottleLine1" based on the previously created KPI type, like so:
+
+<img id="PressuredAirPerBottleLine1" src="graphics/PressuredAirPerBottleLine1.png" alt="PressuredAirPerBottleLine1" width="900"/>
+
+Now, create a "Gauge" widget and attach it to the KPI instance you just created:
+
+<img id="PressuredAirPerBottleGauge" src="graphics/PressuredAirPerBottleGauge.png" alt="PressuredAirPerBottleGauge" width="900"/>
+
+Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
+
+
+
+
+
+
+
+
+
+
+
+
 # Navigation
 
 [Overview](../README.md)
