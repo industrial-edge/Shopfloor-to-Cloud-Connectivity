@@ -175,7 +175,7 @@ Before deploying the flows, the following topic has to be changed to `ie/d/j/sim
 
 ![FlowCreator1](graphics/topic.png)
 
-4. Deploy the Flows
+4. Deploy the Flow
 
 ## Configure Connection to the Northbound
 
