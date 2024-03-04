@@ -101,7 +101,7 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 You just created the "Overview" Dashboard !
 
-## Line 1 - Media Consumption
+## Line 1 - Media Consumption Dashboard
 
 This is the final result of the dashboard:
 
