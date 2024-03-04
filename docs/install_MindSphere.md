@@ -71,6 +71,10 @@ To do that, create a "Diagram" widget and attach it to the following parameters:
 
 <img id="tag2" src="graphics/tag2.png" alt="Tag2" width="900"/>
 
+And make sure to have this Y-Axis coinfiguration:
+
+<img id="yaxis" src="graphics/yaxis.png" alt="yaxis" width="900"/>
+
 Chosse the KPI Calculation Period of your preference. Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
 
 ### Create widget for Cost of each Line
@@ -94,6 +98,20 @@ Now, create a "Gauge" widget and attach it to the KPI instance you just created:
 <img id="CostLine1_tag" src="graphics/costline_tag.png" alt="CostLine1_tag" width="900"/>
 
 Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
+
+You just created the "Overview" Dashboard !
+
+## Line 1 - Media Consumption
+
+This is the final result of the dashboard:
+
+<img id="Line1_media" src="graphics/LINE1_MEDIACOMSUMPTION.png" alt="Line1-media-consumption" width="900"/>
+
+Create a new dashboard by going to *My Plant*, select the asset where the variables are added, click on "Add dashboard" and name it "Line 1 - Media Consumption".
+
+
+
+
 
 # Navigation
 
