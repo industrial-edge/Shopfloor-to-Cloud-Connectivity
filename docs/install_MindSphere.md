@@ -240,7 +240,7 @@ Create a new dashboard by going to *My Plant*, select the asset where the variab
 
 Follow the same steps you took to create the 'Line 1 - Media Consumption' dashboard.
 
-
+Now all dashboards have been created, demonstrating the purpose of this app example.
 
 # Navigation
 
