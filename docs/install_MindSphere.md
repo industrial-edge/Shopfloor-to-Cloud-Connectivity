@@ -160,7 +160,7 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 Here, the creation of this section of the dashboard will be explained:
 
-<img id="PressuredAirPerBottleWidget" src="graphics/PressuredAirPerBottleWidget.png" alt="PressuredAirPerBottleWidget" width="900"/>
+<img id="PressuredAirPerBottleWidget" src="graphics/PressuredAirPerBottle_Widget.png" alt="PressuredAirPerBottleWidget" width="900"/>
 
 For this widget, create the following KPI type:
 
@@ -178,8 +178,21 @@ Then, just click save, place the widget in the dashboard layout and repeat the s
 
 
 
+### Create widget for Consumption Per Bottle:
 
+Here, the creation of this section of the dashboard will be explained:
 
+<img id="ConsumptionDiagram" src="graphics/ConsumptionDiagram.png" alt="ConsumptionDiagram" width="900"/>
+
+Now, create a "Diagram" widget and attach it to the following KPI instances:
+
+<img id="ConsumptionPerBottleDiagram" src="graphics/ConsumptionPerBottleDiagram.png" alt="ConsumptionPerBottleDiagram" width="900"/>
+
+And make sure to have this Y-Axis configuration:
+
+<img id="ConsumptionDiagramYaxis" src="graphics/ConsumptionDiagramYaxis.png" alt="ConsumptionDiagramYaxis" width="900"/>
+
+Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
 
 
 
