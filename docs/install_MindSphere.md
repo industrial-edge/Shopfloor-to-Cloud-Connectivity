@@ -15,7 +15,7 @@
         - [Create widget for Consumption Per Bottle](#create-widget-for-consumption-per-bottle)
         - [Create widget for Cost per Bottle (Gauge)](#create-widget-for-cost-per-bottle(gauge))
         - [Create widget for Cost per Bottle (Diagram)](#create-widget-for-cost-per-bottle(diagram))
-    - Line 2 - Media Consumption Dashboard
+    - [Line 2 - Media Consumption Dashboard](#line-2-media-consumption-dashboard)
 
 - [Navigation](#navigation)
   
