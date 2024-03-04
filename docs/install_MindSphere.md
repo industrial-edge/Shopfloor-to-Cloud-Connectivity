@@ -142,7 +142,7 @@ Here, the creation of this section of the dashboard will be explained:
 
 For this widget, create the following KPI type:
 
-<img id="WaterPerBottleKPIType" src="graphics/WaterPerBottleKPIType.png" alt=WaterPerBottleKPIType" width="900"/>
+<img id="WaterPerBottleKPIType" src="graphics/WaterPerBottleKPIType.png" alt="WaterPerBottleKPIType" width="900"/>
 
 Then, create a KPI instance named "WaterPerBottleLine1" based on the previously created KPI type, like so:
 
