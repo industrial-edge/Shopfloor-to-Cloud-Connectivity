@@ -47,6 +47,8 @@ Now, create a new dashboard by going to *My Plant*, select the asset where the v
 
 ### Create widget for Produced Bottles of Each Line:
 
+Here, the creation of this section of the dashboard will be explained:
+
 <img id="value" src="graphics/Value.png" alt="Value" width="900"/>
 
 To do that, in the created dashboard, proceed to create a widget. 
@@ -61,6 +63,8 @@ Chosse the KPI Calculation Period of your preference. Then, just click save, pla
 
 ### Create widget for Consumption Graphic of Each Line
 
+Here, the creation of this section of the dashboard will be explained:
+
 <img id="graphic1" src="graphics/Graphic.png" alt="Graphic" width="900"/>
 
 To do that, create a "Diagram" widget and attach it to the following parameters:
@@ -70,6 +74,8 @@ To do that, create a "Diagram" widget and attach it to the following parameters:
 Chosse the KPI Calculation Period of your preference. Then, just click save, place the widget in the dashboard layout and repeat the same proccess for Line 2.
 
 ### Create widget for Cost of each Line
+
+Here, the creation of this section of the dashboard will be explained:
 
 <img id="cost" src="graphics/cost.png" alt="cost" width="900"/>
 
