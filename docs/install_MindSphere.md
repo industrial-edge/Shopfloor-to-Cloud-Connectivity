@@ -8,31 +8,34 @@
   
 # IIH Insights Hub Sync
 
-No further steps have to be done to connect the data to Insights Hub. Data in Insights Hub should already be available from [previous steps](install_Device_Northbound.md)
+To analyze incoming data from the Shopfloor-To-Cloud edge device in Insights Hub Cloud, you can use the Energy Manager application to create dashboards so you can process and display the supplied data.
 
-> **_NOTE:_** Continue with [configuration of Energy Manager on Insights Hub](#configure-energy-manager)
+For this, the following dashboards are created using the data collected from the Shopfloor:
+
+1) **Overview: the following will be shown here:**
+- Produced Bottles of Each Line
+- Consumption Graphic of Each Line
+- Cost of each Line
+
+2) **Line 1 - Media Consumption:**
+- Energy per Bottle
+- Water per Bottle
+- Pressured Air per Bottle
+- Consumption per Bottle
+- Cost per Bottle
+
+3) **Line 2 - Media Consumption:**
+- Energy per Bottle
+- Water per Bottle
+- Pressured Air per Bottle
+- Consumption per Bottle
+- Cost per Bottle
 
 # Configure Energy Manager
 
-The Energy Manager shows the data from the whole Factory1
-  
-  ![Mindsphere_EnergyManager1](graphics/Mindspehre_EnergyManager1.png)
-  
-  ![Mindsphere_EnergyManager2](graphics/Mindspehre_EnergyManager2.png)
+Let's start by builidng the **Overview** dashboard. This is the final result of the dashboard:
 
-1. The handling is the same as described under [Central Device Energy Manager ](install_Device_Northbound.md#northbound-device---energy-manager)
-  
-- CostsPerBottle: `((EnergyLine1 + EnergyLine2) / 1000 * cost_kWh + (PressuredAirLine1 + PressuredAirLine2)`
-                     `* cost_Liter_Air + (WaterLine1 + WaterLine2) * cost_Liter_Water) / Bottles` Unit: €
 
-- CostsPerFactory: `((EnergyLine1 + EnergyLine2) / 1000 * cost_kWh + (PressuredAirLine1 + PressuredAirLine2)`
-                     `* cost_Liter_Air + (WaterLine1 + WaterLine2) * cost_Liter_Water)/100` Unit: €
-
-- EnergyPerBottle: `(EnergyLine1 + EnergyLine2) / (BottlesLine1 + BottlesLine2)` Unit: Wh
-
-- PressuredAirPerBottle: `(PressuredAirLine1 + PressuredAirLine2) / (BottlesLine1 + BottlesLine2)` Unit: ml
-
-- WaterPerBottle: `(WaterLine1 + WaterLine2) / (BottlesLine1 + BottlesLine2)` Unit: ml
 
 # Navigation
 
