@@ -87,7 +87,7 @@ For this example, we will only walk through the steps for Energy 1. The same ste
 
 To provide data from the PLC to the Databus connect the OPC UA Connector to the PLC and add the required PLC variables. We will use Common Configurator to achieve this.
 
-Go to each *Edge Device UI > Apps* and open *Common Configurator*
+Go to each *Edge Device UI > Apps* and open *Common Configurator*.
 
 ### Enter Databus Credentials
 
