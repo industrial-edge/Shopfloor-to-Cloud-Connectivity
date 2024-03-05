@@ -69,7 +69,6 @@ TIA & PLCs:
 - PLC 1512SP-1 PN FW V2.1
 
 Industrial Edge:
-
 - Industrial Edge Management Virtual V2.0.1-1
 - Industrial Edge Virtual Device V1.16.1-1-a
 - OPC UA Connector V2.0.1-0
