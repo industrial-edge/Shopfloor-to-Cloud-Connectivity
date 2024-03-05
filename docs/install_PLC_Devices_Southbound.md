@@ -165,7 +165,7 @@ To do this, follow this steps:
   ![FlowCreator1](graphics/Flow_Creator1.png)
 
 2. Double click on a MQTT-Node  
-3. Add IE Databus Credentials
+3. Add Databus Credentials
   
   ![FlowCreator2](graphics/Flow_Creator2.png)
   
