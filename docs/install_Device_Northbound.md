@@ -96,11 +96,11 @@ All the following steps for this option will be performed in the "Common Configu
 
 2. Click on "Integrate"
    
-  ![IIH_Integrate](graphics/IIH1.png)
+    ![IIH_Integrate](graphics/IIH1.png)
 
 3. Confirm the integration in the popup window
 
-  ![IIH_IntegrateConfirmation](graphics/IIH2.png)
+    ![IIH_IntegrateConfirmation](graphics/IIH2.png)
 
 ### Configure Connection to Insights Hub
 
