@@ -175,7 +175,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
   In this section, how to fill this information will be explained:
 
-  ![Aggregate1](graphics/Aggregate1.png)
+  ![Aggregate2](graphics/Aggregate2.png)
 
   To do this, go to *Insights Hub UI > Asset Manager*:
 
