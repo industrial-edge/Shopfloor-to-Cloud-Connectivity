@@ -223,7 +223,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
     - MQTT QoS: *enter the message delivery guarantee level to the MQTT protocol*
     
   > [!IMPORTANT]
-  > More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html).
+  > More information can be found in the [Common Configurator documentation](https://cache.industry.siemens.com/dl/files/743/109826743/att_1162983/v1/EdgeApp_IIH_enUS_en-US.pdf) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html).
   > Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html).
 
 
