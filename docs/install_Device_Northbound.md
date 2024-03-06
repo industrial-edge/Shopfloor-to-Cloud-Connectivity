@@ -120,111 +120,111 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 4. Select the Target type. Those are required to allow the Common Configurator to interact with Insights Hubs REST-API.
 
-  ![Aggregate0](graphics/Aggregate0.png)
+    ![Aggregate0](graphics/Aggregate0.png)
 
-  You need to fill those 3 sections in order to get a proper interaction with Insights Hub:
+    You need to fill those 3 sections in order to get a proper interaction with Insights Hub:
 
-  - Credentials for the application.
-  - Certificate Credentials.
-  - Advanced Configuration.
+    - Credentials for the application.
+    - Certificate Credentials.
+    - Advanced Configuration.
 
-  **Credentials for the application**
+    **Credentials for the application**
 
-  In this section, how to fill this information will be explained:
+    In this section, how to fill this information will be explained:
 
-  ![Aggregate](graphics/Aggregate.png)
+    ![Aggregate](graphics/Aggregate.png)
 
-  To allow Common Configurator to update the asset model in Insights Hub, The IH Tenant Administrator has to create a **Technical User** and add the following roles:
+    To allow Common Configurator to update the asset model in Insights Hub, The IH Tenant Administrator has to create a **Technical User** and add the following roles:
 
-  - mdsp:core:assetmanagement.admin
-  - mdsp:core:assetmodeler.fullaccess
-  - mdsp:core:mindconnect.fullaccess
-  
-  To do this, go to *Insights Hub UI > Settings*:
-
-  ![IHUI](graphics/IHUI.png)
-
-  Go to *User Management > Technical Users*:
-
-  ![IHUI2](graphics/IHUI2.png)
-
-  Select *Create technical user*:
-
-  ![IHUI3](graphics/IHUI3.png)
-
-  Assign a name and click on "Create technical user":
-
-  ![IHUI4](graphics/IHUI4.png)
-
-  The following tab will appear. Make sure to save the generated password and assign the previously described roles:
-
-  ![IHUI6](graphics/IHUI6.png)
-
-  And that's it. Now assign the required information as follows:
-
-  - Name: Shopfloor-to-Cloud
-  - App Id: *enter the technical user you created*
-  - Password: *enter the technical user generated password*
-
-  > [!IMPORTANT]  
-  > More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html)
+    - mdsp:core:assetmanagement.admin
+    - mdsp:core:assetmodeler.fullaccess
+    - mdsp:core:mindconnect.fullaccess
     
+    To do this, go to *Insights Hub UI > Settings*:
 
-  **Certificate Credentials.**
+    ![IHUI](graphics/IHUI.png)
 
-  In this section, how to fill this information will be explained:
+    Go to *User Management > Technical Users*:
 
-  ![Aggregate2](graphics/Aggregate2.png)
+    ![IHUI2](graphics/IHUI2.png)
 
-  To do this, go to *Insights Hub UI > Asset Manager*:
+    Select *Create technical user*:
 
-  ![AssetManager1](graphics/AssetManager1.png)
+    ![IHUI3](graphics/IHUI3.png)
 
-  Then, go to *Asset Manager > Connectivity > MQTT Certificates*:
+    Assign a name and click on "Create technical user":
 
-  ![AssetManager2](graphics/AssetManager2.png)
+    ![IHUI4](graphics/IHUI4.png)
 
-  Click on "Create a new certificate":
+    The following tab will appear. Make sure to save the generated password and assign the previously described roles:
 
-  ![AssetManager3](graphics/AssetManager3.png)
+    ![IHUI6](graphics/IHUI6.png)
 
-  Now, select the type of authentication:
+    And that's it. Now assign the required information as follows:
 
-  ![AssetManager4](graphics/AssetManager4.png)
+    - Name: Shopfloor-to-Cloud
+    - App Id: *enter the technical user you created*
+    - Password: *enter the technical user generated password*
 
-  Create the certificate name and enter the author email:
+    > [!IMPORTANT]  
+    > More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html)
+      
 
-  ![AssetManager5](graphics/AssetManager5.png)
+    **Certificate Credentials.**
 
-  As soon as you click on the "Create & Download" button, the following files will be automatically downloaded:
+    In this section, how to fill this information will be explained:
 
-  - Certificate file (.pem)
-  - Certificate key file (.key)
+    ![Aggregate2](graphics/Aggregate2.png)
 
-  And that's it. Now assign the required information as follows:
+    To do this, go to *Insights Hub UI > Asset Manager*:
 
-  - Tenant: *enter your Insights Hub Tenant* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
-  - Device name: *enter your device name, for this case, it was named "Shopfloor-to-Cloud"*
-  - Certificate: *upload the .pem file*
-  - Key: *upload the .key file*
-  - Region *enter your region* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
-  - Broker URL: mindconnectmqtt.eu1.mindsphere.io
-  - Broker Port: 8883
+    ![AssetManager1](graphics/AssetManager1.png)
 
-  > [!IMPORTANT]  
-  > Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html)
-    
-  **Advanced Configuration**
+    Then, go to *Asset Manager > Connectivity > MQTT Certificates*:
 
-  In this section, how to fill this information will be explained:
+    ![AssetManager2](graphics/AssetManager2.png)
 
-  ![Aggregate3](graphics/Aggregate3.png)
+    Click on "Create a new certificate":
 
-  Assign the required information as follows:
+    ![AssetManager3](graphics/AssetManager3.png)
 
-  - Insights Hub Broker Root CA: *upload the .pem file, for this case, you can leave in blank*
-  - Publishing interval in seconds: *enter the period of time between each publication of data collected by the connected device*
-  - MQTT QoS: *enter the message delivery guarantee level to the MQTT protocol*
+    Now, select the type of authentication:
+
+    ![AssetManager4](graphics/AssetManager4.png)
+
+    Create the certificate name and enter the author email:
+
+    ![AssetManager5](graphics/AssetManager5.png)
+
+    As soon as you click on the "Create & Download" button, the following files will be automatically downloaded:
+
+    - Certificate file (.pem)
+    - Certificate key file (.key)
+
+    And that's it. Now assign the required information as follows:
+
+    - Tenant: *enter your Insights Hub Tenant* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
+    - Device name: *enter your device name, for this case, it was named "Shopfloor-to-Cloud"*
+    - Certificate: *upload the .pem file*
+    - Key: *upload the .key file*
+    - Region *enter your region* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
+    - Broker URL: mindconnectmqtt.eu1.mindsphere.io
+    - Broker Port: 8883
+
+    > [!IMPORTANT]  
+    > Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html)
+      
+    **Advanced Configuration**
+
+    In this section, how to fill this information will be explained:
+
+    ![Aggregate3](graphics/Aggregate3.png)
+
+    Assign the required information as follows:
+
+    - Insights Hub Broker Root CA: *upload the .pem file, for this case, you can leave in blank*
+    - Publishing interval in seconds: *enter the period of time between each publication of data collected by the connected device*
+    - MQTT QoS: *enter the message delivery guarantee level to the MQTT protocol*
 
 5. Click "Save". The connection will be established and you should see a green status in the Insights Hub connection on the Common Configurator "Home" window:
 
