@@ -240,8 +240,6 @@ You need to have a Insights Hub account and create certificates to allow a conne
 3. Add the following structure:
 
     ![IIH_CreateAssetModel1](graphics/IIH7.png)
-
-
     > [!IMPORTANT]  
     > Check the "Storage" and "Cloud Sync" checkbox for each variable
   
