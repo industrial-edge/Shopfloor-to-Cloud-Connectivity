@@ -157,7 +157,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
   ![IHUI4](graphics/IHUI4.png)
 
-  The following tab will appear. Make sure to save the generated password and assign the previosly described roles:
+  The following tab will appear. Make sure to save the generated password and assign the previously described roles:
 
   ![IHUI6](graphics/IHUI6.png)
 
