@@ -250,7 +250,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
   > [!IMPORTANT]  
   > Check the "Storage" and "Cloud Sync" checkbox for each variable
   
-6. Deploy the configuration:
+6. Deploy the configuration.
     The incoming data from Energy1 and Energy2 will now be stored in the integrated IIH Essentials. Under "Store Data" you can see the created Asset model and the datapoints.
       ![IIH_StoreData1](graphics/Line1.png)
       ![IIH_StoreData2](graphics/Line2.png)
