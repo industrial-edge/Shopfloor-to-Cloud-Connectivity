@@ -131,44 +131,44 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
   **Credentials for the application**
 
-    In this section, how to fill this information will be explained:
+  In this section, how to fill this information will be explained:
 
-    ![Aggregate](graphics/Aggregate.png)
+  ![Aggregate](graphics/Aggregate.png)
 
-    To allow Common Configurator to update the asset model in Insights Hub, The IH Tenant Administrator has to create a **Technical User** and add the following roles:
+  To allow Common Configurator to update the asset model in Insights Hub, The IH Tenant Administrator has to create a **Technical User** and add the following roles:
 
-    - mdsp:core:assetmanagement.admin
-    - mdsp:core:assetmodeler.fullaccess
-    - mdsp:core:mindconnect.fullaccess
-    
-    To do this go to *Insights Hub UI > Settings*:
+  - mdsp:core:assetmanagement.admin
+  - mdsp:core:assetmodeler.fullaccess
+  - mdsp:core:mindconnect.fullaccess
+  
+  To do this go to *Insights Hub UI > Settings*:
 
-    ![IHUI](graphics/IHUI.png)
+  ![IHUI](graphics/IHUI.png)
 
-    Go to *User Management > Technical Users*:
+  Go to *User Management > Technical Users*:
 
-    [IHUI2](graphics/IHUI2.png)
+  [IHUI2](graphics/IHUI2.png)
 
-    Select *Create technical user*:
+  Select *Create technical user*:
 
-    [IHUI3](graphics/IHUI3.png)
+  [IHUI3](graphics/IHUI3.png)
 
-    Assign a name and click on "Create technical user":
+  Assign a name and click on "Create technical user":
 
-    [IHUI4](graphics/IHUI4.png)
+  [IHUI4](graphics/IHUI4.png)
 
-    The following tab will appear. Make sure to save the generated password and assign the previosly described roles:
+  The following tab will appear. Make sure to save the generated password and assign the previosly described roles:
 
-    [IHUI6](graphics/IHUI6.png)
+  [IHUI6](graphics/IHUI6.png)
 
-    And that's it. Now assign the required information as follows:
+  And that's it. Now assign the required information as follows:
 
-    - Name: Shopfloor-to-Cloud
-    - App Id: *enter the technical user you created*
-    - Password: *enter the technical user generated password*
+  - Name: Shopfloor-to-Cloud
+  - App Id: *enter the technical user you created*
+  - Password: *enter the technical user generated password*
 
-    > [!IMPORTANT]  
-    > More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html)
+  > [!IMPORTANT]  
+  > More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html)
     
 
   b. Certificate Credentials. 
