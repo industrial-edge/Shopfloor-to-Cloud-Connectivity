@@ -166,8 +166,6 @@ You need to have a Insights Hub account and create certificates to allow a conne
     - App Id: *enter the technical user you created*
     - Password: *enter the technical user generated password*
 
-    > [!IMPORTANT]
-    > More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html).
     
     **Certificate Credentials.**
 
@@ -209,9 +207,6 @@ You need to have a Insights Hub account and create certificates to allow a conne
     - Region *enter your region* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
     - Broker URL: mindconnectmqtt.eu1.mindsphere.io
     - Broker Port: 8883
-    
-    > [!IMPORTANT]
-    > Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html).
 
   
 
@@ -226,6 +221,11 @@ You need to have a Insights Hub account and create certificates to allow a conne
     - Insights Hub Broker Root CA: *upload the .pem file, for this case, you can leave in blank*
     - Publishing interval in seconds: *enter the period of time between each publication of data collected by the connected device*
     - MQTT QoS: *enter the message delivery guarantee level to the MQTT protocol*
+    
+  > [!IMPORTANT]
+  > More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html).
+  > Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html).
+
 
 5. Click "Save". The connection will be established and you should see a green status in the Insights Hub connection on the Common Configurator "Home" window:
 
