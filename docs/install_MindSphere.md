@@ -120,7 +120,7 @@ This is the final result of the dashboard:
 
 <img id="Line1_media" src="graphics/LINE1_MEDIACOMSUMPTION.png" alt="Line1-media-consumption" width="900"/>
 
-Create a new dashboard by going to *My Plant*, select the asset where the variables are added, click on "Add dashboard" and name it "Line 1 - Media Consumption".
+Create a new dashboard by going to *My Plant*, select the "Line 1" asset , click on "Add dashboard" and name it "Line 1 - Media Consumption".
 
 ### Create widget for Energy Per Bottle
 
