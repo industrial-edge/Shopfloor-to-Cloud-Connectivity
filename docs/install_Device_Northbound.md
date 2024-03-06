@@ -167,68 +167,64 @@ You need to have a Insights Hub account and create certificates to allow a conne
     - Password: *enter the technical user generated password*
 
 
-> :bulb: More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html).
+    > :information: More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html).
+    
+    **Certificate Credentials.**
 
----
+    In this section, how to fill this information will be explained:
 
-  **Certificate Credentials.**
+    ![Aggregate2](graphics/Aggregate2.png)
 
-  In this section, how to fill this information will be explained:
+    To do this, go to *Insights Hub UI > Asset Manager*:
 
-  ![Aggregate2](graphics/Aggregate2.png)
+    ![AssetManager1](graphics/AssetManager1.png)
 
-  To do this, go to *Insights Hub UI > Asset Manager*:
+    Then, go to *Asset Manager > Connectivity > MQTT Certificates*:
 
-  ![AssetManager1](graphics/AssetManager1.png)
+    ![AssetManager2](graphics/AssetManager2.png)
 
-  Then, go to *Asset Manager > Connectivity > MQTT Certificates*:
+    Click on "Create a new certificate":
 
-  ![AssetManager2](graphics/AssetManager2.png)
+    ![AssetManager3](graphics/AssetManager3.png)
 
-  Click on "Create a new certificate":
+    Now, select the type of authentication:
 
-  ![AssetManager3](graphics/AssetManager3.png)
+    ![AssetManager4](graphics/AssetManager4.png)
 
-  Now, select the type of authentication:
+    Create the certificate name and enter the author email:
 
-  ![AssetManager4](graphics/AssetManager4.png)
+    ![AssetManager5](graphics/AssetManager5.png)
 
-  Create the certificate name and enter the author email:
+    As soon as you click on the "Create & Download" button, the following files will be automatically downloaded:
 
-  ![AssetManager5](graphics/AssetManager5.png)
+    - Certificate file (.pem)
+    - Certificate key file (.key)
 
-  As soon as you click on the "Create & Download" button, the following files will be automatically downloaded:
+    And that's it. Now assign the required information as follows:
 
-  - Certificate file (.pem)
-  - Certificate key file (.key)
+    - Tenant: *enter your Insights Hub Tenant* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
+    - Device name: *enter your device name, for this case, it was named "Shopfloor-to-Cloud"*
+    - Certificate: *upload the .pem file*
+    - Key: *upload the .key file*
+    - Region *enter your region* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
+    - Broker URL: mindconnectmqtt.eu1.mindsphere.io
+    - Broker Port: 8883
+    
+    > :bulb:Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html).
 
-  And that's it. Now assign the required information as follows:
+  
 
-  - Tenant: *enter your Insights Hub Tenant* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
-  - Device name: *enter your device name, for this case, it was named "Shopfloor-to-Cloud"*
-  - Certificate: *upload the .pem file*
-  - Key: *upload the .key file*
-  - Region *enter your region* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
-  - Broker URL: mindconnectmqtt.eu1.mindsphere.io
-  - Broker Port: 8883
+    **Advanced Configuration**
 
+    In this section, how to fill this information will be explained:
 
+    ![Aggregate3](graphics/Aggregate3.png)
 
-> :bulb:Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html).
+    Assign the required information as follows:
 
----
-
-  **Advanced Configuration**
-
-  In this section, how to fill this information will be explained:
-
-  ![Aggregate3](graphics/Aggregate3.png)
-
-  Assign the required information as follows:
-
-  - Insights Hub Broker Root CA: *upload the .pem file, for this case, you can leave in blank*
-  - Publishing interval in seconds: *enter the period of time between each publication of data collected by the connected device*
-  - MQTT QoS: *enter the message delivery guarantee level to the MQTT protocol*
+    - Insights Hub Broker Root CA: *upload the .pem file, for this case, you can leave in blank*
+    - Publishing interval in seconds: *enter the period of time between each publication of data collected by the connected device*
+    - MQTT QoS: *enter the message delivery guarantee level to the MQTT protocol*
 
 5. Click "Save". The connection will be established and you should see a green status in the Insights Hub connection on the Common Configurator "Home" window:
 
