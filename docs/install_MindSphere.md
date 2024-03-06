@@ -54,7 +54,7 @@ Let's start by builidng the **Overview** dashboard. This is the final result of 
 
 <img id="Overview" src="graphics/OVERVIEW_DASHBOARD.png" alt="OVERVIEW" width="900"/>
 
-Now, create a new dashboard by going to *My Plant*, select the asset where the variables are added, click on "Add dashboard" and name it "Overview":
+Now, create a new dashboard by going to *My Plant*, select the "Factory" asset, click on "Add dashboard" and name it "Overview":
 
 <img id="add_new_dasboard" src="graphics/Insights1.png" alt="CreateDashboard2" width="900"/>
 
@@ -68,7 +68,7 @@ To do that, in the created dashboard, proceed to create a widget.
 
 <img id="add_widget" src="graphics/addwidget.png" alt="KPI" width="900"/>
 
-Create a "Value" widget to display the Produced Bottles of the Line 1 and attach it to the "Line1_ProducedBottles", like so:
+Create a "Value" widget to display the Produced Bottles of the Line 1 and attach it to the "ProducedBottles" parameter on the Line1 asset, like so:
 
 <img id="tag1" src="graphics/tag1.png" alt="Tag1" width="900"/>
 
@@ -102,9 +102,9 @@ For this widget, the following KPI type needs to be created:
 
 In order to do that, go to *Energy Manager UI > Configuration > KPI Types* and create a new KPI type with the information provided in the picture above.
 
-Then, create a KPI instance named "CostLine1" based on the previously created KPI type, like so:
+Then, create a KPI instance named "CostPerLine1" based on the previously created KPI type, like so:
 
-<img id="CostLine1" src="graphics/CostLine1.png" alt="CostLine1" width="900"/>
+<img id="CostLine1" src="graphics/CostPerLine1.png" alt="CostLine1" width="900"/>
 
 Now, create a "Gauge" widget and attach it to the KPI instance you just created:
 
@@ -134,7 +134,7 @@ For this widget, create the following KPI type:
 
 Then, create a KPI instance named "EnergyPerBottleLine1" based on the previously created KPI type, like so:
 
-<img id="EnergyPerBottleLine1" src="graphics/EnergyPerBottleLine1.png" alt="EnergyPerBottleLine1" width="900"/>
+<img id="EnergyPerBottleLine1" src="graphics/EnergyPerBottle1.png" alt="EnergyPerBottleLine1" width="900"/>
 
 Now, create a "Gauge" widget and attach it to the KPI instance you just created:
 
@@ -159,7 +159,7 @@ For this widget, create the following KPI type:
 
 Then, create a KPI instance named "WaterPerBottleLine1" based on the previously created KPI type, like so:
 
-<img id="WaterPerBottleLine1" src="graphics/WaterPerBottleLine1.png" alt="WaterPerBottleLine1" width="900"/>
+<img id="WaterPerBottleLine1" src="graphics/WaterPerBottle1.png" alt="WaterPerBottleLine1" width="900"/>
 
 Now, create a "Gauge" widget and attach it to the KPI instance you just created:
 
@@ -181,7 +181,7 @@ For this widget, create the following KPI type:
 
 Then, create a KPI instance named "PressuredAirPerBottleLine1" based on the previously created KPI type, like so:
 
-<img id="PressuredAirPerBottleLine1" src="graphics/PressuredAirPerBottleLine1.png" alt="PressuredAirPerBottleLine1" width="900"/>
+<img id="PressuredAirPerBottleLine1" src="graphics/PressuredAirPerBottle1.png" alt="PressuredAirPerBottleLine1" width="900"/>
 
 Now, create a "Gauge" widget and attach it to the KPI instance you just created:
 
