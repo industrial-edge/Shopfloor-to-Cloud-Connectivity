@@ -181,21 +181,55 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
   ![AssetManager1](graphics/AssetManager1.png)
 
-  Then, go to *Asset Manager > Connectivity > MQTT Certificates*
+  Then, go to *Asset Manager > Connectivity > MQTT Certificates*:
 
   ![AssetManager2](graphics/AssetManager2.png)
 
-  SEGUIRRRRRRRRRR
+  Click on "Create a new certificate":
+
+  ![AssetManager3](graphics/AssetManager3.png)
+
+  Now, select the type of authentication:
+
+  ![AssetManager4](graphics/AssetManager4.png)
+
+  Create the certificate name and enter the author email:
+
+  ![AssetManager5](graphics/AssetManager5.png)
+
+  As soon as you click on the "Create & Download" button, the following files will be automatically downloaded:
+
+  - Certificate file (.pem)
+  - Certificate key file (.key)
+
+  And that's it. Now assign the required information as follows:
+
+  - Tenant: *enter your Insights Hub Tenant* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
+  - Device name: *enter your device name, for this case, it was named "Shopfloor-to-Cloud"*
+  - Certificate: *upload the .pem file*
+  - Key: *upload the .key file*
+  - Region *enter your region* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
+  - Broker URL: mindconnectmqtt.eu1.mindsphere.io
+  - Broker Port: 8883
 
   > [!IMPORTANT]  
   > Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html)
     
+  **Advanced Configuration**
 
-    Lastly, save the configuration.
+  In this section, how to fill this information will be explained:
 
-5. The connection will be established and you should see a green status in the Insights Hub "Home" window:
+  ![Aggregate3](graphics/Aggregate3.png)
 
-   ![IIH_InsightsHub2](graphics/IIH6.png)
+  Assign the required information as follows:
+
+  - Insights Hub Broker Root CA: *upload the .pem file, for this case, you can leave in blank*
+  - Publishing interval in seconds: *enter the period of time between each publication of data collected by the connected device*
+  - MQTT QoS: *enter the message delivery guarantee level to the MQTT protocol*
+
+5. Click "Save". The connection will be established and you should see a green status in the Insights Hub connection on the Common Configurator "Home" window:
+
+   ![online](graphics/IIH6.png)
 
 ### Create the Asset Model
 
