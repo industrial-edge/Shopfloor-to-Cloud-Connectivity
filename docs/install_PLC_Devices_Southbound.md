@@ -157,9 +157,9 @@ To do this, follow this steps:
 
 1. Import the JSON-File
   
-    For Energy1: [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
+    For Energy1: [FlowCreator_Energy1](../src/Device_Energy1/Energy1.json)
 
-    For Energy2: [FlowCreator_Energy2](../src/Device_Energy2/FlowCreator_Energy2.json)
+    For Energy2: [FlowCreator_Energy2](../src/Device_Energy2/Energy2.json)
   
     
   ![FlowCreator1](graphics/Flow_Creator1.png)
@@ -171,10 +171,6 @@ To do this, follow this steps:
   
     
   ![FlowCreator3](graphics/Flow_Creator3.png)
-
-Before deploying the flows, the following topic has to be changed to `ie/d/j/simatic/v1/opcuac1/dp/r/Energy1/default` for Energy 1 and to `ie/d/j/simatic/v1/opcuac1/dp/r/Energy2/default` for Energy 2:
-
-![FlowCreator1](graphics/topic.png)
 
 4. Deploy the Flow
 
