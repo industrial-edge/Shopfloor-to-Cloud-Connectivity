@@ -129,7 +129,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
   - Certificate Credentials.
   - Advanced Configuration.
 
-  a. Credentials for the application
+  **Credentials for the application**
 
     In this section, how to fill this information will be explained:
 
