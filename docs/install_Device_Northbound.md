@@ -129,7 +129,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
   - Certificate Credentials.
   - Advanced Configuration.
 
-  4.1 **Credentials for the application**
+  **Credentials for the application**
 
   In this section, how to fill this information will be explained:
 
@@ -171,7 +171,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
   > More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html)
     
 
-  4.2 **Certificate Credentials.**
+  **Certificate Credentials.**
 
   In this section, how to fill this information will be explained:
 
