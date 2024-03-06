@@ -4,7 +4,7 @@
 - [Configure Northbound](#configure-northbound)
   - [Create Databus Credentials and Topics](#create-databus-credentials-and-topics)
   - [Configure Communication with DataXess](#configure-communication-with-dataxess)
-  - [Insights Hub Sync](#iih-insights-hub-sync)
+  - [Insights Hub Sync](#insights-hub-sync)
     - [Integrate IIH Essentials](#integrate-iih-essentials)
     - [Configure Connections](#configure-connections)
     - [Create the Asset Model](#create-the-asset-model)
