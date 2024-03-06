@@ -235,9 +235,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 1. Go to "Define Data > Organize" to create an Asset Model and connect the variables
 
-2. Add an Asset and name it by double clicking on it
-
-3. Add the following structure:
+2. Add the following structure:
 
     ![IIH_CreateAssetModel1](graphics/IIH7.png)
 
@@ -245,7 +243,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
   > [!IMPORTANT]  
   > Check the "Storage" and "Cloud Sync" checkbox for each variable
   
-4. Deploy the configuration.
+3. Deploy the configuration.
     The incoming data from Energy1 and Energy2 will now be stored in the integrated IIH Essentials. Under "Store Data" you can see the created Asset model and the datapoints.
       ![IIH_StoreData1](graphics/Line1.png)
       ![IIH_StoreData2](graphics/Line2.png)
