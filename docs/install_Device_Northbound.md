@@ -116,7 +116,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 3. Proceed with configuring the Insights Hub connection by clicking "Add" button.
 
-  ![IIH_OnlineStatus](graphics/IIH4.png)
+    ![IIH_OnlineStatus](graphics/IIH4.png)
 
 4. Select the Target type. Those are required to allow the Common Configurator to interact with Insights Hubs REST-API.
 
