@@ -147,19 +147,19 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
   Go to *User Management > Technical Users*:
 
-  [IHUI2](graphics/IHUI2.png)
+  ![IHUI2](graphics/IHUI2.png)
 
   Select *Create technical user*:
 
-  [IHUI3](graphics/IHUI3.png)
+  ![IHUI3](graphics/IHUI3.png)
 
   Assign a name and click on "Create technical user":
 
-  [IHUI4](graphics/IHUI4.png)
+  ![IHUI4](graphics/IHUI4.png)
 
   The following tab will appear. Make sure to save the generated password and assign the previosly described roles:
 
-  [IHUI6](graphics/IHUI6.png)
+  ![IHUI6](graphics/IHUI6.png)
 
   And that's it. Now assign the required information as follows:
 
