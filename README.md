@@ -94,45 +94,51 @@ Insights Hub:
 
 You can find the further information about the following steps in the [docs](docs/install_PLC_Devices_Southbound.md)
 
+- Configuration Steps
 - Configure PLC project in TIA-Portal
-
 - Configure PLC connections in Industrial Edge
   - Create Databus Credentials and Topics
   - Configure OPC UA Connector in Common Configurator
     - Enter Databus Credentials
     - Add PLC
     - Add Tags
-  
 - Configure Data preprocessing 
   - IE Flow Creator
-  
 - Configure Connection to Northbound
-  - DataXess
 
 
 ## Configuration Northbound Device
 
 You can find the further information about the following steps in the [docs](docs/install_Device_Northbound.md)
 
-- Configure Connection to Southbound
-  - Create Databus Credentials
-  - Configure communication with DataXess
-
-- Organize incoming data
-  - Integrate IIH Essentials in Common Configurator
-  - Create an Asset model
-
-- Connect to Insights Hub
-
-- Configure visualization
-  - Energy Manager
+- Configuration Steps
+- Configure Northbound
+  - Create Databus Credentials and Topics
+  - Configure Communication with DataXess
+  - Insights Hub Sync
+    - Integrate IIH Essentials into Common Configurator
+    - Configure Connection to Insights Hub
+    - Create the Asset Model
 
 
 ## Configuration Insights Hub
 You can find the further information about the following steps in the [docs](docs/install_MindSphere.md)
 
-- Configure visualization
-  - Energy Manager 
+- Configuration Steps
+- IIH Insights Hub Sync
+- Configure Energy Manager
+    - Overview Dashboard
+      - Create widget for Produced Bottles of Each Line
+      - Create widget for Consumption Graphic of Each Line
+      - Create widget for Cost of each Line
+    - Line 1 - Media Consumption Dashboard
+      - Create widget for Energy Per Bottle
+      - Create widget for Water per Bottle
+      - Create widget for PressuredAir per Bottle
+      - Create widget for Consumption Per Bottle
+      - Create widget for Cost per Bottle (Gauge)
+      - Create widget for Cost per Bottle (Diagram)
+    - Line 2 - Media Consumption Dashboard
 
 
 ## Documentation
