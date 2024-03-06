@@ -141,7 +141,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
   - mdsp:core:assetmodeler.fullaccess
   - mdsp:core:mindconnect.fullaccess
   
-  To do this go to *Insights Hub UI > Settings*:
+  To do this, go to *Insights Hub UI > Settings*:
 
   ![IHUI](graphics/IHUI.png)
 
