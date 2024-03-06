@@ -255,9 +255,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
       ![IIH_StoreData1](graphics/Line1.png)
       ![IIH_StoreData2](graphics/Line2.png)
-
     In Insights Hub Energy Manager, you should now also see your data structure from Common Configurator.
-
         ![InsightsHub_Datamodel](graphics/IIH10.png)
     
 
