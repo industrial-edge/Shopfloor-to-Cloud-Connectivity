@@ -252,12 +252,11 @@ You need to have a Insights Hub account and create certificates to allow a conne
   
 6. Deploy the configuration:
     The incoming data from Energy1 and Energy2 will now be stored in the integrated IIH Essentials. Under "Store Data" you can see the created Asset model and the datapoints.
-
       ![IIH_StoreData1](graphics/Line1.png)
       ![IIH_StoreData2](graphics/Line2.png)
+
     In Insights Hub Energy Manager, you should now also see your data structure from Common Configurator.
-    
-        ![InsightsHub_Datamodel](graphics/IIH10.png)
+      ![InsightsHub_Datamodel](graphics/IIH10.png)
     
 
 Up to this point, the following steps have been completed:
