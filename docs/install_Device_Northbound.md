@@ -5,10 +5,9 @@
   - [Create Databus Credentials and Topics](#create-databus-credentials-and-topics)
   - [Configure Communication with DataXess](#configure-communication-with-dataxess)
   - [Insights Hub Sync](#insights-hub-sync)
-    - [Integrate IIH Essentials](#integrate-iih-essentials)
-    - [Configure Connections](#configure-connections)
+    - [Integrate IIH Essentials into Common Configurator](#integrate-iih-essentials-into-common-configurator)
+    - [Configure Connection to Insights Hub](#configure-connection-to-insights-hub)
     - [Create the Asset Model](#create-the-asset-model)
-  - [Northbound Device - Energy Manager](#northbound-device---energy-manager)
 - [Navigation](#navigation)
   
 # Configure Northbound
@@ -103,7 +102,7 @@ All the following steps for this option will be performed in the "Common Configu
 
   ![IIH_IntegrateConfirmation](graphics/IIH2.png)
 
-### Configure Connection to Insights Hub.
+### Configure Connection to Insights Hub
 
 Common Configurator needs a connection to the Databus and to Insights Hub. 
 
