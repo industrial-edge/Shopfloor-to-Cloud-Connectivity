@@ -132,7 +132,7 @@ For this widget, create the following KPI type:
 
 <img id="energyPerBottle" src="graphics/energyxbottle.png" alt="energyPerBottle" width="900"/>
 
-Then, create a KPI instance named "EnergyPerBottleLine1" based on the previously created KPI type, like so:
+Then, create a KPI instance named "EnergyPerBottle1" based on the previously created KPI type, like so:
 
 <img id="EnergyPerBottleLine1" src="graphics/EnergyPerBottle1.png" alt="EnergyPerBottleLine1" width="900"/>
 
@@ -157,7 +157,7 @@ For this widget, create the following KPI type:
 
 <img id="WaterPerBottleKPIType" src="graphics/WaterPerBottleKPIType.png" alt="WaterPerBottleKPIType" width="900"/>
 
-Then, create a KPI instance named "WaterPerBottleLine1" based on the previously created KPI type, like so:
+Then, create a KPI instance named "WaterPerBottle1" based on the previously created KPI type, like so:
 
 <img id="WaterPerBottleLine1" src="graphics/WaterPerBottle1.png" alt="WaterPerBottleLine1" width="900"/>
 
@@ -179,7 +179,7 @@ For this widget, create the following KPI type:
 
 <img id="PressuredAirPerBottleKPIType" src="graphics/PressuredAirPerBottleKPIType.png" alt="PressuredAirPerBottleKPIType" width="900"/>
 
-Then, create a KPI instance named "PressuredAirPerBottleLine1" based on the previously created KPI type, like so:
+Then, create a KPI instance named "PressuredAirPerBottle1" based on the previously created KPI type, like so:
 
 <img id="PressuredAirPerBottleLine1" src="graphics/PressuredAirPerBottle1.png" alt="PressuredAirPerBottleLine1" width="900"/>
 
@@ -219,7 +219,7 @@ For this widget, create the following KPI type:
 
 <img id="CostPerBottleKPIType" src="graphics/CostPerBottleKPIType.png" alt="CostPerBottleKPIType" width="900"/>
 
-Then, create a KPI instance named "CostPerBottleLine1" based on the previously created KPI type, like so:
+Then, create a KPI instance named "CostPerBottle1" based on the previously created KPI type, like so:
 
 <img id="CostPerBottleKPIInstance" src="graphics/CostPerBottleKPIInstance.png" alt="CostPerBottleKPIInstance" width="900"/>
 
