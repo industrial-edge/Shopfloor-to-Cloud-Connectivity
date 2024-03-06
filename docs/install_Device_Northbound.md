@@ -117,17 +117,81 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 3. Proceed with configuring the Insights Hub connection by clicking "Add" button.
 
-   ![IIH_OnlineStatus](graphics/IIH4.png)
+  ![IIH_OnlineStatus](graphics/IIH4.png)
 
-4. Select the Target type. Enter credentials for the application. Those are required, to allow the IIH to interact with Insights Hubs REST-API.
-   
-   ![IIH_InsightsHub](graphics/IIH5.png)
+4. Select the Target type. Those are required to allow the Common Configurator to interact with Insights Hubs REST-API.
 
-   The Insights Hub Tenant Administrator has to create them and assign the role "mdsp:core:Admin3rdPartyTechUser", to allow IIH to update the asset model in Insights Hub. More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html)
+  ![Aggregate0](graphics/Aggregate0.png)
 
-   Enter the certificate details and upload the certificate and key. Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html)
+  You need to fill those 3 sections in order to get a proper interaction with Insights Hub:
 
-   Lastly, save the configuration.
+  - Credentials for the application.
+  - Certificate Credentials.
+  - Advanced Configuration.
+
+  a. Credentials for the application
+
+    In this section, how to fill this information will be explained:
+
+    ![Aggregate](graphics/Aggregate.png)
+
+    To allow Common Configurator to update the asset model in Insights Hub, The IH Tenant Administrator has to create a **Technical User** and add the following roles:
+
+    - mdsp:core:assetmanagement.admin
+    - mdsp:core:assetmodeler.fullaccess
+    - mdsp:core:mindconnect.fullaccess
+    
+    To do this go to *Insights Hub UI > Settings*:
+
+    ![IHUI](graphics/IHUI.png)
+
+    Go to *User Management > Technical Users*:
+
+    [IHUI2](graphics/IHUI2.png)
+
+    Select *Create technical user*:
+
+    [IHUI3](graphics/IHUI3.png)
+
+    Assign a name and click on "Create technical user":
+
+    [IHUI4](graphics/IHUI4.png)
+
+    The following tab will appear. Make sure to save the generated password and assign the previosly described roles:
+
+    [IHUI6](graphics/IHUI6.png)
+
+    And that's it. Now assign the required information as follows:
+
+    - Name: Shopfloor-to-Cloud
+    - App Id: *enter the technical user you created*
+    - Password: *enter the technical user generated password*
+
+    > [!IMPORTANT]  
+    > More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html)
+    
+
+  b. Certificate Credentials. 
+
+    In this section, how to fill this information will be explained:
+
+    ![Aggregate1](graphics/Aggregate1.png)
+
+    To do this, go to *Insights Hub UI > Asset Manager*:
+
+    ![AssetManager1](graphics/AssetManager1.png)
+
+    Then, go to *Asset Manager > Connectivity > MQTT Certificates*
+
+    ![AssetManager2](graphics/AssetManager2.png)
+
+    SEGUIRRRRRRRRRR
+
+    > [!IMPORTANT]  
+    > Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html)
+    
+
+    Lastly, save the configuration.
 
 5. The connection will be established and you should see a green status in the Insights Hub "Home" window:
 
@@ -139,7 +203,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 2. Add an Asset and name it by double clicking on it
 
-3. Add two Aspects to structure the data according two our two machines
+3. Add the following structure:
 
   ![IIH_CreateAssetModel1](graphics/IIH7.png)
 
@@ -156,7 +220,8 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
 The incoming data from Energy1 and Energy2 will now be stored in the integrated IIH Essentials. Under "Store Data" you can see the created Asset model and the datapoints.
 
-  ![IIH_StoreData](graphics/IIH8.png)
+  ![IIH_StoreData1](graphics/Line1.png)
+  ![IIH_StoreData2](graphics/Line2.png)
 
 In Insights Hub Energy Manager, you should now also see your data structure from Common Configurator.
 
