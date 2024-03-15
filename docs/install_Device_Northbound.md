@@ -198,7 +198,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
     - Certificate file (.pem)
     - Certificate key file (.key)
 
-    And that's it. Now assign the required information as follows:
+    Now assign the required information as follows:
 
     - Tenant: *enter your Insights Hub Tenant* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
     - Device name: *enter your device name, for this case, it was named "Shopfloor-to-Cloud"*
