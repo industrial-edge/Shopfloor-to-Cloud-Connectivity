@@ -44,6 +44,16 @@ For this, the following dashboards are created using the data collected from the
 - Consumption per Bottle
 - Cost per Bottle
 
+The configuration files for each of the dashboards are presented below:
+
+- [Overview Dashboard](../src/CentralDevice/Overview.json)
+- [Line 1 Dashboard](../src/CentralDevice/Line1.json)
+- [Line 2 Dashboard](../src/CentralDevice/Line2.json)
+
+ To import these dashboards, go to *Energy Manager UI*, select the asset, click on "Add dashboard", select "Import Dashboard" and upload the corresponding dashboard configuration file.
+
+However, The step by step of how to build these dashboards is shown below.
+
 # Configure Energy Manager
 
 From here, the step-by-step process of creating each dashboard will be explained.

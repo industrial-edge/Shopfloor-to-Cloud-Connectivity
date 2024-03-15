@@ -160,7 +160,7 @@ You need to have a Insights Hub account and create certificates to allow a conne
 
     ![IHUI6](graphics/IHUI6.png)
 
-    And that's it. Now assign the required information as follows:
+    Now assign the required information as follows:
 
     - Name: Shopfloor-to-Cloud
     - App Id: *enter the technical user you created*
