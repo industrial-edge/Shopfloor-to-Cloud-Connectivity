@@ -231,7 +231,7 @@ For this widget, create the following KPI type:
 
 Then, create a KPI instance named "CostPerBottle1" based on the previously created KPI type, like so:
 
-<img id="CostPerBottleKPIInstance" src="graphics/CostPerBottle1.png" alt="CostPerBottleKPIInstance" width="900"/>
+<img id="CostPerBottleKPIInstance" src="graphics/CostPerBottleLine1.png" alt="CostPerBottleKPIInstance" width="900"/>
 
 Now, create a "Gauge" widget and attach it to the KPI instance you just created:
 
