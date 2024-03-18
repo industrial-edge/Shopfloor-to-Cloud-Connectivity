@@ -2,27 +2,26 @@
 
 - [Configuration Steps](#configuration-steps)
 - [Configure Northbound](#configure-northbound)
-  - [Databus](#databus)
-  - [External Databus](#external-databus)
-  - [IIH Insights Hub Sync](#iih-insights-hub-sync)
-    - [Integrate Data Service](#integrate-data-service)
-    - [Configure Connections](#configure-connections)
+  - [Create Databus Credentials and Topics](#create-databus-credentials-and-topics)
+  - [Configure Communication with DataXess](#configure-communication-with-dataxess)
+  - [Insights Hub Sync](#insights-hub-sync)
+    - [Integrate IIH Essentials into Common Configurator](#integrate-iih-essentials-into-common-configurator)
+    - [Configure Connection to Insights Hub](#configure-connection-to-insights-hub)
     - [Create the Asset Model](#create-the-asset-model)
-  - [Northbound Device - Energy Manager](#northbound-device---energy-manager)
 - [Navigation](#navigation)
   
 # Configure Northbound
 
-The Northbound consist of one device. In the following this is called "Central Device".
-Installed Apps on Central Device:
-  - Data Service
+The Northbound consist of one device. In the following this is called "Shopfloor-to-Cloud".
+Installed Apps:
+  - IIH Essentials
   - Databus
-  - Energy Manager
-  - External Databus  
-  - IIH Core
-  - IIH Configurator
+  - DataXess 
+  - IIH Semantics
+  - Common Configurator
+  - Registry Service
 
-## Databus
+## Create Databus Credentials and Topics
 
 Configure the User and Topic in the Databus Configurator as described [here](install_PLC_Devices_Southbound.md).  
 
@@ -44,264 +43,224 @@ Instead of manually configuring you can also import the configuration files:
 
   ![ie_databus](graphics/IE_Databus.png)
 
-## External Databus
+## Configure Communication with DataXess
 
-To receive the data from the IE Cloud Connector from Energy1 and Energy2 the External Databus has to be configured
+In this section, we will configure the communication between the two acquisition devices (Energy1 and Energy2) and the aggregation device (Shopfloor-to-Cloud).
 
-Instead of manually configuring you can also import the configuration files:
+To do this, follow these steps:
 
-[External_Databus_Central](../src/CentralDevice/IE_MQTT_Connctor_Central.json) (Password = Edge1234!)
+1. Go to *Industrial Edge Management UI > Data Connections* and open DataXess.
+   
+2. It doesn't matter which device you select to launch the app. The configuration will be done centrally for all devices at once.
 
-1. Launch the External Databus Configurator and add your related Credentials/Topics:
+ ![DataXess1](graphics/data1.png)
 
-   - Username: `edge`
-   - Password: `edge`
+3. Start the configuration by creating a new group
+   
+  ![DataXess2](graphics/data2.png)
 
-![ie_mqtt_Connector](graphics/IE_MQTT_Connector_User.png)
+4. Add a group name and description and add all 3 devices to it. Make sure to select the central device as the "Aggregator Device" and click "Save".
+   
+  ![DataXess3](graphics/data3.png)
 
-2. Add Topic and Permission
+5. Click on one of the setting symbols of your new created group to configure the data that get's exchanged. Select the topics `ie/d/j/simatic/v1/iefc/dp/r/#` and `ie/m/j/simatic/v1/iefc/dp` for both acquistion devices.
+   
+  ![DataXess4](graphics/data4.png)
+  ![DataXess5](graphics/data5.png)
 
-- Topic: `ie/#`
-- Permission: `Publish and Subscribe`
+6. DataXess will automatically create new topics on the aggregator device were the data will be published.
+   
+  ![DataXess6](graphics/data9.png)
 
-![ie_mqtt_Connector](graphics/IE_MQTT_Connector_Topic.png)
-    
-![ie_mqtt_Connector](graphics/MQTT_Connector.png)
+7. Click "Deploy".
+  
+ ![DataXess6](graphics/data6.png)
+   
+8. Configure a new user that will be used to subscribe and publish to the configured topics and click "Validate",
+   
+  ![DataXess7](graphics/data7.png)
 
-3. Set "Unsecure" in the "Certificate" settings
+If everything was configured correctly, all devices should have a green status. Also, the general connection status msut be in green as well, as shown:
 
-![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Certificate.png)
+  ![DataXess8](graphics/data8.png)
 
-4. Bridge Configure
+##  Insights Hub Sync
 
-   - Insert User: `edge`
-   - Insert password: `edge`
-   - Select Topic:  `ie/#`
-   - Direction: `IE MQTT Connector` :arrow_right: `IE Databus`
+In this section, the necessary configurations will be made to establish communication with the cloud (Insights Hub).
 
-![IE_MQTT_Connector](graphics/IE_MQTT_Connector_Bridge.png)
+All the following steps for this option will be performed in the "Common Configurator" app on the Aggregation Device (Shopfloor-to-cloud).
 
-##  IIH Insights Hub Sync
+### Integrate IIH Essentials into Common Configurator
 
-All the following steps for this option will be performed in the "IIH Configurator" app on the Central Device.
-
-### Integrate Data Service
-
-To store data in the Industrial Information Hub (IIH), it is required to integrate the Data Service Application. 
-
-1. Go to the "Store Data" tab
+1. Go to *Edge Device UI > Apps*, open *Common Configurator*. Then, go to *Store Data*.
 
 2. Click on "Integrate"
    
-  ![IIH_IntegrateDataService](graphics/IIH_IntegrateDataService.png)
+    ![IIH_Integrate](graphics/IIH1.png)
 
 3. Confirm the integration in the popup window
 
-  ![IIH_IntegrateDataServiceConfirmation](graphics/IIH_IntegrateDataServiceConfirmation.png)
+    ![IIH_IntegrateConfirmation](graphics/IIH2.png)
 
-### Configure Connections
+### Configure Connection to Insights Hub
 
-The IIH needs a connection to the Databus and to Insights Hub. You need to have a Insights Hub account and create
-certificates to allow a connection from the IIH.
+Common Configurator needs a connection to the Databus and to Insights Hub. 
+
+You need to have a Insights Hub account and create certificates to allow a connection from the Common Configurator.
 
 1. Configure the Databus credentials under "Settings > Databus credentials"
 
-  ![IIH_DatabusCredentials](graphics/IIH_DatabusCredentials.png)
+   ![IIH_DatabusCredentials](graphics/IIH3.png)
 
 2. Save the configuration
 
-3. Check if the device has an online connection in the "Home" tab, to proceed with configuring the Insights Hub connection.
+3. Proceed with configuring the Insights Hub connection by clicking "Add" button.
 
-  ![IIH_OnlineStatus](graphics/IIH_OnlineStatus.png)
+    ![IIH_OnlineStatus](graphics/IIH4.png)
 
-4. Click on "Add parent IED / Connect to MindSphere"
+4. Select the Target type. Those are required to allow the Common Configurator to interact with Insights Hubs REST-API.
 
-  ![IIH_MindsphereConfig1](graphics/IIH_MindsphereConfig1.png)
+    ![Aggregate0](graphics/Aggregate0.png)
 
-5. Select the device type "MindSphere Device"
+    You need to fill those 3 sections in order to get a proper interaction with Insights Hub:
 
-6. Enter credentials for the application. Those are required, to allow the IIH to interact with Insights Hubs REST-API.
-   The Insights Hub Tenant Administrator has to create them and assign the role "mdsp:core:Admin3rdPartyTechUser", to
-   allow the IIH to update the asset model in Insights Hub. More information can be found in the [IIH documentation](https://cache.industry.siemens.com/dl/dl-media/582/109803582/att_1087779/v6/EdgeApp_CommonConfigurator_en-US/en-US/index.html#treeId=487dc5ea471ae3fbdfb56d715301dad7) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html) 
+    - Credentials for the application.
+    - Certificate Credentials.
+    - Advanced Configuration.
 
-  ![IIH_MindsphereConfig2](graphics/IIH_MindsphereConfig2.png)
+    **Credentials for the application**
 
-7. Enter the certificate details and upload the certificate and key. Information on how to create connector certificates
-   can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html)
+    In this section, how to fill this information will be explained:
 
-8. Select your region and save the configuration.
+    ![Aggregate](graphics/Aggregate.png)
 
-  ![IIH_ConnectionSuccessfull](graphics/IIH_ConnectionSuccessfull.png)
+    To allow Common Configurator to update the asset model in Insights Hub, The IH Tenant Administrator has to create a **Technical User** and add the following roles:
 
-9. The connection will be established and you should see a green status in the IIH "Home" window
+    - mdsp:core:assetmanagement.admin
+    - mdsp:core:assetmodeler.fullaccess
+    - mdsp:core:mindconnect.fullaccess
+    
+    To do this, go to *Insights Hub UI > Settings*:
+
+    ![IHUI](graphics/IHUI.png)
+
+    Go to *User Management > Technical Users*:
+
+    ![IHUI2](graphics/IHUI2.png)
+
+    Select *Create technical user*:
+
+    ![IHUI3](graphics/IHUI3.png)
+
+    Assign a name and click on "Create technical user":
+
+    ![IHUI4](graphics/IHUI4.png)
+
+    The following tab will appear. Make sure to save the generated password and assign the previously described roles:
+
+    ![IHUI6](graphics/IHUI6.png)
+
+    Now assign the required information as follows:
+
+    - Name: Shopfloor-to-Cloud
+    - App Id: *enter the technical user you created*
+    - Password: *enter the technical user generated password*
+
+    
+    **Certificate Credentials.**
+
+    In this section, how to fill this information will be explained:
+
+    ![Aggregate2](graphics/Aggregate2.png)
+
+    To do this, go to *Insights Hub UI > Asset Manager*:
+
+    ![AssetManager1](graphics/AssetManager1.png)
+
+    Then, go to *Asset Manager > Connectivity > MQTT Certificates*:
+
+    ![AssetManager2](graphics/AssetManager2.png)
+
+    Click on "Create a new certificate":
+
+    ![AssetManager3](graphics/AssetManager3.png)
+
+    Now, select the type of authentication:
+
+    ![AssetManager4](graphics/AssetManager4.png)
+
+    Create the certificate name and enter the author email:
+
+    ![AssetManager5](graphics/AssetManager5.png)
+
+    As soon as you click on the "Create & Download" button, the following files will be automatically downloaded:
+
+    - Certificate file (.pem)
+    - Certificate key file (.key)
+
+    Now assign the required information as follows:
+
+    - Tenant: *enter your Insights Hub Tenant* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
+    - Device name: *enter your device name, for this case, it was named "Shopfloor-to-Cloud"*
+    - Certificate: *upload the .pem file*
+    - Key: *upload the .key file*
+    - Region *enter your region* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
+    - Broker URL: mindconnectmqtt.eu1.mindsphere.io
+    - Broker Port: 8883
+
+  
+
+    **Advanced Configuration**
+
+    In this section, how to fill this information will be explained:
+
+    ![Aggregate3](graphics/Aggregate3.png)
+
+    Assign the required information as follows:
+
+    - Insights Hub Broker Root CA: *upload the .pem file, for this case, you can leave in blank*
+    - Publishing interval in seconds: *enter the period of time between each publication of data collected by the connected device*
+    - MQTT QoS: *enter the message delivery guarantee level to the MQTT protocol*
+    
+  > [!IMPORTANT]
+  > More information can be found in the [Common Configurator documentation](https://cache.industry.siemens.com/dl/files/743/109826743/att_1162983/v1/EdgeApp_IIH_enUS_en-US.pdf) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html).
+  > Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html).
+
+
+5. Click "Save". The connection will be established and you should see a green status in the Insights Hub connection on the Common Configurator "Home" window:
+
+   ![online](graphics/IIH6.png)
 
 ### Create the Asset Model
 
 1. Go to "Define Data > Organize" to create an Asset Model and connect the variables
 
-2. Add an Asset and name it by double clicking on it
+2. Add the following structure:
 
-3. Add two Aspects to structure the data according two our two machines
-
-  ![IIH_CreateAssetModel1](graphics/IIH_CreateAssetModel1.png)
-
-4. Now add 4 variables for each Aspect and give them names
-
-5. On the left side below "Data Sources" you should see the two Databus topics with the variables from each machine
-
-6. Assign those tags two the variables in your Asset model per drag & drop
-
-  ![IIH_CreateAssetModel2](graphics/IIH_CreateAssetModel2.png)
-
-7. Check the "Storage" and "Cloud Sync" checkbox for each variable
-
-8. Deploy the configuration
-
-The incoming data will now be stored in the integrated Data Service. Under "Store Data" you can see the created 
-Asset model and the datapoints.
-
-  ![IIH_StoreData](graphics/IIH_StoreData.png)
-
-In Insights Hub Energy Manager, you should now also see your data structure from the IIH.
-
-  ![MindSphere_Datamodel](graphics/MindSphere_Datamodel.png)
-
-## Northbound Device - Energy Manager
-
-To analyze the data locally on the Edge Device, you can use Energy Manager App on the Northbound Device
-
-Energy Manager displays the total energy consumption, the energy consumption per bottle and the associated costs for each line.
-
-  ![EnergyManageroverview1](graphics/EnergyManager_overview1.png)
-
-  ![EnergyManageroverview2](graphics/EnergyManager_overview2.png)
-
-  ![EnergyManageroverview3](graphics/EnergyManager_overview3.png)
-
-At first a ned dashboard, that contains the widgets will be created.
+    ![IIH_CreateAssetModel1](graphics/IIH7.png)
 
 
-1. Add a new dashboard  "Overview Media Consumption"
+  > [!IMPORTANT]  
+  > Check the "Storage" and "Cloud Sync" checkbox for each variable
   
-  ![EnergyManager1](graphics/EnergyManager1.png)
+3. Deploy the configuration.
+    The incoming data from Energy1 and Energy2 will now be stored in the integrated IIH Essentials. Under "Store Data" you can see the created Asset model and the datapoints.
+      ![IIH_StoreData1](graphics/Line1.png)
+      ![IIH_StoreData2](graphics/Line2.png)
 
-2. Do the same for the dashboards "Media Consumption per Bottle Line1" and "Media Consumption per Bottle Line2"
-  
-Show the produced bottles from Line1 in a Value on Dashboard "Overview Media Consumption"
-
-3. Click on "Create first widget"
-   
-4. Select type "Value" and continue
-
-  ![EnergyManager2](graphics/EnergyManager2.png)
-
-5. Name the widget "Produced Bottles Line1" and select the calculation period
-  
-  ![EnergyManager3](graphics/EnergyManager3.png)
-
-6. Select parameter
-  
-  ![EnergyManager4](graphics/EnergyManager4.png)
-
-7. Select "counter" for the aggregation
-
-  ![EnergyManager5](graphics/EnergyManager5.png)
-
-8. Click "continue" twice and finish the configuration
-   
-9.  Do the same for "Produced Bottles Line2"
-
-Show the "Media Consumption Line1" as a line diagram
-
-10. Click "New widget"
+    In Insights Hub Energy Manager, you should now also see your data structure from Common Configurator.
+      ![InsightsHub_Datamodel](graphics/IIH10.png)
     
-11. Select type "Diagram" and continue 
-    
-12. Name the widget "Media Consumption Line1" and select the calculation 
-  
-  ![EnergyManager6](graphics/EnergyManager6.png)
 
-Select parameter
+Up to this point, the following steps have been completed:
 
-  ![EnergyManager7](graphics/EnergyManager7.png)
+- Communication has been established between the Southbound devices (Energy1 and Energy2) and the Northbound device (Shopfloor-to-Cloud).
 
-13. Select "counter" for the aggregation
-    
-14. To change the colour of the lines click on the gear and select the colour
+- Communication has been established between the Northbound device (Shopfloor-to-Cloud) and the cloud (Insights Hub).
 
-  ![EnergyManager8](graphics/EnergyManager8.png)
+From here onwards, the Energy Manager application hosted in the cloud will be used to create a dashboard with the preprocessed data sourced from the Northbound device.
 
-Because of different units it´s necessary to adapt the "Y-axis"
-
-15. On rubric 5 "Chart-Display options" click on the gear next to "Y-axis"
-    
-16. Assign the parameters as shown in the picture below
-
-  ![EnergyManager9](graphics/EnergyManager9.png)
-
-17. Do the same for the other line diagrams 
-  
-  Note: for some diagrams KPIs are necessary, how to set them is explained in the next step
-
-A gauge diagram is a way to give a quick overview about the current values e.g. Energy per Bottle Line1  
-Here it´s necessary to generate a KPI that calculates the value
-
-In order not to configure all calculations individually, it´s helpful to create KPIs
-
-18. Click "Configuration" on the left side and select "KPI types"
-
-  ![EnergyManager12](graphics/EnergyManager12.png)
-
-19. Add "New KPI type"
-    
-20. Edit Name and Unit
-    
-21. Add the formula in case of this example `totalEnergyLine1 / ProducedBottlesLine1`
-  
-  ![EnergyManager13](graphics/EnergyManager13.png)
-
-22. After saving switch back to "My Plant" 
-    
-23. Select the Dashboard "Media Consumption Bottle Line1"
-    
-24. Add a new widget
-    
-25. Select type "Gauge"
-  
-  ![EnergyManager10](graphics/EnergyManager10.png)
-
-26. Name the widget "Energy per Bottle Line1" and select the calculation period
-  
-  ![EnergyManager11](graphics/EnergyManager11.png)
-
-27. Click "New KPI instance"
-    
-28. Mark "on basis of a KPI type" and select the KPI type
-    
-29. Add the associated variable to the operands
-
-  ![EnergyManager14](graphics/EnergyManager14.png)
-
-  ![EnergyManager15](graphics/EnergyManager15.png)
-
-30. Add the limits of the gauge
-
-  ![EnergyManager16](graphics/EnergyManager16.png)
-
-  ![EnergyManager17](graphics/EnergyManager17.png)
-
-
-Used KPI types:
-  
-- CostsPerBottle: `(Energy / 1000 * cost_kWh + PressuredAir * cost_Liter_Air + Water * cost_Liter_Water) / Bottles` Unit: €
-
-- CostsPerLine: `(Energy / 1000 * cost_kWh + PressuredAir * cost_Liter_Air + Water * cost_Liter_Water)` Unit: €
-
-- EnergyPerBottle: `Energy / Bottles` Unit: Wh
-
-- PressuredAirPerBottle: `PressuredAir / Bottles` Unit: ml
-
-- WaterPerBottle: `Water / Bottles` Unit: ml
+This Energy Manager will be setup in [here](install_MindSphere.md)
 
 # Navigation
 

@@ -5,7 +5,6 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 - [Shopfloor to Cloud Connectivity - Integrate machine \& production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
   - [Overview](#overview)
     - [Reference Architecture](#reference-architecture)
-      - [IIH Insights Hub Sync](#iih-insights-hub-sync)
     - [Network Architecture](#network-architecture)
   - [General task](#general-task)
   - [Requirements](#requirements)
@@ -20,17 +19,21 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 ## Overview
 
-![overview](docs/graphics/overview.png)
+The following image represents the data flow that will be achieved in this example, which covers everything from the acquisition of data from a machine in full production to its storage and processing in the cloud in general:
+
+<img id="architecture1" src="docs/graphics/architecture1.png" alt="Data Flow Diagram for Performance Insights" width="600"/>
 
 ### Reference Architecture 
 
-#### IIH Insights Hub Sync
+This representation visualizes how data moves across edge applications within edge devices. The specific configurations of these applications will be detailed in this repository:
 
-![overview3](docs/graphics/overview4.png)
+<img id="architecture2" src="docs/graphics/architecture2.png" alt="Data Through Edge Apps" width="900"/>
 
 ### Network Architecture
 
-![overview2](docs/graphics/overview2.png)
+The following image illustrates the interaction and communication between all the devices used:
+
+<img id="architecture3" src="docs/graphics/architecture3.png" alt="Network architecture" width="700"/>
 
 ## General task
 
@@ -38,10 +41,9 @@ Gathering of energy data from various controllers and converting it to a standar
 
 Central monitoring of energy data from multiple locations in dashboards, with a strict separation between Automation Cell Network (Southbound) and Datacenter (Northbound). Because there is no direct connection between Southbound and the connected PLCs with the Internet, this guideline minimizes security risks.
 
-Sharing the standardized data with a northbound Edge Device, with internet connectivity, via MQTT.
+Sharing the standardized data with a northbound Edge Device, with internet connectivity.
 
-Structuring the energy data in asset models according to the asset design in Insights Hub in the northbound Edge Device
-and forwarding them to Insights Hub.
+Structuring the energy data in asset models according to the asset design in Insights Hub in the northbound Edge Device and forwarding them to Insights Hub.
 
 
 
@@ -53,9 +55,9 @@ and forwarding them to Insights Hub.
 - Established connection to 2 PLCs to acquire data with the Edge Device
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed System App Configurators on IEM (Common Connector Configurator, Databus Configurator, IE Cloud Connector Configurator) 
-- Installed apps on Southbound-Devices (OPC UA Connector, IE Cloud Connector, Databus, IE Flow Creator)
-- Installed apps on Northbound-Device (Data Service, Databus, Energy Manager, External Databus, IIH Core, IIH Configurator)
+- Installed System App Configurators on IEM (Common Connector Configurator, Databus Configurator, DataXess Configurator) 
+- Installed apps on Southbound-Devices (OPC UA Connector, DataXess, Databus, Flow Creator)
+- Installed apps on Northbound-Device (IIH Essentials, Databus, Energy Manager, DataXess, IIH Semantics, Common Configurator)
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 - Access to Insights Hub
 - Energy Manager
@@ -67,19 +69,22 @@ TIA & PLCs:
 - PLC 1512SP-1 PN FW V2.1
 
 Industrial Edge:
-- Industrial Edge Management V1.7.4
-- Industrial Edge Device V1.5.0-21-amd64
-- OPC UA Connector V2.0.0
-- Registry Service V1.8.0
-- Common Import Converter V2.0.0
-- Databus V2.2.0
-- Data Service V1.6.0
-- IE Flow Creator V1.3.9
-- Energy Manager V1.2.0
-- IE Cloud Connector V1.6.2
-- IIH Core V1.6.0
-- IIH Configurator V1.6.0
+- Industrial Edge Management Virtual V2.0.1-1
+- Industrial Edge Virtual Device V1.16.1-1-a
+- OPC UA Connector V2.0.1-0
+- Registry Service V1.9.0-0
+- Common Import Converter V2.1.0-2
+- Databus V2.3.2-5
+- IIH Essentials V1.10.0
+- Flow Creator V1.17.0-2
+- Energy Manager V1.16.1
+- DataXess V1.4.1-3
+- IIH Semantics V1.9.0-0
+- Common Configurator V1.9.0-4
 - Web browser (Mozilla or Chrome)
+- Common Connector Configurator V1.9.1-1
+- DataXess Configurator V1.4.2-4
+- Databus Configurator V2.3.2-2
 
 Insights Hub:
 - Asset Manager 
@@ -89,38 +94,51 @@ Insights Hub:
 
 You can find the further information about the following steps in the [docs](docs/install_PLC_Devices_Southbound.md)
 
+- Configuration Steps
 - Configure PLC project in TIA-Portal
 - Configure PLC connections in Industrial Edge
-  - OPC UA Connector
-  - Common Import Converter
-  - Registry Service
-  - Databus 
+  - Create Databus Credentials and Topics
+  - Configure OPC UA Connector in Common Configurator
+    - Enter Databus Credentials
+    - Add PLC
+    - Add Tags
 - Configure Data preprocessing 
-  - IE Flow Creator 
+  - IE Flow Creator
 - Configure Connection to Northbound
-  - IE Cloud Connector 
 
 
 ## Configuration Northbound Device
 
 You can find the further information about the following steps in the [docs](docs/install_Device_Northbound.md)
 
-- Configure Connection to Southbound
-  - Databus 
-  - External Databus
-  - Industrial Information Hub 
-    - Data Service
-    - Insights Hub Sync
-
-- Configure visualization
-  - Energy Manager
+- Configuration Steps
+- Configure Northbound
+  - Create Databus Credentials and Topics
+  - Configure Communication with DataXess
+  - Insights Hub Sync
+    - Integrate IIH Essentials into Common Configurator
+    - Configure Connection to Insights Hub
+    - Create the Asset Model
 
 
 ## Configuration Insights Hub
 You can find the further information about the following steps in the [docs](docs/install_MindSphere.md)
 
-- Configure visualization
-  - Energy Manager 
+- Configuration Steps
+- IIH Insights Hub Sync
+- Configure Energy Manager
+    - Overview Dashboard
+      - Create widget for Produced Bottles of Each Line
+      - Create widget for Consumption Graphic of Each Line
+      - Create widget for Cost of each Line
+    - Line 1 - Media Consumption Dashboard
+      - Create widget for Energy Per Bottle
+      - Create widget for Water per Bottle
+      - Create widget for PressuredAir per Bottle
+      - Create widget for Consumption Per Bottle
+      - Create widget for Cost per Bottle (Gauge)
+      - Create widget for Cost per Bottle (Diagram)
+    - Line 2 - Media Consumption Dashboard
 
 
 ## Documentation

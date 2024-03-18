@@ -1,0 +1,588 @@
+{
+  "version": 2,
+  "app": "EnergyManager",
+  "exportType": "dashboard",
+  "creationDate": "2024-03-15T22:59:25.871Z",
+  "dateSettings": {
+    "queryTypeId": "day",
+    "dateRange": {
+      "from": null,
+      "to": null
+    },
+    "useCurrentDate": true,
+    "offset": 0
+  },
+  "dimension": {
+    "width": 50,
+    "height": 25
+  },
+  "title": "Line 2 - Media Consumption",
+  "queryTypes": [],
+  "statusMappings": [],
+  "widgets": [
+    {
+      "title": "CostPerBottle",
+      "type": "performance-insight-gauge",
+      "dimension": {
+        "width": 24,
+        "height": 7
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": 0.5,
+              "low": 0.2
+            },
+            "alert": {
+              "high": 0.7,
+              "low": 0.1
+            }
+          },
+          "dataSource": {
+            "type": "KPI",
+            "id": "1",
+            "aggregation": "None",
+            "name": "CostPerLine2",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "",
+            "unit": "$",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 26,
+        "y": 10
+      },
+      "views": [
+        {
+          "type": "gauge",
+          "range": {
+            "low": 0,
+            "high": 0.8
+          }
+        }
+      ],
+      "useDashboardDateSettings": true
+    },
+    {
+      "title": "Cost PerBottle",
+      "type": "performance-insight-chart",
+      "dimension": {
+        "width": 24,
+        "height": 8
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": 0.5,
+              "low": 0.2
+            },
+            "alert": {
+              "high": 0.7,
+              "low": 0.1
+            }
+          },
+          "dataSource": {
+            "type": "KPI",
+            "id": "1",
+            "aggregation": "None",
+            "name": "CostPerLine2",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "",
+            "unit": "$",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 26,
+        "y": 17
+      },
+      "views": [
+        {
+          "type": "linechart",
+          "xAxis": [
+            {
+              "title": "",
+              "type": "datetime",
+              "min": null,
+              "max": null
+            }
+          ],
+          "yAxis": [
+            {
+              "title": "$",
+              "type": "linear",
+              "min": null,
+              "max": null
+            }
+          ],
+          "series": [
+            {
+              "dataSourceSettingsId": "0",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 0,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            }
+          ]
+        }
+      ],
+      "useDashboardDateSettings": true
+    },
+    {
+      "title": "Water Per Bottle",
+      "type": "performance-insight-gauge",
+      "dimension": {
+        "width": 17,
+        "height": 10
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": 10,
+              "low": 3
+            },
+            "alert": {
+              "high": 20,
+              "low": 1
+            }
+          },
+          "dataSource": {
+            "type": "KPI",
+            "id": "2",
+            "aggregation": "None",
+            "name": "WaterPerBottle2",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "",
+            "unit": "ml",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 17,
+        "y": 0
+      },
+      "views": [
+        {
+          "type": "gauge",
+          "range": {
+            "low": 0,
+            "high": 25
+          }
+        }
+      ],
+      "useDashboardDateSettings": true
+    },
+    {
+      "title": "Pressured Air per Bottle",
+      "type": "performance-insight-gauge",
+      "dimension": {
+        "width": 16,
+        "height": 10
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": 10,
+              "low": 7
+            },
+            "alert": {
+              "high": 15,
+              "low": 2
+            }
+          },
+          "dataSource": {
+            "type": "KPI",
+            "id": "3",
+            "aggregation": "None",
+            "name": "PressuredAirPerBottle2",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "",
+            "unit": "ml",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 34,
+        "y": 0
+      },
+      "views": [
+        {
+          "type": "gauge",
+          "range": {
+            "low": 0,
+            "high": 20
+          }
+        }
+      ],
+      "useDashboardDateSettings": true
+    },
+    {
+      "title": "EnergyPerBottle",
+      "type": "performance-insight-gauge",
+      "dimension": {
+        "width": 17,
+        "height": 10
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": 3.5,
+              "low": 2
+            },
+            "alert": {
+              "high": 5,
+              "low": 1
+            }
+          },
+          "dataSource": {
+            "type": "KPI",
+            "id": "4",
+            "aggregation": "None",
+            "name": "EnergyPerBottle2",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "",
+            "unit": "wh",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "views": [
+        {
+          "type": "gauge",
+          "range": {
+            "low": 0,
+            "high": 6
+          }
+        }
+      ],
+      "useDashboardDateSettings": true
+    },
+    {
+      "title": "Consumption Per Bottle",
+      "type": "performance-insight-chart",
+      "dimension": {
+        "width": 26,
+        "height": 15
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "KPI",
+            "id": "4",
+            "aggregation": "None",
+            "name": "EnergyPerBottle2",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "",
+            "unit": "wh",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null
+          }
+        },
+        {
+          "id": "1",
+          "color": "#FFB900",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "KPI",
+            "id": "2",
+            "aggregation": "None",
+            "name": "WaterPerBottle2",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "",
+            "unit": "ml",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null
+          }
+        },
+        {
+          "id": "2",
+          "color": "#AAB414",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "KPI",
+            "id": "3",
+            "aggregation": "None",
+            "name": "PressuredAirPerBottle2",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "",
+            "unit": "ml",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 0,
+        "y": 10
+      },
+      "views": [
+        {
+          "type": "linechart",
+          "xAxis": [
+            {
+              "title": "",
+              "type": "datetime",
+              "min": null,
+              "max": null
+            }
+          ],
+          "yAxis": [
+            {
+              "title": "wh",
+              "type": "linear",
+              "min": null,
+              "max": null
+            },
+            {
+              "title": "ml",
+              "type": "linear",
+              "min": null,
+              "max": null
+            }
+          ],
+          "series": [
+            {
+              "dataSourceSettingsId": "0",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 0,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "1",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 1,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "2",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 1,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            }
+          ]
+        }
+      ],
+      "useDashboardDateSettings": true
+    }
+  ]
+}

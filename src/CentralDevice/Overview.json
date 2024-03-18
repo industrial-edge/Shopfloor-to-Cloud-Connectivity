@@ -1,0 +1,686 @@
+{
+  "version": 2,
+  "app": "EnergyManager",
+  "exportType": "dashboard",
+  "creationDate": "2024-03-15T22:59:04.697Z",
+  "dateSettings": {
+    "queryTypeId": "day",
+    "dateRange": {
+      "from": null,
+      "to": null
+    },
+    "useCurrentDate": true,
+    "offset": 0
+  },
+  "dimension": {
+    "width": 50,
+    "height": 25
+  },
+  "title": "Overview",
+  "queryTypes": [],
+  "statusMappings": [],
+  "widgets": [
+    {
+      "title": "Line 1 - Produced Bottles",
+      "type": "performance-insight-value",
+      "dimension": {
+        "width": 25,
+        "height": 5
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "Variable",
+            "id": "1",
+            "aggregation": "Counter",
+            "name": "ProducedBottles",
+            "assetId": "4b66ad0d00a5405c966a83379ccd3d1e",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 1"
+            ],
+            "aspectName": "MediaConsumption",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "isShared": false
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "minute",
+        "value": 1
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "views": [
+        {
+          "type": "value",
+          "showStatistics": true,
+          "sortBy": "dataSourcesOrder",
+          "showValueWithoutAbbreviation": false
+        }
+      ],
+      "useDashboardDateSettings": true
+    },
+    {
+      "title": "Line 1 - Consumption",
+      "type": "performance-insight-chart",
+      "dimension": {
+        "width": 25,
+        "height": 11
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "Variable",
+            "id": "2",
+            "aggregation": "Counter",
+            "name": "totalWater",
+            "assetId": "4b66ad0d00a5405c966a83379ccd3d1e",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 1"
+            ],
+            "aspectName": "MediaConsumption",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "isShared": false
+          }
+        },
+        {
+          "id": "1",
+          "color": "#FFB900",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "Variable",
+            "id": "3",
+            "aggregation": "Counter",
+            "name": "totalPressured_Air",
+            "assetId": "4b66ad0d00a5405c966a83379ccd3d1e",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 1"
+            ],
+            "aspectName": "MediaConsumption",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "isShared": false
+          }
+        },
+        {
+          "id": "2",
+          "color": "#AAB414",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "Variable",
+            "id": "4",
+            "aggregation": "Counter",
+            "name": "totalEnergy",
+            "assetId": "4b66ad0d00a5405c966a83379ccd3d1e",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 1"
+            ],
+            "aspectName": "MediaConsumption",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "isShared": false
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 0,
+        "y": 5
+      },
+      "views": [
+        {
+          "type": "linechart",
+          "xAxis": [
+            {
+              "title": "",
+              "type": "datetime",
+              "min": null,
+              "max": null
+            }
+          ],
+          "yAxis": [
+            {
+              "title": "Liter",
+              "type": "linear",
+              "min": null,
+              "max": null
+            },
+            {
+              "title": "Watts",
+              "type": "linear",
+              "min": null,
+              "max": null
+            }
+          ],
+          "series": [
+            {
+              "dataSourceSettingsId": "0",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 0,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "1",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 0,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "2",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 1,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            }
+          ]
+        }
+      ],
+      "useDashboardDateSettings": true
+    },
+    {
+      "title": "Line 2 - Produced Bottles",
+      "type": "performance-insight-value",
+      "dimension": {
+        "width": 25,
+        "height": 5
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "Variable",
+            "id": "5",
+            "aggregation": "Counter",
+            "name": "ProducedBottles",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "MediaConsumption",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "isShared": false
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "minute",
+        "value": 1
+      },
+      "position": {
+        "x": 25,
+        "y": 0
+      },
+      "views": [
+        {
+          "type": "value",
+          "showStatistics": true,
+          "sortBy": "dataSourcesOrder",
+          "showValueWithoutAbbreviation": false
+        }
+      ],
+      "useDashboardDateSettings": true
+    },
+    {
+      "title": "Line 2 - Cost",
+      "type": "performance-insight-gauge",
+      "dimension": {
+        "width": 25,
+        "height": 9
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": 14000,
+              "low": 5500
+            },
+            "alert": {
+              "high": 25000,
+              "low": 1000
+            }
+          },
+          "dataSource": {
+            "type": "KPI",
+            "id": "6",
+            "aggregation": "None",
+            "name": "CostPerLine2",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "",
+            "unit": "$",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 25,
+        "y": 16
+      },
+      "views": [
+        {
+          "type": "gauge",
+          "range": {
+            "low": 0,
+            "high": 45000
+          }
+        }
+      ],
+      "useDashboardDateSettings": true
+    },
+    {
+      "title": "Line 2 - Consumption",
+      "type": "performance-insight-chart",
+      "dimension": {
+        "width": 25,
+        "height": 11
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "Variable",
+            "id": "7",
+            "aggregation": "Counter",
+            "name": "totalPressured_Air",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "MediaConsumption",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "isShared": false
+          }
+        },
+        {
+          "id": "1",
+          "color": "#FFB900",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "Variable",
+            "id": "8",
+            "aggregation": "Counter",
+            "name": "totalEnergy",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "MediaConsumption",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "isShared": false
+          }
+        },
+        {
+          "id": "2",
+          "color": "#AAB414",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "type": "Variable",
+            "id": "9",
+            "aggregation": "Counter",
+            "name": "totalWater",
+            "assetId": "1ef1435e44eb4eaca848fa6ff20e3374",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 2"
+            ],
+            "aspectName": "MediaConsumption",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "isShared": false
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 25,
+        "y": 5
+      },
+      "views": [
+        {
+          "type": "linechart",
+          "xAxis": [
+            {
+              "title": "",
+              "type": "datetime",
+              "min": null,
+              "max": null
+            }
+          ],
+          "yAxis": [
+            {
+              "title": "",
+              "type": "linear",
+              "min": null,
+              "max": null
+            },
+            {
+              "title": "",
+              "type": "linear",
+              "min": null,
+              "max": null
+            }
+          ],
+          "series": [
+            {
+              "dataSourceSettingsId": "0",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 0,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "1",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 1,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "2",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 0,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            }
+          ]
+        }
+      ],
+      "useDashboardDateSettings": true
+    },
+    {
+      "title": "Line 1 - Cost",
+      "type": "performance-insight-gauge",
+      "dimension": {
+        "width": 25,
+        "height": 9
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": 15000,
+              "low": 10000
+            },
+            "alert": {
+              "high": 18000,
+              "low": 2000
+            }
+          },
+          "dataSource": {
+            "type": "KPI",
+            "id": "10",
+            "aggregation": "None",
+            "name": "CostPerLine1",
+            "assetId": "4b66ad0d00a5405c966a83379ccd3d1e",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Factory",
+              "Line 1"
+            ],
+            "aspectName": "",
+            "unit": "$",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 0,
+        "y": 16
+      },
+      "views": [
+        {
+          "type": "gauge",
+          "range": {
+            "low": 0,
+            "high": 20000
+          }
+        }
+      ],
+      "useDashboardDateSettings": true
+    }
+  ]
+}

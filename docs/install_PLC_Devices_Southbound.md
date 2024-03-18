@@ -1,13 +1,16 @@
 # Configuration Steps
 - [Configuration Steps](#configuration-steps)
 - [Configure PLC-Project in TIA-Portal](#configure-plc-project-in-tia-portal)
-- [Configuration Southbound for Industrial Edge](#configuration-southbound-for-industrial-edge)
-  - [Databus](#databus)
-  - [OPC UA Connector](#opc-ua-connector)
+- [Configure PLC connections in Industrial Edge](#configure-plc-connections-in-industrial-edge)
+  - [Create Databus Credentials and Topics](#create-databus-credentials-and-topics)
+  - [Configure OPC UA Connector in Common Configurator](#configure-opc-ua-connector-in-common-configurator)
+      - [Enter Databus credentials](#enter-databus-credentials)
+      - [Add PLC](#add-plc)
+      - [Add tags](#add-tags)
+- [Configure Data Processing](#configure-data-processing)
   - [IE Flow Creator](#ie-flow-creator)
-  - [IE Cloud Connector](#ie-cloud-connector)
-- [Navigation](#navigation)
-  
+- [Configure Connection to Northbound](#configure-data-processing)
+
 
 # Configure PLC-Project in TIA-Portal
 
@@ -20,54 +23,127 @@
 3. Download the PLC programs to the PLCs and set the PLCs into RUN
  
  
-# Configuration Southbound for Industrial Edge
+# Configure PLC connections in Industrial Edge
 
-The Southbound consist of two devices. In the following they are called "Energy1" and "Energy2"
+The Southbound consist of two  edge devices. For this example, they are called "Energy1" and "Energy2"
 
 Installed Apps on the Device Energy1 and Energy2: 
   - OPC UA Connector
   - Common Import Converter
+  - Common Configurator
   - Registry Service
-  - IE Cloud Connector
+  - IIH Essentials
+  - DataXess
   - Databus
-  - IE Flow Creator
+  - Flow Creator
 
-## Databus
+Each of the following steps are done in the Industrial Edge system and, as explained in the Reference Architecture shown in the main page, the OPC UA Connector is used on the Industrial Edge Device (IED) to read data from the PLCs and provide the data. Then, the data is sent via the connectors to the Databus.
 
-Add a user in the Databus Configurator with username and password and provide necessary access right to the required topics so the OPC UA Connector, IE Flow Creator and IE Cloud Connector can publish and subscribe to topics.
+## Create Databus Credentials and Topics
 
-Instead of manually configuring you can also import the configuration files:
+Go to the *Industrial Edge Management UI > Data Connections*, select "Databus" and launch it on the "Energy1" Edge Device.
 
-[Databus_Energy1](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
+When the configurator is open, click on the "plus" icon in the red square shown in the picture bellow to add an user: 
 
-[Databus_Energy2](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
+![Databus IEM 1](graphics/databusIEM1.png)
 
-1. Open the Industrial Edge Management App and launch the Databus configurator, add your related credentials/topics:
+Add your related credentials/topics:
 
    - Username: `edge`
    - Password: `edge`
-   - Topic: `ie/#`
+   - Topics: 
+     - `ie/#` 
    - Permission: `Publish and Subscribe`
 
-  ![ie_databus_user](graphics/IE_Databus_User.png)
-
-1. Deploy configuration to device
-
-  ![ie_databus](graphics/IE_Databus.png)
+![Databus IEM 2](graphics/databusIEM2.png)
 
 
-## OPC UA Connector
+Click on the plus icon to add the rest of the topics:
 
-To provide data from the PLC on the Databus connect the OPC UA Connector to the PLC and add the required PLC variables. We will use the central configuration in the IEM.
+![Databus IEM 3](graphics/databusIEM3.png)
 
-1. Launch the OPC UA Connector Configurator in the Industrial Edge Management under 'Data Connections' and configure the PLC connection 
-2. Import the JSON file [Energy1_OPCUA_Connector](../src/Device_Energy1/Energy1_OPCUA_Connector.json) for Energy1 and [Energy2_OPCUA_Connector](../src/Device_Energy2/Energy2_OPCUA_Connector.json) for Energy2 
-3. Adjust IP address of the imported PLC connection
-4. Select the PLC and deploy the configuration
-   
-  ![OPCUA_connector](graphics/OPCUA_Connector.png)
+Add the following topics:
+ - `ie/d/j/simatic/v1/iefc/dp/r/#`
+ - `ie/m/j/simatic/v1/iefc/dp`
 
-## IE Flow Creator
+![Databus IEM 4](graphics/databusIEM4.png)
+
+Click deploy and repeat the same steps for the "Energy2" edge device.
+
+Instead of manually configuring you can also import the configuration file to both devices:
+
+[Databus_Configuration](../src/Device_Energy1/Databus_Energy1_config.json) (Password = Edge1234!)
+
+
+
+## Configure OPC UA Connector in Common Configurator
+
+In this section, the following steps will be addressed:
+
+- Connect the "Energy1" PLC to the "Energy1" Edge device to retrieve tags via the OPC UA Connector.
+- Connect the "Energy2" PLC to the "Energy2" Edge device to retrieve tags via the OPC UA Connector.
+  
+For this example, we will only walk through the steps for Energy 1. The same steps should be repeated for "Energy2".
+
+To provide data from the PLC to the Databus connect the OPC UA Connector to the PLC and add the required PLC variables. We will use Common Configurator to achieve this.
+
+Go to each *Edge Device UI > Apps* and open *Common Configurator*.
+
+### Enter Databus Credentials
+
+Go to *Settings > Databus Credentials* and enter the previously created Databus credentials:
+
+![Common Configurator 1](graphics/CommonConfigurator1.png)
+
+> [!IMPORTANT]  
+> If the credentials were typed correctly you should see the "Valid Credentials" pop-up label on the top right as shown in the picture.
+
+### Add PLC
+
+Go to *Get Data* and open the OPC UA Connector:
+
+![Common Configurator 2](graphics/CommonConfigurator2.png)
+
+> [!IMPORTANT]  
+> If the Databus was configured correctly, "Databus is installed" label should be checked in green.
+
+Click on *Tags* tab and select *Add data source*:
+
+![Common Configurator 3](graphics/CommonConfigurator3.png)
+
+Type your PLC information (OPC UA server) and save:
+
+![Common Configurator 4](graphics/CommonConfigurator_4.png)
+
+Then click "Import tags" on the just created data-source and import the JSON file [Energy1_OPCUA_Connector](../src/Device_Energy1/Energy1_OPCUA_Connector.json) for Energy1 and [Energy2_OPCUA_Connector](../src/Device_Energy2/Energy2_OPCUA_Connector.json) for Energy2.
+
+![Common Configurator 5](graphics/CommonConfigurator_5.png)
+
+In this case, you'll se something like this for Energy 1:
+
+![Common Configurator 6](graphics/CommonConfigurator_6.png)
+
+Select all the tags, enter the acquision cycle and access mode. Last, click "Import".
+
+Now, the tags for Energy 1 are imported in the data-source. Just click "Deploy" to apply changes:
+
+After deployment, ensure that the connector status is displayed in "green" and that the data source also shows a green status, like so:
+
+![Common Configurator 8](graphics/CommonConfigurator_8.png)
+
+To check if data is actually being extracted from the PLC, let's integrate IIH Essentials into Common Configurator. And after creating assets and adding the tags, data is shown:
+
+![Common Configurator 11](graphics/CommonConfigurator_11.png)
+
+Now, repeat the same proccess for Energy 2.
+
+## Configure Data Processing
+
+The data collected from the OPC UA Connector is published to the Databus, and using the Flow Creator, we retrieve this data from the Databus and send it to the central Device (Shopfloor-to-Cloud) through the DataXess application, which will be configured in the Northbound.
+
+Please note that for the Flow Creator to function properly, the Acquisition Devices must be strictly named "Energy1" and "Energy2".
+
+### Flow Creator
 
 Aggregate the raw data from the PLC to:
 - Energy
@@ -75,124 +151,32 @@ Aggregate the raw data from the PLC to:
 - Pressured Air
 - Produced Bottles 
 
-After aggregation the data and metadata are published to IE Databus. IE Cloud Connector subscribes to these topics and sends them to the central device 
-
 The aggregated values are published on newly defined topics to prevent collision with OPC UA Connector related topic names
+
+To do this, follow this steps:
 
 1. Import the JSON-File
   
-    Energy1: [FlowCreator_Energy1](../src/Device_Energy1/FlowCreator_Energy1.json)
+    For Energy1: [FlowCreator_Energy1](../src/Device_Energy1/Energy1.json)
 
-    Energy2:[FlowCreator_Energy2](../src/Device_Energy2/FlowCreator_Energy2.json)
+    For Energy2: [FlowCreator_Energy2](../src/Device_Energy2/Energy2.json)
   
     
   ![FlowCreator1](graphics/Flow_Creator1.png)
 
 2. Double click on a MQTT-Node  
-3. Add IE Databus Credentials
+3. Add Databus Credentials
   
   ![FlowCreator2](graphics/Flow_Creator2.png)
   
     
   ![FlowCreator3](graphics/Flow_Creator3.png)
 
-4. Deploy the Flows
+4. Deploy the Flow
 
-## IE Cloud Connector
+## Configure Connection to the Northbound
 
-For the communication from Energy1 and Energy2 to the Central device configure the IE Cloud Connector. 
-
-Instead of manually configuring you can also import the configuration files:
-
-[CloudConnector_Energy1](../src/Device_Energy1/CloudConnector_Energy1.json) (Password = Edge1234!)
-
-[CloudConnector_Energy2](../src/Device_Energy2/CloudConnector_Energy2.json) (Password = Edge1234!)
-
-1. Click "Edit Configuration" and login to the Databus.
-
-  ![Cloud_Connector](graphics/Cloud_Connector_Login.png)
-
-Configure starting from the left side "Bus Adaptor" to the right the "Cloud Connector Clients" Adapt the IP addresses to your system.
-
-![Cloud_Connector](graphics/Cloud_Connector_Cloud_Client.png)
-
-To save the configuration, initially click on your route and connect your topics from the bus adaptor with your cloud topics 
-
-Then click on deploy.
-
-Note: Create one topic for the data and one topic for the metadata. 
-
-
-2. Add the Metadata-topic in the Bus Adaptor Field
-
-    Energy1: `ie/m/j/simatic/v1/iefc/dp`
-
-    Energy2: `ie/m/j/simatic/v1/iefc/dp` 
-  
-      
-  ![Cloud_Connector1](graphics/Cloud_Connector_Topic2.png)
-  
-3. Add the Data-topic
-   
-   Energy1:
-   `ie/d/j/simatic/v1/iefc/dp/r/line1/default`
-  
-   Energy2:
-   `ie/d/j/simatic/v1/iefc/dp/r/line2/default`
-    
-  ![Cloud_Connector2](graphics/Cloud_Connector_Topic1.png)
-
-"Connecting Routes" allows you to forward the data from Databus-Topics to the "Cloud Connector Clients"
-
-4. Add Connecting Routes
-  
-   Energy1:
-   - `central-data` 
-   - `central-metadata`
-  
-   Energy2:
-   - `central-data2`
-   - `central-metadata2`
-  
-    
-  ![Cloud_Connector3](graphics/Cloud_Connector_Route.png)
-
-"Local Lake" allows you to connect a local MQTT-Broker like the External Databus 
-
-5. Add Cloud Connector Clients
-  - Type: `LOCAL_LAKE`
-  
-  - Publish Topic & enter the Databus credentials of the northbound device:
-  
-    Energy1:
-    - Metadata: `ie/m/j/simatic/v1/energy1line1:iefc/dp`
-    - Data: `ie/d/j/simatic/v1/energy1line1:iefc/dp/r/line1/default`
-    
-    Energy2:
-    - Metadata: `ie/m/j/simatic/v1/energy2line2:iefc/dp`
-    - Data: `ie/d/j/simatic/v1/energy2line2:iefc/dp/r/line2/default`
-  
-    
-  ![Cloud_Connector4](graphics/Cloud_Connector_ClientStandard.png)
-  
-
-  ![Cloud_Connector5](graphics/Cloud_Connector_Client1.png)
-    
-      
-  ![Cloud_Connector6](graphics/Cloud_Connector_Client2.png)
-
-6. Mark the data and metadata routes an click "Save Route" 
-      
-        
-  ![Cloud_Connector7](graphics/Cloud_Connector_Route1.png)
-    
-      
-  ![Cloud_Connector8](graphics/Cloud_Connector_Route2.png)
-
-7. Deploy your configuration
-
-
-
+The DataXess application will send the preprocessed data to the central device. The configuration is done centrally in the IEM and is explained in [configuration of the Northbound Device](install_Device_Northbound.md).
 
 
 # Navigation

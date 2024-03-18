@@ -1,0 +1,75 @@
+{
+  "user-config": [
+    {
+      "password": "PBKDF2$sha512$100000$Sz1vJpaNmO9CnhWTMzpr8w==$o5XH/sEYsmklL/Vy+RSV2GhB+7rNSNmQTi+dnwkK32h+a/1gM3+kyitD2ClLAGwfcKAmVlIb0PfWLXegxdlgag==",
+      "username": "edge",
+      "created-at": "2023-07-25T13:18:03.717Z",
+      "last-modified-at": 1690291105515,
+      "id": "a64de3f2-d2e7-4ba0-8889-70ef3df01bf4",
+      "topics": [
+        {
+          "topic-name": "ie/#",
+          "access-rights": "both",
+          "id": "a64de3f2-d2e7-4ba0-8889-70ef3df01bf4_95dcc013-b472-4c52-a202-931dd40ba26c",
+          "created-at": "2023-07-25T13:18:03.830Z",
+          "last-modified-at": 1690291083830
+        },
+        {
+          "topic-name": "ie/d/j/simatic/v1/iefc/dp/r/#",
+          "access-rights": "both",
+          "id": "a64de3f2-d2e7-4ba0-8889-70ef3df01bf4_8c2a3f2e-cbbc-4417-90e6-e555253e9cc8",
+          "created-at": "2023-07-25T13:18:25.515Z",
+          "last-modified-at": 1690291105515
+        }
+      ]
+    }
+  ],
+  "advanced-config": {
+    "general": {
+      "hostname": "ie-databus",
+      "plugin-type": "go-auth",
+      "allowed-access-rights": [
+        "none",
+        "subscribe",
+        "both"
+      ]
+    },
+    "server-settings": {
+      "protocol": "mqtt",
+      "port": "1883",
+      "allow-anonymous": false,
+      "max-keepalive": "",
+      "max-connections": "1000",
+      "max-qos": "2",
+      "message-size-limit": "",
+      "max-client-connections": "-1",
+      "auto-gen-client-id": true,
+      "auto-id-prefix": "",
+      "persistent-client-expiration": "",
+      "persistence": {
+        "is-enabled": true,
+        "autosave-interval": "300",
+        "autosave-on-changes": false,
+        "filename": "mosquitto.db",
+        "path": "/home/mosquitto/persistence/"
+      },
+      "logging": {
+        "is-enabled": true,
+        "log-facility": "",
+        "log-type": [
+          "all"
+        ],
+        "log-destination": [
+          "topic"
+        ],
+        "connection-messages": true,
+        "log-timestamp": {
+          "is-enabled": true,
+          "format": "%Y-%m-%dT%H:%M:%S"
+        }
+      }
+    }
+  },
+  "config-version": "1.4.1",
+  "integrity": "a7eece9871ebe67bd6b5977a5a2ea3ebcc269225d925b9b6c5f197d459de651ab6afbf602f8bf6fe99d55de08c4034a45ff346edbbc312e73f7f36f9ada5ef77"
+}
