@@ -1,0 +1,790 @@
+{
+  "version": 7,
+  "app": "EnergyManager",
+  "exportType": "dashboard",
+  "creationDate": "2026-11-05T23:14:00.015Z",
+  "dateSettings": {
+    "queryTypeId": "day",
+    "dateRange": {
+      "from": null,
+      "to": null
+    },
+    "useCurrentDate": true,
+    "offset": 0
+  },
+  "dimension": {
+    "height": 25,
+    "width": 50
+  },
+  "title": "Overview",
+  "updateRate": 30000,
+  "backgroundImage": null,
+  "queryTypes": [],
+  "statusMappings": [],
+  "widgets": [
+    {
+      "title": "Tank 2 - Consumption",
+      "type": "performance-insight-chart",
+      "dimension": {
+        "height": 10,
+        "width": 14
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#FFB900",
+          "decimalPlaces": 2,
+          "label": "Filling Tank",
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "name": "signals_energySignals_energyConsumptionFillingTank",
+            "assetId": "1d49f16861164d8c8b9d2147f888d2a3",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Tank-2"
+            ],
+            "aspectName": "Tank-2",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "type": "Variable",
+            "id": "1",
+            "aggregation": "Counter"
+          }
+        },
+        {
+          "id": "1",
+          "color": "#647D2D",
+          "decimalPlaces": 2,
+          "label": "Filling Bottles",
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "name": "signals_energySignals_energyConsumptionFillingBottles",
+            "assetId": "1d49f16861164d8c8b9d2147f888d2a3",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Tank-2"
+            ],
+            "aspectName": "Tank-2",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "type": "Variable",
+            "id": "2",
+            "aggregation": "Counter"
+          }
+        },
+        {
+          "id": "2",
+          "color": "#8B2361",
+          "decimalPlaces": 2,
+          "label": "Heating",
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "name": "signals_energySignals_energyConsumptionHeatingTank",
+            "assetId": "1d49f16861164d8c8b9d2147f888d2a3",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Tank-2"
+            ],
+            "aspectName": "Tank-2",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "type": "Variable",
+            "id": "3",
+            "aggregation": "Counter"
+          }
+        },
+        {
+          "id": "3",
+          "color": "#006FE6",
+          "decimalPlaces": 2,
+          "label": "Water",
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "name": "signals_energySignals_waterConsumptionFillingTank",
+            "assetId": "1d49f16861164d8c8b9d2147f888d2a3",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Tank-2"
+            ],
+            "aspectName": "Tank-2",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "type": "Variable",
+            "id": "4",
+            "aggregation": "Counter"
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 14,
+        "y": 5
+      },
+      "views": [
+        {
+          "type": "linechart",
+          "xAxis": [
+            {
+              "title": "",
+              "type": "datetime",
+              "isScaled": false,
+              "min": null,
+              "max": null
+            }
+          ],
+          "yAxis": [
+            {
+              "title": "Ltr",
+              "type": "linear",
+              "isScaled": false,
+              "min": null,
+              "max": null
+            },
+            {
+              "title": "W",
+              "type": "linear",
+              "isScaled": false,
+              "min": null,
+              "max": null
+            }
+          ],
+          "series": [
+            {
+              "dataSourceSettingsId": "0",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 1,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "1",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 1,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "2",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 1,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "3",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 0,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            }
+          ],
+          "showLegend": true,
+          "isXAxisScaledToDateRange": false,
+          "comparisonAxis": null
+        }
+      ],
+      "assets": [],
+      "dateSettingsMode": "inherited",
+      "kpiTypes": []
+    },
+    {
+      "title": "Tank 1 - Consumption",
+      "type": "performance-insight-chart",
+      "dimension": {
+        "height": 10,
+        "width": 14
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#FFB900",
+          "decimalPlaces": 2,
+          "label": "Filling Tank",
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "name": "signals_energySignals_energyConsumptionFillingTank",
+            "assetId": "f937a25670084bf4956136e2c4c3a46f",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Tank-1"
+            ],
+            "aspectName": "Tank-1",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "type": "Variable",
+            "id": "5",
+            "aggregation": "Counter"
+          }
+        },
+        {
+          "id": "1",
+          "color": "#637C43",
+          "decimalPlaces": 2,
+          "label": "Filling Bottles",
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "name": "signals_energySignals_energyConsumptionFillingBottles",
+            "assetId": "f937a25670084bf4956136e2c4c3a46f",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Tank-1"
+            ],
+            "aspectName": "Tank-1",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "type": "Variable",
+            "id": "6",
+            "aggregation": "Counter"
+          }
+        },
+        {
+          "id": "2",
+          "color": "#8B2361",
+          "decimalPlaces": 2,
+          "label": "Heating",
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "name": "signals_energySignals_energyConsumptionHeatingTank",
+            "assetId": "f937a25670084bf4956136e2c4c3a46f",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Tank-1"
+            ],
+            "aspectName": "Tank-1",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "type": "Variable",
+            "id": "7",
+            "aggregation": "Counter"
+          }
+        },
+        {
+          "id": "3",
+          "color": "#006FE6",
+          "decimalPlaces": 2,
+          "label": "Water",
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "name": "signals_energySignals_waterConsumptionFillingTank",
+            "assetId": "f937a25670084bf4956136e2c4c3a46f",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Tank-1"
+            ],
+            "aspectName": "Tank-1",
+            "unit": "",
+            "dataType": "Double",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "type": "Variable",
+            "id": "8",
+            "aggregation": "Counter"
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 0,
+        "y": 5
+      },
+      "views": [
+        {
+          "type": "linechart",
+          "xAxis": [
+            {
+              "title": "",
+              "type": "datetime",
+              "isScaled": false,
+              "min": null,
+              "max": null
+            }
+          ],
+          "yAxis": [
+            {
+              "title": "Ltr",
+              "type": "linear",
+              "isScaled": false,
+              "min": null,
+              "max": null
+            },
+            {
+              "title": "W",
+              "type": "linear",
+              "isScaled": false,
+              "min": null,
+              "max": null
+            }
+          ],
+          "series": [
+            {
+              "dataSourceSettingsId": "0",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 1,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "1",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 1,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "2",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 1,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            },
+            {
+              "dataSourceSettingsId": "3",
+              "type": "line",
+              "xAxis": 0,
+              "yAxis": 0,
+              "stacked": false,
+              "visible": true,
+              "step": false
+            }
+          ],
+          "showLegend": true,
+          "isXAxisScaledToDateRange": false,
+          "comparisonAxis": null
+        }
+      ],
+      "assets": [],
+      "dateSettingsMode": "inherited",
+      "kpiTypes": []
+    },
+    {
+      "title": "Tank 1 - Cost",
+      "type": "performance-insight-gauge",
+      "dimension": {
+        "height": 8,
+        "width": 14
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": 500,
+              "low": 250
+            },
+            "alert": {
+              "high": 800,
+              "low": 100
+            }
+          },
+          "dataSource": {
+            "name": "Tank 1 - Cost",
+            "assetId": "52484dd6cec444e7be5105b5341ba4a5",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud"
+            ],
+            "aspectName": "",
+            "unit": "$",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null,
+            "type": "KPI",
+            "id": "9",
+            "aggregation": "None"
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 0,
+        "y": 15
+      },
+      "views": [
+        {
+          "type": "gauge",
+          "range": {
+            "low": 0,
+            "high": 1000
+          }
+        }
+      ],
+      "assets": [],
+      "dateSettingsMode": "inherited",
+      "kpiTypes": []
+    },
+    {
+      "title": "Tank 2 - Cost",
+      "type": "performance-insight-gauge",
+      "dimension": {
+        "height": 8,
+        "width": 14
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": 500,
+              "low": 250
+            },
+            "alert": {
+              "high": 800,
+              "low": 100
+            }
+          },
+          "dataSource": {
+            "name": "Tank 2 - Cost",
+            "assetId": "52484dd6cec444e7be5105b5341ba4a5",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud"
+            ],
+            "aspectName": "",
+            "unit": "$",
+            "dataType": "Double",
+            "defaultAggregation": "None",
+            "kpiCategory": null,
+            "type": "KPI",
+            "id": "10",
+            "aggregation": "None"
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 14,
+        "y": 15
+      },
+      "views": [
+        {
+          "type": "gauge",
+          "range": {
+            "low": 0,
+            "high": 1000
+          }
+        }
+      ],
+      "assets": [],
+      "dateSettingsMode": "inherited",
+      "kpiTypes": []
+    },
+    {
+      "title": "Tank 2 - Produced Bottles",
+      "type": "performance-insight-value",
+      "dimension": {
+        "height": 5,
+        "width": 14
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "name": "process_numberProduced",
+            "assetId": "1d49f16861164d8c8b9d2147f888d2a3",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Tank-2"
+            ],
+            "aspectName": "Tank-2",
+            "unit": "",
+            "dataType": "Int64",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "type": "Variable",
+            "id": "11",
+            "aggregation": "Counter"
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 14,
+        "y": 0
+      },
+      "views": [
+        {
+          "type": "value",
+          "showStatistics": true,
+          "sortBy": "dataSourcesOrder",
+          "showValueWithoutAbbreviation": false,
+          "backgroundColor": null,
+          "showWidgetName": true,
+          "widgetNameColor": null,
+          "widgetTextColor": null,
+          "textAlign": "left",
+          "showGraph": true
+        }
+      ],
+      "assets": [],
+      "dateSettingsMode": "inherited",
+      "kpiTypes": []
+    },
+    {
+      "title": "Tank 1 - Produced Bottles",
+      "type": "performance-insight-value",
+      "dimension": {
+        "height": 5,
+        "width": 14
+      },
+      "dataSourcesSettings": [
+        {
+          "id": "0",
+          "color": "#00646E",
+          "decimalPlaces": 2,
+          "label": null,
+          "limits": {
+            "warning": {
+              "high": null,
+              "low": null
+            },
+            "alert": {
+              "high": null,
+              "low": null
+            }
+          },
+          "dataSource": {
+            "name": "process_numberProduced",
+            "assetId": "f937a25670084bf4956136e2c4c3a46f",
+            "path": [
+              "dffassup.Tenant",
+              "dffassup_Shopfloor-to-Cloud",
+              "Tank-1"
+            ],
+            "aspectName": "Tank-1",
+            "unit": "",
+            "dataType": "Int64",
+            "defaultAggregation": "Average",
+            "acquisitionCategory": "ProcessValue",
+            "type": "Variable",
+            "id": "12",
+            "aggregation": "Counter"
+          }
+        }
+      ],
+      "dateSettings": {
+        "queryTypeId": "day",
+        "dateRange": {
+          "from": null,
+          "to": null
+        },
+        "useCurrentDate": true,
+        "offset": 0
+      },
+      "kpiCalculationTimeRange": {
+        "timeRange": "hour",
+        "value": 1
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "views": [
+        {
+          "type": "value",
+          "showStatistics": true,
+          "sortBy": "dataSourcesOrder",
+          "showValueWithoutAbbreviation": false,
+          "backgroundColor": null,
+          "showWidgetName": true,
+          "widgetNameColor": null,
+          "widgetTextColor": null,
+          "textAlign": "left",
+          "showGraph": true
+        }
+      ],
+      "assets": [],
+      "dateSettingsMode": "inherited",
+      "kpiTypes": []
+    }
+  ],
+  "compactMode": false,
+  "widgetOpacity": 100
+}
