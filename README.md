@@ -1,6 +1,6 @@
 # Shopfloor to Cloud Connectivity - Integrate machine & production data securely into the company cloud
 
-Use case for communication from Edge Device to Edge Device and company Cloud (e.g. Insights Hub, formerly known as MindSphere) via MQTT 
+Use case for communication from Edge Device to Edge Device and company Cloud (e.g. Insights Hub, formerly known as MindSphere) via MQTT
 
 - [Shopfloor to Cloud Connectivity - Integrate machine \& production data securely into the company cloud](#shopfloor-to-cloud-connectivity---integrate-machine--production-data-securely-into-the-company-cloud)
   - [Overview](#overview)
@@ -21,9 +21,9 @@ Use case for communication from Edge Device to Edge Device and company Cloud (e.
 
 The following image represents the data flow that will be achieved in this example, which covers everything from the acquisition of data from a machine in full production to its storage and processing in the cloud in general:
 
-<img id="architecture1" src="docs/graphics/architecture1.png" alt="Data Flow Diagram for Performance Insights" width="600"/>
+<img id="architecture1" src="docs/graphics/architecture1.png" alt="Data flow diagram" width="600"/>
 
-### Reference Architecture 
+### Reference Architecture
 
 This representation visualizes how data moves across edge applications within edge devices. The specific configurations of these applications will be detailed in this repository:
 
@@ -37,119 +37,107 @@ The following image illustrates the interaction and communication between all th
 
 ## General task
 
-Gathering of energy data from various controllers and converting it to a standardized form in a southbound Edge Device with no internet access. 
+Gathering of tank data from two PLCs (Tank Application Example) and structuring it in asset models in the IIH Essentials of two southbound Edge Devices with no internet access.
 
-Central monitoring of energy data from multiple locations in dashboards, with a strict separation between Automation Cell Network (Southbound) and Datacenter (Northbound). Because there is no direct connection between Southbound and the connected PLCs with the Internet, this guideline minimizes security risks.
+Central monitoring of the tank data from multiple locations in dashboards, with a strict separation between Automation Cell Network (Southbound) and Datacenter (Northbound). Because there is no direct connection between Southbound and the connected PLCs to the Internet, this guideline minimizes security risks.
 
-Sharing the standardized data with a northbound Edge Device, with internet connectivity.
+Synchronizing the data via IIH synchronization with a northbound Edge Device with internet connectivity.
 
-Structuring the energy data in asset models according to the asset design in Insights Hub in the northbound Edge Device and forwarding them to Insights Hub.
-
-
-
+Forwarding the synchronized Tank assets from the northbound Edge Device to Insights Hub.
 
 ## Requirements
 
-###  Prerequisites
+### Prerequisites
+
 - Industrial Edge Learning Path (Module 1-3)
-- Established connection to 2 PLCs to acquire data with the Edge Device
+- Established connection to 2 PLCs to acquire data with the Edge Devices
 - Access to an Industrial Edge Management System (IEM)
 - Onboarded 3 Industrial Edge Devices (IEDs) on Industrial Edge Management
-- Installed System App Configurators on IEM (Common Connector Configurator, Databus Configurator, DataXess Configurator) 
-- Installed apps on Southbound-Devices (OPC UA Connector, DataXess, Databus, Flow Creator)
-- Installed apps on Northbound-Device (IIH Essentials, Databus, Energy Manager, DataXess, IIH Semantics, Common Configurator)
-- Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
+- Installed System App Configurators on IEM (Common Configurator, Databus Configurator)
+- Installed apps on Southbound-Devices (Common Configurator, IIH Essentials, Databus, OPCUA HighPerformance Connector on Tank-1, SIMATIC S7+ Connector on Tank-2)
+- Installed apps on Northbound-Device (Common Configurator, IIH Essentials, Databus)
+- Google Chrome or Firefox
 - Access to Insights Hub
 - Energy Manager
   
 ### Used components
 
 TIA & PLCs:
-- TIA V16
-- PLC 1512SP-1 PN FW V2.1
+
+- TIA V19
+- PLCSIM Advanced (2 instances with the [Siemens Tank Application](https://github.com/industrial-edge/miscellaneous/tree/main/tank%20application))
 
 Industrial Edge:
-- Industrial Edge Management Virtual V2.0.1-1
-- Industrial Edge Virtual Device V1.16.1-1-a
-- OPC UA Connector V2.0.1-0
-- Registry Service V1.9.0-0
-- Common Import Converter V2.1.0-2
-- Databus V2.3.2-5
-- IIH Essentials V1.10.0
-- Flow Creator V1.17.0-2
-- Energy Manager V1.16.1
-- DataXess V1.4.1-3
-- IIH Semantics V1.9.0-0
-- Common Configurator V1.9.0-4
+
+- Industrial Edge Management Pro V2 V2.3.2
+- Industrial Edge Virtual Device V1.28.1
+- OPCUA HighPerformance Connector V1.2.1
+- SIMATIC S7+ Connector V2.4.1
+- Databus V4.0.0
+- IIH Essentials V2.6.0
+- Common Configurator V2.6.0
 - Web browser (Mozilla or Chrome)
-- Common Connector Configurator V1.9.1-1
-- DataXess Configurator V1.4.2-4
-- Databus Configurator V2.3.2-2
+- Common Configurator (IEM) V1.1.0
+- Databus Configurator V4.0.0
 
 Insights Hub:
-- Asset Manager 
+
+- Asset Manager
 - Energy Manager
 
 ## Configuration Southbound Devices
 
-You can find the further information about the following steps in the [docs](docs/install_PLC_Devices_Southbound.md)
+You can find further information about the following steps in the [docs](docs/install_PLC_Devices_Southbound.md)
 
 - Configuration Steps
 - Configure PLC project in TIA-Portal
 - Configure PLC connections in Industrial Edge
   - Create Databus Credentials and Topics
-  - Configure OPC UA Connector in Common Configurator
+  - Configure the Connectors in Common Configurator
     - Enter Databus Credentials
-    - Add PLC
+    - Add PLC for Tank-1
+    - Add PLC for Tank-2
     - Add Tags
-- Configure Data preprocessing 
-  - IE Flow Creator
-- Configure Connection to Northbound
-
+  - Manage Data
+    - Verify local IIH values
 
 ## Configuration Northbound Device
 
-You can find the further information about the following steps in the [docs](docs/install_Device_Northbound.md)
+You can find further information about the following steps in the [docs](docs/install_Device_Northbound.md)
 
 - Configuration Steps
 - Configure Northbound
   - Create Databus Credentials and Topics
-  - Configure Communication with DataXess
+  - Configure IIH Synchronization
+    - Configure Send to the Northbound on the Child Devices
+    - Configure Receive on the Parent Device
   - Insights Hub Sync
-    - Integrate IIH Essentials into Common Configurator
+    - Prerequisites
+    - Certificate Credentials
     - Configure Connection to Insights Hub
-    - Create the Asset Model
-
+    - Select the Assets for Insights Hub
 
 ## Configuration Insights Hub
-You can find the further information about the following steps in the [docs](docs/install_MindSphere.md)
+
+You can find further information about the following steps in the [docs](docs/install_MindSphere.md)
 
 - Configuration Steps
 - IIH Insights Hub Sync
 - Configure Energy Manager
-    - Overview Dashboard
-      - Create widget for Produced Bottles of Each Line
-      - Create widget for Consumption Graphic of Each Line
-      - Create widget for Cost of each Line
-    - Line 1 - Media Consumption Dashboard
-      - Create widget for Energy Per Bottle
-      - Create widget for Water per Bottle
-      - Create widget for PressuredAir per Bottle
-      - Create widget for Consumption Per Bottle
-      - Create widget for Cost per Bottle (Gauge)
-      - Create widget for Cost per Bottle (Diagram)
-    - Line 2 - Media Consumption Dashboard
-
+  - Overview Dashboard
+    - Create widget for Produced Bottles of Each Tank
+    - Create widget for Consumption Graphic of Each Tank
+    - Create widget for Cost of each Tank
 
 ## Documentation
 
 You can find further documentation and help in the following links
-  - [Industrial Edge Hub](https://iehub.eu1.edge.siemens.cloud/#/documentation)
-  - [Industrial Edge Forum](https://www.siemens.com/industrial-edge-forum)
-  - [Industrial Edge landing page](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge/simatic-edge.html)
-  - [Industrial Edge Learning Path](https://siemens-learning-simaticedge.sabacloud.com/)
-  - [Energy Manager on Insights Hub application manual](https://documentation.mindsphere.io/resources/html/energy-manager/en-US/index.html)
 
+- [Industrial Edge Hub](https://iehub.eu1.edge.siemens.cloud/#/documentation)
+- [Industrial Edge Forum](https://www.siemens.com/industrial-edge-forum)
+- [Industrial Edge landing page](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge/simatic-edge.html)
+- [Industrial Edge Learning Path](https://siemens-learning-simaticedge.sabacloud.com/)
+- [Energy Manager on Insights Hub application manual](https://documentation.mindsphere.io/resources/html/energy-manager/en-US/index.html)
 
 ## Contribution
 
@@ -161,4 +149,3 @@ If you haven't previously signed the [Siemens Contributor License Agreement](htt
 ## Licence and Legal Information
 
 Please read the [Legal information](LICENSE.md).
-

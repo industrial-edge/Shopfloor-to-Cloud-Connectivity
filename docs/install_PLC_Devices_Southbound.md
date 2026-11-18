@@ -1,183 +1,168 @@
 # Configuration Steps
+
 - [Configuration Steps](#configuration-steps)
 - [Configure PLC-Project in TIA-Portal](#configure-plc-project-in-tia-portal)
 - [Configure PLC connections in Industrial Edge](#configure-plc-connections-in-industrial-edge)
   - [Create Databus Credentials and Topics](#create-databus-credentials-and-topics)
-  - [Configure OPC UA Connector in Common Configurator](#configure-opc-ua-connector-in-common-configurator)
-      - [Enter Databus credentials](#enter-databus-credentials)
-      - [Add PLC](#add-plc)
-      - [Add tags](#add-tags)
-- [Configure Data Processing](#configure-data-processing)
-  - [IE Flow Creator](#ie-flow-creator)
-- [Configure Connection to Northbound](#configure-data-processing)
-
+  - [Configure the Connectors in Common Configurator](#configure-the-connectors-in-common-configurator)
+    - [Enter Databus Credentials](#enter-databus-credentials)
+    - [Add PLC for Tank-1](#add-plc-for-tank-1)
+    - [Add PLC for Tank-2](#add-plc-for-tank-2)
+    - [Add tags](#add-tags)
+  - [Manage Data](#manage-data)
+    - [Verify local IIH values](#verify-local-iih-values)
+- [Navigation](#navigation)
 
 # Configure PLC-Project in TIA-Portal
 
-1. Download the TIA portal projects [EnergyManagement_Energy1](../src/Device_Energy1/EnergyManagement_Energy1.zap16) and [EnergyManagement_Energy2](../src/Device_Energy2/EnergyManagement_Energy2.zap16)
+In this example we will use the same PLC Project for both PLCs, but with different PLCSIM Advanced instances and IP addresses to simulate two separate tanks.
 
-2. Open TIA portal and open the projects containing the Energy Management application (Adapt the IP addresses to your system)
-   
-![TIA_IP](graphics/TIA_IP.png)
+Instead of using PLCSIM Advanced you can also use physical PLCs with the same project.
 
-3. Download the PLC programs to the PLCs and set the PLCs into RUN
- 
- 
+1. Download `tia-tank-application.zap19` from the [Siemens Tank Application example](https://github.com/industrial-edge/miscellaneous/tree/main/tank%20application). The V4.0 project requires TIA Portal V19 or later; the reference example uses PLCSIM Advanced V6.0 for simulation.
+
+1. Retrieve the project in TIA Portal and prepare two PLCSIM Advanced instances, `Tank_1` and `Tank_2`. Adapt the PLC IP addresses to your network and ensure that each acquisition IED can reach its PLC. This example uses `10.14.7.111` for `Tank_1` and `10.14.7.112` for `Tank_2`.
+  ![Tank Application PLC network configuration in TIA Portal](graphics/005_Tank_Application_PLC.PNG)
+
+1. Download the Tank program to both PLC simulations and set them to RUN. Follow the Tank Application's operating instructions to start the simulation so that process values change. For `Tank_1`, ensure that the PLC OPC UA server is enabled and its tags are accessible.
+
 # Configure PLC connections in Industrial Edge
 
-The Southbound consist of two  edge devices. For this example, they are called "Energy1" and "Energy2"
+The southbound consists of two edge devices, "Tank-1" and "Tank-2".
+All addresses below are lab examples; adapt them to your network.
 
-Installed Apps on the Device Energy1 and Energy2: 
-  - OPC UA Connector
-  - Common Import Converter
-  - Common Configurator
-  - Registry Service
-  - IIH Essentials
-  - DataXess
-  - Databus
-  - Flow Creator
+| IED Name | IED IP | PLC instance / IP | Used Connector |
+| --- | --- | --- | --- |
+| Tank-1 | `10.14.7.22` | Tank_1 / `10.14.7.111` | OPCUA HighPerformance Connector |
+| Tank-2 | `10.14.7.23` | Tank_2 / `10.14.7.112` | SIMATIC S7+ Connector |
 
-Each of the following steps are done in the Industrial Edge system and, as explained in the Reference Architecture shown in the main page, the OPC UA Connector is used on the Industrial Edge Device (IED) to read data from the PLCs and provide the data. Then, the data is sent via the connectors to the Databus.
+Installed apps on the IEDs:
+
+- Common Configurator
+- IIH Essentials
+- Databus
+- OPCUA HighPerformance Connector (on Tank-1)
+- SIMATIC S7+ Connector (on Tank-2)
+
+![Installed apps on Tank-1](graphics/011_tank_1_device_apps.PNG)
+
+![Installed apps on Tank-2](graphics/012_tank_2_device_apps.PNG)
+
+Each of the following steps is done in the Industrial Edge system and, as explained in the Reference Architecture shown in the main page, the OPCUA HighPerformance Connector and the SIMATIC S7+ Connector are used on the Industrial Edge Devices (IEDs) to read data from the PLCs and provide the data to the local IIH Essentials.
 
 ## Create Databus Credentials and Topics
 
-Go to the *Industrial Edge Management UI > Data Connections*, select "Databus" and launch it on the "Energy1" Edge Device.
+Go to *Industrial Edge Management UI > Data Connections*, select *Databus* and launch its configurator on "Tank-1".
 
-When the configurator is open, click on the "plus" icon in the red square shown in the picture bellow to add an user: 
+In *User View*, select username/password authentication and use the plus icon to create a user.
 
-![Databus IEM 1](graphics/databusIEM1.png)
+![Databus user and topic permissions](graphics/014_1_databus_configuration.PNG)
 
-Add your related credentials/topics:
+Here we use the following settings:
 
-   - Username: `edge`
-   - Password: `edge`
-   - Topics: 
-     - `ie/#` 
-   - Permission: `Publish and Subscribe`
+| Setting | Value |
+| --- | --- |
+| Topic name | `ie/#` |
+| Username | `edge` |
+| Password | `edge` |
+| Permission | Publish and Subscribe |
 
-![Databus IEM 2](graphics/databusIEM2.png)
+> [!NOTE]
+> `edge` / `edge` are example credentials for this lab setup only. Use strong, unique passwords in real deployments.
 
+![Databus user and topic creation](graphics/014_2_databus_configuration.PNG)
 
-Click on the plus icon to add the rest of the topics:
+Click save, then deploy and repeat the same steps for the "Tank-2" edge device.
 
-![Databus IEM 3](graphics/databusIEM3.png)
-
-Add the following topics:
- - `ie/d/j/simatic/v1/iefc/dp/r/#`
- - `ie/m/j/simatic/v1/iefc/dp`
-
-![Databus IEM 4](graphics/databusIEM4.png)
-
-Click deploy and repeat the same steps for the "Energy2" edge device.
-
-Instead of manually configuring you can also import the configuration file to both devices:
-
-[Databus_Configuration](../src/Device_Energy1/Databus_Energy1_config.json) (Password = Edge1234!)
-
-
-
-## Configure OPC UA Connector in Common Configurator
+## Configure the Connectors in Common Configurator
 
 In this section, the following steps will be addressed:
 
-- Connect the "Energy1" PLC to the "Energy1" Edge device to retrieve tags via the OPC UA Connector.
-- Connect the "Energy2" PLC to the "Energy2" Edge device to retrieve tags via the OPC UA Connector.
+- Connect the "Tank-1" PLC to the "Tank-1" Edge device to retrieve tags via the OPC UA Connector.
+- Connect the "Tank-2" PLC to the "Tank-2" Edge device to retrieve tags via the SIMATIC S7+ Connector.
   
-For this example, we will only walk through the steps for Energy 1. The same steps should be repeated for "Energy2".
-
-To provide data from the PLC to the Databus connect the OPC UA Connector to the PLC and add the required PLC variables. We will use Common Configurator to achieve this.
+To provide data from the PLC to the IIH, set up the connection and add the required PLC variables in the Connector. We will use Common Configurator to achieve this.
 
 Go to each *Edge Device UI > Apps* and open *Common Configurator*.
 
 ### Enter Databus Credentials
 
-Go to *Settings > Databus Credentials* and enter the previously created Databus credentials:
+On each acquisition IED, go to *Settings > Databus credentials* and enter the previously created Databus credentials. Use `ie-databus:1883` as the service name for the local publisher and subscriber, and save the settings.
 
-![Common Configurator 1](graphics/CommonConfigurator1.png)
+![Local Databus credentials in Common Configurator on Tank-1](graphics/015_databus_credentials_tank_1.PNG)
 
 > [!IMPORTANT]  
 > If the credentials were typed correctly you should see the "Valid Credentials" pop-up label on the top right as shown in the picture.
 
-### Add PLC
+### Add PLC for Tank-1
 
-Go to *Get Data* and open the OPC UA Connector:
+On "Tank-1", go to *Get data > Connector configuration*, select *OPCUA HighPerformance Connector* and add a new data source with the following settings:
 
-![Common Configurator 2](graphics/CommonConfigurator2.png)
+- Name: `Tank-1`
+- OPC-UA Server URL: `opc.tcp://10.14.7.111`
+- IP port number: `4840`
+- Message Security Mode and Security policy: `None`
+- Authentication mode: `Anonymous`
+- Use Source TimeStamp: enabled
 
-> [!IMPORTANT]  
-> If the Databus was configured correctly, "Databus is installed" label should be checked in green.
+![OPC UA data source configuration for Tank-1](graphics/017_opc_connector_tank_1.PNG)
 
-Click on *Tags* tab and select *Add data source*:
+> [!WARNING]
+> Anonymous, unencrypted OPC UA access is used only for this isolated lab example. Do not use these settings as production security guidance.
 
-![Common Configurator 3](graphics/CommonConfigurator3.png)
+Alternatively, you can restore the connector configuration using the [Tank-1 connector configuration export](../src/Tank-1_opcuahpc1_export.json) to restore the supplied connection (including tags) through Common Configurator's *Settings > Backup & restore*. Review the imported data source and adapt its address before deploying.
 
-Type your PLC information (OPC UA server) and save:
+### Add PLC for Tank-2
 
-![Common Configurator 4](graphics/CommonConfigurator_4.png)
+On "Tank-2", follow the same procedure with the *SIMATIC S7+ Connector*. Restore the [Tank-2 connector configuration export](../src/Tank-2_css7pdriver1_export.json) through *Settings > Backup & restore*, or add the data source and browse its tags manually. Review these settings before deploying:
 
-Then click "Import tags" on the just created data-source and import the JSON file [Energy1_OPCUA_Connector](../src/Device_Energy1/Energy1_OPCUA_Connector.json) for Energy1 and [Energy2_OPCUA_Connector](../src/Device_Energy2/Energy2_OPCUA_Connector.json) for Energy2.
+- Communication protocol: `S7-1500 / S7-1200`
+- Name: `Tank-2`
+- IPv4 address: `10.14.7.112`
+- Legitimation mode: *Legitimate via protection level password*
+- Acquisition mode: *Provide data on change*
+- Use source time stamp: enabled
 
-![Common Configurator 5](graphics/CommonConfigurator_5.png)
+![SIMATIC S7+ data source configuration for Tank-2](graphics/018_s7_connector_tank_2.PNG)
 
-In this case, you'll se something like this for Energy 1:
+Alternatively, you can restore the connector configuration using the [Tank-2 connector configuration export](../src/Tank-2_css7pdriver1_export.json) to restore the supplied connection.
 
-![Common Configurator 6](graphics/CommonConfigurator_6.png)
+### Add tags
 
-Select all the tags, enter the acquision cycle and access mode. Last, click "Import".
+After saving the connection, use *Browse tags* to select the following tags:
 
-Now, the tags for Energy 1 are imported in the data-source. Just click "Deploy" to apply changes:
+- `GDB.signals.tankSignals.actLevel`
+- `GDB.signals.tankSignals.actTemperature`
+- `GDB.signals.energySignals.energyConsumptionFillingTank`
+- `GDB.signals.energySignals.waterConsumptionFillingTank`
+- `GDB.signals.energySignals.energyConsumptionHeatingTank`
+- `GDB.signals.energySignals.energyConsumptionFillingBottles`
+- `GDB.signals.energySignals.gasConsumptionHeatingTank`
+- `GDB.process.numberProduced`
+- `GDB.process.numberFaulty`
+- `GDB.process.numberGood`
 
-After deployment, ensure that the connector status is displayed in "green" and that the data source also shows a green status, like so:
+Use the filter to find the tags listed above. Select the tags, enter the acquisition cycle and access mode. Last, click *Import*. Deploy the connector configuration, then check that the connector and data source are connected.
 
-![Common Configurator 8](graphics/CommonConfigurator_8.png)
+![Browse tags](graphics/017_opc_connector_tags_tank_1.PNG)
 
-To check if data is actually being extracted from the PLC, let's integrate IIH Essentials into Common Configurator. And after creating assets and adding the tags, data is shown:
+## Manage Data
 
-![Common Configurator 11](graphics/CommonConfigurator_11.png)
+The Tank values are used directly in IIH Essentials. For this, go to *Manage data* in Common Configurator and create a new asset for the Tank.
 
-Now, repeat the same proccess for Energy 2.
+![Add a new Asset](graphics/019_add_asset.PNG)
 
-## Configure Data Processing
+To add the tags from the connector, select the asset and open the *Attributes* tab. On the right side select the connector and choose the tags you want to add to the asset. Drag and drop the selected tags into the asset's attribute list.
 
-The data collected from the OPC UA Connector is published to the Databus, and using the Flow Creator, we retrieve this data from the Databus and send it to the central Device (Shopfloor-to-Cloud) through the DataXess application, which will be configured in the Northbound.
+![Drag and drop connector tags into the asset attributes](graphics/019_drag_drop_tags.PNG)
 
-Please note that for the Flow Creator to function properly, the Acquisition Devices must be strictly named "Energy1" and "Energy2".
+Apply the same changes for Tank-2.
 
-### Flow Creator
+### Verify local IIH values
 
-Aggregate the raw data from the PLC to:
-- Energy
-- Water
-- Pressured Air
-- Produced Bottles 
+The configuration will directly be referenced in IIH Essentials. Check the current values in the IIH while the Tank simulation is running. Compare the tank level, temperature, and produced-bottle counter with the corresponding PLC values. Confirm changing values on both IEDs before configuring synchronization.
 
-The aggregated values are published on newly defined topics to prevent collision with OPC UA Connector related topic names
-
-To do this, follow this steps:
-
-1. Import the JSON-File
-  
-    For Energy1: [FlowCreator_Energy1](../src/Device_Energy1/Energy1.json)
-
-    For Energy2: [FlowCreator_Energy2](../src/Device_Energy2/Energy2.json)
-  
-    
-  ![FlowCreator1](graphics/Flow_Creator1.png)
-
-2. Double click on a MQTT-Node  
-3. Add Databus Credentials
-  
-  ![FlowCreator2](graphics/Flow_Creator2.png)
-  
-    
-  ![FlowCreator3](graphics/Flow_Creator3.png)
-
-4. Deploy the Flow
-
-## Configure Connection to the Northbound
-
-The DataXess application will send the preprocessed data to the central device. The configuration is done centrally in the IEM and is explained in [configuration of the Northbound Device](install_Device_Northbound.md).
-
+If values do not update locally, check PLC RUN state, network reachability, connector status, and tag selection before proceeding.
 
 # Navigation
 

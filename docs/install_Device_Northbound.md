@@ -3,264 +3,203 @@
 - [Configuration Steps](#configuration-steps)
 - [Configure Northbound](#configure-northbound)
   - [Create Databus Credentials and Topics](#create-databus-credentials-and-topics)
-  - [Configure Communication with DataXess](#configure-communication-with-dataxess)
+  - [Configure IIH Synchronization](#configure-iih-synchronization)
+    - [Configure Databus Credentials on the Parent Device](#configure-databus-credentials-on-the-parent-device)
+    - [Configure Send to the Northbound on the Child Devices](#configure-send-to-the-northbound-on-the-child-devices)
+    - [Configure Receive on the Parent Device](#configure-receive-on-the-parent-device)
   - [Insights Hub Sync](#insights-hub-sync)
-    - [Integrate IIH Essentials into Common Configurator](#integrate-iih-essentials-into-common-configurator)
+    - [Prerequisites](#prerequisites)
+    - [Certificate Credentials](#certificate-credentials)
     - [Configure Connection to Insights Hub](#configure-connection-to-insights-hub)
-    - [Create the Asset Model](#create-the-asset-model)
+    - [Select the Assets for Insights Hub](#select-the-assets-for-insights-hub)
 - [Navigation](#navigation)
   
 # Configure Northbound
 
-The Northbound consist of one device. In the following this is called "Shopfloor-to-Cloud".
+The Northbound consists of one device. In the following this is called "Shopfloor-to-Cloud". In this example it uses the IP address `10.14.7.21`; adapt it to your network.
 Installed Apps:
-  - IIH Essentials
-  - Databus
-  - DataXess 
-  - IIH Semantics
-  - Common Configurator
-  - Registry Service
+
+- IIH Essentials
+- Databus
+- Common Configurator
+
+![Installed apps on Shopfloor-to-Cloud](graphics/013_shopfloor_to_cloud_device_apps.PNG)
+
+DataXess, IIH Semantics, Registry Service or a separate External Databus app are not required.
 
 ## Create Databus Credentials and Topics
 
-Configure the User and Topic in the Databus Configurator as described [here](install_PLC_Devices_Southbound.md).  
+Configure the User and Topic in the Databus Configurator as described in [Installation of PLC Devices Southbound](install_PLC_Devices_Southbound.md).  
 
-Instead of manually configuring you can also import the configuration files:
-
-[Databus_Central](../src/CentralDevice/IE-Databus.json) (Password = Edge1234!)
-
-1. Launch the Databus Configurator and add your related Credentials/Topics:
+1. In the Industrial Edge Management, launch the Databus Configurator on "Shopfloor-to-Cloud" and add your related Credentials/Topics:
 
    - Username: `edge`
    - Password: `edge`
-   - Topic: `ie/#`
+   - Topics: `ie/#` and `/sync/#`
    - Permission: `Publish and Subscribe`
+
+   > [!NOTE]
+   > `edge` / `edge` are example credentials for this lab setup only. Use strong, unique passwords in real deployments.
+
+   An additional topic `/sync/#` is required for the IIH synchronization between the Tank devices and Shopfloor-to-Cloud. Create this topic in the Databus Configurator as well by clicking the plus sign in the topic list.
   
-    
-  ![ie_databus_user](graphics/IE_Databus_User.png)
-  
- 2. Deploy configuration to device
+   ![Databus users and topics on Shopfloor-to-Cloud](graphics/014_3_databus_configuration.PNG)
 
-  ![ie_databus](graphics/IE_Databus.png)
+1. Go to *Settings* and enable *Connection to External Clients*, so that the Tank devices can connect to the Databus of Shopfloor-to-Cloud. In this example, *No encryption (unsecure)* is selected and the Databus is reached at `10.14.7.21:9883`.
 
-## Configure Communication with DataXess
+   ![External client access to the Databus](graphics/016_external_databus_configuration.PNG)
 
-In this section, we will configure the communication between the two acquisition devices (Energy1 and Energy2) and the aggregation device (Shopfloor-to-Cloud).
+   > [!WARNING]
+   > Unencrypted external Databus access is used only for this isolated lab example. Do not use these settings as production security guidance.
 
-To do this, follow these steps:
+1. Deploy configuration to device
 
-1. Go to *Industrial Edge Management UI > Data Connections* and open DataXess.
-   
-2. It doesn't matter which device you select to launch the app. The configuration will be done centrally for all devices at once.
+## Configure IIH Synchronization
 
- ![DataXess1](graphics/data1.png)
+In this section, we will configure the synchronization between the two acquisition devices (Tank-1 and Tank-2) and the aggregation device (Shopfloor-to-Cloud). The Tank devices send their data to the external Databus endpoint of Shopfloor-to-Cloud, where it is received by IIH Essentials.
 
-3. Start the configuration by creating a new group
-   
-  ![DataXess2](graphics/data2.png)
+### Configure Databus Credentials on the Parent Device
 
-4. Add a group name and description and add all 3 devices to it. Make sure to select the central device as the "Aggregator Device" and click "Save".
-   
-  ![DataXess3](graphics/data3.png)
-
-5. Click on one of the setting symbols of your new created group to configure the data that get's exchanged. Select the topics `ie/d/j/simatic/v1/iefc/dp/r/#` and `ie/m/j/simatic/v1/iefc/dp` for both acquistion devices.
-   
-  ![DataXess4](graphics/data4.png)
-  ![DataXess5](graphics/data5.png)
-
-6. DataXess will automatically create new topics on the aggregator device were the data will be published.
-   
-  ![DataXess6](graphics/data9.png)
-
-7. Click "Deploy".
-  
- ![DataXess6](graphics/data6.png)
-   
-8. Configure a new user that will be used to subscribe and publish to the configured topics and click "Validate",
-   
-  ![DataXess7](graphics/data7.png)
-
-If everything was configured correctly, all devices should have a green status. Also, the general connection status msut be in green as well, as shown:
-
-  ![DataXess8](graphics/data8.png)
-
-##  Insights Hub Sync
-
-In this section, the necessary configurations will be made to establish communication with the cloud (Insights Hub).
-
-All the following steps for this option will be performed in the "Common Configurator" app on the Aggregation Device (Shopfloor-to-cloud).
-
-### Integrate IIH Essentials into Common Configurator
-
-1. Go to *Edge Device UI > Apps*, open *Common Configurator*. Then, go to *Store Data*.
-
-2. Click on "Integrate"
-   
-    ![IIH_Integrate](graphics/IIH1.png)
-
-3. Confirm the integration in the popup window
-
-    ![IIH_IntegrateConfirmation](graphics/IIH2.png)
-
-### Configure Connection to Insights Hub
-
-Common Configurator needs a connection to the Databus and to Insights Hub. 
-
-You need to have a Insights Hub account and create certificates to allow a connection from the Common Configurator.
-
-1. Configure the Databus credentials under "Settings > Databus credentials"
-
-   ![IIH_DatabusCredentials](graphics/IIH3.png)
+1. Configure the Databus credentials in the Common Configurator on "Shopfloor-to-Cloud" under "Settings > Databus credentials" in the same way as described in the [southbound guide](install_PLC_Devices_Southbound.md#enter-databus-credentials).
 
 2. Save the configuration
 
-3. Proceed with configuring the Insights Hub connection by clicking "Add" button.
+### Configure Send to the Northbound on the Child Devices
 
-    ![IIH_OnlineStatus](graphics/IIH4.png)
+On each Tank IED, open *Synchronize data > Send* in Common Configurator and add a destination with these settings:
 
-4. Select the Target type. Those are required to allow the Common Configurator to interact with Insights Hubs REST-API.
+| Setting | Example value |
+| --- | --- |
+| Destination type | Industrial Information Hub (IIH) |
+| System name | `Tank-1` or `Tank-2`, unique for each child |
+| Display name | `Northbound Device` |
+| Parent system name | `Shopfloor-to-Cloud`, matching the parent IIH |
+| OPC UA synchronization | Inactive |
+| Data synchronization | Active, cycle 1 second |
+| MQTT host / port | `10.14.7.21` / `9883` (parent Databus external endpoint) |
+| Use credentials | Active; use a user configured on the parent Databus |
+| Use SSL/TLS | Inactive in this isolated lab; match your broker configuration |
+| State | Active |
 
-    ![Aggregate0](graphics/Aggregate0.png)
+![Child IIH destination for the northbound device](graphics/021_send_data_destination.PNG)
 
-    You need to fill those 3 sections in order to get a proper interaction with Insights Hub:
+Select the Tank assets and variables to synchronize in the destination's *Hierarchy* tab and save the configuration. Repeat for the other child with its own system name and hierarchy.
 
-    - Credentials for the application.
-    - Certificate Credentials.
-    - Advanced Configuration.
+![Hierarchy](graphics/021_2_send_data_destination.PNG)
 
-    **Credentials for the application**
+### Configure Receive on the Parent Device
 
-    In this section, how to fill this information will be explained:
+1. Go to *Edge Device UI > Apps* on "Shopfloor-to-Cloud" and open *Common Configurator*. Then, go to *Synchronize data > Receive*.
 
-    ![Aggregate](graphics/Aggregate.png)
+2. Add a new receive configuration with the following settings and save the changes:
 
-    To allow Common Configurator to update the asset model in Insights Hub, The IH Tenant Administrator has to create a **Technical User** and add the following roles:
+   | Setting | Example value |
+   | --- | --- |
+   | System name | `Shopfloor-to-Cloud`, matching the parent system name configured on the Tank devices |
+   | Name | `IIH Sync` |
+   | MQTT host / port | `10.14.7.21` / `9883` (external Databus endpoint of Shopfloor-to-Cloud) |
+   | Use credentials | Active; user `edge` and its password |
+   | Use SSL/TLS | Inactive in this isolated lab; match your Databus configuration |
+   | State | Active |
 
-    - mdsp:core:assetmanagement.admin
-    - mdsp:core:assetmodeler.fullaccess
-    - mdsp:core:mindconnect.fullaccess
-    
-    To do this, go to *Insights Hub UI > Settings*:
+   ![Receive data on Shopfloor-to-Cloud](graphics/022_receive_data.PNG)
 
-    ![IHUI](graphics/IHUI.png)
+If everything was configured correctly, the broker state is "Connected" and Tank-1 and Tank-2 are listed with a green status under the receive configuration, as shown above. The Tank assets and their changing values are now available in IIH Essentials on Shopfloor-to-Cloud.
 
-    Go to *User Management > Technical Users*:
+## Insights Hub Sync
 
-    ![IHUI2](graphics/IHUI2.png)
+In this section, the necessary configurations will be made to establish communication with the cloud (Insights Hub).
 
-    Select *Create technical user*:
+All the following steps for this option will be performed in the "Common Configurator" app on the Northbound Device (Shopfloor-to-Cloud).
 
-    ![IHUI3](graphics/IHUI3.png)
+### Prerequisites
 
-    Assign a name and click on "Create technical user":
+A Technical User is needed in Insights Hub, see: [Insights Hub Documentation - Technical Users](https://documentation.mindsphere.io/MindSphere/apps/settings/technical-users.html)
 
-    ![IHUI4](graphics/IHUI4.png)
+The Technical User needs at least the following permissions:
 
-    The following tab will appear. Make sure to save the generated password and assign the previously described roles:
+- mdsp:core:assetmanagement.admin
+- mdsp:core:assetmodeler.fullaccess
+- mdsp:core:mindconnect.fullaccess
 
-    ![IHUI6](graphics/IHUI6.png)
+### Certificate Credentials
 
-    Now assign the required information as follows:
+To create a new certificate, go to *Insights Hub UI > System Tools > Asset Manager*:
 
-    - Name: Shopfloor-to-Cloud
-    - App Id: *enter the technical user you created*
-    - Password: *enter the technical user generated password*
+![Asset Manager](graphics/030_asset_manager.PNG)
 
-    
-    **Certificate Credentials.**
+Then, go to *Asset Manager > Connectivity > MQTT Certificates*:
 
-    In this section, how to fill this information will be explained:
+![MQTT Certificates](graphics/031_mqtt_certificates.PNG)
 
-    ![Aggregate2](graphics/Aggregate2.png)
+Click on "Create a new certificate":
 
-    To do this, go to *Insights Hub UI > Asset Manager*:
+![Create new Certificate](graphics/032_mqtt_certificates.PNG)
 
-    ![AssetManager1](graphics/AssetManager1.png)
+Now, select the type of authentication:
 
-    Then, go to *Asset Manager > Connectivity > MQTT Certificates*:
+![Generate agent Certificate](graphics/033_mqtt_certificates.PNG)
 
-    ![AssetManager2](graphics/AssetManager2.png)
+Create the certificate name and enter the author email:
 
-    Click on "Create a new certificate":
+![Generate MQTT certificate](graphics/034_mqtt_certificates.PNG)
 
-    ![AssetManager3](graphics/AssetManager3.png)
+As soon as you click on the "Create & Download" button, the following files will be automatically downloaded:
 
-    Now, select the type of authentication:
+- Certificate file (.pem)
+- Certificate key file (.key)
 
-    ![AssetManager4](graphics/AssetManager4.png)
+### Configure Connection to Insights Hub
 
-    Create the certificate name and enter the author email:
+Add a new data destination for Insights Hub in the Common Configurator app on the Northbound IED.
 
-    ![AssetManager5](graphics/AssetManager5.png)
+1. Go to *Synchronize data > Send* and click the plus icon to add a new data destination.
 
-    As soon as you click on the "Create & Download" button, the following files will be automatically downloaded:
+2. The following settings are required to allow the data synchronization to interact with Insights Hub:
 
-    - Certificate file (.pem)
-    - Certificate key file (.key)
+    ![Insights Hub data destination](graphics/040_send_data_destination.PNG)
 
-    Now assign the required information as follows:
+    - Destination type: Insights Hub (MindSphere)
+    - Display name: Insights Hub
+    - Tenant: *enter your Insights Hub Tenant* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home"
+    - Client: *enter the certificate name from the previous step, for this case, it was named "Shopfloor-to-Cloud"*
+    - App ID: *enter the technical user you created*
+    - Secret key: *enter the technical user generated secret key*
+    - Region: *enter your region* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home"
+    - Connector certificate: *upload the .pem file*
+    - Connector key: *upload the .key file*
+    - Broker URL: *the Broker URL for your tenant/region*, usually something like "mqtt.ih.[region].siemens.app"
+    - Broker port: *enter the Broker port for your tenant, typically 8883*
 
-    - Tenant: *enter your Insights Hub Tenant* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
-    - Device name: *enter your device name, for this case, it was named "Shopfloor-to-Cloud"*
-    - Certificate: *upload the .pem file*
-    - Key: *upload the .key file*
-    - Region *enter your region* you can find this in your Insights Hub URL "https://[tenant].[region].mindsphere.io/home" 
-    - Broker URL: mindconnectmqtt.eu1.mindsphere.io
-    - Broker Port: 8883
+    The other values can stay as default unless specific requirements dictate otherwise.
 
-  
+   > [!IMPORTANT]
+   > More information can be found in the [IIH Documentation](https://docs.industrial-operations-x.siemens.cloud/r/en-us/v2.6/industrial-information-hub/) and the [Insights Hub Operator Cockpit Documentation](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html).
+   > Information on how to create connector certificates can be found in the [MindConnect MQTT Agent Onboarding HowTo](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [MindSphere Managing CA Certificates HowTo](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [MindConnect Agent Certificate HowTo](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html).
 
-    **Advanced Configuration**
+3. Click "Add". The connection will be established and you should see a green status for the Insights Hub destination in the IIH Essentials overview:
 
-    In this section, how to fill this information will be explained:
+   ![Insights Hub destination status in IIH Essentials](graphics/042_IIH.PNG)
 
-    ![Aggregate3](graphics/Aggregate3.png)
+### Select the Assets for Insights Hub
 
-    Assign the required information as follows:
+The Tank-1 and Tank-2 assets are received through the IIH synchronization, so no additional Asset Model has to be created on the Shopfloor-to-Cloud device.
 
-    - Insights Hub Broker Root CA: *upload the .pem file, for this case, you can leave in blank*
-    - Publishing interval in seconds: *enter the period of time between each publication of data collected by the connected device*
-    - MQTT QoS: *enter the message delivery guarantee level to the MQTT protocol*
-    
-  > [!IMPORTANT]
-  > More information can be found in the [Common Configurator documentation](https://cache.industry.siemens.com/dl/files/743/109826743/att_1162983/v1/EdgeApp_IIH_enUS_en-US.pdf) and [here](https://documentation.mindsphere.io/MindSphere/apps/operator-cockpit/application-credentials-for-API-applications.html).
-  > Information on how to create connector certificates can be found [here](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html), [here](https://documentation.mindsphere.io/MindSphere/howto/howto-managing-ca-certificates.html) and [here](https://documentation.mindsphere.io/MindSphere/howto/howto-obtaining-auto-generated-agent-certificate.html).
+1. Open the created data destination under *Synchronize data > Send* and go to the *Hierarchy* tab.
 
+2. Add the received assets `Tank-1` and `Tank-2` from the *Model* on the right to the hierarchy and save the configuration:
 
-5. Click "Save". The connection will be established and you should see a green status in the Insights Hub connection on the Common Configurator "Home" window:
+    ![Insights Hub hierarchy](graphics/041_hierarchy.PNG)
 
-   ![online](graphics/IIH6.png)
-
-### Create the Asset Model
-
-1. Go to "Define Data > Organize" to create an Asset Model and connect the variables
-
-2. Add the following structure:
-
-    ![IIH_CreateAssetModel1](graphics/IIH7.png)
-
-
-  > [!IMPORTANT]  
-  > Check the "Storage" and "Cloud Sync" checkbox for each variable
-  
-3. Deploy the configuration.
-    The incoming data from Energy1 and Energy2 will now be stored in the integrated IIH Essentials. Under "Store Data" you can see the created Asset model and the datapoints.
-      ![IIH_StoreData1](graphics/Line1.png)
-      ![IIH_StoreData2](graphics/Line2.png)
-
-    In Insights Hub Energy Manager, you should now also see your data structure from Common Configurator.
-      ![InsightsHub_Datamodel](graphics/IIH10.png)
-    
+    In Insights Hub, you should now see the Tank-1 and Tank-2 assets with their changing values.
 
 Up to this point, the following steps have been completed:
 
-- Communication has been established between the Southbound devices (Energy1 and Energy2) and the Northbound device (Shopfloor-to-Cloud).
+- Communication has been established between the Southbound devices (Tank-1 and Tank-2) and the Northbound device (Shopfloor-to-Cloud).
 
 - Communication has been established between the Northbound device (Shopfloor-to-Cloud) and the cloud (Insights Hub).
 
-From here onwards, the Energy Manager application hosted in the cloud will be used to create a dashboard with the preprocessed data sourced from the Northbound device.
-
-This Energy Manager will be setup in [here](install_MindSphere.md)
+How to check the received data is described in the [Insights Hub guide](install_MindSphere.md).
 
 # Navigation
 
